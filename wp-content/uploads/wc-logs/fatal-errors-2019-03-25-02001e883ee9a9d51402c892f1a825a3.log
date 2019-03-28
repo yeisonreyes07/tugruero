@@ -1,0 +1,88 @@
+2019-03-25T15:54:16+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:54:25+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:54:52+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:55:22+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:55:38+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:55:39+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:55:40+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:56
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 56
+
+2019-03-25T15:56:49+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:60
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 60
+
+2019-03-25T15:56:51+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:60
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 60
+
+2019-03-25T15:56:57+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:61
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 61
+
+2019-03-25T15:56:58+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Query::have_posts() in /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php:61
+Stack trace:
+#0 /home/fidel/public_html/tugruero/wp-includes/template-loader.php(77): include()
+#1 /home/fidel/public_html/tugruero/wp-blog-header.php(19): require_once('/home/fidel/pub...')
+#2 /home/fidel/public_html/tugruero/index.php(17): require('/home/fidel/pub...')
+#3 {main}
+  thrown en /home/fidel/public_html/tugruero/wp-content/themes/tugruero/index.php en la línea 61
+

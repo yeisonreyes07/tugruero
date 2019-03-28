@@ -100,27 +100,9 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 							continue;
 						} ?>
 						<div class="wmc-currency-rate">
-							<?php echo $currency . '/' . $currency_default ?> = <?php
-							switch ( $list_currencies[ $currency ]['pos'] ) {
-								case 'left' :
-									$format = '%1$s%2$s';
-									break;
-								case 'right' :
-									$format = '%2$s%1$s';
-									break;
-								case 'left_space' :
-									$format = '%1$s&nbsp;%2$s';
-									break;
-								case 'right_space' :
-									$format = '%2$s&nbsp;%1$s';
-									break;
-							}
-							$arg = array(
-								'currency'     => $currency,
-								'decimals'     => $list_currencies[ $currency ]['decimals'],
-								'price_format' => $format,
-							);
-							echo wc_price( $list_currencies[ $currency ]['rate'], $arg );
+							<?php echo $currency_default . '/' . $currency ?> = <?php
+
+							echo $list_currencies[ $currency ]['rate'];
 							?>
 						</div>
 					<?php }
@@ -131,27 +113,8 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 						continue;
 					} ?>
 					<div class="wmc-currency-rate">
-						<?php echo $key . '/' . $currency_default ?> = <?php
-						switch ( $currency['pos'] ) {
-							case 'left' :
-								$format = '%1$s%2$s';
-								break;
-							case 'right' :
-								$format = '%2$s%1$s';
-								break;
-							case 'left_space' :
-								$format = '%1$s&nbsp;%2$s';
-								break;
-							case 'right_space' :
-								$format = '%2$s&nbsp;%1$s';
-								break;
-						}
-						$arg = array(
-							'currency'     => $key,
-							'decimals'     => $currency['decimals'],
-							'price_format' => $format,
-						);
-						echo wc_price( $currency['rate'], $arg );
+						<?php echo $currency_default . '/' . $key ?> = <?php
+						echo $currency['rate'];
 						?>
 					</div>
 				<?php }
@@ -247,10 +210,10 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 				?>
 				<div class="wmc-currency <?php echo esc_attr( $class ) ?>">
 
-						<a rel="nofollow" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
+					<a rel="nofollow" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
 
-							<?php echo esc_html( $k ) ?>
-						</a>
+						<?php echo esc_html( $k ) ?>
+					</a>
 				</div>
 			<?php } ?>
 		</div>
@@ -298,9 +261,9 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 						?>
 						<div class="wmc-currency">
 
-								<a rel="nofollow" href="<?php echo esc_url( $link ) ?>">
+							<a rel="nofollow" href="<?php echo esc_url( $link ) ?>">
 
-							<?php echo esc_html( $k ) ?></a>
+								<?php echo esc_html( $k ) ?></a>
 						</div>
 					<?php } ?>
 				</div>
@@ -357,7 +320,7 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 				?>
 				<div class="wmc-currency <?php echo esc_attr( $class ) ?>">
 
-						<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
+					<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
 
 
 						<img alt="<?php echo esc_attr( $country['name'] ) ?>"
@@ -422,8 +385,8 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 						?>
 						<div class="wmc-currency">
 
-								<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>"
-								   href="<?php echo esc_url( $link ) ?>">
+							<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>"
+							   href="<?php echo esc_url( $link ) ?>">
 
 
 								<img alt="<?php echo esc_attr( $country['name'] ) ?>"
@@ -493,7 +456,7 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 						?>
 						<div class="wmc-currency">
 
-								<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>" href="<?php echo $link ?>">
+							<a rel="nofollow" title="<?php echo esc_attr( $country['name'] ) ?>" href="<?php echo $link ?>">
 
 
 								<img alt="<?php echo esc_attr( $country['name'] ) ?>"
@@ -547,7 +510,7 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 				?>
 				<div class="wmc-currency <?php echo esc_attr( $class ) ?>">
 
-						<a rel="nofollow" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
+					<a rel="nofollow" href="<?php echo $class ? '#' : esc_url( $link ) ?>">
 
 						<?php echo esc_html( get_woocommerce_currency_symbol( $k ) ) ?></a>
 				</div>
@@ -600,9 +563,9 @@ class WOOMULTI_CURRENCY_F_Frontend_Shortcode {
 						?>
 						<div class="wmc-currency">
 
-								<a rel="nofollow" href="<?php echo esc_url( $link ) ?>">
+							<a rel="nofollow" href="<?php echo esc_url( $link ) ?>">
 
-							<?php echo get_woocommerce_currency_symbol( $k ); ?></a>
+								<?php echo get_woocommerce_currency_symbol( $k ); ?></a>
 						</div>
 					<?php } ?>
 				</div>

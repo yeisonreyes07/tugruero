@@ -14,7 +14,7 @@ class WOOMULTI_CURRENCY_F_Frontend_Cache {
 
 		$this->settings = new WOOMULTI_CURRENCY_F_Data();
 		if ( $this->settings->get_enable() ) {
-			add_action( 'wp_loaded', array( $this, 'wp_loaded' ) );
+//			add_action( 'wp_loaded', array( $this, 'wp_loaded' ) );
 			add_action( 'init', array( $this, 'clear_browser_cache' ) );
 		}
 	}

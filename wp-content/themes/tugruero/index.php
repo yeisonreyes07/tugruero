@@ -17,43 +17,211 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
+			<div class="section-banner">
+				<?php $query= new WP_Query('post_type=banner');
+				if ($query->have_posts()) {
+				# code...
+					while($query->have_posts()){
+						$query->the_post();
+						$query->the_content();
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+					<div class="banner" style="background-image: url(<?php the_post_thumbnail_url();?>);">
+						<div class="content-banner">
+							<?php the_content();?>
+							<a href="#" class="boton">Llámanos</a>
+						</div>
+					</div>
+				<?php }} wp_reset_query();?>
+			</div>
+			<div class="liston">
+				<div class="kpi">
+					<div class="izq"><span class="bold">+7000</span></div>
+					<div class="der"><p>Servicios</p><p>realizados</p></div>
+				</div>
+				
+				<div class="kpi">
+					<div class="izq"><span class="bold">+20</span></div>
+					<div class="der"><p>Mil</p><p>afiliados</p></div>
+				</div>
+				<div class="kpi">
+					<div class="izq"><span class="bold">90%</span></div>
+					<div class="der"><p>Clientes nos</p><p>recomiendan</p></div>
+				</div>
+			</div>
+			<div class="planes" id="planes">
+				<h1>Nuestros planes</h1>
+				<p class="subt">Adquiere nuestros planes anuales con los mejores descuentos, desde nuestra plataforma web.</p>
+				<div class="container-planes">
+					<?php #$query= new WP_Query('post_type=product&order=ASC');
+						$query = new WC_Product_Query( array(
+							'limit' => 10,
+							'orderby' => 'date',
+							'order' => 'ASC',
+						));
+						$products = $query->get_products();
+						#if ($products->have_posts()) {
+						 #code...
+						foreach($products as $product){
+							#print_r($product->get_short_description());
+						?>
+					<div class="product">
+						<div class="body-product">
+							<div class="image">
+								<img src="<?php $image_size = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' ); echo get_the_post_thumbnail_url( $product->id, $image_size); ?>" />
+							</div>
+							<div class="short-description">
+								<h1><?php echo $product->name; ?></h1>
+								<div class="desc">
+									<p><?php echo $product->get_short_description(); ?></p>
+								</div>
+								<div class="price">
+									<?php echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
+ 								</div>
+							</div>
+							<div class="description">
+								<!--<p>Auxilio vial en 30 minutos</p>
+								<p>Acceso a servicios vía Call Center</p>
+								<p>Búsqueda de grueros vía GPS</p>
+								<p>Disponible en los 24 estados del país</p>
+								<p>2000 grueros disponibles para el auxilio</p>
+								<p>RCV (Opcional)</p>
+								<p>Tres (03) servicios de grúa de 25Km</p>
+								<p>Servicios de grúa ilimitados de 50Km</p> 
+								<p>Un (01) servicios de grúa de 100Km</p>-->
+								<p><?php echo $product->get_description();?></p>
+							</div>
+							<div class="afiliate">
+								<a href="#">Afíliate</a>
+							</div>
+						</div>
+					</div>
+					<?php }#}?>
+				</div>
+			</div>
+			<div class="services">
+				<h1>Nuestros servicios</h1>
+				<div class="content-services">
+					<?php $query= new WP_Query('post_type=servicios&order=ASC');
+					if ($query->have_posts()) {
+					# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+					<div class="service">
+						<img src="<?php the_post_thumbnail_url(); ?>" />
+						<?php the_content(); ?>
+					</div>
+				<?php }} wp_reset_query();?>
+				</div>
+				<div class="cards">
+					<?php $query= new WP_Query('post_type=informacion&order=ASC');
+					if ($query->have_posts()) {
+					# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+					<div class="card">
+						<div class="content-card">
+							<div class="icon">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/PLANES.png" />
+							</div>
+							<div class="text">
+								<h3>Planes TU/GRUERO</h3>
+								<p><?php the_field("planes_tu_gruero");?></p>
+							</div>
+							<div class="boton">
+								<a href="#">Ver Planes</a>
+							</div>
+						</div>
+					</div>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
+					<div class="card">
+						<div class="content-card">
+							<div class="icon">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/SERVICIOS.png" />
+							</div>
+							<div class="text">
+								<h3>Servicios particulares:</h3>
+								<p><?php the_field("servicios_particulares");?></p>
+							</div>
+							<div class="boton">
+								<a href="#">Llamar</a>
+							</div>
+						</div>
+					</div>
+					<?php }} wp_reset_query();?>
+				</div>
+			</div>
+			<div class="testimonials">
+				<div class="content-testimonial">
+					<?php $query= new WP_Query('post_type=testimonios');
+					if ($query->have_posts()) {
+					# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+						<div class="testimonial">
+							<div class="image">
+								<img src="<?php the_post_thumbnail_url(); ?>" />
+							</div>
+							<div class="text">
+								<h1>Testimonios</h1>
+								<div class="texto">
+									<?php echo get_the_content(); ?>
+								</div>
+								<div class="cargo">
+									<?php the_field("cargo"); ?>
+								</div>
+							</div>
+						</div>
+					<?php }} wp_reset_query();?>
+				</div>
+			</div>
+			<div class="clients">
+				<h1>Ellos han hablado</h1>
+				<h1>de nosotros</h1>
+				<div class="content-clients">
+					<?php $query= new WP_Query('post_type=referencia');
+					if ($query->have_posts()) {
+					# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+					<div class="client">
+						<img src="<?php the_post_thumbnail_url();?>" />
+					</div>
+					<?php }} wp_reset_query();?>
+				</div>
+			</div>
+			<div class="galerias" id="galeria">
+				<h1>Galería</h1>
+				<div class="content-galeria">
+					<?php $query= new WP_Query('post_type=galeria');
+					if ($query->have_posts()) {
+						# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+					<div class="galeria">
+						<div class="image">
+							<img src="<?php the_post_thumbnail_url();?>" />
+						</div>
+					</div>
+					<?php }} wp_reset_query(); ?>
+				</div>
+			</div>
+			<div class="contacto" id="contacto">
+				<h1>TU/Gruero Corporativo</h1>
+				<p class="subt">No trabajamos con otras compañías de asistencia, pero en comparación de otro servicios ustedes son más atentos y responsables</p>
+				<?php echo do_shortcode('[contact-form-7 id="5" title="Formulario de contacto 1"]'); ?>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

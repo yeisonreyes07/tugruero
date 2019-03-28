@@ -983,3 +983,608 @@ object {
 .gallery-caption {
 	display: block;
 }
+/* HOMEPAGE*/
+@font-face {
+	font-family: 'Montserrat-Light';
+	src: url('fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: url('fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat-ExtraBold';
+	src: url('fonts/Montserrat/Montserrat-ExtraBold.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Nunito-Light';
+	src: url('fonts/Nunito/Nunito-Light.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Nunito-Bold';
+	src: url('fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Nunito-ExtraBold';
+	src: url('fonts/Nunito/Nunito-ExtraBold.ttf') format('truetype');
+	font-style: normal;
+}
+
+header{
+	width: 100%;
+	position: absolute;
+	padding: 20px 0px;
+	z-index: 10;
+}
+.site-branding{
+	display: table;
+	width: 80%;
+	margin: 0px auto;
+}
+.site-branding .logo{
+	width: 200px;
+	display: inline-table;
+	vertical-align: middle;
+}
+.site-branding .logo img{
+	width: 100%;
+}
+.site-branding .menu-head{
+	width: calc(100% - 200px);
+	display: inline-table;
+	vertical-align: middle;
+	text-align: right;
+}
+.site-branding .menu-head ul li{
+	display: inline-table;
+	text-align: right;
+	float: none;
+	margin-left: 20px;
+}
+.site-branding .menu-head ul li a{
+	color:white;
+	font-family: 'Montserrat-Light', sans-serif;
+}
+.head-phone{
+	width: 100%;
+	display: inline-table;
+	text-align: right;
+	color: white;
+	font-family: 'Montserrat-Light', sans-serif;
+}
+.head-phone img{
+	width: 20px;
+}
+.section-banner .banner{
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: table;
+	width: 100%;
+}
+.section-banner .banner .content-banner{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+.section-banner .slick-next{
+	right: 50px;
+}
+.section-banner .slick-prev{
+	left: 50px;
+	z-index: 11;
+}
+.section-banner .banner .content-banner h1{
+	font-family: 'Montserrat-ExtraBold', sans-serif;
+	font-size: 3em;
+	margin: 0px;
+	line-height: 1.3em;
+	text-shadow: 5px 3px 3px rgba(0,0,0,0.5);
+}
+.section-banner .banner .content-banner p{
+	text-align: center !important;
+	margin: 0px;
+	font-family: 'Montserrat-Light', sans-serif;
+	text-shadow: 5px 3px 3px rgba(0,0,0,0.5);
+}
+.section-banner .banner .content-banner .boton{
+	background: rgb(213, 118, 56);
+	color: white;
+	font-family: 'Montserrat-Bold', sans-serif;
+	border-radius: 20px;
+	padding: 10px 50px;
+	font-size: 1.1em;
+	text-decoration: none;
+	margin-top: 60px;
+	display: inline-block;
+	box-shadow: 5px 3px 3px rgba(0,0,0,0.5);
+}
+.liston{
+	background: rgb(213, 118, 56);
+	padding: 10px 0%;
+}
+.liston .kpi{
+	width: 33%;
+	display: inline-table;
+	vertical-align: middle;
+	color: white;
+}
+.liston .kpi:nth-child(1){
+	text-align: right;
+}
+
+.liston .kpi:nth-child(2){
+	text-align: center;
+}
+
+.liston .kpi .izq{
+	display: inline-table;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.liston .kpi .der{
+	display: inline-table;
+	vertical-align: middle;
+}
+.liston .kpi .izq span{
+	font-size: 2em;
+	font-family: 'Nunito-Bold', sans-serif;
+}
+.liston .kpi .der p{
+	margin: 0px;
+	line-height: 15px;
+	font-family: 'Nunito-Light', sans-serif;
+	text-align: left;
+}
+
+.services{
+	background-image: url(images/NUESTROS-SERVICIOS.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.services{
+	font-family: 'Nunito-Bold', sans-serif;
+	color: white;
+	text-align: center;
+	padding: 10% 0px;	
+}
+.services h1{
+	margin-bottom: 50px;
+	font-size: 3em;
+	margin-top: 0px;
+}
+.services .content-services{
+	display: table;
+	width: 80%;
+	margin: 0px auto;
+}
+.services .content-services .service{
+	width: 33%;
+	vertical-align: top;	display: inline-table;
+}
+.services .content-services .service img{
+	width: 80px;
+}
+.services .content-services .service p{
+	text-align: center !important;
+}
+.services .cards{
+	margin: 50px auto 0px auto;
+	display: table;
+	width: 80%;
+}
+.services .cards .card{
+	width: 50%;
+	display: inline-table;
+	vertical-align: middle;
+}
+.services .cards .card .content-card{
+	width: 90%;
+	background-color: rgb(45, 48, 51);
+	border-radius: 10px;
+	display: table;
+	padding: 20px;
+}
+.services .cards .card:nth-child(2) .content-card{
+	margin-left: auto;
+}
+.services .cards .card .content-card .icon{
+	width: 80px;
+	display: inline-table;
+	vertical-align: middle;
+}
+.services .cards .card .content-card .icon img{
+	width: 100%;
+}
+.services .cards .card .content-card .text{
+	width: calc(100% - 80px);
+	display: inline-table;
+	padding-left: 10px;
+	vertical-align: middle;
+	text-align: left;
+	font-family: 'Nunito-Light', sans-serif;
+}
+.services .cards .card .content-card .text h3{
+	color: rgb(250, 105, 60);
+	margin: 0px 0px 10px 0px;
+}
+.services .cards .card .content-card .text p{
+	margin: 0px;
+	font-size: 12px;
+	line-height: 17px;
+	width: 90%;
+	font-weight: 600;
+}
+.services .cards .card .content-card .boton{
+	width: 100%;
+	margin-top: 20px
+}
+.services .cards .card .content-card .boton a{
+	background-color: rgb(250, 105, 60);
+	padding: 5px 40px;
+	color: white;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: inline-block;
+}
+.testimonials{
+	padding: 10% 0px;
+	background-image: url(images/TESTIMONIOS.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.testimonials .content-testimonial{
+	width: 80%;
+	margin: 0px auto;
+}
+.testimonials .content-testimonial .testimonial{
+	display: table;
+	width: 100%;
+}
+.testimonials .content-testimonial .testimonial .image{
+	width: 50%;
+	display: inline-table;
+	vertical-align: middle;
+	padding: 0% 7%;
+	position: relative;
+}
+.testimonials .content-testimonial .testimonial .image:after {
+    content: '';
+    background: black;
+    width: 75%;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    z-index: 1;
+    border-radius: 50%;
+    left: 10%;
+}
+.testimonials .content-testimonial .testimonial .image img{
+	width: 100%;
+	border-radius: 50%;
+	position: relative;
+	z-index: 3;
+}
+.testimonials .content-testimonial .testimonial .text{
+	width: 50%;
+	display: inline-table;
+	vertical-align: middle;
+	font-family: 'Nunito-Bold', sans-serif;
+
+}
+.testimonials .content-testimonial .testimonial .text h1{
+	color: rgb(250, 105, 60);
+	margin-bottom: 40px;
+	margin-top: 0px;
+	font-size: 3em;
+}
+.testimonials .content-testimonial .testimonial .text .texto{
+	font-weight: 600;
+	width: 75%;
+	font-family: 'Nunito-Light', sans-serif;
+}
+.testimonials .content-testimonial .testimonial .text .cargo{
+	margin-top: 50px;
+	font-size: 1em;
+	line-height: 1em;
+}
+.testimonials .content-testimonial .testimonial .text .cargo p{
+	margin: 0px;
+}
+.clients{
+	padding: 5% 0px;
+	background: black;
+	text-align: center;
+}
+.clients h1{
+	margin: 0px;
+	color:white;
+	font-size: 3em;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+}
+.clients .content-clients{
+	margin: 50px auto 0px auto;
+	width: 80%;
+	display: table;
+}
+.clients .content-clients .client{
+	width: 16.66%;
+	display: inline-table;
+	vertical-align: middle;
+	margin-bottom: 20px;
+    margin-top: 20px;
+}
+.clients .content-clients .client img{
+	width: 70%;
+}
+.galerias {
+	padding: 5% 0px 10% 0px;
+	background-image: url(images/GALERIA.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.galerias h1{
+	color: white;
+	font-size: 3em;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin-bottom: 80px;
+}
+.galerias .content-galeria{
+	width: 80%;
+	margin: 0px auto;
+}
+
+.galerias .content-galeria .galeria .image{
+	width: 60%;
+	margin: 0px auto;
+}
+.galerias .content-galeria .galeria .image img{
+	width: 100%;
+	border-radius: 50%;
+}
+.contacto{
+	padding: 5% 0px 7% 0px;
+	background-image: url(images/contacto.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.contacto h1{
+	color: white;
+	font-size: 3em;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.contacto .subt{
+	color: white;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin: 0px auto 80px auto;
+	width: 40%;
+}
+.contacto form{
+	width: 60%;
+	margin: 0px auto;
+}
+.contacto form .your-name{
+	width: 100%;
+	margin-bottom: 20px;
+	display: inline-table;
+}
+.contacto form .your-email, .contacto form .tel-854{
+	width: 50%;
+	display: inline-table;
+	margin-bottom: 20px;
+}
+.contacto form .your-email input, .contacto form .tel-854 input{
+	width: 90%;
+}
+.contacto form .tel-854 input{
+	margin-left: auto;
+	display: block;
+}
+.contacto form .your-name input{
+	width: 100%;
+}
+.contacto form input[type=text], .contacto form input[type=email], .contacto form textarea, .contacto form input[type=tel]{
+	padding: 5px 10px;
+	background: rgb(230, 230, 230);
+}
+.contacto form input[type=submit]{
+	background-color: rgb(250, 105, 60);
+	padding: 7px 70px;
+	color: white;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: block;
+	border: 0px solid;
+	margin: 50px auto 0px auto;
+}
+.site-footer{
+	background: black;
+	color: white;
+	padding-top: 50px;
+}
+.site-info{
+	width: 80%;
+	margin: 0px auto;
+}
+.site-footer .logo{
+	width: 100%;
+}
+.site-footer .logo img{
+	width: 200px;
+}
+.site-info .line{
+	width: 33%;
+	vertical-align: top;
+	display: inline-table;
+}
+.site-info .line1 p{
+	width: 70%;
+	font-size: 14px;
+	line-height: 15px;
+	font-family: 'Nunito-Light', sans-serif;
+}
+.site-info .line1 .redes a{
+	text-decoration: none;
+	margin-right: 20px;
+}
+.site-info .line1 .redes a img{
+	width: 20px;
+}
+.site-info .line1 .redes a.fb img{
+	width: 12px;
+}
+.site-info .line2 p{
+	font-size: 14px;
+	line-height: 15px;
+	font-family: 'Nunito-Light', sans-serif;
+	margin-bottom: 15px;
+}
+.site-info .line3 nav ul{
+	list-style: none;
+}
+.site-info .line3 nav ul li a{
+	color: white;
+	font-size: 14px;
+	line-height: 15px;
+	font-family: 'Nunito-Light', sans-serif;
+	text-decoration: none;
+}
+.copyright{
+	width: 100%;
+	padding: 20px 10% 30px 10%;
+	border-top: 1px solid white;
+	color: white;
+	font-size: 14px;
+	line-height: 15px;
+	font-family: 'Nunito-Light', sans-serif;
+}
+.planes{
+	padding: 5% 0px 7% 0px;
+	background-image: url(images/NUESTROSPLANES.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.planes h1{
+	color: white;
+	font-size: 3em;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.planes .subt{
+	color: white;
+	line-height: 1em;
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin: 0px auto 130px auto;
+	width: 40%;
+	font-size: 1.1em;
+}
+
+.planes .container-planes{
+	width: 80%;
+	margin: 10px auto 0px auto;
+	display: table;
+}
+.planes .container-planes .product{
+	width: 33%;
+	display: inline-table;
+	position: relative;
+}
+.planes .container-planes .product .body-product{
+	width: 90%;
+	margin: 0px auto;
+	background: white;
+	border-radius: 30px;
+	position: relative;
+}
+.planes .container-planes .product .body-product .image{
+    width: 100px;
+    background: rgb(45, 48, 51);
+    display: block;
+    position: absolute;
+    margin-top: -70px;
+    height: 100px;
+    left: calc(50% - 50px);
+    padding: 20px;
+    border-radius: 50%;
+}
+.planes .container-planes .product .body-product .image img{
+	width: 100%;
+}
+.planes .container-planes .product .body-product .short-description{
+	background: rgb(45, 48, 51);
+	border-radius: 30px;
+	padding-top: 15px;
+	padding-bottom: 40px;
+	color: white;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    text-align: center;
+    font-family: 'Nunito-Light', sans-serif;
+}
+.planes .container-planes .product .body-product .short-description h1{
+	margin-top: 0px;
+	font-size: 1.1em;
+	position: relative;
+}
+.planes .container-planes .product .body-product .short-description .desc p{
+	margin: 0px;
+	font-size: 11px;
+}
+.planes .container-planes .product .body-product .short-description .price{
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 1.1em;
+	margin-top: 5px;
+}
+.planes .container-planes .product .body-product .description{
+	padding: 20px 10%;
+}
+.planes .container-planes .product .body-product .description p{
+	font-family: 'Nunito-Light', sans-serif;
+	margin: 5px 0px;
+	font-size: 14px;
+}
+.planes .container-planes .product .body-product .description p img{
+	width: 8px;
+	margin-right: 4px;
+}
+.planes .container-planes .product .body-product  .afiliate{
+	background: rgb(213, 118, 56);
+	border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 10px 0px;
+    text-align: center;
+}
+.planes .container-planes .product .body-product  .afiliate a{
+	color: white;
+	font-size: 1.3em;
+	text-decoration: none;
+	font-family: 'Nunito-Bold', sans-serif;
+}

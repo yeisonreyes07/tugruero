@@ -1,17 +1,17 @@
 === Multi Currency for WooCommerce - The best free currency exchange plugin - Run smoothly on WooCommerce 3.x===
 Contributors: mrt3vn
 Donate link: http://www.villatheme.com/donate
-Tags: woocommerce, currency, switcher, exchange, wordpress, filter, plugin, free, widget, style, woocommerce multi currency, woo multi currency, woocommerece currency, currency switcher, woocommerce currency, bitcoin
+Tags: woocommerce, currency, switcher, exchange, wordpress, currency for woocommerce, multi currency for woocommerce, woocommerce multi currency, woocommerce multi currency, woocommerce currency, currency switcher, woocommerce currency, bitcoin
 Requires at least: 4.4
-Tested up to: 5.0.2
-Stable tag: 2.1.3.1
+Tested up to: 5.1
+Stable tag: 2.1.3.2
 License: GPLv2 or later
 
 == Description ==
 
->[Try the Demo](http://new2new.com/?item=woo-multi-currency "Demo Woo Multi Currency") | [Documents](http://docs.villatheme.com/?item=woo-multi-currency "Documents") | [Pro Version](https://goo.gl/2hWzFT "Pro Version") | [Discuss & Support via Facebook](https://goo.gl/FAzFb5 "Discuss & Support")
+WooCommerce Multi Currency is a plugin for WooCommerce powered online store that allows to switch to different currencies easily and create current exchange rate converter without limit WooCommerce Currency. It accepts payment with only one currency or all currencies. WooCommerce Multi Currency is a free plugin.
 
-Woo Multi Currency is a plugin for WooCommerce powered online store that allows to switch to different currencies easily and create current exchange rate converter without limit WooCommerce Currency. It accepts payment with only one currency or all currencies. WooCommerce Multi Currency is a free plugin.
+>[Try the Demo](http://new2new.com/?item=woo-multi-currency "Demo WooCommerce Multi Currency") | [Documents](http://docs.villatheme.com/?item=woo-multi-currency "Documents") | [Pro Version](https://goo.gl/2hWzFT "Pro Version") | [Discuss & Support via Facebook](https://goo.gl/FAzFb5 "Discuss & Support")
 
 ### Important Notice:
 - Plugin works based on WooCommerce 3.x plugin.
@@ -48,7 +48,7 @@ Woo Multi Currency is a plugin for WooCommerce powered online store that allows 
 
 &#9658; **Updates weekly:** If have any bug or any problem, we’ll update plugin weekly..
 
-&#9658; **Easy to use:** simply configure a few steps: configure in Setting Currency, input exchange rates automatically or manually and Drag & Drop position of Woo Multi Currency Widget.
+&#9658; **Easy to use:** simply configure a few steps: configure in Setting Currency, input exchange rates automatically or manually and Drag & Drop position of WooCommerce Multi Currency Widget.
 
 &#9658; Access our videos tutorials.
 
@@ -90,6 +90,8 @@ Check screenshots at https://villatheme.com/woo-multi-currency/ or https://villa
 
 ### MAY BE YOU NEED
 
+[WooCommerce Thank You Page Customizer](https://goo.gl/bnDzaF): Customize your “Thank You” page and give coupons to customers after a successful order
+
 [WooCommerce Notification](https://goo.gl/IYAQ7B): Social Proof Marketing plugin. Live recent order on the front-end of your site.
 
 [WooCommerce Photo Review](https://goo.gl/m27Yy1): Allow posting reviews include product pictures, review reminder, review for coupons.
@@ -119,6 +121,10 @@ Check screenshots at https://villatheme.com/woo-multi-currency/ or https://villa
 4. Design tab in setting page
 
 == Changelog ==
+/*2.1.3.2  - 2019.03.08*/
+- Updated: Do not auto clear cache(W3 Total cache and WP Rocket)
+- Fixed: Exchange rates widget
+
 /*2.1.3.1  - 2018.01.04*/
 - Updated: The same premium
 
@@ -126,6 +132,9 @@ Check screenshots at https://villatheme.com/woo-multi-currency/ or https://villa
 - Updated: Class support
 - Fixed: Currency position not working
 - Fixed: Tab JS in backend
+
+/*2.1.2.4.2 - 2018.11.19*/
+- Fixed: Currency position not working
 
 /*2.1.2.4.1 - 2018.11.10*/
 - Fixed: Support class

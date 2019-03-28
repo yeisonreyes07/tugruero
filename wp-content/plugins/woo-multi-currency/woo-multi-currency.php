@@ -3,19 +3,19 @@
 Plugin Name: Multi Currency for WooCommerce
 Plugin URI: http://villatheme.com
 Description: Allows display prices and accepts payments in multiple currencies. Working only with WooCommerce.
-Version: 2.1.3.1
+Version: 2.1.3.2
 Author: VillaTheme
 Author URI: http://villatheme.com
 Copyright 2016-2018 VillaTheme.com. All rights reserved.
 Text-domain: woo-multi-currency
-Tested up to: 5.0.2
+Tested up to: 5.1
 WC requires at least: 3.0.0
 WC tested up to: 3.5.3
 */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'WOOMULTI_CURRENCY_F_VERSION', '2.1.3.1' );
+define( 'WOOMULTI_CURRENCY_F_VERSION', '2.1.3.2' );
 /**
  * Detect plugin. For use on Front End only.
  */
