@@ -19,7 +19,16 @@ $(document).ready(function() {
 		slidesToSlide: 1,
 		arrows: true,
 		autoplay: true,
-	  	autoplaySpeed: 3000,
+			autoplaySpeed: 3000,
+			responsive: [
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						infinite: true,
+					}
+				}]
 	});
 
 		// Add smooth scrolling to all links

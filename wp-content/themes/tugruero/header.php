@@ -32,7 +32,7 @@
 			</div>
 			<div class="menu-head">
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tugruero' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu.png" /></button>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',

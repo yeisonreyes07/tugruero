@@ -1588,3 +1588,98 @@ header{
 	text-decoration: none;
 	font-family: 'Nunito-Bold', sans-serif;
 }
+@media(max-width: 480px){
+	.section-banner .banner .content-banner p{
+		width: 80%;
+		margin: 0px auto;
+	}
+	.liston .kpi:nth-child(1), .liston .kpi:nth-child(2){
+		width: 49%;
+	}
+	.liston .kpi:nth-child(3){
+		width: 100%;
+		text-align: center;
+	}
+	.planes .container-planes .product{
+		width: 100%;
+		margin-bottom: 100px;
+	}
+	.services .content-services .service{
+		width: 50%;
+	}
+	.services .cards .card{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.services .cards .card .content-card{
+		width: 100%;
+	}
+	.services .cards .card .content-card .text p{
+		width: 100%;
+	}
+	.testimonials .content-testimonial .testimonial .image{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.testimonials .content-testimonial .slick-list{
+		text-align: center;
+	}
+	.testimonials .content-testimonial .testimonial .text{
+		width: 100%;
+	}
+	.testimonials .content-testimonial .testimonial .text .texto{
+		width: 100%;
+	}
+	.clients .content-clients .client{
+		width: 33.3%;
+	}
+	.contacto .subt{
+		width: 90%;
+	}
+	.contacto form{
+		width: 90%;
+	}
+	.contacto form .your-email, .contacto form .tel-854{
+		width: 100%;
+	}
+	.contacto form .your-email input, .contacto form .tel-854 input{
+		width: 100%;
+	}
+	.site-info .line{
+		width: 49%;
+	}
+	.site-info .line1 p{
+		width: 90%;
+	}
+	.site-info .line1 .redes a{
+		margin-right: 10px;
+	}
+	.site-info .line3{
+		width: 100%;
+	}
+	.site-branding .menu-head{
+		position: absolute;
+		right: 25px;
+		top: 25px;
+		width: 100%;
+	}
+	.menu-menu-1-container{
+		background: rgb(213, 118, 56);
+		margin-right: -25px;
+	}
+	.site-branding .menu-head ul li{
+		width: 100%;
+		margin-left: 0px;
+		padding: 10px 25px 10px 0px;
+
+	}
+}
+.main-navigation button{
+	background: transparent;
+	border: 0px solid;
+	margin-left: auto;
+}
+.main-navigation button img{
+	width: 20px;
+}
