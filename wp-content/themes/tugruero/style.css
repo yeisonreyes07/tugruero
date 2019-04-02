@@ -1016,7 +1016,7 @@ object {
 	font-style: normal;
 }
 
-header{
+header.site-header{
 	width: 100%;
 	position: absolute;
 	padding: 20px 0px;
@@ -1589,6 +1589,9 @@ header{
 	font-family: 'Nunito-Bold', sans-serif;
 }
 @media(max-width: 480px){
+	.planes .subt{
+		width: 90%;
+	}
 	.section-banner .banner .content-banner p{
 		width: 80%;
 		margin: 0px auto;
@@ -1682,4 +1685,128 @@ header{
 }
 .main-navigation button img{
 	width: 20px;
+}
+body:not(.home) .site-content{
+	padding-top: 150px;
+}
+.wpmc-tabs-wrapper .wpmc-tabs-list{
+	display: none;
+}
+.page{
+	margin-bottom: 0px;
+}
+.woocommerce-checkout #content{
+	background-image: url(images/fondo-checkout.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	padding-bottom: 50px;
+
+}
+.woocommerce-checkout #content article header{
+	text-align: center;
+}
+.woocommerce-checkout form .form-row input[type=text], .woocommerce-checkout form .form-row input[type=password],
+.woocommerce-checkout form .form-row input[type=number], .woocommerce-checkout form .form-row input[type=email],
+.woocommerce-checkout form .form-row textarea,
+.tml-action form input[type=text], .tml-action form input[type=password],
+.tml-action form input[type=number], .tml-action form input[type=email],
+.tml-action form textarea{
+	padding:8px 10px 8px 20px;
+	background: #e6e6e6;
+	border-radius: 10px;
+	font-size: 14px;
+}
+.woocommerce-checkout form .form-row label, .tml-action form label{
+	font-size: 12px;
+	font-weight: bold;
+}
+.woocommerce-checkout form .form-row button, .tml-action form .tml-button{
+	background-color: rgb(250, 105, 60);
+	padding: 7px 70px;
+	color: white;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: block;
+	border: 0px solid;
+	margin: 20px auto 30px auto;	
+}
+.woocommerce form.login .lost_password a, .tml-action .tml-links a{
+	color: rgb(250, 105, 60);
+	text-decoration: none;
+}
+.tml-action .tml-links{
+	margin-left: 0px;
+	padding-left: 0px;
+	text-align: center;
+}
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register{
+	border: 0px;
+}
+.woocommerce form.login{
+	width: 40%;
+	margin: 0px auto;
+}
+.woocommerce form.login > p:nth-child(1) {
+	display: none;
+}
+.woocommerce form.login .form-row{
+	width: 100%;
+}
+.wpmc-nav-wrapper{
+	width: 80%;
+	margin: 0px auto;
+}
+.wpmc-nav-wrapper .wpmc-footer-left button{
+	background-color: white !important;
+	padding: 7px 40px;
+	color: rgb(250, 105, 60) !important;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: block;
+	border: 0px solid;
+	margin-left: auto;
+}
+.wpmc-nav-wrapper .wpmc-footer-right button{
+	background-color: rgb(250, 105, 60) !important;
+	padding: 7px 40px;
+	color: white !important;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: block;
+	border: 0px solid;
+	float: left;
+}
+.woocommerce-checkout form.woocommerce-checkout{
+	width: 70%;
+	margin: 0px auto;
+}
+.woocommerce-checkout form.woocommerce-checkout #billing_country_field{
+	display: none;
+}
+.woocommerce-checkout .wpmc-nav-wrapper{
+	margin-top: 20px;
+}
+.tml-action #content{
+	background-image: url(images/fondo-login.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	padding-bottom: 50px;
+}
+.tml-action #content article header{
+	text-align: center;
+}
+
+.tml-action #content form{
+	width: 30%;
+	margin: 0px auto;
 }
