@@ -208,3 +208,46 @@ function woocommerce_button_proceed_to_checkout() {
 	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Siguiente', 'woocommerce' ); ?></a>
 	<?php
   }
+
+  add_filter( 'woocommerce_billing_fields', 'bbloomer_move_checkout_email_field', 10, 1 );
+ 
+  function bbloomer_move_checkout_email_field( $address_fields ) {
+	  #print_r($address_fields);
+	  $address_fields['billing_myfield19']['priority'] = 1;
+	  $address_fields['billing_myfield20']['priority'] = 2;
+	  $address_fields['billing_myfield21']['priority'] = 3;
+	  $address_fields['billing_myfield22']['priority'] = 4;
+	  $address_fields['billing_myfield23']['priority'] = 5;
+	  $address_fields['billing_myfield24']['priority'] = 6;
+	  $address_fields['billing_myfield25']['priority'] = 7;
+	  $address_fields['billing_myfield26']['priority'] = 8;
+	  $address_fields['billing_myfield27']['priority'] = 9;
+	  
+	  $address_fields['billing_myfield12']['priority'] = 10;
+	  $address_fields['billing_myfield13']['priority'] = 11;
+	  $address_fields['billing_myfield14']['priority'] = 12;
+	  $address_fields['billing_myfield15']['priority'] = 13;
+	  $address_fields['billing_myfield16']['priority'] = 14;
+	  $address_fields['billing_myfield17']['priority'] = 15;
+	  $address_fields['billing_myfield18']['priority'] = 16;
+	   
+	  $address_fields['billing_first_name']['priority'] = 17;
+	  $address_fields['billing_last_name']['priority'] = 18;
+	  $address_fields['billing_email']['priority'] = 19;
+	  $address_fields['billing_company']['priority'] = 20;
+	  $address_fields['billing_country']['priority'] = 21;
+	  $address_fields['billing_address_1']['priority'] = 22;
+	  $address_fields['billing_address_2']['priority'] = 23;
+	  $address_fields['billing_city']['priority'] = 24;
+	  $address_fields['billing_state']['priority'] = 25;
+	  $address_fields['billing_postcode']['priority'] = 26;
+	  $address_fields['billing_phone']['priority'] = 27;
+	  #$address_fields['billing_myfield19']['priority'] = 19;
+	  #$address_fields['billing_myfield21']['priority'] = 20;
+	  #$address_fields['billing_myfield20']['priority'] = 21;
+	  #$address_fields['billing_myfield22']['priority'] = 22;
+	  #$address_fields['billing_myfield23']['priority'] = 23;
+	  
+	  return $address_fields;
+  }
+  

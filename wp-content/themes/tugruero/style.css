@@ -1713,11 +1713,15 @@ body:not(.home) .site-content{
 .woocommerce-checkout form .form-row textarea,
 .tml-action form input[type=text], .tml-action form input[type=password],
 .tml-action form input[type=number], .tml-action form input[type=email],
-.tml-action form textarea, .woocommerce-cart #content form input[type=text], .woocommerce-cart #content form input[type=number]{
+.tml-action form textarea, .woocommerce-cart #content form input[type=text], 
+.woocommerce-cart #content form input[type=number], .woocommerce-checkout #content form select{
 	padding:8px 10px 8px 20px;
 	background: #e6e6e6;
 	border-radius: 10px;
 	font-size: 14px;
+}
+.woocommerce-checkout #content form select{
+	padding:7px 10px 7px 20px;
 }
 .woocommerce-checkout form .form-row label, .tml-action form label, .woocommerce-cart #content form label{
 	font-size: 12px;
@@ -1761,7 +1765,7 @@ body:not(.home) .site-content{
 	width: 80%;
 	margin: 0px auto;
 }
-.wpmc-nav-wrapper .wpmc-footer-left button{
+.wpmc-nav-wrapper .wpmc-footer-left button, .wpmc-nav-wrapper .wpmc-footer-left a{
 	background-color: white !important;
 	padding: 7px 40px;
 	color: rgb(250, 105, 60) !important;
@@ -1772,6 +1776,11 @@ body:not(.home) .site-content{
 	display: block;
 	border: 0px solid;
 	margin-left: auto;
+}
+.wpmc-nav-wrapper .wpmc-footer-left a{
+	display: inline;
+	float: right;
+	padding: 2px 40px;
 }
 .wpmc-nav-wrapper .wpmc-footer-right button{
 	background-color: rgb(250, 105, 60) !important;
@@ -1850,7 +1859,7 @@ body:not(.home) .site-content{
 	margin-top: 50px;
 	vertical-align: top;
 }
-.woocommerce-cart #content form .btns .izq a{
+.woocommerce-cart #content form .btns .izq a, .btn-carro .izq a, .btn-conductor .izq button{
 	background-color: white !important;
 	padding: 3px 40px;
 	color: rgb(250, 105, 60) !important;
@@ -1874,7 +1883,8 @@ body:not(.home) .site-content{
 .woocommerce-cart #content form .btns .der .cart_totals .wc-proceed-to-checkout{
 	padding: 0px;
 }
-.woocommerce-cart #content form .btns .der .cart_totals .wc-proceed-to-checkout a{
+.woocommerce-cart #content form .btns .der .cart_totals .wc-proceed-to-checkout a, .btn-carro .der a,
+.btn-conductor .der a{
 	background-color: rgb(250, 105, 60) !important;
 	padding: 7px 40px;
 	color: white !important;
@@ -1893,5 +1903,37 @@ body:not(.home) .site-content{
 	margin-bottom: 10px;
 }
 .woocommerce-cart .woocommerce-message{
+	display: none;
+}
+.btn-carro, .btn-conductor{
+	position: relative;
+    float: left;
+	width: 100%;
+	margin-top: 50px;
+	
+}
+.btn-carro .izq a, .btn-conductor .izq button{
+	padding: 7px 40px;
+}
+.btn-carro .izq a{
+	padding: 3px 40px;
+}
+.btn-carro .izq, .btn-conductor .izq{
+	float: left;
+}
+.btn-carro .der, .btn-conductor .der{
+	float: right;
+}
+.btn-carro .izq, .btn-carro .der, .btn-conductor .izq, .btn-conductor .der{
+	width: calc(50% - 40px);
+}
+.btn-carro .izq a, .btn-conductor .izq button{
+	float: right;
+}
+.btn-carro .der a, .btn-conductor .der a, .btn-conductor .der a{
+	float: left;
+	padding: 3px 40px;
+}
+.hide{
 	display: none;
 }
