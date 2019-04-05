@@ -1937,3 +1937,6 @@ body:not(.home) .site-content{
 .hide{
 	display: none;
 }
+#wpmc-prev{
+	display: none !important;
+}

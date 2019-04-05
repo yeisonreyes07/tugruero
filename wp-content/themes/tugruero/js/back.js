@@ -80,8 +80,12 @@ $(document).ready(function() {
 		$('.woocommerce-billing-fields #billing_state_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_postcode_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_phone_field').addClass('hide');
-		$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
-
+		if($('.wpmc-step-login').hasClass('previus')){
+			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
+		}
+		$('button#wpmc-skip-login').on('click', function(){
+			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
+		})
 		$('.btn-carro .der a').on('click', function(){
 			$('.woocommerce-billing-fields #billing_myfield12_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield13_field').addClass('hide');
