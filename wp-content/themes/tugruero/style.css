@@ -1587,6 +1587,7 @@ header.site-header{
 	font-size: 1.3em;
 	text-decoration: none;
 	font-family: 'Nunito-Bold', sans-serif;
+	cursor: pointer;
 }
 @media(max-width: 480px){
 	.planes .subt{
@@ -1695,7 +1696,7 @@ body:not(.home) .site-content{
 .page{
 	margin-bottom: 0px;
 }
-.woocommerce-checkout #content{
+.woocommerce-checkout #content, .woocommerce-cart #content{
 	background-image: url(images/fondo-checkout.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1712,13 +1713,13 @@ body:not(.home) .site-content{
 .woocommerce-checkout form .form-row textarea,
 .tml-action form input[type=text], .tml-action form input[type=password],
 .tml-action form input[type=number], .tml-action form input[type=email],
-.tml-action form textarea{
+.tml-action form textarea, .woocommerce-cart #content form input[type=text], .woocommerce-cart #content form input[type=number]{
 	padding:8px 10px 8px 20px;
 	background: #e6e6e6;
 	border-radius: 10px;
 	font-size: 14px;
 }
-.woocommerce-checkout form .form-row label, .tml-action form label{
+.woocommerce-checkout form .form-row label, .tml-action form label, .woocommerce-cart #content form label{
 	font-size: 12px;
 	font-weight: bold;
 }
@@ -1809,4 +1810,88 @@ body:not(.home) .site-content{
 .tml-action #content form{
 	width: 30%;
 	margin: 0px auto;
+}
+.woocommerce-cart #content header.entry-header{
+	text-align: center;
+}
+.woocommerce-cart #content form{
+	width: 500px;
+	margin: 0px auto;
+}
+.woocommerce-cart #content form .form-cart .form-row{
+	width: 70%;
+	margin: 0px auto;
+	margin-bottom: 20px;
+}
+.woocommerce-cart #content form input[type=text]{
+	width: 100%;
+}
+.woocommerce-cart #content form .wac-qty-button{
+	background: transparent;
+	display: inline-table;
+}
+.woocommerce-cart #content form .wac-qty-button .wac-btn-inc, .woocommerce-cart #content form .wac-qty-button .wac-btn-sub{
+	width: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+.woocommerce-cart #content form input[type=number]{
+	width: calc(100% - 50px);
+	display: inline-table;
+}
+.woocommerce-cart #content form .btns{
+	display: table;
+}
+.woocommerce-cart #content form .btns .izq, .woocommerce-cart #content form .btns .der{
+	display: inline-table;
+	width: 250px;
+	text-align: center;
+	margin-top: 50px;
+	vertical-align: top;
+}
+.woocommerce-cart #content form .btns .izq a{
+	background-color: white !important;
+	padding: 3px 40px;
+	color: rgb(250, 105, 60) !important;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: inline-block;
+	border: 0px solid;
+	margin-left: auto;
+}
+.woocommerce-cart #content form .btns .der button[type=submit]{
+	display: none;
+}
+.woocommerce-cart #content form .btns .der .cart_totals h2{
+	display: none;
+}
+.woocommerce-cart #content form .btns .der .cart_totals table{
+	display: none;
+}
+.woocommerce-cart #content form .btns .der .cart_totals .wc-proceed-to-checkout{
+	padding: 0px;
+}
+.woocommerce-cart #content form .btns .der .cart_totals .wc-proceed-to-checkout a{
+	background-color: rgb(250, 105, 60) !important;
+	padding: 7px 40px;
+	color: white !important;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: block;
+	border: 0px solid;
+	float: right;
+}
+.woocommerce-cart article > header.entry-header{
+	display: none;
+}
+.woocommerce-cart #content form label{
+	margin-bottom: 10px;
+}
+.woocommerce-cart .woocommerce-message{
+	display: none;
 }

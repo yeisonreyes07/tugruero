@@ -28,7 +28,7 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<div class="logo">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" />
+				<a href="<?php echo site_url();?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" /></a>
 			</div>
 			<div class="menu-head">
 				<nav id="site-navigation" class="main-navigation">

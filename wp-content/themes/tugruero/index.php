@@ -91,7 +91,7 @@ get_header();
 								<p><?php echo $product->get_description();?></p>
 							</div>
 							<div class="afiliate">
-								<a href="#">Afíliate</a>
+								<a id="<?php echo $product->id; ?>">Afíliate</a>
 							</div>
 						</div>
 					</div>

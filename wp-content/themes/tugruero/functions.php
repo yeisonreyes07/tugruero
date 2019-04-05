@@ -159,3 +159,52 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//Insertar Javascript js y enviar ruta admin-ajax.php
+add_action('wp_enqueue_scripts', 'dcms_insertar_js');
+
+function dcms_insertar_js(){
+	wp_register_script('dcms_miscript', get_template_directory_uri(). '/js/ajax.js', array('jquery'), '1', true );
+	wp_enqueue_script('dcms_miscript');
+
+	wp_localize_script('dcms_miscript','dcms_vars',['ajaxurl'=>admin_url('admin-ajax.php')]);
+}
+
+
+add_action( 'wp_ajax_nopriv_bbloomer_add_product_to_cart', 'bbloomer_add_product_to_cart' );
+add_action( 'wp_ajax_bbloomer_add_product_to_cart', 'bbloomer_add_product_to_cart' );
+
+function bbloomer_add_product_to_cart() {
+          
+	// select ID
+	          
+	//check if product already in cart
+	if ( WC()->cart->get_cart_contents_count() == 0 ) {
+	 
+		// if no products in cart, add it
+		WC()->cart->add_to_cart( $_POST['id'] );
+	          
+	}
+     
+}
+
+
+add_action( 'wp_ajax_nopriv_bbloomer_empty_products_to_cart', 'bbloomer_empty_products_to_cart' );
+add_action( 'wp_ajax_bbloomer_empty_products_to_cart', 'bbloomer_empty_products_to_cart' );
+
+function bbloomer_empty_products_to_cart() {
+          
+	// select ID
+	          
+	//check if product already in cart
+	
+	global $woocommerce;
+	$woocommerce->cart->empty_cart();
+     
+}
+
+function woocommerce_button_proceed_to_checkout() {
+	$checkout_url = WC()->cart->get_checkout_url();
+	?>
+	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Siguiente', 'woocommerce' ); ?></a>
+	<?php
+  }
