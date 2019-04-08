@@ -1940,3 +1940,15 @@ body:not(.home) .site-content{
 #wpmc-prev{
 	display: none !important;
 }
+.woo-multi-currency.wmc-sidebar.style-1 .wmc-list-currencies .wmc-currency{
+	background: rgb(45, 48, 51) !important;
+}
+.woo-multi-currency.wmc-sidebar.style-1 .wmc-list-currencies .wmc-currency.wmc-active{
+	background: rgb(250, 105, 60) !important;
+}
+.woo-multi-currency.wmc-sidebar.style-1 .wmc-list-currencies .wmc-currency:hover{
+	background: rgb(250, 105, 60) !important;
+}
+.woo-multi-currency.wmc-sidebar .wmc-title{
+	background: rgb(45, 48, 51) !important;
+}
