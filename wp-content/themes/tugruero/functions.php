@@ -178,6 +178,9 @@ function bbloomer_add_product_to_cart() {
 	// select ID
 	          
 	//check if product already in cart
+	global $woocommerce;
+	$woocommerce->cart->empty_cart(); 
+	
 	if ( WC()->cart->get_cart_contents_count() == 0 ) {
 	 
 		// if no products in cart, add it
@@ -214,8 +217,8 @@ function woocommerce_button_proceed_to_checkout() {
   function bbloomer_move_checkout_email_field( $address_fields ) {
 	  #print_r($address_fields);
 	  $address_fields['billing_myfield19']['priority'] = 1;
-	  $address_fields['billing_myfield20']['priority'] = 2;
-	  $address_fields['billing_myfield21']['priority'] = 3;
+	  $address_fields['billing_myfield20']['priority'] = 3;
+	  $address_fields['billing_myfield21']['priority'] = 2;
 	  $address_fields['billing_myfield22']['priority'] = 4;
 	  $address_fields['billing_myfield23']['priority'] = 5;
 	  $address_fields['billing_myfield24']['priority'] = 6;
@@ -250,4 +253,4 @@ function woocommerce_button_proceed_to_checkout() {
 	  
 	  return $address_fields;
   }
-  
+                      

@@ -80,6 +80,12 @@ $(document).ready(function() {
 		$('.woocommerce-billing-fields #billing_state_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_postcode_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_phone_field').addClass('hide');
+		$("#wpmc-skip-login").text("Saltar Login");
+		$("#wpmc-back-to-cart").text("Anterior");
+		$("#wpmc-next").text("Siguiente");
+		if($('.wpmc-step-login').hasClass('current')){
+			$('article .entry-header .entry-title').text("Inicio de sesion");
+		}
 		if($('.wpmc-step-login').hasClass('previus')){
 			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
 		}
@@ -108,7 +114,8 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_postcode_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_phone_field').removeClass('hide');
 			$('.woocommerce-checkout .wpmc-nav-wrapper').removeClass('hide');
-	
+			$('article .entry-header .entry-title').text("Datos de facturación");
+				
 		});
 
 		$('.btn-conductor .der a').on('click', function(){
@@ -132,7 +139,7 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield18_field').removeClass('hide');
 			$('.woocommerce-checkout .btn-carro').removeClass('hide');
 
-			
+			$('article .entry-header .entry-title').text("Datos del vehiculo");
 	
 		});
 
@@ -144,8 +151,8 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield23_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield24_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield25_field').removeClass('hide');
-			$('.woocommerce-billing-fields #billing_myfield26_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield27_field').removeClass('hide');
+			$('.woocommerce-billing-fields #billing_myfield26_field').removeClass('hide');
 			$('.woocommerce-checkout .btn-conductor').removeClass('hide');
 
 			$('.woocommerce-billing-fields #billing_myfield12_field').addClass('hide');
@@ -156,6 +163,8 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield17_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield18_field').addClass('hide');
 			$('.woocommerce-checkout .btn-carro').addClass('hide');
+			$('article .entry-header .entry-title').text("Datos del propietario");
+			
 		});
 		$('.woocommerce-checkout .wpmc-footer-left a').on('click', function(){
 			$('.woocommerce-billing-fields #billing_myfield12_field').removeClass('hide');
@@ -179,8 +188,25 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_postcode_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_phone_field').addClass('hide');
 			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
-	
+			$('article .entry-header .entry-title').text("Datos del vehiculo");
+		
 		});
 
+		$(document).on('change', function(){
+			if($('.wpmc-step-login').hasClass('current')){
+				$('article .entry-header .entry-title').text("Inicio de sesion");
+			}
+			setTimeout(function(){
+				if(!$('.wpmc-step-billing.current #billing_myfield19_field').hasClass('hide')){
+					console.log("ss")
+					$('article .entry-header .entry-title').text("Datos del propietario");
+				}
+				if(!$('.wpmc-step-billing.current #billing_myfield12_field').hasClass('hide')){
+					console.log("ss")
+				}
+				
+			}, 1000);
+			
+		});
 	})
 	
