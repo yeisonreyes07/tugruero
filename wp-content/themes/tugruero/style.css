@@ -1581,6 +1581,12 @@ header.site-header{
     border-bottom-right-radius: 30px;
     padding: 10px 0px;
     text-align: center;
+    cursor: pointer;
+	transition: all 0.5s ease;
+}
+.planes .container-planes .product .body-product  .afiliate:hover{
+	background: rgb(45, 48, 51);
+	transition: all 0.5s ease;
 }
 .planes .container-planes .product .body-product  .afiliate a{
 	color: white;
@@ -1588,6 +1594,7 @@ header.site-header{
 	text-decoration: none;
 	font-family: 'Nunito-Bold', sans-serif;
 	cursor: pointer;
+	width: 100%;
 }
 @media(max-width: 480px){
 	.planes .subt{
@@ -1846,7 +1853,7 @@ body:not(.home) .site-content{
 	color: white;
 }
 .woocommerce-cart #content form input[type=number]{
-	width: calc(100% - 50px);
+	width: 100%;
 	display: inline-table;
 }
 .woocommerce-cart #content form .btns{
@@ -1952,3 +1959,35 @@ body:not(.home) .site-content{
 .woo-multi-currency.wmc-sidebar .wmc-title{
 	background: rgb(45, 48, 51) !important;
 }
+.woocommerce-checkout-payment{
+	background: transparent !important;
+}
+ #payment ul.payment_methods li{
+ 	display: inline-table;
+ 	width: 33%;
+ 	vertical-align: top;
+ }
+ .woocommerce-checkout #payment{
+ 	position: relative;
+ }
+ .woocommerce-checkout #payment div.payment_box{
+ 	position: absolute;
+ 	left: 0px;
+ 	background: rgb(45, 48, 51);
+    color: white;
+}
+ .wpmc-step-payment{
+ 	margin-bottom: 100px;
+ }
+ .woocommerce-checkout #payment div.form-row{
+ 	margin-top: 350px;
+ }
+ #payment div.payment_box::before{
+ 	display: none !important;
+ }
+ .woocommerce button.button.alt{
+ 	background: rgb(250, 105, 60) !important;
+ }
+ .woocommerce-account-fields p{
+ 	display: none;
+ }

@@ -54,6 +54,7 @@ $(document).ready(function() {
 		  } // End if
 		});	
 		
+		$('.woocommerce-account-fields p label input').attr("checked", "checked");
 		$('.woocommerce-billing-fields h3').addClass('hide');
 		$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield27_field');
 		$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield18_field');
@@ -83,8 +84,13 @@ $(document).ready(function() {
 		$("#wpmc-skip-login").text("Saltar Login");
 		$("#wpmc-back-to-cart").text("Anterior");
 		$("#wpmc-next").text("Siguiente");
+		$("#billing_city_field label").empty();
+		$("#billing_city_field label").append('Ciudad&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
+		
+		$("#billing_state_field label").empty();
+		$("#billing_state_field label").append('Estado&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
 		if($('.wpmc-step-login').hasClass('current')){
-			$('article .entry-header .entry-title').text("Inicio de sesion");
+			$('article .entry-header .entry-title').text("Inicio de sesión");
 		}
 		if($('.wpmc-step-login').hasClass('previus')){
 			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
@@ -92,6 +98,9 @@ $(document).ready(function() {
 		$('button#wpmc-skip-login').on('click', function(){
 			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
 		})
+		//$('.woocommerce-checkout #payment ul.payment_methods li input ~ label').empty();
+		//$('.woocommerce-checkout #payment ul.payment_methods li input ~ label').append('<div class="cuadro"><img src="/wp-content/themes/tugruero/images/money-transfer.svg"/></div><p>Transferencia Bancaria</p>');
+		
 		$('.btn-carro .der a').on('click', function(){
 			$('.woocommerce-billing-fields #billing_myfield12_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield13_field').addClass('hide');
@@ -103,16 +112,32 @@ $(document).ready(function() {
 			$('.woocommerce-checkout .btn-carro').addClass('hide');
 
 			$('.woocommerce-billing-fields #billing_first_name_field').removeClass('hide');
+			
+			var name=$('.woocommerce-billing-fields #billing_myfield19').val()
+			$('.woocommerce-billing-fields #billing_first_name').val(name);
+
 			$('.woocommerce-billing-fields #billing_last_name_field').removeClass('hide');
+			var lastname=$('.woocommerce-billing-fields #billing_myfield21').val()
+			$('.woocommerce-billing-fields #billing_last_name').val(lastname);
+
 			$('.woocommerce-billing-fields #billing_email_field').removeClass('hide');
+			var email=$('.woocommerce-billing-fields #billing_myfield24').val()
+			$('.woocommerce-billing-fields #billing_email').val(email);
+
 			$('.woocommerce-billing-fields #billing_company_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_country_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_address_1_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_address_2_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_city_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_state_field').removeClass('hide');
+			var state=$('.woocommerce-billing-fields #billing_myfield26').val()
+			$('.woocommerce-billing-fields #billing_state').val(state);
+			
 			$('.woocommerce-billing-fields #billing_postcode_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_phone_field').removeClass('hide');
+			var phone=$('.woocommerce-billing-fields #billing_myfield22').val()
+			$('.woocommerce-billing-fields #billing_phone').val(phone);
+			
 			$('.woocommerce-checkout .wpmc-nav-wrapper').removeClass('hide');
 			$('article .entry-header .entry-title').text("Datos de facturación");
 				
@@ -191,24 +216,27 @@ $(document).ready(function() {
 			$('article .entry-header .entry-title').text("Datos del vehiculo");
 		
 		});
-
+		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
+			$('article .entry-header .entry-title').text("Resumen de pedido");
+			
+		});
+		
 		$(document).on('change', function(){
 			if($('.wpmc-step-login').hasClass('current')){
 				$('article .entry-header .entry-title').text("Inicio de sesion");
 			}
 			setTimeout(function(){
 				if(!$('.wpmc-step-billing.current #billing_myfield19_field').hasClass('hide')){
-					console.log("ss")
 					$('article .entry-header .entry-title').text("Datos del propietario");
 				}
-				if(!$('.wpmc-step-billing.current #billing_myfield12_field').hasClass('hide')){
-					console.log("ss")
-				}
+				
 				
 			}, 1000);
 			
 		});
 	})
 	
-	/*Colocar nombre y apellido en el registro*/
-	
+	/*
+	1- Colocar nombre y apellido en el registro
+	1- Detalle del pedido en el titulo
+	*/
