@@ -210,3 +210,5 @@ $(document).ready(function() {
 		});
 	})
 	
+	/*Colocar nombre y apellido en el registro*/
+	
