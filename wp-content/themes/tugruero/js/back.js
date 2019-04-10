@@ -56,11 +56,16 @@ $(document).ready(function() {
 		
 		$('.woocommerce-account-fields p label input').attr("checked", "checked");
 		$('.woocommerce-billing-fields h3').addClass('hide');
-		$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield27_field');
-		$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield18_field');
-		$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
-		$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));
-
+		if (!$('body').hasClass('logged-in')) {		
+			$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield27_field');
+			$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield18_field');
+			$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
+			$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));
+		}else{
+			$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield27_field');
+			$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
+			$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));	
+		}
 		$('.woocommerce-billing-fields #billing_myfield12_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield13_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield14_field').addClass('hide');
@@ -89,8 +94,13 @@ $(document).ready(function() {
 		
 		$("#billing_state_field label").empty();
 		$("#billing_state_field label").append('Estado&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
-		if($('.wpmc-step-login').hasClass('current')){
-			$('article .entry-header .entry-title').text("Inicio de sesión");
+		
+		if($('body').hasClass('woocommerce-checkout')){
+			if($('.wpmc-step-login').hasClass('current')){
+				$('article .entry-header .entry-title').text("Inicio de sesión");
+			}else{
+				$('article .entry-header .entry-title').text("Datos del propietario");
+			}
 		}
 		if($('.wpmc-step-login').hasClass('previus')){
 			$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
@@ -226,8 +236,10 @@ $(document).ready(function() {
 				$('article .entry-header .entry-title').text("Inicio de sesion");
 			}
 			setTimeout(function(){
-				if(!$('.wpmc-step-billing.current #billing_myfield19_field').hasClass('hide')){
-					$('article .entry-header .entry-title').text("Datos del propietario");
+				if ($('body').hasClass('woocommerce-checkout')) {
+					if(!$('.wpmc-step-billing.current #billing_myfield19_field').hasClass('hide')){
+						$('article .entry-header .entry-title').text("Datos del propietario");
+					}
 				}
 				
 				
