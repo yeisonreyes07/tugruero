@@ -91,7 +91,7 @@ get_header();
 								<p><?php echo $product->get_description();?></p>
 							</div>
 							<div class="afiliate">
-								<a id="<?php echo $product->id; ?>">Afíliate</a>
+								<a href="<?php echo get_home_url();?>/plan">Afíliate</a>
 							</div>
 						</div>
 					</div>
