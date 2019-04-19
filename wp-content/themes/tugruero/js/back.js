@@ -130,6 +130,10 @@ $(document).ready(function() {
 				items+="<li>El campo Celular es requerido.";
 				valid=false;
 			}
+			if($('.woocommerce-billing-fields #billing_phone').val().length!=7){
+				items+="<li>El campo Celular debe tener 7 dígitos.";
+				valid=false;
+			}
 			if($('.woocommerce-billing-fields #billing_myfield14').val()==''){
 				items+="<li>El campo Cédula/RIF es requerido.";
 				valid=false;

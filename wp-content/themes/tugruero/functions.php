@@ -245,7 +245,17 @@ function woocommerce_button_proceed_to_checkout() {
 	  
 	  return $address_fields;
   }
-                      
+  function cosas()
+	{
+		global $woocommerce;
+		$items = $woocommerce->cart->get_cart();
+		foreach($items as $item => $values) { 
+			$_product =  wc_get_product( $values['data']->get_id()); 
+			echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br>'; 
+			$price = get_post_meta($values['product_id'] , '_price', true);
+			echo "  Price: ".$price."<br>";
+		} 
+	}
 #add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
 /*function add_login_logout_link($items, $args) {
         ob_start();
