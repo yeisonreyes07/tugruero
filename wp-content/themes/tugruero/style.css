@@ -1741,6 +1741,9 @@ body:not(.home) .site-content{
 	border-radius: 10px;
 	font-size: 14px;
 }
+.form-row{
+	display: block;
+}
 .woocommerce-checkout #content form select{
 	padding:7px 10px 7px 20px;
 }
