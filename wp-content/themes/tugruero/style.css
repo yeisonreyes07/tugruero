@@ -1533,6 +1533,9 @@ header.site-header.scrolling{
 	border-radius: 30px;
 	position: relative;
 }
+.planes .container-planes .product .body-product .short-description .desc strong{
+	display: block;
+}
 .planes .container-planes .product .body-product .image{
     width: 100px;
     background: rgb(45, 48, 51);
@@ -2163,4 +2166,12 @@ body:not(.home) .site-content{
 	padding-bottom: 0px;
 	font-family: 'Nunito-Light', sans-serif;
 
+}
+.tachado span{
+	display: block;
+	text-decoration: line-through;
+	font-size: 14px;
+}
+.tachado span.hide{
+	display: none;
 }

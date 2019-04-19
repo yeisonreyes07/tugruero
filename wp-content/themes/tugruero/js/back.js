@@ -30,7 +30,13 @@ $(document).ready(function() {
 					}
 				}]
 	});
-
+	if($('body').hasClass('home')){
+		if($('.wmc-list-currencies .wmc-currency.wmc-active span:nth-child(1)').text() == "VEF"){
+			$('.tachado span.dolar').addClass('hide');
+		}else if($('.wmc-list-currencies .wmc-currency.wmc-active span:nth-child(1)').text() == "USD"){
+			$('.tachado span.vef').addClass('hide');
+		}
+	}
 		// Add smooth scrolling to all links
 		$(".site-branding .menu-head ul li a, #viewPlan").on('click', function(event) {
 	  

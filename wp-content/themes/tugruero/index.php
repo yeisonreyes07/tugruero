@@ -74,20 +74,15 @@ get_header();
 								<div class="desc">
 									<p><?php echo $product->get_short_description(); ?></p>
 								</div>
+								<div class="tachado">
+									<span class="dolar">$ <?php echo get_field("precio_anterior_dolar", $product->id);?></span>
+									<span class="vef">Bs.S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
+								</div>
 								<div class="price">
 									<?php echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
  								</div>
 							</div>
 							<div class="description">
-								<!--<p>Auxilio vial en 30 minutos</p>
-								<p>Acceso a servicios vía Call Center</p>
-								<p>Búsqueda de grueros vía GPS</p>
-								<p>Disponible en los 24 estados del país</p>
-								<p>2000 grueros disponibles para el auxilio</p>
-								<p>RCV (Opcional)</p>
-								<p>Tres (03) servicios de grúa de 25Km</p>
-								<p>Servicios de grúa ilimitados de 50Km</p> 
-								<p>Un (01) servicios de grúa de 100Km</p>-->
 								<p><?php echo $product->get_description();?></p>
 							</div>
 							<div class="afiliate">
