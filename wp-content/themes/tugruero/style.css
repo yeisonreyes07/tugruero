@@ -1193,6 +1193,8 @@ header.site-header.scrolling{
 	width: 50%;
 	display: inline-table;
 	vertical-align: middle;
+	background: transparent;
+	border: 0px;
 }
 .services .cards .card .content-card{
 	width: 90%;
@@ -1710,7 +1712,8 @@ body:not(.home) .site-content{
 .page{
 	margin-bottom: 0px;
 }
-.woocommerce-checkout #content, .woocommerce-cart #content, .page-template-content-plan #content{
+.woocommerce-checkout #content, .woocommerce-cart #content, .page-template-content-plan #content,
+.page-template-content-faq #content{
 	background-image: url(images/fondo-checkout.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2120,3 +2123,44 @@ body:not(.home) .site-content{
 }
 .woocommerce_checkout_coupon .woocommerce-info:before{
 	color:rgb(250, 105, 60) !important; 
+}
+.page-template-content-faq h1.title{
+	font-family: 'Nunito-Bold', sans-serif;
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 3em;
+	margin-top: 0px;
+}
+.page-template-content-faq .content-faqs{
+	width: 80%;
+	margin: 0px auto;
+}
+.page-template-content-faq .content-faqs .faq{
+	padding: 20px 0px 20px 0px;
+	border-bottom: 1px solid white;
+}
+.page-template-content-faq .content-faqs .faq p{
+	margin-bottom: 0px;
+}
+.page-template-content-faq .content-faqs .faq a{
+	color: white;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 20px;
+	display: block;
+	outline: none;
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+.page-template-content-faq .content-faqs .faq a:hover{
+	color:rgb(250, 105, 60);
+	transition: all 0.5s ease;
+}
+.page-template-content-faq .content-faqs .faq .card-body{
+	background: transparent;
+	border: 0px solid;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	font-family: 'Nunito-Light', sans-serif;
+
+}

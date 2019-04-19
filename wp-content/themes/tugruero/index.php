@@ -132,7 +132,7 @@ get_header();
 								<p><?php the_field("planes_tu_gruero");?></p>
 							</div>
 							<div class="boton">
-								<a href="#">Ver Planes</a>
+								<a href="#planes" id="viewPlan">Ver Planes</a>
 							</div>
 						</div>
 					</div>
