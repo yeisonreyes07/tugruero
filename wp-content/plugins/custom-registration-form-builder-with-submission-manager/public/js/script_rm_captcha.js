@@ -9,13 +9,11 @@ function rmInitCaptcha(){
     $('.g-recaptcha').each(function(index, el) {
         grecaptcha.render(el, {'sitekey' : rm_captcha_site_key});
     });
-    
-    grecaptcha.execute(rm_captcha_site_key,{action: 'homepage'}).then(function(token) {
-        /*$('.rm_captcha_fieldrow').each(function(){
-            $(this).find('.g-recaptcha-response').val(token);
-        });*/
-        $('.g-recaptcha-response').val(token);
-    });
+    if(rm_recap_ver.api==3){
+        grecaptcha.execute(rm_captcha_site_key,{action: 'homepage'}).then(function(token) {
+            $('.g-recaptcha-response').val(token);
+        });
+    }
 }
 
 

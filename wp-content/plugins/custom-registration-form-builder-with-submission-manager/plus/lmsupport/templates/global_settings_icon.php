@@ -1,15 +1,3 @@
-<?php
-?>
-<a href="admin.php?page=rm_form_sett_profilegrid&gs=1">
-    <div class="rm-settings-box">
-        <img class="rm-settings-icon" src="<?php echo RM_IMG_URL; ?>profilegrid.png">
-        <div class="rm-settings-description">
-
-        </div>
-        <div class="rm-settings-subtitle"><?php echo __('ProfileGrid', 'registrationmagic-gold'); ?></div>
-        <span><?php echo __('User Profiles, Groups, Memberships and Communities', 'registrationmagic-gold'); ?></span>
-    </div>
-</a>
 <a href="admin.php?page=rm_ex_lmsupport">
     <div class="rm-settings-box">
         <img class="rm-settings-icon" src="<?php echo RM_EX_LMS()->base_url; ?>images/gs_icon.png">

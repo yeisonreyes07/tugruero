@@ -128,7 +128,32 @@ global $rm_env_requirements;
                     <div class="rm-settings-subtitle"><?php _e("Advance Options",'custom-registration-form-builder-with-submission-manager') ?></div>
                     <span><?php _e("Libraries and sessions management",'custom-registration-form-builder-with-submission-manager') ?></span>
                 </div></a>
+            
+            <a href="admin.php?page=rm_form_sett_profilegrid&gs=1">
+                <div class="rm-settings-box">
+                    <img class="rm-settings-icon" src="<?php echo RM_IMG_URL; ?>profilegrid.png">
+                    <div class="rm-settings-description">
+
+                    </div>
+                    <div class="rm-settings-subtitle"><?php echo __('ProfileGrid', 'registrationmagic-gold'); ?></div>
+                    <span><?php echo __('User Profiles, Groups, Memberships and Communities', 'registrationmagic-gold'); ?></span>
+                </div>
+            </a>
+            
+            <a href="admin.php?page=rm_options_eventprime&gs=1">
+                <div class="rm-settings-box">
+                    <img class="rm-settings-icon" src="<?php echo $image_path; ?>event-prime-logo.png">
+                    <div class="rm-settings-description">
+
+                    </div>
+                    <div class="rm-settings-subtitle"><?php _e('EventPrime', 'custom-registration-form-builder-with-submission-manager') ?></div>
+                    <span><?php _e('Event Registrations and Bookings', 'custom-registration-form-builder-with-submission-manager'); ?></span>
+                </div>
+            </a>
+            
             <?php  echo apply_filters('rm_global_setting_manager', ''); ?>
+            
+            
         </div>
     </div>
     <?php 

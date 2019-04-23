@@ -49,4 +49,8 @@ class Element_Captcha extends Element {
         );
     }
     
+    public function localizeJS(){
+       return array('script_rm_captcha'=>array('name'=>'rm_recap_ver','value'=>array('api'=>$this->version)));
+    }
+    
 }

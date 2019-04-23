@@ -23,7 +23,7 @@ class WOOMULTI_CURRENCY_F_Frontend_Location {
 				if ( is_admin() ) {
 					return;
 				}
-				$current_currency = $_GET['wmc-currency'];
+				$current_currency = wp_unslash( $_GET['wmc-currency'] );
 				$this->settings->set_current_currency( $current_currency );
 			}
 

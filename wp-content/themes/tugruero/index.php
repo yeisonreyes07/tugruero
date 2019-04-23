@@ -51,7 +51,9 @@ get_header();
 			<div class="planes" id="planes">
 				<h1>Nuestros planes</h1>
 				<p class="subt">Adquiere nuestros planes anuales con los mejores descuentos, desde nuestra plataforma web.</p>
+				<?php dynamic_sidebar('sidebar-2'); ?>
 				<div class="container-planes">
+					
 					<?php #$query= new WP_Query('post_type=product&order=ASC');
 						$query = new WC_Product_Query( array(
 							'limit' => 10,
@@ -79,6 +81,7 @@ get_header();
 									<span class="vef">Bs.S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
 								</div>
 								<div class="price">
+									<?php #print_r($product);?>
 									<?php echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
  								</div>
 							</div>

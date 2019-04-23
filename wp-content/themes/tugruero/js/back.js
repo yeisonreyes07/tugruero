@@ -211,6 +211,7 @@ $(document).ready(function() {
 				$('.woocommerce-checkout .btn-carro').removeClass('hide');
 
 				$('article .entry-header .entry-title').text("Datos del vehículo");
+				$('.resumen-cart .paso .pas').text("2");
 			}else{
 				$(".msg-error").append(items);
 			}
@@ -251,6 +252,7 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield25_field').addClass('hide');
 			$('.woocommerce-checkout .btn-carro').addClass('hide');
 			$('article .entry-header .entry-title').text("Datos del propietario");
+			$('.resumen-cart .paso .pas').text("1");
 	});
 	$('.woocommerce-checkout .btn-carro .der a').on('click', function(){
 		$("#checkout_coupon").addClass('hide');
@@ -274,7 +276,7 @@ $(document).ready(function() {
 			$("#order_review").addClass("current");
 			$('article .entry-header .entry-title').text("Resumen de Pedido");
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
-			
+			$('.resumen-cart .paso .pas').text("3");
 		}else{
 			$(".msg-error").append(items);
 		}
@@ -292,6 +294,7 @@ $(document).ready(function() {
 		$('.woocommerce-checkout .wpmc-nav-wrapper').addClass('hide');
 		$('article .entry-header .entry-title').text("Datos del vehículo");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','none');
+		$('.resumen-cart .paso .pas').text("2");
 		
 	});
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){

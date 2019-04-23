@@ -227,6 +227,7 @@ class RM_Admin {
                 add_submenu_page("", 'Log Retention', 'Log Retention', "manage_options", "rm_login_retention", array($this->get_controller(), 'run'));
                 add_submenu_page("", 'Advanced Log', 'Advanced Log', "manage_options", "rm_login_advanced", array($this->get_controller(), 'run'));
                 add_submenu_page("", 'ProfileGrid', 'ProfileGrid', "manage_options", "rm_form_sett_profilegrid", array($this->get_controller(), 'run'));
+                add_submenu_page("", 'EventPrime', 'EventPrime', "manage_options", "rm_options_eventprime", array($this->get_controller(), 'run'));
                 
             }
             else

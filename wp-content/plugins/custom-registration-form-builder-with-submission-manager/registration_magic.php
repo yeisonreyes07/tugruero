@@ -16,7 +16,7 @@
  * Plugin Name:       RegistrationMagic
  * Plugin URI:        http://www.registrationmagic.com
  * Description:       A powerful system for customizing registration forms, setting up paid registrations, tracking submissions, managing users, assigning user roles, analyzing stats, and much more!!
- * Version:           4.5.2.0
+ * Version:           4.5.4.0
  * Tags:              registration, form, custom, analytics, simple, submissions
  * Requires at least: 3.3.0
  * Requires PHP: 5.6
@@ -84,7 +84,7 @@ if (is_plugin_active_for_network($rmgold) || is_plugin_active($rmgold) ||
 }
 */
 if(!defined('RM_PLUGIN_VERSION')) {
-define('RM_PLUGIN_VERSION', '4.5.2.0');
+define('RM_PLUGIN_VERSION', '4.5.4.0');
 define('RM_DB_VERSION', 5.2);
 define('RM_SHOW_WHATSNEW_SPLASH', false);  //Set it to 'false' to disable whatsnew screen.
 define('RM_PLUGIN_BASENAME', plugin_basename(__FILE__ ));
@@ -184,7 +184,9 @@ function registration_magic_register_autoload() {
         $installed_php_version = phpversion();
         $gopts = new RM_Options;
         require_once RM_EXTERNAL_DIR . 'session/rm_wpdb_sessions.php';
-        if(!session_id())
+        // Skip session start if theme editor operation 
+        $theme_editing= isset($_REQUEST['action']) && $_REQUEST['action']=='edit-theme-plugin-file' ? true : null;
+        if(!session_id() && !$theme_editing)
             session_start();
         require_once RM_EXTERNAL_DIR . 'PFBC/Form.php';
         require_once RM_EXTERNAL_DIR . 'mailchimp/class_rm_mailchimp.php';

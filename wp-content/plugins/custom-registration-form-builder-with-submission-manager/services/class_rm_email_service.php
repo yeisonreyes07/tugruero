@@ -172,6 +172,11 @@ class RM_Email_Service
      */
     public static function notify_new_user($params)
     {
+        // Check if it is disabled from custom filter
+        $enabled = apply_filters('rm_new_user_enabled',true,$params);
+        if(empty($enabled))
+            return;
+        
         $gopt = new RM_Options();
         $rm_email= new RM_Email();
         $notification_msg= self::get_notification_message($params->form_id,'form_nu_notification'); 
@@ -203,6 +208,11 @@ class RM_Email_Service
      */
     public static function notify_admin_to_activate_user($params)
     {
+        // Check if it is disabled from custom filter
+        $enabled = apply_filters('rm_user_activation_link_to_admin',true,$params);
+        if(empty($enabled))
+            return;
+        
         $gopt = new RM_Options();
         $rm_email= new RM_Email();
         $user_email = $params->email;
@@ -221,9 +231,7 @@ class RM_Email_Service
         //Fix for lower case 'k'
         $notification_msg = str_replace('{{ACTIVATION_LINK}}', $params->link, $notification_msg);
         $notification_msg = str_replace('%ACTIVATION_LINK%', $params->link, $notification_msg);
-        
-
-        //$email->message = "msg \r\n\r\n--" . $boundary . "\r\n" . $header_text . $msg_text . "\r\n\r\n--" . $boundary . "\r\n" . $header_html . $html_pre .$msg_css . $msg_html . $html_post . "\r\n\r\n--" . $boundary . "--\r\n";
+        $notification_msg = apply_filters('rm_user_activation_msg_to_admin',$notification_msg,$params);
         $rm_email->message($notification_msg);
         $form= new RM_Forms();
         $form->load_from_db($params->form_id);        
@@ -258,7 +266,15 @@ class RM_Email_Service
         $email_content = '<div class="mail-wrapper">';
         /* Preparing content for front end notification */
         $email_content .= wpautop($params->email_content) . '<br><br>';
-
+        
+        // Replacing Username and password
+        if(!empty($params->req['username'])){
+            $email_content = str_replace('{{Username}}',$params->req['username'], $email_content);
+        }
+        if(!empty($params->req['pwd'])){
+            $email_content = str_replace('{{UserPassword}}',$params->req['pwd'], $email_content);
+        }
+        
         /*
           Set unique token */
         if ($token) {

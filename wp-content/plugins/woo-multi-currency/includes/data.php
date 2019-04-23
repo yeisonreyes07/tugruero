@@ -598,17 +598,17 @@ class WOOMULTI_CURRENCY_F_Data {
 				$arg = array( 'wmc-currency' => $k );
 				if ( $current_currency == $k ) {
 					if ( isset( $_GET['min_price'] ) ) {
-						$arg['min_price'] = $_GET['min_price'];
+						$arg['min_price'] = floatval( sanitize_text_field( $_GET['min_price'] ) );
 					}
 					if ( isset( $_GET['max_price'] ) ) {
-						$arg['max_price'] = $_GET['max_price'];
+						$arg['max_price'] = floatval( sanitize_text_field( $_GET['max_price'] ) );
 					}
 				} else {
 					if ( isset( $_GET['min_price'] ) ) {
-						$arg['min_price'] = ( $_GET['min_price'] / $selected_currencies[ $current_currency ]['rate'] ) * $currency['rate'];
+						$arg['min_price'] = ( floatval( sanitize_text_field( $_GET['min_price'] ) ) / $selected_currencies[ $current_currency ]['rate'] ) * $currency['rate'];
 					}
 					if ( isset( $_GET['max_price'] ) ) {
-						$arg['max_price'] = ( $_GET['max_price'] / $selected_currencies[ $current_currency ]['rate'] ) * $currency['rate'];
+						$arg['max_price'] = ( floatval( sanitize_text_field( $_GET['max_price'] ) ) / $selected_currencies[ $current_currency ]['rate'] ) * $currency['rate'];
 					}
 				}
 				$link        = apply_filters( 'wmc_get_link', add_query_arg( $arg ), $k, $currency );
@@ -1026,7 +1026,7 @@ class WOOMULTI_CURRENCY_F_Data {
 	 *
 	 * @param        $name
 	 * @param        $value
-	 * @param int    $time
+	 * @param int $time
 	 * @param string $path
 	 */
 	public function setcookie( $name, $value, $time = 86400, $path = '/' ) {

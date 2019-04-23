@@ -611,6 +611,8 @@ class Registration_Magic
         $this->loader->add_action('wp_ajax_nopriv_rm_activation_link', $rm_public, 'send_activation_link');
         $this->loader->add_action('rm_load_user_registrations',$rm_public,'load_user_registrations');
         $this->loader->add_action('init', $this, 'user_online_status');
+        $this->loader->add_action('wp_ajax_rm_paypal_ipn',$rm_public,'paypal_ipn');
+        $this->loader->add_action('wp_ajax_nopriv_rm_paypal_ipn',$rm_public,'paypal_ipn');
     }
 
     /**

@@ -63,6 +63,9 @@ class RM_Form_Settings_Controller {
         $installUrl = admin_url('update.php?action=install-plugin&plugin=profilegrid-user-profiles-groups-and-communities');
         $installUrl = wp_nonce_url($installUrl, 'install-plugin_profilegrid-user-profiles-groups-and-communities');
         $data->pg_install_url = $installUrl;
+        $installUrl = admin_url('update.php?action=install-plugin&plugin=eventprime-event-calendar-management');
+        $installUrl = wp_nonce_url($installUrl, 'install-plugin_eventprime-event-calendar-management');
+        $data->ep_install_url = $installUrl;
         $view = $this->mv_handler->setView('form_settings');
         $view->render($data);
     }

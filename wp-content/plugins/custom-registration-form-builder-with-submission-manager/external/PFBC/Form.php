@@ -498,6 +498,7 @@ JS;
     {
         $urls = array();
         $deps = array();
+        $localize= array();
         
         if (!in_array("jQuery", $this->prevent))
             $urls['jQuery'] = $this->_prefix . "://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
@@ -508,6 +509,10 @@ JS;
         {
             $elementUrls = $element->getJSFiles();
             $elementDeps = $element->getJSDeps();
+            $local = $element->localizeJS();
+            if(!empty($local)){
+                array_push($localize,$local);
+            }
             
             if (is_array($elementDeps))
                 $deps = array_merge($deps, $elementDeps);
@@ -532,6 +537,14 @@ JS;
 
             foreach ($urls as $handle => $url){
                 echo RM_Utilities::enqueue_external_scripts($handle, $url);
+            }
+        }
+        
+        if(!empty($localize)){
+            foreach($localize as $single){
+                foreach($single as $handle_key=>$data){
+                    wp_localize_script($handle_key,$data['name'],$data['value']);
+                }
             }
         }
     }

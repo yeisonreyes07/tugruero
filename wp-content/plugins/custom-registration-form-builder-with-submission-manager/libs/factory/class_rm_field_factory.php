@@ -283,6 +283,7 @@ class RM_Field_Factory {
             {
                 $current_user = wp_get_current_user();                            
                 $this->opts['value'] = $current_user->user_email;
+                $this->opts['readonly']= 'readonly';
             }
         }
         else

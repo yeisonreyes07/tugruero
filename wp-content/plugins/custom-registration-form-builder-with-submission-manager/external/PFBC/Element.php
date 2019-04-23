@@ -197,4 +197,6 @@ abstract class Element extends Base {
         {
             $this->validation[]= $validation;
         }
+        
+        public function localizeJS(){ return array(); }
 }

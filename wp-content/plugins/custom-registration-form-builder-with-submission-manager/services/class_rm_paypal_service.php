@@ -215,7 +215,9 @@ class RM_Paypal_Service implements RM_Gateway_Service
         $this->paypal->add_field('upload', '1');
         $this->paypal->add_field('return', $this_script . $sign . 'rm_pproc=success&rm_pproc_id=0'.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // return URL after the transaction got over
         $this->paypal->add_field('cancel_return', $this_script . $sign . 'rm_pproc=cancel&rm_pproc_id=0'.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // cancel URL if the trasaction was cancelled during half of the transaction
-        $this->paypal->add_field('notify_url', $this_script . $sign . 'rm_pproc=ipn&rm_pproc_id=0'.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // Notify URL which received IPN (Instant Payment Notification)
+        $notify_url = add_query_arg(array('action'=>'rm_paypal_ipn','rm_fid'=>$form_id,'rm_fno'=>$form_no),admin_url('admin-ajax.php'));
+        //$this->paypal->add_field('notify_url', $this_script . $sign . 'rm_pproc=ipn&rm_pproc_id=0'.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // Notify URL which received IPN (Instant Payment Notification)
+        $this->paypal->add_field('notify_url', $notify_url); 
         $this->paypal->add_field('currency_code', $this->currency);
         $this->paypal->add_field('invoice', $invoice);
 
@@ -262,8 +264,8 @@ class RM_Paypal_Service implements RM_Gateway_Service
         $this->paypal->add_field('bn', 'CMSHelp_SP');
         $this->paypal->add_field('return', $this_script . $sign . 'rm_pproc=success&rm_pproc_id='.$log_entry_id.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // return URL after the transaction got over
         $this->paypal->add_field('cancel_return', $this_script . $sign . 'rm_pproc=cancel&rm_pproc_id='.$log_entry_id.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // cancel URL if the trasaction was cancelled during half of the transaction
-        $this->paypal->add_field('notify_url', $this_script . $sign . 'rm_pproc=ipn&rm_pproc_id='.$log_entry_id.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // Notify URL which received IPN (Instant Payment Notification)
-                        
+        //$this->paypal->add_field('notify_url', $this_script . $sign . 'rm_pproc=ipn&rm_pproc_id='.$log_entry_id.'&rm_fid='.$form_id.'&rm_fno='.$form_no.'&sh='.$sec_hash); // Notify URL which received IPN (Instant Payment Notification)
+        $this->paypal->add_field('notify_url', $notify_url);                 
           $data=array();
        
          // POST it to paypal

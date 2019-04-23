@@ -1165,3 +1165,73 @@ div.tokens-suggestion-selector ul li:focus {
     background-position: 50% 80%;
     }
 }
+
+/*--- EP Integration  ----*/
+
+
+.rmagic.rm-ep-integration {   
+    width: auto;
+    float: none;
+    margin: 0px;
+    max-width: 100%;
+}
+
+#ep_popup_container .rm-directory-container {   
+    background-image: url(../../images/ep-popup-integration.png);
+    background-repeat: no-repeat;
+    height: 566px;
+    width: 100%;
+    background-size: contain;
+    background-position: 50% 100%;
+    margin-top: 40px;
+    padding: 0px 20px;
+}
+
+#ep_popup_container .rm-directory-container .rm-publish-directory-col {  
+    width: 45%;
+}
+
+#ep_popup_container .rm-directory-container .rm-publish-directory-col a.pg-install-now {
+    background: white;
+    border-color: #c8d7e1;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    color: #2e4453;
+    cursor: pointer;
+    outline: 0;
+    overflow: hidden;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 4px;
+    padding: 7px 14px 9px;
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+    margin: 15px auto 0px auto;
+}
+
+#ep_popup_container .rm-directory-container .rm-publish-directory-col a.pg-install-now:hover {  
+    border-color: #a8bece;
+    color: #2e4453;
+}
+
+#ep_popup_container .rm-directory-container .rm-publish-directory-col a.pg-install-now:focus{   
+    outline: 0;
+    border-color: #00aadc;
+    box-shadow: 0 0 0 2px #78dcfa;
+}
+
+@media only screen and (max-width:1480px) {
+#ep_popup_container .rm-directory-container{
+    margin: 0px auto;
+    margin-top: 0px;
+    width: 94%;
+    float: none;
+    padding: 20px 0px;
+    background-position: 50% 80%;
+    }
+}

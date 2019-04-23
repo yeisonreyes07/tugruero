@@ -418,4 +418,9 @@ function handle_data(email,first_name,type) {
                         alert(resp['msg']);
 		});
 	}
-  
+ 
+   jQuery(document).ready(function(){
+       
+    jQuery(".rm_form_field_type_richtext").parent() .addClass("rm-richtext-fw");   
+       
+    }); 

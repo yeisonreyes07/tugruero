@@ -113,6 +113,15 @@ function tugruero_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Currency', 'tugruero' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'tugruero' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'tugruero_widgets_init' );
 
@@ -242,20 +251,56 @@ function woocommerce_button_proceed_to_checkout() {
 	  $address_fields['billing_myfield22']['priority'] = 21;
 	  $address_fields['billing_myfield23']['priority'] = 22;
 	  $address_fields['billing_myfield24']['priority'] = 23;
-	  
-	  return $address_fields;
+	  global $woocommerce;
+		
+		$items = $woocommerce->cart->get_cart();
+		foreach($items as $item => $values) {
+			$i=0;
+			for($ii= 0; $ii< $values['quantity']; $ii++){
+				$address_fields['billing_options'.$i] = array(
+					'label' => __('NIF'.$i, 'woocommerce'), // Add custom field label
+					'placeholder' => _x('Your NIF here....', 'placeholder', 'woocommerce'), // Add custom field placeholder
+					'required' => false, // if field is required or not
+					'clear' => false, // add clear or not
+					'type' => 'text', // add field type
+					'class' => array('form-row-first'),
+					'required'=> true,    // add class name
+				);
+				$address_fields['billing_options'.$i]['priority'] = 100+$i;
+				$i++;
+			}
+		}
+		return $address_fields;
   }
   function cosas()
 	{
 		global $woocommerce;
 		$items = $woocommerce->cart->get_cart();
+		echo '<div class="resumen-cart">';
 		foreach($items as $item => $values) { 
+			echo "<div class='paso'>Paso <span class='pas'>1</span><span class='pastotal'>/3</span></div>";
 			$_product =  wc_get_product( $values['data']->get_id()); 
-			echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br>'; 
-			$price = get_post_meta($values['product_id'] , '_price', true);
-			echo "  Price: ".$price."<br>";
-		} 
+			echo "<div class='producto'>".$_product->get_title().'</div>'; 
+			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			echo "<div class='pago'>Total a pagar: ".$price."</div>";
+		}
+		echo "</div>"; 
 	}
+	function cosas3()
+	{
+		global $woocommerce;
+		$items = $woocommerce->cart->get_cart();
+		echo '<div class="resumen-cart">';
+		foreach($items as $item => $values) { 
+			echo "<div class='paso'>Paso <span class='pas'>3</span><span class='pastotal'>/3</span></div>";
+			$_product =  wc_get_product( $values['data']->get_id()); 
+			echo "<div class='producto'>".$_product->get_title().'</div>'; 
+			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			echo "<div class='pago'>Total a pagar: ".$price."</div>";
+		}
+		echo "</div>"; 
+	}
+	
 #add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
 /*function add_login_logout_link($items, $args) {
         ob_start();

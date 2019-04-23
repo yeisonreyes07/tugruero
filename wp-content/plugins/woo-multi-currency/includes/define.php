@@ -10,8 +10,8 @@ define( 'WOOMULTI_CURRENCY_F_WIDGETS', WOOMULTI_CURRENCY_F_FRONTEND . "widgets" 
 define( 'WOOMULTI_CURRENCY_F_LANGUAGES', WOOMULTI_CURRENCY_F_DIR . "languages" . DIRECTORY_SEPARATOR );
 define( 'WOOMULTI_CURRENCY_F_INCLUDES', WOOMULTI_CURRENCY_F_DIR . "includes" . DIRECTORY_SEPARATOR );
 define( 'WOOMULTI_CURRENCY_F_PLUGINS', WOOMULTI_CURRENCY_F_DIR . "plugins" . DIRECTORY_SEPARATOR );
-$plugin_url = plugins_url( 'woo-multi-currency' );
-//$plugin_url = plugins_url( '',__FILE__ );
+//$plugin_url = plugins_url( 'woo-multi-currency' );
+$plugin_url = plugins_url( '',__FILE__ );
 $plugin_url = str_replace( '/includes', '', $plugin_url );
 define( 'WOOMULTI_CURRENCY_F_CSS', $plugin_url . "/css/" );
 define( 'WOOMULTI_CURRENCY_F_CSS_DIR', WOOMULTI_CURRENCY_F_DIR . "css" . DIRECTORY_SEPARATOR );

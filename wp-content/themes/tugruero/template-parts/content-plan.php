@@ -11,7 +11,9 @@ get_header();
 ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>	
     <h1 class="title"><?php echo get_the_content(); ?></h1>
-    <div class="form-cart">
+    <?php dynamic_sidebar('sidebar-2'); ?>
+
+	<div class="form-cart">
 		<div class="form-row">
 			<label>Escoja el plan de su preferencia</label>
 			<select id="plan">

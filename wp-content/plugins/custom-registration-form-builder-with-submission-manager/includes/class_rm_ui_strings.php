@@ -1409,7 +1409,7 @@ class RM_UI_Strings {
                 return sprintf(__("Display a message after the form has been successfully submitted. <a target='_blank' class='rm-more' href='%s'>More</a>", 'custom-registration-form-builder-with-submission-manager'),'https://registrationmagic.com/knowledgebase/post-submission/#htsuccessmessage');
 
             case 'HELP_ADD_FORM_UNIQUE_TOKEN':
-                return sprintf(__("A Unique Token number is assigned to the submission and also emailed to the user if auto-reply is turned on. Token number is visible in the submission records. <a target='_blank' class='rm-more' href='%s'>More</a>", 'custom-registration-form-builder-with-submission-manager'),'https://registrationmagic.com/knowledgebase/post-submission/#httokennumber');
+                return sprintf(__("A Unique Token Number/ Unique ID is assigned to the submission and also emailed to the user if auto-reply is turned on. Token number is visible in the submission records. <a target='_blank' class='rm-more' href='%s'>More</a>", 'custom-registration-form-builder-with-submission-manager'),'https://registrationmagic.com/knowledgebase/post-submission/#httokennumber');
 
             case 'HELP_ADD_FORM_REDIRECT_AFTER_SUB':
                 return sprintf(__("Redirect the user to a new page after submission (and success message). <a target='_blank' class='rm-more' href='%s'>More</a>", 'custom-registration-form-builder-with-submission-manager'),'https://registrationmagic.com/knowledgebase/post-submission/#htredirection');

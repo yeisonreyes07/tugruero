@@ -159,7 +159,7 @@ class RM_Public {
 
     public function rm_front_submissions($attr) {
         $form_prev= isset($_GET['form_prev']) ? absint($_GET['form_prev']) : '';
-        if(is_user_logged_in() && class_exists('Profile_Magic') && empty($attr) && empty($form_prev)){
+        if(is_user_logged_in() && class_exists('Profile_Magic') && empty($attr) && empty($form_prev) && !isset($_REQUEST['submission_id']) ){
              return do_shortcode('[PM_Profile]');
         }
         $user_model= new RM_User;
@@ -209,7 +209,7 @@ class RM_Public {
                 echo '<style>#'.$_POST['rm_form_sub_id'].'{display:block;}</style>';
                 echo '<style>#'.str_replace('rm_login_form_','rm_otp_form_',$_POST['rm_form_sub_id']).'{display:block;}</style>';
             }else{
-                echo '<script>jQuery(document).ready(function(){jQuery("#rm_login_form_'.self::$login_form_counter.'").html("<div class=\'rm-login-attempted-notice\'>'.__('Note: You are already attempting login using a different login form on this page. To keep your logging experience simple and secure, this login form in no longer accessible. Please continue the login process using the form with which you attempted login before the page refresh.','custom-registration-form-builder-with-submission-manager').'</div>")});</script>';
+                //echo '<script>jQuery(document).ready(function(){jQuery("#rm_login_form_'.self::$login_form_counter.'").html("<div class=\'rm-login-attempted-notice\'>'.__('Note: You are already attempting login using a different login form on this page. To keep your logging experience simple and secure, this login form in no longer accessible. Please continue the login process using the form with which you attempted login before the page refresh.','custom-registration-form-builder-with-submission-manager').'</div>")});</script>';
             }
         }
         
@@ -514,5 +514,13 @@ class RM_Public {
             //return $view->read($msg);
         }
         
+    }
+    
+    public function paypal_ipn(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $paypal_service = new RM_Paypal_Service();
+            $resp = $paypal_service->callback('ipn',null,null);
+        }
+        die;
     }
 }

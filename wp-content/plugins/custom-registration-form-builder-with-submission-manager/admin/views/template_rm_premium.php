@@ -7,7 +7,7 @@ $rm_premium_image_url = RM_IMG_URL . "pro/";
     <!---Header Area-->
     <!---Content Area-->
     <div class="rm_pr_content">
-        <!----Main Pitch---->
+    <!----Main Pitch---->
         <div class="rm_pr_row">
             <div class="rm_pr_block_left">
                 <div class="rm_pr_pitch_title">
@@ -27,7 +27,25 @@ $rm_premium_image_url = RM_IMG_URL . "pro/";
                 </div>
             </div>
             <div class="rm_pr_block_right">
-                <div class="rm-pitch-img"><img src="<?php echo RM_IMG_URL; ?>premium/rm-hero-image.png"></div>
+                <div class="rm_pr_rocket">
+                    <div class="rm_pr_rocket-strip"><img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/rocket-strip.png"></div>
+                    <div class="rm_pr_clouds_front">
+                    <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/clouds-front.png">
+                    </div>
+                    <div class="rm_pr_fire">
+                    <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/rocket-fire.png">
+                    </div>
+                <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/hero-image.png">
+                    <div class="rm_pr_smoke">
+                    <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/smoke-bg.png">
+                    </div>
+                    <div class="rm_pr_clouds">
+                    <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/clouds-bg.png">
+                    </div>
+                    <div class="rm_pr_clouds_far">
+                    <img class="rm_pitch_img" src="<?php echo RM_IMG_URL; ?>premium/clouds-far.png">
+                    </div>
+                    </div>
             </div>
         </div>
         <!----Features---->

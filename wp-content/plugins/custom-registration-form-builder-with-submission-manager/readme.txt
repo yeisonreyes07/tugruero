@@ -4,7 +4,7 @@ Donate link: http://registrationmagic.com/
 Tags: User Registration, Registration, WooCommerce Registration Form, Online Registration, event registration
 Requires at least: 3.5
 Tested up to: 5.1
-Stable tag: 4.5.2.0
+Stable tag: 4.5.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -406,6 +406,23 @@ Note, this functionality is limited to Premium version of RegistrationMagic.
 19. Global Settings.
 
 == Changelog ==
+
+= 4.5.4.0 =
+* Fixed time-out issue when trying to edit files via wp-admin/theme-editor.php
+* Username and Password fields added in auto responder email body.
+* Added Filter to disable sending of New User/Password.
+* Fixed JS error while using reCaptcha.
+* Fixed an issue with login form and application form in the same page reported by user anjanphukan [here](https://wordpress.org/support/topic/issue-with-login-form-and-application-form-in-the-same-page/).
+* Unique ID column added in My Accounts section. (Premium only)
+* Added Email domain based restriction. (Premium Only)
+* Improved ProfileGrid integration.
+* JS improvement to handle form reloading when browser back button is used.
+
+= 4.5.2.2 =
+* PayPal IPN improvements.
+
+= 4.5.2.1 =
+* UI Fixes
 
 = 4.5.2.0 =
 * PHP warning handled in Address field.
@@ -1514,6 +1531,23 @@ Fixed: Blocks showing up on front-end with some WP themes.
 * Added Custom Fields
 
 == Upgrade Notice ==
+
+= 4.5.4.0 =
+* Fixed time-out issue when trying to edit files via wp-admin/theme-editor.php
+* Username and Password fields added in auto responder email body.
+* Added Filter to disable sending of New User/Password.
+* Fixed JS error while using reCaptcha.
+* Fixed an issue with login form and application form in the same page reported by user anjanphukan [here](https://wordpress.org/support/topic/issue-with-login-form-and-application-form-in-the-same-page/).
+* Unique ID column added in My Accounts section. (Premium only)
+* Added Email domain based restriction. (Premium Only)
+* Improved ProfileGrid integration.
+* JS improvement to handle form reloading when browser back button is used.
+
+= 4.5.2.2 =
+* PayPal IPN Fix
+
+= 4.5.2.1 =
+* UI Fixes
 
 = 4.5.2.0 =
 * PHP warning handled in Address field.
