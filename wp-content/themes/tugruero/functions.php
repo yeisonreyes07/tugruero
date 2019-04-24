@@ -251,7 +251,7 @@ function woocommerce_button_proceed_to_checkout() {
 	  $address_fields['billing_myfield22']['priority'] = 21;
 	  $address_fields['billing_myfield23']['priority'] = 22;
 	  $address_fields['billing_myfield24']['priority'] = 23;
-	  global $woocommerce;
+	  /*global $woocommerce;
 		
 		$items = $woocommerce->cart->get_cart();
 		foreach($items as $item => $values) {
@@ -269,7 +269,7 @@ function woocommerce_button_proceed_to_checkout() {
 				$address_fields['billing_options'.$i]['priority'] = 100+$i;
 				$i++;
 			}
-		}
+		}*/
 		return $address_fields;
   }
   function cosas()
