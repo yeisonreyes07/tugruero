@@ -51,7 +51,10 @@ get_header();
 			<div class="planes" id="planes">
 				<h1>Nuestros planes</h1>
 				<p class="subt">Adquiere nuestros planes anuales con los mejores descuentos, desde nuestra plataforma web.</p>
-				<?php dynamic_sidebar('sidebar-2'); ?>
+				<div class="elige-moneda">
+					<label>Ver precios en</label>
+					<?php dynamic_sidebar('sidebar-2'); ?>
+				</div>
 				<div class="container-planes">
 					
 					<?php #$query= new WP_Query('post_type=product&order=ASC');

@@ -11,7 +11,6 @@ get_header();
 ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>	
     <h1 class="title"><?php echo get_the_content(); ?></h1>
-    <?php dynamic_sidebar('sidebar-2'); ?>
 
 	<div class="form-cart">
 		<div class="form-row">
@@ -33,6 +32,11 @@ get_header();
 		<div class="form-row">
 			<label>Escoja la cantidad de carros que desea afiliar</label>
 			<input type="number" id="cantidad" value="1"/>					
+        </div>
+        <div class="form-row">
+        	<label>¿En cuál moneda deseas pagar tu plan?</label>
+      	    <?php dynamic_sidebar('sidebar-2'); ?>
+
         </div>
         <div class="btns-cart">
             <div class="izq">

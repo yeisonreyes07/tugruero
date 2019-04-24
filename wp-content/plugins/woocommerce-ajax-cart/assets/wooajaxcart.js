@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
 
     wacRefreshCart = function() {
         // deal with update cart button
-        updateButton = $("button[name='update_cart'],input[name='update_cart']");
+        var updateButton = $("button[name='update_cart'],input[name='update_cart']");
         updateButton.removeAttr('disabled')
                     .trigger('click')
                     .val( wooajaxcart.updating_text )
@@ -59,7 +59,7 @@ jQuery(document).ready(function($){
         }
 
         // hide or show the "+" button based on max stock limit (snippet based on @evtihii idea)
-        maxStock = el_qty.attr('max');
+        var maxStock = el_qty.attr('max');
         if ( maxStock > 0 ) {
             incrementButton = el_qty.parent().find('.wac-btn-inc').parent().parent();
 
@@ -106,16 +106,18 @@ jQuery(document).ready(function($){
 
     wacListenQtyButtons = function() {
         $(document.body).on('click', '.wac-btn-inc', function(e){
-            inputQty = $(this).parent().parent().parent().find('.qty');
+            var inputQty = $(this).parent().parent().parent().find('.qty');
             inputQty.val( function(i, oldval) { return ++oldval; });
             inputQty.trigger('change');
+            
             return false;
         });
 
         $(document.body).on('click', '.wac-btn-sub', function(e){
-            inputQty = $(this).parent().parent().parent().find('.qty');
+            var inputQty = $(this).parent().parent().parent().find('.qty');
             inputQty.val( function(i, oldval) { return oldval > 0 ? --oldval : 0; });
             inputQty.trigger('change');
+
             return false;
         });
     };

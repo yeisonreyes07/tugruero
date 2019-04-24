@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	// body...
+	$('article .entry-header .entry-title').text("");
+			
 	$('.section-banner').slick({
 		slidesToShow: 1,
 		slidesToSlide: 1,
@@ -323,6 +325,7 @@ $(document).ready(function() {
 			$('header.site-header').removeClass('scrolling');	
 		}
 	});
+	console.log(window.location.pathname);
 })
 	
 	/*

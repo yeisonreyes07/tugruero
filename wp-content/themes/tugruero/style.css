@@ -1515,8 +1515,8 @@ header.site-header.scrolling{
 	width: 40%;
 	font-size: 1.1em;
 }
-.planes .widget_wmc_widget, .page-template-content-plan .widget_wmc_widget {
-	width: calc(80% - 50px);
+.planes .widget_wmc_widget{
+	//width: calc(80% - 50px);
 	margin: 0px auto 100px auto;
 }
 .page-template-content-plan .widget_wmc_widget {
@@ -1756,9 +1756,14 @@ body:not(.home) .site-content{
 	padding:7px 10px 7px 20px;
 }
 .woocommerce-checkout form .form-row label, .tml-action form label, .woocommerce-cart #content form label,
-.page-template-content-plan #content .form-cart label{
-	font-size: 12px;
+.page-template-content-plan #content .form-cart label,
+.elige-moneda label{
+	font-size: 13px;
 	font-weight: bold;
+	font-family: 'Nunito-Bold', sans-serif;
+}
+.elige-moneda label{
+	color: white;
 }
 .woocommerce-checkout form .form-row button, .tml-action form .tml-button, 
 .page-template-content-plan #content .form-cart .btns-cart .der a{
@@ -2187,9 +2192,9 @@ body:not(.home) .site-content{
 	display: none;
 }
 .resumen-cart{
-	position: absolute;
-	right: 50px;
-	top: 120px;
+	position: fixed;
+	right: 40px;
+	top: 100px;
 	font-family: 'Nunito-Bold', sans-serif;
 
 }
@@ -2199,4 +2204,40 @@ body:not(.home) .site-content{
 }
 .woo-multi-currency.wmc-right{
 	display: none;
+}
+.order-finish {
+	text-align: center;
+}
+.order-finish img{
+	width: 180px;
+	margin: 0px auto;
+}
+.texto-pago{
+	font-family: 'Nunito-Bold', sans-serif;	
+	margin-top: 20px;
+}
+.texto-pago h1{
+	line-height: 1em;
+	margin: 0px;
+	font-size: 1.8em;
+}
+.texto-pago a{
+	background-color: rgb(250, 105, 60);
+	padding: 5px 50px;
+	color: white;
+	font-family: 'Nunito-Bold', sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 20px;
+	display: inline-table;
+	border: 0px solid;
+	margin: 30px auto 30px auto;
+
+}
+.woocommerce-order-received #content article header{
+	display: none;
+}
+.elige-moneda{
+	width: calc(80% - 50px);
+	margin: 0px auto;
 }

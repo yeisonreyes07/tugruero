@@ -229,7 +229,7 @@ function woocommerce_button_proceed_to_checkout() {
 	  $address_fields['billing_last_name']['priority'] = 2;
 		$address_fields['billing_myfield11']['priority'] = 3;
 		$address_fields['billing_myfield12']['priority'] = 4;
-	  $address_fields['billing_phone']['priority'] = 5;
+	  $address_fields['billing_phone']['priority'] = 6;
 	  $address_fields['billing_myfield13']['priority'] = 6;
 	  $address_fields['billing_myfield14']['priority'] = 7;
 	  $address_fields['billing_email']['priority'] = 8;
