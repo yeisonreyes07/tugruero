@@ -16,8 +16,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/js/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/js/slick/slick-theme.css">
+	
 	<?php wp_head(); ?>
 </head>
 
@@ -28,7 +30,7 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<div class="logo">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" />
+				<a href="<?php echo site_url();?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" /></a>
 			</div>
 			<div class="menu-head">
 				<nav id="site-navigation" class="main-navigation">

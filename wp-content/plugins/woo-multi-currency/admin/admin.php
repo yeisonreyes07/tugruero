@@ -30,7 +30,7 @@ class WOOMULTI_CURRENCY_F_Admin_Admin {
 	}
 
 	public function cache_plugins_note() {
-		$page = isset( $_GET['page'] ) ? $_GET['page'] : '';
+		$page = isset( $_GET['page'] ) ? wp_unslash($_GET['page']) : '';
 		if ( $page != 'woo-multi-currency' ) {
 			return;
 		}
@@ -51,11 +51,11 @@ class WOOMULTI_CURRENCY_F_Admin_Admin {
 
 				<div class="villatheme-content">
 					<p>
-						<?php echo __( 'You are using <strong>WP Fastest Cache</strong>. Please make follow these steps these help <strong>WooCommerce Multi Currency</strong> is working fine with WP Fastest Cache.', 'woo-multi-currency' ) ?>
+						<?php echo __( 'You are using <strong>WP Fastest Cache</strong>. Please make follow these steps to help <strong>WooCommerce Multi Currency</strong> work fine with WP Fastest Cache.', 'woo-multi-currency' ) ?>
 					</p>
 					<ul>
 						<li><?php echo __( '1. In <strong>WooCommerce → Settings → General → Default customer location</strong> make sure you have selected: <strong>Geolocate with page caching support</strong>', 'woo-multi-currency' ) ?></li>
-						<li><?php echo __( '2. Open wp-config.php file via FTP then insert <strong>define(‘WPFC_CACHE_QUERYSTRING’, true);</strong>', 'woo-multi-currency' ) ?></li>
+						<li><?php echo __( '2. Open wp-config.php file via FTP then insert <strong>define(\'WPFC_CACHE_QUERYSTRING\', true);</strong>', 'woo-multi-currency' ) ?></li>
 					</ul>
 
 				</div>
@@ -163,7 +163,7 @@ class WOOMULTI_CURRENCY_F_Admin_Admin {
 	 * Init Script in Admin
 	 */
 	public function admin_enqueue_scripts() {
-		$page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
+		$page = isset( $_REQUEST['page'] ) ? wp_unslash($_REQUEST['page']) : '';
 		if ( $page == 'woo-multi-currency' ) {
 			global $wp_scripts;
 			$scripts = $wp_scripts->registered;

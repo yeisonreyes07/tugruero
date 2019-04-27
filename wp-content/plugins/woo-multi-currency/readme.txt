@@ -3,8 +3,8 @@ Contributors: mrt3vn
 Donate link: http://www.villatheme.com/donate
 Tags: woocommerce, currency, switcher, exchange, wordpress, currency for woocommerce, multi currency for woocommerce, woocommerce multi currency, woocommerce multi currency, woocommerce currency, currency switcher, woocommerce currency, bitcoin
 Requires at least: 4.4
-Tested up to: 5.1
-Stable tag: 2.1.3.2
+Tested up to: 5.1.1
+Stable tag: 2.1.3.3
 License: GPLv2 or later
 
 == Description ==
@@ -12,6 +12,8 @@ License: GPLv2 or later
 WooCommerce Multi Currency is a plugin for WooCommerce powered online store that allows to switch to different currencies easily and create current exchange rate converter without limit WooCommerce Currency. It accepts payment with only one currency or all currencies. WooCommerce Multi Currency is a free plugin.
 
 >[Try the Demo](http://new2new.com/?item=woo-multi-currency "Demo WooCommerce Multi Currency") | [Documents](http://docs.villatheme.com/?item=woo-multi-currency "Documents") | [Pro Version](https://goo.gl/2hWzFT "Pro Version") | [Discuss & Support via Facebook](https://goo.gl/FAzFb5 "Discuss & Support")
+
+[youtube https://youtu.be/8SH2tex-xxM]
 
 ### Important Notice:
 - Plugin works based on WooCommerce 3.x plugin.
@@ -90,6 +92,8 @@ Check screenshots at https://villatheme.com/woo-multi-currency/ or https://villa
 
 ### MAY BE YOU NEED
 
+[WooCommerce Custom Email Blocks](https://goo.gl/jtM1e8): Create your own professional email design & content for all your outgoing emails
+
 [WooCommerce Thank You Page Customizer](https://goo.gl/bnDzaF): Customize your “Thank You” page and give coupons to customers after a successful order
 
 [WooCommerce Notification](https://goo.gl/IYAQ7B): Social Proof Marketing plugin. Live recent order on the front-end of your site.
@@ -121,6 +125,9 @@ Check screenshots at https://villatheme.com/woo-multi-currency/ or https://villa
 4. Design tab in setting page
 
 == Changelog ==
+**2.1.3.3 - 2019.04.04**
+- Updated: Make admin notices dismissible
+
 /*2.1.3.2  - 2019.03.08*/
 - Updated: Do not auto clear cache(W3 Total cache and WP Rocket)
 - Fixed: Exchange rates widget

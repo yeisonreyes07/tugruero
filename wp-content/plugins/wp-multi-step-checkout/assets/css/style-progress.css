@@ -221,8 +221,8 @@
 .wpmc-nav-buttons button.current { display: inline-block !important; }
 
 
-.wpmc-step-item { display: none; }
-.wpmc-step-item.current { display: block; }
+.wpmc-step-item { display: none !important; }
+.wpmc-step-item.current { display: block !important; }
 
 .woocommerce-checkout form.login .wc-social-login {
     display: block !important;

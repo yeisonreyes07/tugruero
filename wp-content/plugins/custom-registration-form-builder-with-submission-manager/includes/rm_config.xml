@@ -234,7 +234,7 @@ and open the template in the editor.
         </request>
 
         <!--Setting related request mappings-->
-        <request slug="rm_options_" allowed_actions="manage,general,fab,security,user,autoresponder,thirdparty,payment,default_pages,user_privacy,save,advance"  controller="options">
+        <request slug="rm_options_" allowed_actions="manage,general,fab,security,user,autoresponder,thirdparty,payment,default_pages,user_privacy,save,advance,eventprime"  controller="options">
 
             <actions>
 
@@ -298,6 +298,11 @@ and open the template in the editor.
                 
                 <!--Advance settings page-->
                 <action name="advance" success-action="rm_options_manage">
+                    <model ref="options" />
+                    <service ref="setting_service" />
+                </action>
+                
+                <action name="eventprime" success-action="rm_options_manage">
                     <model ref="options" />
                     <service ref="setting_service" />
                 </action>

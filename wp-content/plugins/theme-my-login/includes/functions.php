@@ -252,7 +252,7 @@ function tml_enqueue_scripts() {
 		$dependencies[] = 'password-strength-meter';
 	}
 
-	wp_enqueue_script( 'theme-my-login', THEME_MY_LOGIN_URL . "assets/scripts/theme-my-login$suffix.js", $dependencies, THEME_MY_LOGIN_VERSION );
+	wp_enqueue_script( 'theme-my-login', THEME_MY_LOGIN_URL . "assets/scripts/theme-my-login$suffix.js", $dependencies, THEME_MY_LOGIN_VERSION, true );
 	wp_localize_script( 'theme-my-login', 'themeMyLogin', array(
 		'action' => tml_is_action() ? tml_get_action()->get_name() : '',
 		'errors' => tml_get_errors()->get_error_codes(),
@@ -261,10 +261,24 @@ function tml_enqueue_scripts() {
 	if ( tml_is_action() ) {
 		/** This action is documented in wp-login.php */
 		do_action( 'login_enqueue_scripts' );
-
-		/** This action is documented in wp-login.php */
-		do_action( 'login_head' );
 	}
+}
+
+/**
+ * Do the login_head action hook.
+ *
+ * @since 7.0.13
+ */
+function tml_do_login_head() {
+	if ( ! tml_is_action() ) {
+		return;
+	}
+
+	// This is already attached to "wp_head"
+	remove_action( 'login_head', 'wp_print_head_scripts', 9 );
+
+	/** This action is documented in wp-login.php */
+	do_action( 'login_head' );
 }
 
 /**
@@ -286,11 +300,11 @@ function tml_add_rewrite_rules() {
 		return;
 	}
 	foreach ( tml_get_actions() as $action ) {
-		add_rewrite_rule(
-			tml_get_action_slug( $action ) . '/?$',
-			'index.php?action=' . $action->get_name(),
-			'top'
-		);
+		$url = 'index.php?action=' . $action->get_name();
+		if ( $page = tml_action_has_page( $action ) ) {
+			$url .= '&pagename=' . get_page_uri( $page );
+		}
+		add_rewrite_rule( tml_get_action_slug( $action ) . '/?$', $url, 'top' );
 	}
 }
 
@@ -338,7 +352,10 @@ function tml_filter_site_url( $url, $path, $scheme ) {
 	// Parse the query
 	$query = array();
 	if ( ! empty( $parsed_url['query'] ) ) {
-		parse_str( htmlspecialchars_decode( $parsed_url['query'] ), $query );
+		parse_str( $parsed_url['query'], $query );
+
+		// Encode the query args
+		$query = array_map( 'rawurlencode', $query );
 	}
 
 	/**
@@ -619,9 +636,11 @@ function tml_nav_menu_css_class( $classes, $item ) {
  * @return WP_Error The registration errors.
  */
 function tml_validate_new_user_password( $errors = null ) {
+
 	if ( empty( $errors ) ) {
 		$errors = new WP_Error();
 	}
+
 	if ( tml_allow_user_passwords() ) {
 		if ( empty( $_POST['user_pass1'] ) || empty( $_POST['user_pass2'] ) ) {
 			$errors->add( 'empty_password', __( '<strong>ERROR</strong>: Please enter a password.', 'theme-my-login' ) );
@@ -633,6 +652,7 @@ function tml_validate_new_user_password( $errors = null ) {
 			$errors->add( 'password_mismatch', __( '<strong>ERROR</strong>: Please enter the same password in both password fields.', 'theme-my-login' ) );
 		}
 	}
+
 	return $errors;
 }
 
@@ -941,21 +961,15 @@ function tml_set_data( $name, $value = '' ) {
  * @return mixed The requested value.
  */
 function tml_get_request_value( $key, $type = 'any' ) {
-
-	$value = '';
 	$type  = strtoupper( $type );
-
-	$types = array( 'POST', 'GET', 'REQUEST' );
-	if ( in_array( $type, $types ) ) {
-		$types = array( $type );
-	}
-
-	foreach ( $types as $type ) {
-		$type = '_' . $type;
-		if ( ! empty( $GLOBALS[ $type ] ) && array_key_exists( $key, $GLOBALS[ $type ] ) ) {
-			$value = $GLOBALS[ $type ][ $key ];
-			break;
-		}
+	if ( 'POST' == $type && array_key_exists( $key, $_POST ) ) {
+		$value = $_POST[ $key ];
+	} elseif ( 'GET' == $type && array_key_exists( $key, $_GET ) ) {
+		$value = $_GET[ $key ];
+	} elseif ( array_key_exists( $key, $_REQUEST ) ) {
+		$value = $_REQUEST[ $key ];
+	} else {
+		$value = '';
 	}
 
 	if ( is_string( $value ) ) {

@@ -168,9 +168,10 @@ else
 <?php } ?>
 
 <?php
+/*
 if(!empty($data->hidden_forms)){
     foreach($data->hidden_forms as $forms_id){
         echo '<script>jQuery(document).ready(function(){jQuery("#'.$forms_id.'").html("<div class=\'rm-login-attempted-notice\'>'.__('Note: You are already attempting login using a different login form on this page. To keep your logging experience simple and secure, this login form in no longer accessible. Please continue the login process using the form with which you attempted login before the page refresh.','custom-registration-form-builder-with-submission-manager').'</div>")});</script>';
     }
 }
-?>
+*/

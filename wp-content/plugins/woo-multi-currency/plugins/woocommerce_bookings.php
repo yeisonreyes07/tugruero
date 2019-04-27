@@ -29,9 +29,7 @@ class WOOMULTI_CURRENCY_F_Plugin_WooCommerce_Bookings {
 	 * @return mixed
 	 */
 	public function woocommerce_bookings_calculated_booking_cost_success_output( $output, $display_price, $product ) {
-		$posted = array();
-
-		parse_str( $_POST['form'], $posted );
+		$posted = wc_clean($_POST['form']);
 		$booking_form = new WC_Booking_Form( $product );
 		$cost         = $booking_form->calculate_booking_cost( $posted );
 

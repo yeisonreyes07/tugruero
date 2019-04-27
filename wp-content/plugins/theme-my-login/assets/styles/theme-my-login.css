@@ -7,41 +7,41 @@
 	        box-sizing: border-box;
 }
 
-.tml-field-wrap {
+.tml .tml-field-wrap {
 	margin-bottom: 1em;
 }
 
-.tml-label {
+.tml .tml-label {
 	display: block;
 	margin: 0.5em 0;
 }
 
-.tml-checkbox + .tml-label {
+.tml .tml-checkbox + .tml-label {
 	display: inline;
 }
 
-.tml-field {
+.tml .tml-field {
 	width: 100%;
 }
 
-.tml-description {
+.tml .tml-description {
 	display: block;
 	font-size: 0.85em;
 	font-style: italic;
 	margin: 0.5em 0;
 }
 
-.tml-errors,
-.tml-messages {
+.tml .tml-errors,
+.tml .tml-messages {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.tml-error,
-.tml-message,
-.tml-success,
-.tml-action-confirmaction .success {
+.tml .tml-error,
+.tml .tml-message,
+.tml .tml-success,
+.tml .tml-action-confirmaction .success {
 	border-left: 4px solid #00a0d2;
 	-webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
 	        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
@@ -50,12 +50,12 @@
 	padding: 0.75em;
 }
 
-.tml-error {
+.tml .tml-error {
 	border-left-color: #dc3232;
 }
 
-.tml-success,
-.tml-action-confirmaction .success {
+.tml .tml-success,
+.tml .tml-action-confirmaction .success {
 	border-left-color: #46b450;
 }
 

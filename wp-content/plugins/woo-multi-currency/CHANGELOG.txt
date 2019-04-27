@@ -1,3 +1,6 @@
+**2.1.3.3 - 2019.04.04**
+- Updated: Make admin notices dismissible
+
 /*2.1.3.2  - 2019.03.08*/
 - Updated: Do not auto clear cache(W3 Total cache and WP Rocket)
 - Fixed: Exchange rates widget

@@ -341,6 +341,56 @@
             </div>
                <!-- PG Integration Pop-up End -->
             <?php endif; ?>   
+               
+            <?php if(class_exists('Event_Magic')): ?>
+            <div class="rm-grid-icon difl">  
+                <a href="?page=rm_options_eventprime" class="rm_fd_link">  
+                    <div class="rm-grid-icon-area dbfl">
+                        <img class="rm-grid-icon dibfl" src="<?php echo RM_IMG_URL; ?>event-prime-logo.png">
+                    </div>
+                    <div class="rm-grid-icon-label dbfl"><?php echo __('EventPrime', 'custom-registration-form-builder-with-submission-manager'); ?></div>
+                </a>
+            </div> 
+            <?php else: ?>
+            <div class="rm-grid-icon difl">  
+                <a id="ep_popup_btn" href="javascript:void(0)" class="rm_fd_link">  
+                    <div class="rm-grid-icon-area dbfl">
+                        <img class="rm-grid-icon dibfl" src="<?php echo RM_IMG_URL; ?>event-prime-logo.png">
+                    </div>
+                    <div class="rm-grid-icon-label dbfl"><?php echo __('EventPrime', 'custom-registration-form-builder-with-submission-manager'); ?></div>
+                </a>
+            </div>
+            <div class="rmagic rm-hide-version-number rm-ep-integration">
+                <div id="ep_popup_container" class="rm-modal-view" style="display:none">
+                    <div class="rm-modal-overlay"></div>
+                    <div class="rm-modal-wrap rm-publish-form-popup">
+                        <div class="rm-modal-titlebar rm-new-form-popup-header">
+                            <div class="rm-modal-title">
+                                <?php _e('EventPrime - Event Calendar Management and Bookings', 'custom-registration-form-builder-with-submission-manager'); ?>               
+                            </div>
+                            <span class="rm-modal-close">×</span>
+                        </div>
+                        <div class="rm-modal-container">
+                            <div class="rm-directory-container dbfl">
+                                <div class="rm-publish-directory-col rm-difl">
+                                    <div class="rm-section-publish-note"><?php _e('Event Calendar Management and Bookings', 'custom-registration-form-builder-with-submission-manager') ?></div>
+                                    <div class="rm-publish-text"><?php _e('Now you can plan events, register users, manage bookings and sell tickets using your RegistrationMagic forms! EventPrime is free and you can get started within minutes.', 'custom-registration-form-builder-with-submission-manager'); ?></div>
+                                    <a href="<?php echo $data->ep_install_url; ?>" class="pg-install-now"><?php _e('Install Now', 'custom-registration-form-builder-with-submission-manager') ?></a>
+
+                                    <div class="rm-pg-group-popup"></div>
+                                </div>
+                                <div class="rm-publish-directory-col rm-difl"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>   
+            <!-- EventPrime Integration Pop-up -->   
+            <?php endif; ?>
+            
             <?php do_action('rm_extended_apps'); ?>
             
             <div class="rm-grid-icon difl rm_dash_popup_link" id="rm_dash_popup_link_integrate"> 
@@ -984,6 +1034,10 @@ $data_string = substr($data_string, 2);
         
         jQuery("#pg_popup_btn").click(function(){
             jQuery("#pg_popup_container").show();
+        });
+        
+        jQuery("#ep_popup_btn").click(function(){
+            jQuery("#ep_popup_container").show();
         });
     });
    

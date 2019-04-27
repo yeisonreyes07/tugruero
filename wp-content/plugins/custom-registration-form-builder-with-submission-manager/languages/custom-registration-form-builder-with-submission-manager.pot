@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: RegistrationMagic Basic v1.0.0\n"
-"POT-Creation-Date: 2019-01-25 09:12+0000\n"
+"POT-Creation-Date: 2019-04-15 09:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <you@example.com>\n"
 "Language-Team: RegistrationMagic Support <support@registrationmagic.com>\n"
@@ -359,7 +359,11 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: includes/class_rm_ui_strings.php:225 public/widgets/html/otp.php:27
+#: includes/class_rm_ui_strings.php:225
+#: admin/views/template_rm_options_eventprime.php:23
+#: admin/views/template_rm_options_eventprime.php:34
+#: admin/views/template_rm_profilegrid.php:23
+#: admin/views/template_rm_profilegrid.php:34 public/widgets/html/otp.php:27
 #: public/widgets/html/otp.php:41
 msgid "Back"
 msgstr ""
@@ -572,7 +576,7 @@ msgstr ""
 msgid "Download All"
 msgstr ""
 
-#: includes/class_rm_ui_strings.php:377 admin/views/template_rm_support.php:97
+#: includes/class_rm_ui_strings.php:377 admin/views/template_rm_support.php:98
 msgid "Download"
 msgstr ""
 
@@ -693,7 +697,7 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:458
 #: admin/views/template_rm_field_conditions.php:169
-#: admin/views/template_rm_new_form_exerpt.php:109
+#: admin/views/template_rm_new_form_exerpt.php:53
 #: admin/views/template_rm_form_view_sett.php:100
 #: admin/views/template_rm_login_view_sett.php:92
 #: plus/chronos/templates/edit_task.php:407
@@ -726,7 +730,7 @@ msgstr ""
 #: admin/views/template_rm_form_gen_sett.php:65
 #: admin/views/template_rm_form_accounts_sett.php:60
 #: admin/views/template_rm_form_add.php:166
-#: admin/views/template_rm_options_security.php:40
+#: admin/views/template_rm_options_security.php:49
 #: admin/views/template_rm_login_view.php:185
 #: admin/views/template_rm_form_cust_sett.php:30
 #: admin/views/template_rm_form_sett_constant_contact.php:70
@@ -802,7 +806,7 @@ msgid "Time"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:485
-#: admin/views/template_rm_formcard_menu.php:35
+#: admin/views/template_rm_formcard_menu.php:38
 msgid "Submissions"
 msgstr ""
 
@@ -842,6 +846,7 @@ msgid "Last modified by"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:509
+#: admin/views/template_rm_formcard_menu.php:13
 #: admin/views/template_rm_login_field_manager.php:206
 msgid "Edit"
 msgstr ""
@@ -969,7 +974,7 @@ msgid "Fields Manager"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:606
-#: admin/views/template_rm_formcard_menu.php:28
+#: admin/views/template_rm_formcard_menu.php:31
 msgid "Form"
 msgstr ""
 
@@ -1001,12 +1006,12 @@ msgid "Text"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:627 includes/class_rm_utilities.php:197
-#: admin/views/template_rm_login_field_manager.php:373
+#: admin/views/template_rm_login_field_manager.php:365
 msgid "Paragraph"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:630 includes/class_rm_utilities.php:198
-#: admin/views/template_rm_login_field_manager.php:361
+#: admin/views/template_rm_login_field_manager.php:353
 msgid "Heading"
 msgstr ""
 
@@ -1184,7 +1189,7 @@ msgstr ""
 msgid "New User"
 msgstr ""
 
-#: includes/class_rm_ui_strings.php:746 services/class_rm_email_service.php:494
+#: includes/class_rm_ui_strings.php:746 services/class_rm_email_service.php:510
 msgid "Activate"
 msgstr ""
 
@@ -1194,8 +1199,8 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:752
 #: admin/views/template_rm_widget_picker.php:67
-#: admin/views/template_rm_login_field_manager.php:503
-#: admin/views/template_rm_field_picker.php:119
+#: admin/views/template_rm_login_field_manager.php:495
+#: admin/views/template_rm_field_picker.php:107
 msgid "Image"
 msgstr ""
 
@@ -1682,6 +1687,7 @@ msgid ""
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:1105
+#: admin/views/template_rm_form_manager.php:296
 msgid "Create New Form"
 msgstr ""
 
@@ -1881,7 +1887,7 @@ msgid "Reset All Stats"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:1253
-#: admin/views/template_rm_form_settings.php:693
+#: admin/views/template_rm_form_settings.php:772
 msgid ""
 "You are going to delete all stats for selected form. Do you want to proceed?"
 msgstr ""
@@ -2138,9 +2144,9 @@ msgstr ""
 #: includes/class_rm_ui_strings.php:1412
 #, php-format
 msgid ""
-"A Unique Token number is assigned to the submission and also emailed to the "
-"user if auto-reply is turned on. Token number is visible in the submission "
-"records. <a target='_blank' class='rm-more' href='%s'>More</a>"
+"A Unique Token Number/ Unique ID is assigned to the submission and also "
+"emailed to the user if auto-reply is turned on. Token number is visible in "
+"the submission records. <a target='_blank' class='rm-more' href='%s'>More</a>"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:1415
@@ -2939,8 +2945,8 @@ msgstr ""
 #: includes/class_rm_ui_strings.php:1864 includes/class_rm_utilities.php:144
 #: includes/class_rm_utilities.php:176
 #: admin/views/template_rm_widget_picker.php:85
-#: admin/views/template_rm_login_field_manager.php:539
-#: admin/views/template_rm_field_picker.php:122
+#: admin/views/template_rm_login_field_manager.php:531
+#: admin/views/template_rm_field_picker.php:110
 msgid "Map"
 msgstr ""
 
@@ -3348,13 +3354,13 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:2115 includes/class_rm_ui_strings.php:3517
 #: includes/class_rm_utilities.php:195
-#: admin/views/template_rm_login_field_manager.php:383
+#: admin/views/template_rm_login_field_manager.php:375
 msgid "Divider"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:2117 includes/class_rm_ui_strings.php:3520
 #: includes/class_rm_utilities.php:196
-#: admin/views/template_rm_login_field_manager.php:397
+#: admin/views/template_rm_login_field_manager.php:389
 msgid "Spacing"
 msgstr ""
 
@@ -3850,14 +3856,14 @@ msgid "Simple single line text field."
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:2424
-#: admin/views/template_rm_login_field_manager.php:369
+#: admin/views/template_rm_login_field_manager.php:361
 msgid ""
 "This is a read only field which can be used to display formatted content "
 "inside the form. HTML is supported."
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:2427
-#: admin/views/template_rm_login_field_manager.php:355
+#: admin/views/template_rm_login_field_manager.php:347
 msgid "Large size read only text useful for creating custom headings."
 msgstr ""
 
@@ -4041,12 +4047,12 @@ msgid ""
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:2544
-#: admin/views/template_rm_login_field_manager.php:379
+#: admin/views/template_rm_login_field_manager.php:371
 msgid "Divider for separating fields."
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:2547
-#: admin/views/template_rm_login_field_manager.php:393
+#: admin/views/template_rm_login_field_manager.php:385
 msgid "Useful for adding space between fields"
 msgstr ""
 
@@ -4872,12 +4878,12 @@ msgid "Allow User to Login using Twitter:"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3097
-#: admin/views/template_rm_formcard_menu.php:62
-#: admin/views/template_rm_formcard_menu.php:124
-#: admin/views/template_rm_formcard_menu.php:171
-#: admin/views/template_rm_formcard_menu.php:296
-#: admin/views/template_rm_formcard_menu.php:329
-#: admin/views/template_rm_formcard_menu.php:345
+#: admin/views/template_rm_formcard_menu.php:65
+#: admin/views/template_rm_formcard_menu.php:127
+#: admin/views/template_rm_formcard_menu.php:174
+#: admin/views/template_rm_formcard_menu.php:299
+#: admin/views/template_rm_formcard_menu.php:332
+#: admin/views/template_rm_formcard_menu.php:348
 #: plus/chronos/templates/edit_task.php:34
 #: plus/chronos/templates/edit_task.php:47
 #: plus/chronos/templates/edit_task.php:69
@@ -5274,7 +5280,7 @@ msgstr ""
 msgid "No role assigned"
 msgstr ""
 
-#: includes/class_rm_ui_strings.php:3352 admin/views/template_rm_support.php:19
+#: includes/class_rm_ui_strings.php:3352 admin/views/template_rm_support.php:20
 msgid "Starter Guide"
 msgstr ""
 
@@ -5354,40 +5360,40 @@ msgid "Configuration Manager"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3409
-#: admin/views/template_rm_formcard_menu.php:30
+#: admin/views/template_rm_formcard_menu.php:33
 msgid "Build"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3412
-#: admin/views/template_rm_formcard_menu.php:31
+#: admin/views/template_rm_formcard_menu.php:34
 msgid "Configure"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3415
-#: admin/views/template_rm_formcard_menu.php:32
+#: admin/views/template_rm_formcard_menu.php:35
 msgid "Integrate"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3418 includes/class_rm_ui_strings.php:3436
 #: admin/views/template_rm_login_sett_manage.php:407
-#: admin/views/template_rm_form_settings.php:819
-#: admin/views/template_rm_formcard_menu.php:33
+#: admin/views/template_rm_form_settings.php:898
+#: admin/views/template_rm_formcard_menu.php:36
 msgid "Publish"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3421
-#: admin/views/template_rm_formcard_menu.php:37
+#: admin/views/template_rm_formcard_menu.php:40
 msgid "Manage"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3424
 #: admin/views/template_rm_login_sett_manage.php:233
-#: admin/views/template_rm_formcard_menu.php:38
+#: admin/views/template_rm_formcard_menu.php:41
 msgid "Analyze"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3427
-#: admin/views/template_rm_formcard_menu.php:39
+#: admin/views/template_rm_formcard_menu.php:42
 msgid "Automate"
 msgstr ""
 
@@ -5496,7 +5502,7 @@ msgid "New Divider Widget"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3508 includes/class_rm_utilities.php:194
-#: admin/views/template_rm_login_field_manager.php:409
+#: admin/views/template_rm_login_field_manager.php:401
 msgid "Rich Text"
 msgstr ""
 
@@ -5505,8 +5511,8 @@ msgid "New Rich Text Widget"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3526 includes/class_rm_ui_strings.php:3538
-#: admin/views/template_rm_login_field_manager.php:405
-#: admin/views/template_rm_login_field_manager.php:421
+#: admin/views/template_rm_login_field_manager.php:397
+#: admin/views/template_rm_login_field_manager.php:413
 msgid "Allows you to display richly formatted text inside your form."
 msgstr ""
 
@@ -5518,12 +5524,12 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:3532 includes/class_rm_ui_strings.php:3559
 #: includes/class_rm_ui_strings.php:3766 includes/class_rm_utilities.php:199
-#: admin/views/template_rm_login_field_manager.php:443
+#: admin/views/template_rm_login_field_manager.php:435
 msgid "Link"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3535
-#: admin/views/template_rm_login_field_manager.php:433
+#: admin/views/template_rm_login_field_manager.php:425
 msgid "Display link inside your form."
 msgstr ""
 
@@ -5701,7 +5707,7 @@ msgid ""
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3666 includes/class_rm_utilities.php:193
-#: admin/views/template_rm_login_field_manager.php:425
+#: admin/views/template_rm_login_field_manager.php:417
 msgid "Timer"
 msgstr ""
 
@@ -5792,7 +5798,7 @@ msgid ""
 "Singapore"
 msgstr ""
 
-#: includes/class_rm_ui_strings.php:3717 admin/views/template_rm_support.php:24
+#: includes/class_rm_ui_strings.php:3717 admin/views/template_rm_support.php:25
 msgid "Payments Guide"
 msgstr ""
 
@@ -5880,7 +5886,7 @@ msgid "Display total price of products selected by user in the form"
 msgstr ""
 
 #: includes/class_rm_ui_strings.php:3784
-#: admin/views/template_rm_field_picker.php:121
+#: admin/views/template_rm_field_picker.php:109
 msgid ""
 "If you have set form limits, you can display the limit status using this "
 "widget"
@@ -5916,8 +5922,8 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:3808 includes/class_rm_utilities.php:178
 #: admin/views/template_rm_widget_picker.php:91
-#: admin/views/template_rm_login_field_manager.php:527
-#: admin/views/template_rm_field_picker.php:123
+#: admin/views/template_rm_login_field_manager.php:519
+#: admin/views/template_rm_field_picker.php:111
 msgid "Form Data Chart"
 msgstr ""
 
@@ -5975,8 +5981,8 @@ msgstr ""
 
 #: includes/class_rm_ui_strings.php:3850 includes/class_rm_utilities.php:180
 #: admin/views/template_rm_widget_picker.php:105
-#: admin/views/template_rm_login_field_manager.php:561
-#: admin/views/template_rm_field_picker.php:125
+#: admin/views/template_rm_login_field_manager.php:553
+#: admin/views/template_rm_field_picker.php:113
 msgid "Registration Feed"
 msgstr ""
 
@@ -6401,9 +6407,9 @@ msgid "Account Password"
 msgstr ""
 
 #: includes/class_rm_utilities.php:183
-#: admin/views/template_rm_field_picker.php:53
-#: admin/views/template_rm_field_picker.php:53
-#: libs/factory/class_rm_field_factory.php:905
+#: admin/views/template_rm_field_picker.php:43
+#: admin/views/template_rm_field_picker.php:43
+#: libs/factory/class_rm_field_factory.php:908
 msgid "Privacy Policy"
 msgstr ""
 
@@ -6421,13 +6427,13 @@ msgstr ""
 
 #: includes/class_rm_utilities.php:189
 #: admin/views/template_rm_widget_picker.php:105
-#: admin/views/template_rm_field_picker.php:125
+#: admin/views/template_rm_field_picker.php:113
 msgid "Submission Feed"
 msgstr ""
 
 #: includes/class_rm_utilities.php:200
 #: admin/views/template_rm_widget_picker.php:53
-#: admin/views/template_rm_field_picker.php:117
+#: admin/views/template_rm_field_picker.php:105
 msgid "YouTube Video"
 msgstr ""
 
@@ -7743,7 +7749,7 @@ msgstr ""
 msgid "User Privacy"
 msgstr ""
 
-#: admin/class_rm_admin.php:477
+#: admin/class_rm_admin.php:479
 msgid ""
 "It seems you are using now obsolete version of PHP. Please note that "
 "RegistrationMagic works best with PHP 5.6 or later versions. You may want to "
@@ -7751,7 +7757,7 @@ msgid ""
 "message may not display again once dismissed."
 msgstr ""
 
-#: admin/class_rm_admin.php:483
+#: admin/class_rm_admin.php:485
 #, php-format
 msgid ""
 "Using Easy Digital Downloads? <a target=\"__blank\" href=\"%s\">Learn how "
@@ -7760,11 +7766,11 @@ msgid ""
 "form submission."
 msgstr ""
 
-#: admin/class_rm_admin.php:483 admin/class_rm_admin.php:489
+#: admin/class_rm_admin.php:485 admin/class_rm_admin.php:491
 msgid "Dismiss"
 msgstr ""
 
-#: admin/class_rm_admin.php:489
+#: admin/class_rm_admin.php:491
 #, php-format
 msgid ""
 "Using WooCommerce? <a target=\"__blank\" href=\"%s\">Learn how to</a> create "
@@ -7808,25 +7814,17 @@ msgstr ""
 msgid "Years"
 msgstr ""
 
-#: public/class_rm_public.php:211 public/views/template_rm_login.php:173
-msgid ""
-"Note: You are already attempting login using a different login form on this "
-"page. To keep your logging experience simple and secure, this login form in "
-"no longer accessible. Please continue the login process using the form with "
-"which you attempted login before the page refresh."
-msgstr ""
-
-#: public/class_rm_public.php:396 public/class_rm_public.php:403
+#: public/class_rm_public.php:397 public/class_rm_public.php:404
 msgid "No such user exists"
 msgstr ""
 
-#: public/class_rm_public.php:412
+#: public/class_rm_public.php:413
 msgid ""
 "Verification link has been sent on your registered email account. Please "
 "check."
 msgstr ""
 
-#: public/class_rm_public.php:415
+#: public/class_rm_public.php:416
 msgid "Incorrect security token. Please try after some time."
 msgstr ""
 
@@ -7834,12 +7832,12 @@ msgstr ""
 msgid "Notification from Admin"
 msgstr ""
 
-#: services/class_rm_email_service.php:510
-#: services/class_rm_email_service.php:523
+#: services/class_rm_email_service.php:526
+#: services/class_rm_email_service.php:539
 msgid "Failed login Attempt"
 msgstr ""
 
-#: services/class_rm_email_service.php:535
+#: services/class_rm_email_service.php:551
 #: admin/views/template_rm_login_email_temp.php:27
 msgid "IP Blocked"
 msgstr ""
@@ -7944,38 +7942,38 @@ msgid "Unlock powerful access control and more by upgrading"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:59
-#: admin/views/template_rm_login_field_manager.php:469
+#: admin/views/template_rm_login_field_manager.php:461
 msgid "iFrame Embed"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:79
-#: admin/views/template_rm_field_picker.php:121
+#: admin/views/template_rm_field_picker.php:109
 msgid "Submission Countdown"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:83
-#: admin/views/template_rm_field_picker.php:122
+#: admin/views/template_rm_field_picker.php:110
 msgid "Display a location with marker using GoogleMaps"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:89
-#: admin/views/template_rm_field_picker.php:123
+#: admin/views/template_rm_field_picker.php:111
 msgid "Display stats about the form using graphs and charts"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:96
-#: admin/views/template_rm_field_picker.php:124
+#: admin/views/template_rm_field_picker.php:112
 msgid "Display various properties of the form"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:98
-#: admin/views/template_rm_login_field_manager.php:513
-#: admin/views/template_rm_field_picker.php:124
+#: admin/views/template_rm_login_field_manager.php:505
+#: admin/views/template_rm_field_picker.php:112
 msgid "Form Meta-Data"
 msgstr ""
 
 #: admin/views/template_rm_widget_picker.php:103
-#: admin/views/template_rm_field_picker.php:125
+#: admin/views/template_rm_field_picker.php:113
 msgid "Display latest registrations/ submissions data in your form"
 msgstr ""
 
@@ -8269,90 +8267,90 @@ msgstr ""
 
 #: admin/views/template_rm_field_manager.php:201
 #: admin/views/template_rm_login_field_manager.php:261
-#: admin/views/template_rm_login_field_manager.php:269
+#: admin/views/template_rm_login_field_manager.php:265
 msgid "Click to edit button label"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:209
-#: admin/views/template_rm_login_field_manager.php:289
+#: admin/views/template_rm_field_manager.php:207
+#: admin/views/template_rm_login_field_manager.php:281
 msgid "Left"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:210
-#: admin/views/template_rm_login_field_manager.php:291
+#: admin/views/template_rm_field_manager.php:208
+#: admin/views/template_rm_login_field_manager.php:283
 msgid "Center"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:211
-#: admin/views/template_rm_login_field_manager.php:293
+#: admin/views/template_rm_field_manager.php:209
+#: admin/views/template_rm_login_field_manager.php:285
 msgid "Right"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:218
-#: admin/views/template_rm_login_field_manager.php:309
+#: admin/views/template_rm_field_manager.php:216
+#: admin/views/template_rm_login_field_manager.php:301
 msgid "Click on buttons to edit label"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:245
+#: admin/views/template_rm_field_manager.php:243
 msgid "Choose a field type"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:268
-#: admin/views/template_rm_login_field_manager.php:341
+#: admin/views/template_rm_field_manager.php:266
+#: admin/views/template_rm_login_field_manager.php:333
 msgid "MagicWidgets"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:289
+#: admin/views/template_rm_field_manager.php:287
 msgid "Publish Form"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:305
+#: admin/views/template_rm_field_manager.php:303
 msgid "Remove Username Field?"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:309
+#: admin/views/template_rm_field_manager.php:307
 msgid ""
 "You are about to remove Username field from this form. Consequently, Email "
 "field wil be used as Username field. Registering users can later login using "
 "their Email and Password. Do you wish to proceed? "
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:313
+#: admin/views/template_rm_field_manager.php:311
 msgid "Yes, Remove Username"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:314
+#: admin/views/template_rm_field_manager.php:312
 msgid "No, Keep Username"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:327
+#: admin/views/template_rm_field_manager.php:325
 msgid "Remove Password Field?"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:331
+#: admin/views/template_rm_field_manager.php:329
 msgid ""
 "You are about to remove Password field from this form. Password field will "
 "be autogenerated and emailed to the user on successful registration. Do you "
 "wish to proceed?"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:334
+#: admin/views/template_rm_field_manager.php:332
 msgid "Yes, Remove Password"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:335
+#: admin/views/template_rm_field_manager.php:333
 msgid "No, Keep Password"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:343
+#: admin/views/template_rm_field_manager.php:341
 msgid "Unlock multi-page and all custom field types by upgrading"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:436
+#: admin/views/template_rm_field_manager.php:434
 msgid "Please enter new name"
 msgstr ""
 
-#: admin/views/template_rm_field_manager.php:436
+#: admin/views/template_rm_field_manager.php:434
 msgid "New Page"
 msgstr ""
 
@@ -8534,13 +8532,13 @@ msgid "User Login Timeline"
 msgstr ""
 
 #: admin/views/template_rm_login_sett_manage.php:313
-#: admin/views/template_rm_form_settings.php:593
+#: admin/views/template_rm_form_settings.php:672
 #: admin/views/template_rm_form_publish_info.php:28
 msgid "Copied to clipboard"
 msgstr ""
 
 #: admin/views/template_rm_login_sett_manage.php:313
-#: admin/views/template_rm_form_settings.php:593
+#: admin/views/template_rm_form_settings.php:672
 msgid "Could not be copied. Please try manually."
 msgstr ""
 
@@ -8550,12 +8548,12 @@ msgid ""
 msgstr ""
 
 #: admin/views/template_rm_login_sett_manage.php:383
-#: admin/views/template_rm_form_settings.php:791
+#: admin/views/template_rm_form_settings.php:870
 msgid "Extend Power of RegistrationMagic"
 msgstr ""
 
 #: admin/views/template_rm_login_sett_manage.php:391
-#: admin/views/template_rm_form_settings.php:799
+#: admin/views/template_rm_form_settings.php:878
 msgid "More Information"
 msgstr ""
 
@@ -8718,143 +8716,143 @@ msgstr ""
 msgid "This is a required field."
 msgstr ""
 
-#: admin/views/template_rm_support.php:11
+#: admin/views/template_rm_support.php:10
 msgid "Resources"
 msgstr ""
 
-#: admin/views/template_rm_support.php:17
+#: admin/views/template_rm_support.php:18
 msgid "Guides"
 msgstr ""
 
-#: admin/views/template_rm_support.php:20
+#: admin/views/template_rm_support.php:21
 msgid "Build your first WordPress registration page"
 msgstr ""
 
-#: admin/views/template_rm_support.php:25
+#: admin/views/template_rm_support.php:26
 msgid "Start accepting payments from your users"
 msgstr ""
 
-#: admin/views/template_rm_support.php:29
+#: admin/views/template_rm_support.php:30
 msgid "Security Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:30
+#: admin/views/template_rm_support.php:31
 msgid "Learn best security practices for registration forms"
 msgstr ""
 
-#: admin/views/template_rm_support.php:34
+#: admin/views/template_rm_support.php:35
 msgid "Custom Status Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:35
+#: admin/views/template_rm_support.php:36
 msgid "How to set up and use custom statuses and labels"
 msgstr ""
 
-#: admin/views/template_rm_support.php:39
+#: admin/views/template_rm_support.php:40
 msgid "Roles and Permissions Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:40
+#: admin/views/template_rm_support.php:41
 msgid "Extend or limit control of users on your site"
 msgstr ""
 
-#: admin/views/template_rm_support.php:44
+#: admin/views/template_rm_support.php:45
 msgid "Automation Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:45
+#: admin/views/template_rm_support.php:46
 msgid "Automate workflows to reduce manual stress"
 msgstr ""
 
-#: admin/views/template_rm_support.php:49
+#: admin/views/template_rm_support.php:50
 msgid "Publishing Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:50
+#: admin/views/template_rm_support.php:51
 msgid "Display what you have built on the frontend"
 msgstr ""
 
-#: admin/views/template_rm_support.php:54
+#: admin/views/template_rm_support.php:55
 msgid "Login Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:55
+#: admin/views/template_rm_support.php:56
 msgid "Make use of advance in-built login features"
 msgstr ""
 
-#: admin/views/template_rm_support.php:59
+#: admin/views/template_rm_support.php:60
 msgid "Shortcodes Guide"
 msgstr ""
 
-#: admin/views/template_rm_support.php:60
+#: admin/views/template_rm_support.php:61
 msgid "All the shortcodes you need in one place"
 msgstr ""
 
-#: admin/views/template_rm_support.php:70
+#: admin/views/template_rm_support.php:71
 msgid "Useful Links"
 msgstr ""
 
-#: admin/views/template_rm_support.php:72
+#: admin/views/template_rm_support.php:73
 msgid "Tutorials"
 msgstr ""
 
-#: admin/views/template_rm_support.php:73
+#: admin/views/template_rm_support.php:74
 msgid "Comprehensive tutorials covering all aspects of RegistrationMagic."
 msgstr ""
 
-#: admin/views/template_rm_support.php:77
+#: admin/views/template_rm_support.php:78
 msgid "Breakthrough Ideas"
 msgstr ""
 
-#: admin/views/template_rm_support.php:78
+#: admin/views/template_rm_support.php:79
 msgid "Innovative solutions to your everyday problems"
 msgstr ""
 
-#: admin/views/template_rm_support.php:82
+#: admin/views/template_rm_support.php:83
 msgid "Blog"
 msgstr ""
 
-#: admin/views/template_rm_support.php:83
+#: admin/views/template_rm_support.php:84
 msgid "Our regular blog with feature updates and more"
 msgstr ""
 
-#: admin/views/template_rm_support.php:87
+#: admin/views/template_rm_support.php:88
 msgid "Changelog"
 msgstr ""
 
-#: admin/views/template_rm_support.php:88
+#: admin/views/template_rm_support.php:89
 msgid "Chronological list of changes and updates"
 msgstr ""
 
-#: admin/views/template_rm_support.php:92
+#: admin/views/template_rm_support.php:93
 msgid "Previous Version"
 msgstr ""
 
-#: admin/views/template_rm_support.php:93
+#: admin/views/template_rm_support.php:94
 msgid "For rolling back to a previous Standard release"
 msgstr ""
 
-#: admin/views/template_rm_support.php:98
+#: admin/views/template_rm_support.php:99
 msgid "Download the latest version of Premium"
 msgstr ""
 
-#: admin/views/template_rm_support.php:101
+#: admin/views/template_rm_support.php:102
 msgid "Contact Us"
 msgstr ""
 
-#: admin/views/template_rm_support.php:104
+#: admin/views/template_rm_support.php:105
 msgid "Feature Request"
 msgstr ""
 
-#: admin/views/template_rm_support.php:105
+#: admin/views/template_rm_support.php:106
 msgid "Submit a feature request to our development team"
 msgstr ""
 
-#: admin/views/template_rm_support.php:109
+#: admin/views/template_rm_support.php:110
 msgid "Support Ticket"
 msgstr ""
 
-#: admin/views/template_rm_support.php:110
+#: admin/views/template_rm_support.php:111
 msgid "Create a support ticket on our helpdesk"
 msgstr ""
 
@@ -8862,82 +8860,82 @@ msgstr ""
 msgid "FAQs"
 msgstr ""
 
-#: admin/views/template_rm_support.php:126
+#: admin/views/template_rm_support.php:128
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: admin/views/template_rm_support.php:130
+#: admin/views/template_rm_support.php:132
 msgid "How to send forms to your email after submission?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:138
+#: admin/views/template_rm_support.php:140
 msgid "How to display a message after form submission?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:144
+#: admin/views/template_rm_support.php:146
 msgid ""
 "How to send a confirmation or thank you email to your users who have "
 "successfully submitted forms?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:150
+#: admin/views/template_rm_support.php:152
 msgid ""
 "How to redirect users to a different page or post after form submission?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:158
+#: admin/views/template_rm_support.php:160
 msgid "How to force login after form submission?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:164
+#: admin/views/template_rm_support.php:166
 msgid "How to send forms automatically to another email address?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:171
+#: admin/views/template_rm_support.php:173
 msgid "How to change position of the labels on your forms?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:177
+#: admin/views/template_rm_support.php:179
 msgid "How to enable reCAPTCHA on your forms?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:183
+#: admin/views/template_rm_support.php:185
 msgid "How to export form submissions?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:189
+#: admin/views/template_rm_support.php:191
 msgid "How to approve user accounts without logging into the dashboard?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:195
+#: admin/views/template_rm_support.php:197
 msgid "How to accept payments through your forms?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:201
+#: admin/views/template_rm_support.php:203
 msgid "How to allow users to edit their forms after submission?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:207
+#: admin/views/template_rm_support.php:209
 msgid "How to make a field mandatory in a form?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:213
+#: admin/views/template_rm_support.php:215
 msgid "How to insert content or rich text within the form?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:219
+#: admin/views/template_rm_support.php:221
 msgid "How to deactivate or suspend an already registered user?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:225
+#: admin/views/template_rm_support.php:227
 msgid "How to publish a login form or a button on your site?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:231
+#: admin/views/template_rm_support.php:233
 msgid "How to redirect users after login?"
 msgstr ""
 
-#: admin/views/template_rm_support.php:237
+#: admin/views/template_rm_support.php:239
 msgid "How to check user's login records?"
 msgstr ""
 
@@ -9567,11 +9565,66 @@ msgstr ""
 msgid "Good Luck!"
 msgstr ""
 
-#: admin/views/template_rm_form_settings.php:663
+#: admin/views/template_rm_form_settings.php:299
+#: admin/views/template_rm_form_settings.php:309
+#: admin/views/template_rm_profilegrid.php:5
+msgid "ProfileGrid"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:320
+#: admin/views/template_rm_form_settings.php:327
+msgid "User Profiles, Groups, Memberships And Communities"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:328
+#: admin/views/template_rm_profilegrid.php:10
+msgid ""
+"Turn front-end user area into powerful user profile hub. Allow users to edit "
+"their profiles including photos. Offer interactive features like groups "
+"memberships, real-time messaging and friend lists. Restrict content "
+"selectively. ProfileGrid is free and you can get started within minutes."
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:329
+#: admin/views/template_rm_form_settings.php:378
+#: admin/views/template_rm_options_eventprime.php:13
+#: admin/views/template_rm_profilegrid.php:13
+#: plus/lmsupport/templates/formflow_publish_extended.php:8
+#: plus/lmsupport/templates/frontend_primer.php:18
+#: plus/lmsupport/templates/promo_page.php:19
+msgid "Install Now"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:351
+#: admin/views/template_rm_form_settings.php:360
+#: admin/views/template_rm_options_eventprime.php:5
+#: admin/views/template_rm_options_eventprime.php:19
+#: admin/views/template_rm_options_eventprime.php:30
+#: admin/views/template_rm_options_manager.php:149
+msgid "EventPrime"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:369
+msgid "EventPrime - Event Calendar Management and Bookings"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:376
+msgid "Event Calendar Management and Bookings"
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:377
+#: admin/views/template_rm_options_eventprime.php:10
+msgid ""
+"Now you can plan events, register users, manage bookings and sell tickets "
+"using your RegistrationMagic forms! EventPrime is free and you can get "
+"started within minutes."
+msgstr ""
+
+#: admin/views/template_rm_form_settings.php:742
 msgid " in last 30 days."
 msgstr ""
 
-#: admin/views/template_rm_form_settings.php:869
+#: admin/views/template_rm_form_settings.php:948
 msgid "Could not change. Please try again."
 msgstr ""
 
@@ -9729,42 +9782,12 @@ msgstr ""
 msgid "Unlock multiple pricing configurations by upgrading"
 msgstr ""
 
-#: admin/views/template_rm_new_form_exerpt.php:45
+#: admin/views/template_rm_new_form_exerpt.php:43
 msgid "Name of your form"
 msgstr ""
 
 #: admin/views/template_rm_new_form_exerpt.php:45
-msgid "Two forms can have same name."
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:57
-msgid "Select a form type"
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:77
-msgid "User Registration Form"
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:79
-msgid ""
-"Initially, the form will be created with Username, Password and Email fields."
-" You can later edit them, add more fields and customize the form."
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:91
-msgid "Contact Form/ Other Form"
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:92
-msgid ""
-"Initially, the form will be created with only Email field. You can later "
-"edit it, add more fields and customize the form."
-msgstr ""
-
-#: admin/views/template_rm_new_form_exerpt.php:102
-msgid ""
-"Username and Password fields will not appear to existing users. But they can "
-"still submit the form if you have allowed multiple submissions."
+msgid "Turn off user registration for this form"
 msgstr ""
 
 #: admin/views/template_rm_form_manager.php:37
@@ -9939,36 +9962,46 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:515
-#: admin/views/template_rm_form_manager.php:538
+#: admin/views/template_rm_form_manager.php:536
+#: admin/views/template_rm_form_manager.php:559
 msgid "Import Successfully Completed"
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:546
-#: admin/views/template_rm_form_manager.php:564
+#: admin/views/template_rm_form_manager.php:567
+#: admin/views/template_rm_form_manager.php:585
 msgid ""
 "Invalid RegistrationMagic template file. Please upload valid template file "
 "with XML extension."
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:572
+#: admin/views/template_rm_form_manager.php:593
 msgid "Please select  a file."
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:592
+#: admin/views/template_rm_form_manager.php:613
 msgid "File upload is in progress..."
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:598
+#: admin/views/template_rm_form_manager.php:619
 msgid "Form Import is in progress...."
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:603
+#: admin/views/template_rm_form_manager.php:624
 msgid "Upload Failed"
 msgstr ""
 
-#: admin/views/template_rm_form_manager.php:607
+#: admin/views/template_rm_form_manager.php:628
 msgid "Upload Aborted"
+msgstr ""
+
+#: admin/views/template_rm_options_eventprime.php:21
+#: admin/views/template_rm_options_eventprime.php:32
+msgid "EventPrime is installed and active."
+msgstr ""
+
+#: admin/views/template_rm_options_eventprime.php:22
+#: admin/views/template_rm_options_eventprime.php:33
+msgid "Click here to open EventPrime"
 msgstr ""
 
 #: admin/views/template_rm_login_recovery.php:17
@@ -10093,6 +10126,22 @@ msgstr ""
 msgid "Set both (Whichever is earlier)"
 msgstr ""
 
+#: admin/views/template_rm_options_security.php:27
+msgid "Version"
+msgstr ""
+
+#: admin/views/template_rm_options_security.php:27
+msgid "reCaptcha v2"
+msgstr ""
+
+#: admin/views/template_rm_options_security.php:27
+msgid "reCaptcha v3"
+msgstr ""
+
+#: admin/views/template_rm_options_security.php:27
+msgid "Select reCaptcha version you want to use with your forms."
+msgstr ""
+
 #: admin/views/template_rm_login_view.php:59
 msgid "Full Name"
 msgstr ""
@@ -10170,41 +10219,42 @@ msgid ""
 msgstr ""
 
 #: admin/views/template_rm_formcard_menu.php:9
+#: admin/views/template_rm_formcard_menu.php:12
 msgid "Click to edit form name"
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:65
+#: admin/views/template_rm_formcard_menu.php:68
 msgid ""
 "Build your form just as you would like it to appear to your site visitors. "
 "Add and set up custom fields, labels, buttons, form pages, colors, "
 "backgrounds and more."
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:128
+#: admin/views/template_rm_formcard_menu.php:131
 msgid ""
 "Every form configuration option under the sky! Tweak behavior of your forms "
 "to match your registration process."
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:176
+#: admin/views/template_rm_formcard_menu.php:179
 msgid ""
 "Give your form extra chops by connecting it to powerful third party apps, "
 "greatly expanding scope of what you can do with your forms."
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:308
+#: admin/views/template_rm_formcard_menu.php:311
 msgid ""
 "Manage form data collected from users. Advance filters and searches make it "
 "both easy and fun to manage large number of submissions."
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:331
+#: admin/views/template_rm_formcard_menu.php:334
 msgid ""
 "Analyze the form data using automatically generated metrics and charts. Find "
 "meaningful insights essential to fine tuning your form's conversion rate."
 msgstr ""
 
-#: admin/views/template_rm_formcard_menu.php:349
+#: admin/views/template_rm_formcard_menu.php:352
 msgid ""
 "It works for you, even when you are not working! Create automated tasks and "
 "emails which run in the background executing predefined actions.​"
@@ -10391,6 +10441,26 @@ msgstr ""
 msgid "Show Form Limits above the Form?"
 msgstr ""
 
+#: admin/views/template_rm_profilegrid.php:19
+#: admin/views/template_rm_profilegrid.php:30
+msgid "ProfileGrid is installed and active."
+msgstr ""
+
+#: admin/views/template_rm_profilegrid.php:20
+#: admin/views/template_rm_profilegrid.php:31
+msgid "Click here to open ProfileGrid"
+msgstr ""
+
+#: admin/views/template_rm_profilegrid.php:21
+#: admin/views/template_rm_profilegrid.php:32
+msgid "ProfileGrid Starter Guide"
+msgstr ""
+
+#: admin/views/template_rm_profilegrid.php:22
+#: admin/views/template_rm_profilegrid.php:33
+msgid "Learn what you can do with ProfileGrid integration"
+msgstr ""
+
 #: admin/views/template_rm_options_manager.php:23
 msgid "Form specific settings can be found inside individual Form Dashboard."
 msgstr ""
@@ -10414,6 +10484,10 @@ msgstr ""
 
 #: admin/views/template_rm_options_manager.php:129
 msgid "Libraries and sessions management"
+msgstr ""
+
+#: admin/views/template_rm_options_manager.php:150
+msgid "Event Registrations and Bookings"
 msgstr ""
 
 #: admin/views/template_rm_login_email_temp.php:17
@@ -10454,11 +10528,11 @@ msgid ""
 "settings."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:21
+#: admin/views/template_rm_premium.php:14
 msgid "Welcome to the next level of WordPress Registrations!"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:24
+#: admin/views/template_rm_premium.php:17
 msgid ""
 "While Standard Edition is pretty powerful system in its own right, there's a "
 "lot more waiting for you! RegistrationMagic <em>Premium</em> is crammed to "
@@ -10467,54 +10541,54 @@ msgid ""
 "transferred automatically."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:30
+#: admin/views/template_rm_premium.php:23
 msgid "Get it"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:33
+#: admin/views/template_rm_premium.php:26
 msgid "Questions?"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:62
-msgid "Top 47 reasons to upgrade!"
+#: admin/views/template_rm_premium.php:55
+msgid "Top 48 reasons to upgrade!"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:68
+#: admin/views/template_rm_premium.php:61
 msgid "Manual Approvals Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:69
+#: admin/views/template_rm_premium.php:62
 msgid ""
 "Review and approve individual users instead of default auto registrations. A "
 "quick approval link is added to the admin notifications for extra "
 "convenience."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:73
+#: admin/views/template_rm_premium.php:66
 msgid "Submission Notes Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:74
+#: admin/views/template_rm_premium.php:67
 msgid ""
 "Attach Admin Note to your user submissions. Frontend notes are visible to "
 "the users and can be sent as notification to them."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:78
+#: admin/views/template_rm_premium.php:71
 msgid "Google Maps Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:79
+#: admin/views/template_rm_premium.php:72
 msgid ""
 "Make use of Google's powerful maps inside your forms. Works with Address and "
 "Map field types."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:85
+#: admin/views/template_rm_premium.php:78
 msgid "Stripe Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:86
+#: admin/views/template_rm_premium.php:79
 #: admin/views/template_rm_login_fd_promo.php:70
 #: admin/views/template_rm_fd_promo.php:80
 msgid ""
@@ -10522,11 +10596,11 @@ msgid ""
 "registrations."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:90
+#: admin/views/template_rm_premium.php:83
 msgid "Role Based Forms Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:91
+#: admin/views/template_rm_premium.php:84
 msgid ""
 "Bound user roles to forms so that users registering through the form will be "
 "automatically assigned the bound role. Alternatively, allow users to choose "
@@ -10534,52 +10608,52 @@ msgid ""
 "adds a new radio button field inside the form."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:95
+#: admin/views/template_rm_premium.php:88
 msgid "Token System Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:96
+#: admin/views/template_rm_premium.php:89
 #: admin/views/template_rm_fd_promo.php:43
 msgid ""
 "Generate and provide your users unique token after form submission. The "
 "token will also be attached to the form submission in dashboard area."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:102
+#: admin/views/template_rm_premium.php:95
 msgid "External Submission Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:103
+#: admin/views/template_rm_premium.php:96
 #: admin/views/template_rm_fd_promo.php:45
 msgid ""
 "Forward form data to an external URL using HTTP POST method. Useful for "
 "integrating RegistrationMagic with numerous other web apps."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:107
+#: admin/views/template_rm_premium.php:100
 msgid "Access Control Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:108
+#: admin/views/template_rm_premium.php:101
 #: admin/views/template_rm_fd_promo.php:26
 msgid ""
 "Add conditional access control to your form. Allow users within specific age "
 "group, with secret passphrase and/or User Role to fill out forms."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:112
+#: admin/views/template_rm_premium.php:105
 msgid "56 Field Types package"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:113
+#: admin/views/template_rm_premium.php:106
 msgid "Full set of custom field types. Now you can build any type of form."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:119
+#: admin/views/template_rm_premium.php:112
 msgid "Export and Filter Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:120
+#: admin/views/template_rm_premium.php:113
 #: admin/views/template_rm_login_fd_promo.php:147
 #: admin/views/template_rm_fd_promo.php:168
 msgid ""
@@ -10587,41 +10661,41 @@ msgid ""
 "as PDF. Filter submissions based on date range."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:124
+#: admin/views/template_rm_premium.php:117
 msgid "Field Analytics Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:125
+#: admin/views/template_rm_premium.php:118
 msgid ""
 "Piecharts divided by options chosen by the users on checkbox, radio button, "
 "drop down and country fields."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:129
+#: admin/views/template_rm_premium.php:122
 msgid "Advanced Paid Registrations Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:130
+#: admin/views/template_rm_premium.php:123
 msgid ""
 "Add Selection Boxes, DropDown and User Defined price options to your paid "
 "registrations."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:136
+#: admin/views/template_rm_premium.php:129
 msgid "Paid User Roles Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:137
+#: admin/views/template_rm_premium.php:130
 msgid ""
 "Add charges to user roles which will appear as payment on the forms bound to "
 "that role."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:141
+#: admin/views/template_rm_premium.php:134
 msgid "Attachments Browser Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:142
+#: admin/views/template_rm_premium.php:135
 #: admin/views/template_rm_login_fd_promo.php:135
 #: admin/views/template_rm_fd_promo.php:156
 msgid ""
@@ -10629,31 +10703,31 @@ msgid ""
 "individual attachments or all of them as compressed zip file."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:146
+#: admin/views/template_rm_premium.php:139
 msgid "MailChimp Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:147
+#: admin/views/template_rm_premium.php:140
 msgid ""
 "If you are a power MailChimp user you may want to map all your custom fields "
 "with registration forms. This extension makes this&nbsp;possible."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:153
+#: admin/views/template_rm_premium.php:146
 msgid "Aweber Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:154
+#: admin/views/template_rm_premium.php:147
 #: admin/views/template_rm_login_fd_promo.php:52
 #: admin/views/template_rm_fd_promo.php:62
 msgid "Integrate your forms with powerful Aweber system."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:158
+#: admin/views/template_rm_premium.php:151
 msgid "Global Overrides Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:159
+#: admin/views/template_rm_premium.php:152
 #: admin/views/template_rm_fd_promo.php:27
 msgid ""
 "Not happy with same Global Settings applied to all your forms? Want to "
@@ -10661,129 +10735,129 @@ msgid ""
 "these settings for individual forms."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:163
+#: admin/views/template_rm_premium.php:156
 msgid "Custom Field with RegEx Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:164
+#: admin/views/template_rm_premium.php:157
 msgid ""
 "Need a new field type that isn't listed? Want to accept only specific type "
 "of field values? Now you can use regular expression to create your own "
 "custom fields with this extension."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:170
+#: admin/views/template_rm_premium.php:163
 msgid "PDF Branding Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:171
+#: admin/views/template_rm_premium.php:164
 msgid ""
 "Brand your submission PDFs &amp;&nbsp;Printouts with customized logo and "
 "taglines."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:175
+#: admin/views/template_rm_premium.php:168
 msgid "Advanced Security Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:176
+#: admin/views/template_rm_premium.php:169
 msgid ""
 "Add extra security options to your forms including banning IPs, Spammy "
 "Domains, reserve important usernames and define password strength options."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:180
+#: admin/views/template_rm_premium.php:173
 msgid "Multi-Page Form Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:181
+#: admin/views/template_rm_premium.php:174
 msgid ""
 "Turn your forms into multi step pages with previous and next buttons. Last "
 "page submits the form. Name pages separately and show them above the form "
 "fields."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:187
+#: admin/views/template_rm_premium.php:180
 msgid "HTML Embed Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:188
+#: admin/views/template_rm_premium.php:181
 #: admin/views/template_rm_fd_promo.php:132
 msgid ""
 "Embed your forms where short code cannot go - including different sites and "
 "third party pages."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:192
+#: admin/views/template_rm_premium.php:185
 msgid "Customizable MagicPopup Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:193
+#: admin/views/template_rm_premium.php:186
 #: admin/views/template_rm_fd_promo.php:142
 msgid "Use Magic Popup as navigation menu with option to add custom links."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:198
+#: admin/views/template_rm_premium.php:191
 msgid "PDF Notification Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:199
+#: admin/views/template_rm_premium.php:192
 msgid "Form will be attached to admin notification email as PDF file."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:207
+#: admin/views/template_rm_premium.php:200
 msgid "Email Username Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:208
+#: admin/views/template_rm_premium.php:201
 msgid ""
 "Use email instead of username during new user registration. Users can now "
 "login with their emails too."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:212
+#: admin/views/template_rm_premium.php:205
 msgid "Default Forms Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:213
+#: admin/views/template_rm_premium.php:206
 msgid "Assign a registration form as default form for a user role."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:217
+#: admin/views/template_rm_premium.php:210
 msgid "Saved Searches Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:218
+#: admin/views/template_rm_premium.php:211
 msgid ""
 "Save your regular submission searches as filters for quick productivity "
 "boost."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:226
+#: admin/views/template_rm_premium.php:219
 msgid "User Directory Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:227
+#: admin/views/template_rm_premium.php:220
 #: admin/views/template_rm_fd_promo.php:133
 msgid "Display registered users as directory on front end of your site."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:231
+#: admin/views/template_rm_premium.php:224
 msgid "Social Login Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:232
+#: admin/views/template_rm_premium.php:225
 msgid ""
 "Allow users to log into your site using popular social networks like Google, "
 "Twitter, LinkedIn, Microsoft and Instagram, apart from existing Facebook "
 "login."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:237
+#: admin/views/template_rm_premium.php:230
 msgid "WooCommerce Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:238
+#: admin/views/template_rm_premium.php:231
 #: admin/views/template_rm_login_fd_promo.php:56
 #: admin/views/template_rm_fd_promo.php:66
 msgid ""
@@ -10791,31 +10865,41 @@ msgid ""
 "shopping experience for your customers."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:245
+#: admin/views/template_rm_premium.php:238
 msgid "MailPoet Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:246
+#: admin/views/template_rm_premium.php:239
 msgid ""
 "Now subscribe users to your MailPoet’s subscriber lists and map fields to "
 "MailPoet forms."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:250
+#: admin/views/template_rm_premium.php:243
+msgid "MailPoet 3 Ext."
+msgstr ""
+
+#: admin/views/template_rm_premium.php:244
+msgid ""
+"Subscribe registering users to latest version of MailPoet lists directly "
+"from your registration forms."
+msgstr ""
+
+#: admin/views/template_rm_premium.php:249
 msgid "Newsletter Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:251
+#: admin/views/template_rm_premium.php:250
 msgid ""
 "Add users to your Newsletter’s subscriber lists right from your registration "
 "forms."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:256
+#: admin/views/template_rm_premium.php:259
 msgid "Dropbox Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:257
+#: admin/views/template_rm_premium.php:260
 #: admin/views/template_rm_login_fd_promo.php:53
 #: admin/views/template_rm_fd_promo.php:63
 msgid ""
@@ -10823,11 +10907,11 @@ msgid ""
 "archiving and sharing."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:264
+#: admin/views/template_rm_premium.php:265
 msgid "Authorize.Net Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:265
+#: admin/views/template_rm_premium.php:266
 #: admin/views/template_rm_login_fd_promo.php:71
 #: admin/views/template_rm_fd_promo.php:81
 msgid ""
@@ -10835,127 +10919,127 @@ msgid ""
 "credit card payments."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:269
+#: admin/views/template_rm_premium.php:270
 msgid "Offline Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:270
+#: admin/views/template_rm_premium.php:271
 msgid ""
 "Now you can accept offline payments and provide payment instructions to "
 "registering users"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:274
+#: admin/views/template_rm_premium.php:282
 msgid "User Inbox Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:275
+#: admin/views/template_rm_premium.php:283
 msgid ""
 "Logged in users can check all the messages they have received from the admin "
 "in a new \"Inbox\" tab on front end area."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:285
+#: admin/views/template_rm_premium.php:288
 msgid "Automation Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:286
+#: admin/views/template_rm_premium.php:289
 msgid ""
 "Created automated workflows and tasks to offload manual tasks to "
 "RegistrationMagic's Automation Manager."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:290
+#: admin/views/template_rm_premium.php:293
 msgid "Unique Values Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:291
+#: admin/views/template_rm_premium.php:294
 msgid ""
 "Accept only unique values for your form fields. No two users can submit same "
 "value for fields marked unique."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:296
+#: admin/views/template_rm_premium.php:306
 msgid "User Submission Cap Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:297
+#: admin/views/template_rm_premium.php:307
 #: admin/views/template_rm_fd_promo.php:39
 msgid ""
 "Define a fixed number of times a single user can submit a specific form."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:307
+#: admin/views/template_rm_premium.php:312
 msgid "Conditional Fields Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:308
+#: admin/views/template_rm_premium.php:313
 msgid ""
 "Add conditional logic to your form fields and control their appearance based "
 "on other field values."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:313
+#: admin/views/template_rm_premium.php:318
 msgid "Email Verification Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:314
+#: admin/views/template_rm_premium.php:319
 msgid "Verify user's email address by sending account activation links."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:319
+#: admin/views/template_rm_premium.php:330
 msgid "Intelligent Notification Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:320
+#: admin/views/template_rm_premium.php:331
 msgid ""
 "Include user submission history, WooCommerce and Easy Digital Downloads data,"
 " with links, to admin submission notification email."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:329
+#: admin/views/template_rm_premium.php:336
 msgid "WePay Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:330
+#: admin/views/template_rm_premium.php:337
 msgid "Accept payments through your forms using popular WePay gateway."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:335
+#: admin/views/template_rm_premium.php:342
 msgid "Custom Status Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:336
+#: admin/views/template_rm_premium.php:343
 msgid ""
 "Now create, customize and apply custom status to submissions to comply with "
 "your registration approval process."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:341
+#: admin/views/template_rm_premium.php:355
 msgid "2FA Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:342
+#: admin/views/template_rm_premium.php:356
 msgid ""
 "Add an extra layer of security and greatly reduce risk of unauthorized "
 "access by enforcing Two-Factor Authentication to your site."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:353
+#: admin/views/template_rm_premium.php:362
 msgid "Login IP Ban Ext."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:354
+#: admin/views/template_rm_premium.php:363
 msgid ""
 "Ban visitor IPs based on login behavior. Set rules or prompts to activate IP "
 "block."
 msgstr ""
 
-#: admin/views/template_rm_premium.php:359
+#: admin/views/template_rm_premium.php:368
 msgid "Username Validation"
 msgstr ""
 
-#: admin/views/template_rm_premium.php:360
+#: admin/views/template_rm_premium.php:369
 msgid ""
 "Allow Username field on the login for to accept both Username and Email, or "
 "only Username."
@@ -11133,27 +11217,27 @@ msgstr ""
 msgid "Send customized emails with mail-merge as part of the task actions."
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:299
+#: admin/views/template_rm_login_field_manager.php:291
 msgid "Updating..."
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:307
+#: admin/views/template_rm_login_field_manager.php:299
 msgid "Display \"Register\" Button"
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:453
+#: admin/views/template_rm_login_field_manager.php:445
 msgid "Insert a YouTube Video in your form."
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:457
+#: admin/views/template_rm_login_field_manager.php:449
 msgid "YouTuve Video"
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:465
+#: admin/views/template_rm_login_field_manager.php:457
 msgid "Display an external webpage inside your form, using HTML iframe."
 msgstr ""
 
-#: admin/views/template_rm_login_field_manager.php:489
+#: admin/views/template_rm_login_field_manager.php:481
 msgid "Upcoming MagicWidgets"
 msgstr ""
 
@@ -11519,41 +11603,41 @@ msgstr ""
 msgid "Upgrade and expand the power of"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:74
+#: admin/views/template_rm_field_picker.php:62
 msgid "WooCommerce Fields"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:76
-#: admin/views/template_rm_field_picker.php:83
-#: admin/views/template_rm_field_picker.php:83
+#: admin/views/template_rm_field_picker.php:64
+#: admin/views/template_rm_field_picker.php:71
+#: admin/views/template_rm_field_picker.php:71
 msgid "WooCommerce Billing Field"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:77
-#: admin/views/template_rm_field_picker.php:84
-#: admin/views/template_rm_field_picker.php:84
+#: admin/views/template_rm_field_picker.php:65
+#: admin/views/template_rm_field_picker.php:72
+#: admin/views/template_rm_field_picker.php:72
 msgid "WooCommerce Shipping Field"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:78
-#: admin/views/template_rm_field_picker.php:85
-#: admin/views/template_rm_field_picker.php:85
+#: admin/views/template_rm_field_picker.php:66
+#: admin/views/template_rm_field_picker.php:73
+#: admin/views/template_rm_field_picker.php:73
 msgid "Billing Phone Number"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:81
+#: admin/views/template_rm_field_picker.php:69
 msgid "WooCommerce Fields (Not Installed or Inactive)"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:118
+#: admin/views/template_rm_field_picker.php:106
 msgid "IFrame Embed"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:120
+#: admin/views/template_rm_field_picker.php:108
 msgid "Total Price"
 msgstr ""
 
-#: admin/views/template_rm_field_picker.php:133
+#: admin/views/template_rm_field_picker.php:118
 msgid "Premium Fields"
 msgstr ""
 
@@ -11626,7 +11710,7 @@ msgid "Lost Your Password?"
 msgstr ""
 
 #: public/views/template_rm_user_payments_view.php:45
-#: public/views/template_rm_front_submissions.php:411
+#: public/views/template_rm_front_submissions.php:414
 msgid "You have not made any payment transactions yet."
 msgstr ""
 
@@ -11636,6 +11720,10 @@ msgstr ""
 
 #: public/views/template_rm_reset_password.php:43
 msgid "password does not match."
+msgstr ""
+
+#: public/views/template_rm_front_submissions.php:422
+msgid "Unique ID"
 msgstr ""
 
 #: public/views/template_rm_logged_in_view.php:70
@@ -11785,7 +11873,7 @@ msgid ""
 msgstr ""
 
 #: external/PayPal/paypal.php:86
-msgid "If you are not automatically redirected to paypal within 5 seconds..."
+msgid "If you are not automatically redirected to PayPal within 5 seconds..."
 msgstr ""
 
 #: external/PayPal/paypal.php:88
@@ -12152,7 +12240,7 @@ msgstr ""
 msgid "View Submissions"
 msgstr ""
 
-#: external/PFBC/Resources/recaptchalib.php:150
+#: external/PFBC/Resources/recaptchalib.php:152
 msgid "Captcha Error"
 msgstr ""
 
@@ -14222,12 +14310,6 @@ msgid ""
 "over other visual elements of the page. The extension is free, and you can "
 "get started within few minutes. You can create as many pages as you like "
 "with individual slugs."
-msgstr ""
-
-#: plus/lmsupport/templates/formflow_publish_extended.php:8
-#: plus/lmsupport/templates/frontend_primer.php:18
-#: plus/lmsupport/templates/promo_page.php:19
-msgid "Install Now"
 msgstr ""
 
 #: plus/lmsupport/templates/formflow_publish_extended.php:10

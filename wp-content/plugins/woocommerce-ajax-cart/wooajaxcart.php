@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce AJAX Cart
 Plugin URI: https://wordpress.org/plugins/woocommerce-ajax-cart/
 Description: Change the default behavior of WooCommerce Cart page, making AJAX requests when quantity field changes
-Version: 1.3.0
+Version: 1.3.1
 Author: Moises Heberle, Alex Szilagyi (contributor)
 Author URI: http://codecanyon.net/user/moiseh
 Text Domain: woocommerce-ajax-cart
@@ -20,8 +20,10 @@ if ( !function_exists('wac_init') ) {
     add_action('init', 'wac_init');
     add_filter('mh_wac_settings', 'wac_settings');
     add_filter('mh_wac_premium_url', 'wac_premium_url');
-    add_action('woocommerce_before_cart_table', 'wac_cart_table');
-    add_action('wac_enqueue_scripts', 'wac_enqueue_scripts');
+    add_action('woocommerce_before_cart_table', 'wac_enqueue_scripts');
+    add_action('wp_enqueue_scripts', 'wac_enqueue_scripts' );
+    // add_action('wac_enqueue_scripts', 'wac_enqueue_scripts');
+    // add_action('woocommerce_before_cart_table', 'wac_enqueue_scripts');
     add_filter('woocommerce_cart_item_quantity', 'wac_filter_woocommerce_cart_item_quantity', 10, 3);
     add_filter('wc_get_template', 'wac_get_template', 10, 5 );
     add_action('plugins_loaded', 'wac_load_plugin_textdomain');
@@ -112,24 +114,10 @@ if ( !function_exists('wac_init') ) {
     function wac_load_plugin_textdomain() {
         load_plugin_textdomain('woocommerce-ajax-cart', FALSE, basename( dirname(dirname( __FILE__ )) ) . '/languages/' );
     }
-    
-    // this is custom code to cart page ajax work in pages like "Woocommerce Shop page"
-    function wac_enqueue_cart_js() {
-        $path = 'assets/js/frontend/cart.js';
-        $src = str_replace( array( 'http:', 'https:' ), '', plugins_url( $path, WC_PLUGIN_FILE ) );
-    
-        $deps = array( 'jquery', 'wc-country-select', 'wc-address-i18n');
-        wp_enqueue_script( 'wc-cart', $src, $deps, WC_VERSION, true );
-    }
-    
-    function wac_cart_table() {
-        wac_enqueue_scripts();
-        wac_zero_quantity_confirmation();
-    }
-    
+
     function wac_enqueue_scripts() {
         wp_enqueue_style('wooajaxcart', plugins_url('assets/wooajaxcart.css', plugin_basename(WAC_BASE_FILE)));
-        wp_enqueue_script('wooajaxcart', plugins_url('assets/wooajaxcart.js', plugin_basename(WAC_BASE_FILE)), array('jquery'));
+        wp_enqueue_script('wooajaxcart', plugins_url('assets/wooajaxcart.js', plugin_basename(WAC_BASE_FILE)), array('jquery', 'wc-cart'));
     
         $frontendData = apply_filters('wac_frontend_vars', array(
             'updating_text' => __( 'Updating...', 'woocommerce-ajax-cart' ),
@@ -138,6 +126,7 @@ if ( !function_exists('wac_init') ) {
         ));
     
         wp_localize_script( 'wooajaxcart', 'wooajaxcart', $frontendData );
+        wac_zero_quantity_confirmation();
     }
     
     // check user confirmation when "quantity = 0" setting

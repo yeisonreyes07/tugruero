@@ -113,6 +113,15 @@ function tugruero_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Currency', 'tugruero' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'tugruero' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'tugruero_widgets_init' );
 
@@ -158,4 +167,148 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+//Insertar Javascript js y enviar ruta admin-ajax.php
+add_action('wp_enqueue_scripts', 'dcms_insertar_js');
+
+function dcms_insertar_js(){
+	wp_register_script('dcms_miscript', get_template_directory_uri(). '/js/ajax.js', array('jquery'), '1', true );
+	wp_enqueue_script('dcms_miscript');
+
+	wp_localize_script('dcms_miscript','dcms_vars',['ajaxurl'=>admin_url('admin-ajax.php')]);
+}
+
+
+add_action( 'wp_ajax_nopriv_bbloomer_add_product_to_cart', 'bbloomer_add_product_to_cart' );
+add_action( 'wp_ajax_bbloomer_add_product_to_cart', 'bbloomer_add_product_to_cart' );
+
+function bbloomer_add_product_to_cart() {
+          
+	// select ID
+	          
+	//check if product already in cart
+	global $woocommerce;
+	$woocommerce->cart->empty_cart(); 
+	
+	if ( WC()->cart->get_cart_contents_count() == 0 ) {
+	 
+		// if no products in cart, add it
+		WC()->cart->add_to_cart( $_POST['id'], $_POST['quantity'] );
+	          
+	}
+  
+}
+
+
+add_action( 'wp_ajax_nopriv_bbloomer_empty_products_to_cart', 'bbloomer_empty_products_to_cart' );
+add_action( 'wp_ajax_bbloomer_empty_products_to_cart', 'bbloomer_empty_products_to_cart' );
+
+function bbloomer_empty_products_to_cart() {
+          
+	// select ID
+	          
+	//check if product already in cart
+	
+	global $woocommerce;
+	$woocommerce->cart->empty_cart();
+     
+}
+
+function woocommerce_button_proceed_to_checkout() {
+	$checkout_url = WC()->cart->get_checkout_url();
+	?>
+	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Siguiente', 'woocommerce' ); ?></a>
+	<?php
+  }
+
+  add_filter( 'woocommerce_billing_fields', 'bbloomer_move_checkout_email_field', 10, 1 );
+ 
+  function bbloomer_move_checkout_email_field( $address_fields ) {
+	  #print_r($address_fields);
+	  $address_fields['billing_first_name']['priority'] = 1;
+	  $address_fields['billing_last_name']['priority'] = 2;
+		$address_fields['billing_myfield11']['priority'] = 3;
+		$address_fields['billing_myfield12']['priority'] = 4;
+	  $address_fields['billing_phone']['priority'] = 6;
+	  $address_fields['billing_myfield13']['priority'] = 6;
+	  $address_fields['billing_myfield14']['priority'] = 7;
+	  $address_fields['billing_email']['priority'] = 8;
+		$address_fields['billing_myfield15']['priority'] = 9;
+		$address_fields['billing_address_1']['priority'] = 10;
+	  $address_fields['billing_address_2']['priority'] = 11;
+	  $address_fields['billing_state']['priority'] = 12;
+	  $address_fields['billing_city']['priority'] = 13;
+	  $address_fields['billing_postcode']['priority'] = 14;
+	  $address_fields['billing_myfield16']['priority'] = 15;
+	  $address_fields['billing_myfield17']['priority'] = 16;
+	  #$address_fields['billing_myfield26']['priority'] = 8;
+	  #$address_fields['billing_myfield27']['priority'] = 9;
+	  
+	  $address_fields['billing_myfield18']['priority'] = 17;
+	  $address_fields['billing_myfield19']['priority'] = 18;
+	  $address_fields['billing_myfield20']['priority'] = 19;
+	  $address_fields['billing_myfield21']['priority'] = 20;
+	  $address_fields['billing_myfield22']['priority'] = 21;
+	  $address_fields['billing_myfield23']['priority'] = 22;
+	  $address_fields['billing_myfield24']['priority'] = 23;
+	  /*global $woocommerce;
+		
+		$items = $woocommerce->cart->get_cart();
+		foreach($items as $item => $values) {
+			$i=0;
+			for($ii= 0; $ii< $values['quantity']; $ii++){
+				$address_fields['billing_options'.$i] = array(
+					'label' => __('NIF'.$i, 'woocommerce'), // Add custom field label
+					'placeholder' => _x('Your NIF here....', 'placeholder', 'woocommerce'), // Add custom field placeholder
+					'required' => false, // if field is required or not
+					'clear' => false, // add clear or not
+					'type' => 'text', // add field type
+					'class' => array('form-row-first'),
+					'required'=> true,    // add class name
+				);
+				$address_fields['billing_options'.$i]['priority'] = 100+$i;
+				$i++;
+			}
+		}*/
+		return $address_fields;
+  }
+  function cosas()
+	{
+		global $woocommerce;
+		$items = $woocommerce->cart->get_cart();
+		echo '<div class="resumen-cart">';
+		foreach($items as $item => $values) { 
+			echo "<div class='paso'>Paso <span class='pas'>1</span><span class='pastotal'>/3</span></div>";
+			$_product =  wc_get_product( $values['data']->get_id()); 
+			echo "<div class='producto'>".$_product->get_title().'</div>'; 
+			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			echo "<div class='pago'>Total a pagar: ".$price."</div>";
+		}
+		echo "</div>"; 
+	}
+	function cosas3()
+	{
+		global $woocommerce;
+		$items = $woocommerce->cart->get_cart();
+		echo '<div class="resumen-cart">';
+		foreach($items as $item => $values) { 
+			echo "<div class='paso'>Paso <span class='pas'>3</span><span class='pastotal'>/3</span></div>";
+			$_product =  wc_get_product( $values['data']->get_id()); 
+			echo "<div class='producto'>".$_product->get_title().'</div>'; 
+			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			echo "<div class='pago'>Total a pagar: ".$price."</div>";
+		}
+		echo "</div>"; 
+	}
+	
+#add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
+/*function add_login_logout_link($items, $args) {
+        ob_start();
+        wp_loginout('/');
+        $loginoutlink = ob_get_contents();
+        ob_end_clean();
+        $items .= '<li>'. $loginoutlink .'</li>';
+    return $items;
+}*/
+
 

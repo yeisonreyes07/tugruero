@@ -51,7 +51,12 @@ get_header();
 			<div class="planes" id="planes">
 				<h1>Nuestros planes</h1>
 				<p class="subt">Adquiere nuestros planes anuales con los mejores descuentos, desde nuestra plataforma web.</p>
+				<div class="elige-moneda">
+					<label>Ver precios en</label>
+					<?php dynamic_sidebar('sidebar-2'); ?>
+				</div>
 				<div class="container-planes">
+					
 					<?php #$query= new WP_Query('post_type=product&order=ASC');
 						$query = new WC_Product_Query( array(
 							'limit' => 10,
@@ -74,24 +79,20 @@ get_header();
 								<div class="desc">
 									<p><?php echo $product->get_short_description(); ?></p>
 								</div>
+								<div class="tachado">
+									<span class="dolar">$ <?php echo get_field("precio_anterior_dolar", $product->id);?></span>
+									<span class="vef">Bs.S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
+								</div>
 								<div class="price">
+									<?php #print_r($product);?>
 									<?php echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
  								</div>
 							</div>
 							<div class="description">
-								<!--<p>Auxilio vial en 30 minutos</p>
-								<p>Acceso a servicios vía Call Center</p>
-								<p>Búsqueda de grueros vía GPS</p>
-								<p>Disponible en los 24 estados del país</p>
-								<p>2000 grueros disponibles para el auxilio</p>
-								<p>RCV (Opcional)</p>
-								<p>Tres (03) servicios de grúa de 25Km</p>
-								<p>Servicios de grúa ilimitados de 50Km</p> 
-								<p>Un (01) servicios de grúa de 100Km</p>-->
 								<p><?php echo $product->get_description();?></p>
 							</div>
 							<div class="afiliate">
-								<a href="#">Afíliate</a>
+								<a href="<?php echo get_home_url();?>/plan">Afíliate</a>
 							</div>
 						</div>
 					</div>
@@ -132,7 +133,7 @@ get_header();
 								<p><?php the_field("planes_tu_gruero");?></p>
 							</div>
 							<div class="boton">
-								<a href="#">Ver Planes</a>
+								<a href="#planes" id="viewPlan">Ver Planes</a>
 							</div>
 						</div>
 					</div>

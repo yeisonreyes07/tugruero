@@ -374,4 +374,13 @@ class RM_Options_Controller
         $view = $this->mv_handler->setView('options_advance');
         $view->render($data);
     }
+    
+    public function eventprime($model,$service,$request,$params){
+        $data= new stdClass();
+        $installUrl = admin_url('update.php?action=install-plugin&plugin=eventprime-event-calendar-management');
+        $installUrl = wp_nonce_url($installUrl, 'install-plugin_eventprime-event-calendar-management');
+        $data->ep_install_url= $installUrl;
+        $view = $this->mv_handler->setView('options_eventprime');
+        $view->render($data);
+    }
 }

@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Multi-Step Checkout
  * Plugin URI: https://wordpress.org/plugins/wp-multi-step-checkout/
  * Description: Nice multi-step checkout for your WooCommerce store
- * Version: 1.17
+ * Version: 1.18
  * Author: SilkyPress
  * Author URI: https://www.silkypress.com
  * License: GPL2
@@ -28,7 +28,7 @@ if ( ! class_exists( 'WPMultiStepCheckout' ) ) :
  * @class WPMultiStepCheckout
  */
 final class WPMultiStepCheckout {
-    public $version = '1.17';
+    public $version = '1.18';
     public $options = array();
 
     protected static $_instance = null;
@@ -191,7 +191,7 @@ final class WPMultiStepCheckout {
 
       if ( $this->theme('storefront')) { ?>
         <style type="text/css">
-          #order_review, #order_review_heading { float: left; }
+          #order_review, #order_review_heading { float: left; width: 100%; }
         </style>
       <?php }
 
@@ -200,6 +200,8 @@ final class WPMultiStepCheckout {
           .wpmc-nav-wrapper { float: left; margin-top: 10px; }
           .woocommerce-checkout a.continue-checkout{display: none;}
           .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:1em 2em 1em 3.5em;margin:0 0 2em;position:relative;background-color:#f7f6f7;color:#515151;border-top:3px solid #a46497;list-style:none outside;width:auto;word-wrap:break-word}.woocommerce-error::after,.woocommerce-error::before,.woocommerce-info::after,.woocommerce-info::before,.woocommerce-message::after,.woocommerce-message::before{content:' ';display:table}.woocommerce-error::after,.woocommerce-info::after,.woocommerce-message::after{clear:both}.woocommerce-error .button,.woocommerce-info .button,.woocommerce-message .button{float:right}.woocommerce-error li,.woocommerce-info li,.woocommerce-message li{list-style:none outside!important;padding-left:0!important;margin-left:0!important}.rtl.woocommerce .price_label,.rtl.woocommerce .price_label span{direction:ltr;unicode-bidi:embed}.woocommerce-message{border-top-color:#8fae1b}.woocommerce-info{border-top-color:#1e85be}.woocommerce-info::before{color:#1e85be}.woocommerce-error{border-top-color:#b81c23}.woocommerce-checkout .shop_table td, .woocommerce-checkout .shop_table th {padding: 10px}.woocommerce .single_add_to_cart_button, .woocommerce button.button {margin-top: 10px}
+          .woocommerce .woocommerce-form-coupon-toggle { display: none; }
+          .woocommerce .checkout_coupon { display: flex !important; }
         </style>
       <?php }
 
@@ -241,10 +243,15 @@ final class WPMultiStepCheckout {
         </style>
       <?php }
 
+      if ( $this->theme('zass')) { ?>
+        <style type="text/css">form.checkout.woocommerce-checkout.processing:after {content: '';}.woocommerce form.checkout.woocommerce-checkout.processing:before {display: none;}</style>
+      <?php }
+
 
       if ( defined( 'WPB_VC_VERSION' ) ) { ?>
         <style type="text/css">
-            .woocommerce-checkout .wpb_column .vc_column-inner::after{clear:none !important;}
+            .woocommerce-checkout .wpb_column .vc_column-inner::after{clear:none !important; content: none !important;}
+            .woocommerce-checkout .wpb_column .vc_column-inner::before{content: none !important;}
         </style>
       <?php } 
 

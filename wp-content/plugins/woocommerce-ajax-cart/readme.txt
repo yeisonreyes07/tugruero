@@ -3,7 +3,7 @@ Contributors: moiseh, el.severo
 Tags: woocommerce, ajax, cart, shipping
 Requires at least: 4.2
 Tested up to: 5.0.1
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Premium version features:
 
 * Allow to change quantities in shop, minicart and single product pages [view demo](https://youtu.be/a4w8wNlZhxk)
 * Make the `Add to cart` button to perform with AJAX, without full page reload [view demo](https://youtu.be/o0VPfMCIctc)
+
+Other suggested plugins:
+[WooCommerce Bookings Calendar](https://wordpress.org/plugins/woo-bookings-calendar)
 
 == Installation ==
 
@@ -94,6 +97,9 @@ Premium version features:
 
 = 1.3.0 =
 * Added AJAX timeout option to delay when change cart quantity
+
+= 1.3.1 =
+* Registering scripts using common hook `wp_enqueue_scripts`
 
 == Frequently Asked Questions ==
 

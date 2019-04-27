@@ -312,6 +312,9 @@ if (!$data->payments && !$data->submissions && $data->is_user !== true)
                 $i = 0;
                 if ($data->submissions):
                     foreach ($data->submissions as $data_single):
+                        $submission= new RM_Submissions();
+                        $submission->load_from_db($data_single->submission_id);
+                        $token= $submission->get_unique_token();
                         ?>  
                         <tr>
                             <td id="<?php echo $data_single->submission_id; ?>"><?php echo ++$i; ?></td>
@@ -416,16 +419,21 @@ if (!$data->payments && !$data->submissions && $data->is_user !== true)
                 <tr>
                     <th class="rm-bg-lt"><?php echo RM_UI_Strings::get('LABEL_DATE'); ?></th>
                     <th class="rm-bg-lt"><?php echo RM_UI_Strings::get('LABEL_FORM'); ?></th>
+                    <th class="rm-bg-lt"><?php _e('Unique ID','custom-registration-form-builder-with-submission-manager'); ?></th>
                     <th class="rm-bg-lt"><?php echo RM_UI_Strings::get('LABEL_AMOUNT'); ?></th>
                     <th class="rm-bg-lt"><?php echo RM_UI_Strings::get('LABEL_INVOICE_SHORT'); ?></th>
                     <th class="rm-bg-lt"><?php echo RM_UI_Strings::get('LABEL_STATUS'); ?></th>
                 </tr>
                 <?php
                 for ($i = $data->offset_pay; $i < $data->end_offset_this_page; $i++):
+                        $submission= new RM_Submissions();
+                        $submission->load_from_db($data->payments[$i]->submission_id);
+                        $token= $submission->get_unique_token();
                     ?>
                     <tr>
                         <td><?php echo RM_Utilities::localize_time($data->payments[$i]->posted_date, $data->date_format); ?></td>
                         <td><a href="<?php echo add_query_arg( 'submission_id',$data->payments[$i]->submission_id); ?>"><?php echo $data->form_names[$data->payments[$i]->submission_id]; ?></a></td>
+                        <td><?php echo !empty($token) ? $token : ''; ?></td>
                         <td><?php echo $data->payments[$i]->total_amount; ?></td>
                         <td><?php echo $data->payments[$i]->invoice; ?></td>
                         <td><?php echo $data->payments[$i]->status; ?></td>

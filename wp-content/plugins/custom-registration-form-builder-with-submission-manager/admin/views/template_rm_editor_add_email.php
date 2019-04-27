@@ -5,7 +5,14 @@ $option_string='';
 
 foreach($data->emails as $email)
 {
-    $option_string .= '<option value="'.$email->field_type.'_'.$email->field_id.'">'.$email->field_label.'</option>';
+    $opt_value= $email->field_type.'_'.$email->field_id;
+    $type= strtolower($email->field_type);
+    if($type=='username'){
+        $opt_value= 'Username';
+    } else if($type=='userpassword'){
+        $opt_value= 'UserPassword';
+    }
+    $option_string .= '<option value="'.$opt_value.'">'.$email->field_label.'</option>';
 }
 ?>
 

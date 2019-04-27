@@ -5,7 +5,7 @@ Email: diana@burduja.eu
 Tags: multistep checkout, multi-step-checkout, woocommerce, checkout, shop checkout, checkout steps, checkout wizard, checkout style, checkout page
 Requires at least: 3.0.1
 Tested up to: 5.1 
-Stable tag: 1.17
+Stable tag: 1.18
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 5.2.4
@@ -77,6 +77,12 @@ The plugin doesn't add any cookies and it doesn't modify/add/delete any of the f
 6. On mobile devices
 
 == Changelog ==
+
+= 1.18 =
+* 04/12/2019
+* Fix: the "Your Order" section is squished in half a column on the Storefront theme
+* Fix: don't toggle the coupon form on the Avada theme
+* Fix: remove constantly loading icon from the Zass theme
 
 = 1.17 =
 * 02/24/2019

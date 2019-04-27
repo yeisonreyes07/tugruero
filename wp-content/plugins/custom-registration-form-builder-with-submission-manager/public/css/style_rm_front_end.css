@@ -1689,6 +1689,12 @@ pre.rm-pre-wrapper-for-script-tags {
     box-shadow: 0 0 30px 0 rgba(18, 25, 33, 0.15);
 }
 
+/* --- Rich text widget full width --- */
+
+.rmagic .rminput.rm-richtext-fw { 
+    width: 100%;
+}
+
 /*--- Login Page Third Party Button  ----*/
 
 .rmagic .rmcontent.rm-login-wrapper {

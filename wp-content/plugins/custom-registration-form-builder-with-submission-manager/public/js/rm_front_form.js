@@ -401,6 +401,19 @@ jQuery(document).ready(function(){
             });
         }
     });
+    // refresh form on back button
+    if($(".rmagic-form").length>0 && performance){
+        var perfEntries = performance.getEntriesByType("navigation");
+        if(perfEntries){
+            for (var i=0; i < perfEntries.length; i++) {
+                var p = perfEntries[i];
+                if(p.type && p.type=='back_forward'){
+                    location.reload(true);
+                }
+            }
+        }
+        
+    }
 });
 
 
@@ -426,4 +439,3 @@ function rmRemoveURLParameter(url, parameter) {
         return url;
     }
 }
-
