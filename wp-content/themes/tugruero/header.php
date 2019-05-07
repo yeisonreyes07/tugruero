@@ -62,7 +62,7 @@
 	</header><!-- #masthead -->
 	<a href="https://api.whatsapp.com/send?phone=<?php the_field("telefono"); ?>" target="_blank">
 		<div class="wasa">
-			<img src="http://127.0.0.1/tugruero/wp-content/uploads/2019/05/Logo-WhatsApp.png" alt="">
+			<img src="<?php echo site_url();?>/wp-content/uploads/2019/05/Logo-WhatsApp.png" alt="">
 		</div>
 	</a>
 	<div id="content" class="site-content">
