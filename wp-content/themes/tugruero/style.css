@@ -1511,12 +1511,12 @@ header.site-header.scrolling{
 	line-height: 1em;
 	font-family: 'Nunito-Bold', sans-serif;
 	text-align: center;
-	margin: 0px auto 80px auto;
+	margin: 0px auto 30px auto;
 	width: 40%;
 	font-size: 1.1em;
 }
 .planes .widget_wmc_widget{
-	//width: calc(80% - 50px);
+	/*width: calc(80% - 50px);*/
 	margin: 0px auto 100px auto;
 }
 .page-template-content-plan .widget_wmc_widget {
@@ -1593,7 +1593,7 @@ header.site-header.scrolling{
 	width: 8px;
 	margin-right: 4px;
 }
-.planes .container-planes .product .body-product  .afiliate{
+.planes .container-planes .product .body-product .afiliate{
 	background: rgb(213, 118, 56);
 	border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -1602,11 +1602,11 @@ header.site-header.scrolling{
     cursor: pointer;
 	transition: all 0.5s ease;
 }
-.planes .container-planes .product .body-product  .afiliate:hover{
+.planes .container-planes .product .body-product .afiliate:hover{
 	background: rgb(45, 48, 51);
 	transition: all 0.5s ease;
 }
-.planes .container-planes .product .body-product  .afiliate a{
+.planes .container-planes .product .body-product a{
 	color: white;
 	font-size: 1.3em;
 	text-decoration: none;
@@ -1734,7 +1734,7 @@ body:not(.home) .site-content{
 .woocommerce-checkout #content article header{
 	text-align: center;
 }
-.woocommerce-checkout form .form-row input[type=text], .woocommerce-checkout form .form-row input[type=password],
+.woocommerce-checkout form .form-row input[type=text], .woocommerce-checkout form .form-row input[type=date], .woocommerce-checkout form .form-row input[type=password],
 .woocommerce-checkout form .form-row input[type=number], .woocommerce-checkout form .form-row input[type=email],
 .woocommerce-checkout form .form-row textarea, .woocommerce-checkout form .form-row input[type=tel],
 .tml-action form input[type=text], .tml-action form input[type=password],
@@ -2196,7 +2196,10 @@ body:not(.home) .site-content{
 	right: 40px;
 	top: 100px;
 	font-family: 'Nunito-Bold', sans-serif;
-
+	background: rgba(213,118,56,0.7);
+    padding: 10px;
+    border-radius: 10px;
+    top: 130px;
 }
 .resumen-cart .paso{
 	font-size: 25px;
@@ -2240,4 +2243,21 @@ body:not(.home) .site-content{
 .elige-moneda{
 	width: calc(80% - 50px);
 	margin: 0px auto;
+}
+.invalido{
+	border: 1px solid #f00;
+}
+.wasa{
+	position: fixed;
+	z-index: 1000;
+	bottom: 20px;
+	right: 20px;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	background: #009688;
+}
+.wasa img{
+	width: 35px;
 }

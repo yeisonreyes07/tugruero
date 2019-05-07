@@ -278,10 +278,12 @@ function woocommerce_button_proceed_to_checkout() {
 		$items = $woocommerce->cart->get_cart();
 		echo '<div class="resumen-cart">';
 		foreach($items as $item => $values) { 
+			echo "<h6>Resumen de compra</h6>";
 			echo "<div class='paso'>Paso <span class='pas'>1</span><span class='pastotal'>/3</span></div>";
 			$_product =  wc_get_product( $values['data']->get_id()); 
 			echo "<div class='producto'>".$_product->get_title().'</div>'; 
-			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			// $price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			$price = get_woocommerce_currency_symbol()." ".$values['quantity']*$_product->get_price();
 			echo "<div class='pago'>Total a pagar: ".$price."</div>";
 		}
 		echo "</div>"; 
@@ -292,10 +294,12 @@ function woocommerce_button_proceed_to_checkout() {
 		$items = $woocommerce->cart->get_cart();
 		echo '<div class="resumen-cart">';
 		foreach($items as $item => $values) { 
+			echo "<h6>Resumen de compra</h6>";
 			echo "<div class='paso'>Paso <span class='pas'>3</span><span class='pastotal'>/3</span></div>";
 			$_product =  wc_get_product( $values['data']->get_id()); 
 			echo "<div class='producto'>".$_product->get_title().'</div>'; 
-			$price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			// $price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
+			$price = get_woocommerce_currency_symbol()." ".$values['quantity']*$_product->get_price();
 			echo "<div class='pago'>Total a pagar: ".$price."</div>";
 		}
 		echo "</div>"; 

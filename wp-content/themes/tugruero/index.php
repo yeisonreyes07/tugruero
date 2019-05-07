@@ -50,7 +50,7 @@ get_header();
 			</div>
 			<div class="planes" id="planes">
 				<h1>Nuestros planes</h1>
-				<p class="subt">Adquiere nuestros planes anuales con los mejores descuentos, desde nuestra plataforma web.</p>
+				<p class="subt">Si compras en nuestra página web tienes un 15% de descuento en todos nuestros planes.</p>
 				<div class="elige-moneda">
 					<label>Ver precios en</label>
 					<?php dynamic_sidebar('sidebar-2'); ?>
@@ -81,19 +81,22 @@ get_header();
 								</div>
 								<div class="tachado">
 									<span class="dolar">$ <?php echo get_field("precio_anterior_dolar", $product->id);?></span>
-									<span class="vef">Bs.S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
+									<span class="vef">Bs. S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
 								</div>
 								<div class="price">
 									<?php #print_r($product);?>
-									<?php echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
+									<?php echo get_woocommerce_currency_symbol()." ".$product->get_price(); ?>
+									<?php //echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
  								</div>
 							</div>
 							<div class="description">
 								<p><?php echo $product->get_description();?></p>
 							</div>
-							<div class="afiliate">
-								<a href="<?php echo get_home_url();?>/plan">Afíliate</a>
-							</div>
+							<a href="<?php echo get_home_url();?>/plan">
+								<div class="afiliate">
+									Afíliate
+								</div>
+							</a>
 						</div>
 					</div>
 					<?php }#}?>

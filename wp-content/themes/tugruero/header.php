@@ -52,13 +52,17 @@
 					$query->the_post();
 					$query->the_content();
 			?>
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/TELEFONO.png" />
-				<span><?php the_field("telefono"); ?></span>
+				<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/TELEFONO.png" />
+				<span><a href="tel:<?php the_field("telefono"); ?>" style="color:#fff;"><?php the_field("telefono"); ?></a></span> -->
 			<?php }}?>
 			</div>
 		</div><!-- .site-branding -->
 
 		
 	</header><!-- #masthead -->
-
+	<a href="https://api.whatsapp.com/send?phone=<?php the_field("telefono"); ?>" target="_blank">
+		<div class="wasa">
+			<img src="http://127.0.0.1/tugruero/wp-content/uploads/2019/05/Logo-WhatsApp.png" alt="">
+		</div>
+	</a>
 	<div id="content" class="site-content">
