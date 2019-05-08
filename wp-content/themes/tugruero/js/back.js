@@ -180,6 +180,11 @@ $(document).ready(function() {
 				items+="<li>El campo Correo Electrónico es requerido.";
 				valid=false;
 			}
+
+			if(validarEmail($('.woocommerce-billing-fields #billing_email').val())){
+				items+="<li>El campo Correo Electrónico no es valido.";
+				valid=false;
+			}
 			
 			if($('.woocommerce-billing-fields #billing_myfield15').val()==''){
 				$('.woocommerce-billing-fields #billing_myfield15').addClass("invalido");
@@ -389,6 +394,14 @@ $(document).ready(function() {
 	console.log(window.location.pathname);
 })
 	
+
+function validarEmail(valor) {
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
+		return true;
+	} else {
+		return false;
+	}
+}
 	/*
 	1- Colocar nombre y apellido en el registro
 	1- Detalle del pedido en el titulo
