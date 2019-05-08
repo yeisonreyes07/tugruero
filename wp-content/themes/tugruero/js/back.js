@@ -164,6 +164,14 @@ $(document).ready(function() {
 				items+="<li>El campo Cédula/RIF es requerido.";
 				valid=false;
 			}
+			if($('.woocommerce-billing-fields #billing_myfield14').val().length>6 || $('.woocommerce-billing-fields #billing_myfield14').val().length<8){
+				$('.woocommerce-billing-fields #billing_myfield14').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield14').focus(function(){
+					$(this).removeClass('invalido');
+				})
+				items+="<li>El campo Cédula/RIF es requerido.";
+				valid=false;
+			}
 			if($('.woocommerce-billing-fields #billing_email').val()==''){
 				$('.woocommerce-billing-fields #billing_email').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_email').focus(function(){
@@ -331,6 +339,7 @@ $(document).ready(function() {
 			$('article .entry-header .entry-title').text("Resumen de Compra");
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 			$('.resumen-cart .paso .pas').text("3");
+			$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
 		}else{
 			$(".msg-error").append(items);
 		}
