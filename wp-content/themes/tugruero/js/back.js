@@ -68,12 +68,12 @@ $(document).ready(function() {
 		$('.woocommerce-billing-fields h3').addClass('hide');
 		$("#checkout_coupon").addClass('hide');
 		if (!$('body').hasClass('logged-in')) {		
-			$('<div class="btn-conductor"><div class="izq"><a href="/plan">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield17_field');
-			$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_company_field');
+			$('<div class="btn-conductor"><div class="izq"><a href="/tugruero/plan">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield25_field');
+			$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield25_field');
 			//$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
 			//$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));
 		}else{
-			$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield27_field');
+			$('<div class="btn-conductor"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield25_field');
 			$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
 			$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));	
 		}
@@ -117,60 +117,112 @@ $(document).ready(function() {
 			var valid=true;
 			console.log($('.woocommerce-billing-fields #billing_first_name').val());
 			if($('.woocommerce-billing-fields #billing_first_name').val()==''){
+				$('.woocommerce-billing-fields #billing_first_name').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_first_name').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Nombres es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_last_name').val()==''){
+				$('.woocommerce-billing-fields #billing_last_name').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_last_name').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Apellidos es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_myfield11').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield11').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield11').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Sexo es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_phone').val()==''){
+				$('.woocommerce-billing-fields #billing_phone').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_phone').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Celular es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_phone').val().length!=7){
+				$('.woocommerce-billing-fields #billing_phone').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_phone').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Celular debe tener 7 dígitos.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_myfield14').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield14').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield14').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Cédula/RIF es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_email').val()==''){
+				$('.woocommerce-billing-fields #billing_email').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_email').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Correo Electrónico es requerido.";
 				valid=false;
 			}
 			
 			if($('.woocommerce-billing-fields #billing_myfield15').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield15').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield15').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Fecha de Nacimiento es requerido.";
 				valid=false;
 			}
 			
 			if($('.woocommerce-billing-fields #billing_address_1').val()==''){
+				$('.woocommerce-billing-fields #billing_address_1').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_address_1').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Dirección es requerido.";
 				valid=false;
 			}
 			
 			if($('.woocommerce-billing-fields #billing_city').val()==''){
+				$('.woocommerce-billing-fields #billing_city').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_city').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Cíudad es requerido.";
 				valid=false;
 			
 			}
 			
 			if($('.woocommerce-billing-fields #billing_state').val()==''){
+				$('.woocommerce-billing-fields #billing_state').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_state').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Estado es requerido.";
 				valid=false;
 			}
 			
 			if($('.woocommerce-billing-fields #billing_postcode').val()==''){
+				$('.woocommerce-billing-fields #billing_postcode').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_postcode').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Código Postal es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_myfield16').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield16').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield16').focus(function(){
+					$(this).removeClass('invalido');
+				})
 				items+="<li>El campo Estado Civil es requerido.";
 				valid=false;
 			}
@@ -276,7 +328,7 @@ $(document).ready(function() {
 		if(valid==true){
 			$(".wpmc-step-item.wpmc-step-billing").removeClass("current");
 			$("#order_review").addClass("current");
-			$('article .entry-header .entry-title').text("Resumen de Pedido");
+			$('article .entry-header .entry-title').text("Resumen de Compra");
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 			$('.resumen-cart .paso .pas').text("3");
 		}else{
@@ -300,7 +352,7 @@ $(document).ready(function() {
 		
 	});
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
-		$('article .entry-header .entry-title').text("Facturación");
+		$('article .entry-header .entry-title').text("Pago");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 	});

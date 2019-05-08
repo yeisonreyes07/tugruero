@@ -2245,7 +2245,7 @@ body:not(.home) .site-content{
 	margin: 0px auto;
 }
 .invalido{
-	border: 1px solid #f00;
+	border: 1px solid #f00 !important;
 }
 .wasa{
 	position: fixed;
