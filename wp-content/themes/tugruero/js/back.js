@@ -164,7 +164,7 @@ $(document).ready(function() {
 				items+="<li>El campo Cédula/RIF es requerido.";
 				valid=false;
 			}
-			if($('.woocommerce-billing-fields #billing_myfield14').val().length>6 || $('.woocommerce-billing-fields #billing_myfield14').val().length<8){
+			if($('.woocommerce-billing-fields #billing_myfield14').val().length>6 && $('.woocommerce-billing-fields #billing_myfield14').val().length<8){
 				$('.woocommerce-billing-fields #billing_myfield14').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_myfield14').focus(function(){
 					$(this).removeClass('invalido');
