@@ -356,7 +356,6 @@ $(document).ready(function() {
 			$('article .entry-header .entry-title').text("Resumen de Compra");
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 			$('.resumen-cart .paso .pas').text("3");
-			$('#wpmc-next').remove();
 		}else{
 			$(".msg-error").append(items);
 		}
