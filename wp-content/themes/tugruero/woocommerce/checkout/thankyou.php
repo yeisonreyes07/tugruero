@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h1>Su pago se ha</h1>
 		<h1>efectuado éxitosamente</h1>
 		<p>En un plazo de max 48 horas nuestro departamento de comercializacion validara toda la informacion y te enviaremos el contrato de servicio a tu correo.</p>
-		<a href="<?php echo get_home_url();?>">Aceptar</a>
+		<a href="<?php echo get_home_url();?>">Finalizar</a>
 	</div>
 </div>
 <!--<div class="woocommerce-order">

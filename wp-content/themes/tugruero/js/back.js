@@ -385,6 +385,7 @@ $(document).ready(function() {
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 		$('#wpmc-next').remove();
+		$("#place_order").html("Procesar pago");
 	});
 	$("#wpmc-prev").on('click', function(){
 		$("#checkout_coupon").addClass('hide');
