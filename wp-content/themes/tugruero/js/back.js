@@ -380,6 +380,7 @@ $(document).ready(function() {
 		$('article .entry-header .entry-title').text("Pago");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
+		$('#wpmc-next').remove();
 	});
 	$("#wpmc-prev").on('click', function(){
 		$("#checkout_coupon").addClass('hide');
