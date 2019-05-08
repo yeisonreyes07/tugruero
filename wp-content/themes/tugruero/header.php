@@ -60,7 +60,7 @@
 
 		
 	</header><!-- #masthead -->
-	<a href="https://api.whatsapp.com/send?phone=584241391462" target="_blank">
+	<a href="https://api.whatsapp.com/send?phone=+584241391462" target="_blank">
 		<div class="wasa">
 			<img src="<?php echo site_url();?>/wp-content/uploads/2019/05/Logo-WhatsApp.png" alt="">
 		</div>
