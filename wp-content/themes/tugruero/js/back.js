@@ -64,7 +64,7 @@ $(document).ready(function() {
 		$('<div class="msg-error"></div>').insertBefore('.woocommerce-checkout #content #primary');
 		$('#wpmc-next').text("Siguente");
 		$('#wpmc-prev').text("Anterior");
-		$("#billing_postcode_field").hide();
+		// $("#billing_postcode_field").hide();
 		$('.woocommerce-account-fields p label input').attr("checked", "checked");
 		$('.woocommerce-billing-fields h3').addClass('hide');
 		$("#checkout_coupon").addClass('hide');
