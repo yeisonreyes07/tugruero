@@ -2534,7 +2534,7 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'root', '$P$Baf8gzYpA3uRNVNNJwsUU2Nrax7c0K/', 'root', 'fidel.alejos@gmail.com', '', '2019-03-07 00:22:33', '', 0, 'root'),
+(1, 'root', '$P$BVVMhST7muukCv0IpDrM7vWvwjzC6L0', 'root', 'fidel.alejos@gmail.com', '', '2019-03-07 00:22:33', '', 0, 'root'),
 (3, 'fidel.aliaga', '$P$B3b2zwSeahe/95X9iW28ngMxrCXCIV.', 'fidel-aliaga', 'fidel.aliaga@binaural.com.ve', '', '2019-04-09 17:58:17', '', 0, 'fidel.aliaga'),
 (4, 'fidel', '$P$ByHjfwXEMIQ1jaN1ADwa3q3A0Ei0KA0', 'fidel', 'fidel@yopmail.com', '', '2019-04-10 16:49:44', '', 0, 'fidel');
 

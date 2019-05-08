@@ -64,6 +64,7 @@ $(document).ready(function() {
 		$('<div class="msg-error"></div>').insertBefore('.woocommerce-checkout #content #primary');
 		$('#wpmc-next').text("Siguente");
 		$('#wpmc-prev').text("Anterior");
+		$("#billing_postcode").hide();
 		$('.woocommerce-account-fields p label input').attr("checked", "checked");
 		$('.woocommerce-billing-fields h3').addClass('hide');
 		$("#checkout_coupon").addClass('hide');
@@ -88,6 +89,8 @@ $(document).ready(function() {
 		$('.woocommerce-billing-fields #billing_myfield23_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield24_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield25_field').addClass('hide');
+		$("#billing_address_1_field label").empty();
+		$("#billing_address_1_field label").append('Dirección de domicilio&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
 		$("#billing_city_field label").empty();
 		$("#billing_city_field label").append('Ciudad&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
 		$("#billing_state_field label").empty();
@@ -231,14 +234,14 @@ $(document).ready(function() {
 				valid=false;
 			}
 			
-			if($('.woocommerce-billing-fields #billing_postcode').val()==''){
-				$('.woocommerce-billing-fields #billing_postcode').addClass("invalido");
-				$('.woocommerce-billing-fields #billing_postcode').focus(function(){
-					$(this).removeClass('invalido');
-				})
-				items+="<li>El campo Código Postal es requerido.";
-				valid=false;
-			}
+			// if($('.woocommerce-billing-fields #billing_postcode').val()==''){
+			// 	$('.woocommerce-billing-fields #billing_postcode').addClass("invalido");
+			// 	$('.woocommerce-billing-fields #billing_postcode').focus(function(){
+			// 		$(this).removeClass('invalido');
+			// 	})
+			// 	items+="<li>El campo Código Postal es requerido.";
+			// 	valid=false;
+			// }
 			if($('.woocommerce-billing-fields #billing_myfield16').val()==''){
 				$('.woocommerce-billing-fields #billing_myfield16').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_myfield16').focus(function(){
