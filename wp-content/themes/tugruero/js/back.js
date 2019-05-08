@@ -70,7 +70,7 @@ $(document).ready(function() {
 		$("#checkout_coupon").addClass('hide');
 		if (!$('body').hasClass('logged-in')) {		
 			$('<div class="btn-conductor"><div class="izq"><a href="/tugruero/plan">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield17_field');
-			$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield17_field');
+			$('<div class="btn-carro"><div class="izq"><a href="#">Anterior</a></div><div class="der"><a href="#">Siguiente</a></div></div>').insertAfter('#billing_myfield25_field');
 			//$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
 			//$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));
 		}else{
