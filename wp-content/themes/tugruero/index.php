@@ -85,7 +85,7 @@ get_header();
 								</div>
 								<div class="price">
 									<?php #print_r($product);?>
-									<?php echo get_woocommerce_currency_symbol()." ".number_format($product->get_price(), 2, '.', ','); ?>
+									<?php echo get_woocommerce_currency_symbol()." ".number_format($product->get_price(), 2, ',', '.'); ?>
 									<?php //echo get_woocommerce_currency_symbol()." ".money_format('%i',$product->get_price()); ?>
  								</div>
 							</div>
