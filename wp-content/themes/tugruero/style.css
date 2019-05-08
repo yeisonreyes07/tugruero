@@ -2199,7 +2199,8 @@ body:not(.home) .site-content{
 	background: rgba(213,118,56,0.7);
     padding: 10px;
     border-radius: 10px;
-    top: 130px;
+	top: 130px;
+	z-index: 1000;
 }
 .resumen-cart .paso{
 	font-size: 25px;

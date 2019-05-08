@@ -215,6 +215,10 @@ $(document).ready(function() {
 				items+="<li>El campo Dirección es requerido.";
 				valid=false;
 			}
+
+			if($('.woocommerce-billing-fields #billing_address_2').val()==''){
+				$('.woocommerce-billing-fields #billing_address_2').val(".");
+			}
 			
 			if($('.woocommerce-billing-fields #billing_city').val()==''){
 				$('.woocommerce-billing-fields #billing_city').addClass("invalido");
