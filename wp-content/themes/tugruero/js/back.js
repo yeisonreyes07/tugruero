@@ -65,6 +65,7 @@ $(document).ready(function() {
 		$('#wpmc-next').text("Siguente");
 		$('#wpmc-prev').text("Anterior");
 		$("#billing_postcode_field").hide();
+		$("#billing_postcode").val("0000");
 		$('.woocommerce-account-fields p label input').attr("checked", "checked");
 		$('.woocommerce-billing-fields h3').addClass('hide');
 		$("#checkout_coupon").addClass('hide');
