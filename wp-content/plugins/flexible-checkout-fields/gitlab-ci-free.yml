@@ -1,0 +1,5 @@
+include: 'https://gitlab.com/wpdesk/gitlab-ci/raw/master/gitlab-ci-1.2.yml'
+
+
+deploy to repository:
+  when: on_success
