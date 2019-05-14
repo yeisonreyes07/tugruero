@@ -2246,7 +2246,7 @@ body:not(.home) .site-content{
 	margin: 0px auto;
 }
 .invalido{
-	border: 1px solid #f00 !important;
+	border: 2px solid #f00 !important;
 }
 .wasa{
 	position: fixed;
@@ -2261,4 +2261,7 @@ body:not(.home) .site-content{
 }
 .wasa img{
 	width: 35px;
+}
+.woocommerce-Price-currencySymbol{
+	margin-right: 10px;
 }

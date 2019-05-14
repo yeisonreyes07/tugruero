@@ -34,7 +34,7 @@ get_header();
 			<input type="number" id="cantidad" value="1"/>					
         </div>
         <div class="form-row">
-        	<label>¿En cuál moneda deseas pagar tu plan?</label>
+        	<label>Haz seleccionado la moneda</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
         </div>
@@ -53,3 +53,11 @@ get_header();
  
 <?php endif; ?>
 <?php get_footer(); ?>
+
+<script>
+	$(document).ready(function(){
+		$("#wmc_widget-2").hide();
+		$("#wmc_widget-2").before('<input type="text" value="'+$("#wmc_widget-2 select option:selected").html()+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;">');
+		$("#wmc_widget-2").after('<small>¿Desea cambiar la moneda, <a href="../">click aquí</a>?</small>');
+	})
+</script>

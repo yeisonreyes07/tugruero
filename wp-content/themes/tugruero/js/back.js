@@ -1,4 +1,24 @@
 $(document).ready(function() {
+	$("#wmc_widget-2 select option").each(function(i,v){
+		if($(this).html()=="Bolívar soberano"){
+			$(this).html("Bolívar soberano (Bs.S)")
+		}
+	})
+	$("#billing_myfield18_field select").prepend("<option selected disabled value='0'>-</option>");
+	$("#billing_myfield19_field select").prepend("<option selected disabled value='0'>-</option>");
+	$("#billing_myfield20_field select").prepend("<option selected disabled value='0'>-</option>");
+	$("#billing_myfield24_field select").prepend("<option selected disabled value='0'>-</option>");
+
+	$(".resumen-cart .pago").each(function(i,v){
+		var valor_ofice = $(this).html()
+		var valor = valor_ofice.split("Bs.S ");
+		if(valor.length>1){
+			var precio = parseInt(valor[1]).toLocaleString();
+			$(this).html(valor[0]+"Bs.S "+precio);
+		}
+	})
+
+	
 	// body...
 	$('article .entry-header .entry-title').text("");
 			
@@ -79,6 +99,12 @@ $(document).ready(function() {
 			$($('.woocommerce-checkout .wpmc-footer-left button')).insertAfter('.btn-conductor .izq a');
 			$('.woocommerce-checkout .wpmc-footer-left').append($('.btn-conductor .izq a'));	
 		}
+		$("#billing_myfield17_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield16_field"><label for="billing_myfield16" class="">¿Cómo te enteraste de nosotros?&nbsp;<abbr class="required" title="obligatorio">*</abbr></label>'+
+			'<select class="" data-placeholder="" name="billing_como_te_enterastes" id="billing_como_te_enterastes" onchange="cambiarComo()">'+
+				'<option>Stands de venta</option><option>Instagram</option><option>Facebook</option><option>Familiar o Amigo</option><option>Busqueda en Google</option><option>Mercadolibre</option><option>Volanteo (calle)</option>'+
+			'</select>'+
+		'</p>');
+		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
 		//$('.btn-carro .der').append($('.woocommerce-checkout .wpmc-nav-buttons button#wpmc-next'));
 		//$('.btn-carro .der button').text("Siguiente")
 		$('.woocommerce-checkout .btn-carro').addClass('hide');
@@ -91,7 +117,7 @@ $(document).ready(function() {
 		$('.woocommerce-billing-fields #billing_myfield24_field').addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield25_field').addClass('hide');
 		$("#billing_address_1_field label").empty();
-		$("#billing_address_1_field label").append('Dirección de domicilio&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
+		$("#billing_address_1_field label").append('Dirección de Domicilio&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
 		$("#billing_city_field label").empty();
 		$("#billing_city_field label").append('Ciudad&nbsp;<abbr class="required" title="obligatorio">*</abbr>');
 		$("#billing_state_field label").empty();
@@ -145,9 +171,11 @@ $(document).ready(function() {
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_phone').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield12').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_phone').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_phone').focus(function(){
 					$(this).removeClass('invalido');
+					$('.woocommerce-billing-fields #billing_myfield12').removeClass("invalido");
 				})
 				items+="<li>El campo Celular es requerido.";
 				valid=false;
@@ -161,9 +189,11 @@ $(document).ready(function() {
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_myfield14').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield13').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_myfield14').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_myfield14').focus(function(){
 					$(this).removeClass('invalido');
+					$('.woocommerce-billing-fields #billing_myfield13').removeClass("invalido");
 				})
 				items+="<li>El campo Cédula/RIF es requerido.";
 				valid=false;
@@ -290,7 +320,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_myfield22_field').removeClass('hide');
 				$('.woocommerce-billing-fields #billing_myfield23_field').removeClass('hide');
 				$('.woocommerce-billing-fields #billing_myfield24_field').removeClass('hide');
-				$('.woocommerce-billing-fields #billing_myfield25_field').removeClass('hide');
+				// $('.woocommerce-billing-fields #billing_myfield25_field').removeClass('hide');
 				$('.woocommerce-checkout .btn-carro').removeClass('hide');
 
 				$('article .entry-header .entry-title').text("Datos del vehículo");
@@ -332,7 +362,7 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield22_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield23_field').addClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield24_field').addClass('hide');
-			$('.woocommerce-billing-fields #billing_myfield25_field').addClass('hide');
+			// $('.woocommerce-billing-fields #billing_myfield25_field').addClass('hide');
 			$('.woocommerce-checkout .btn-carro').addClass('hide');
 			$('article .entry-header .entry-title').text("Datos del propietario");
 			$('.resumen-cart .paso .pas').text("1");
@@ -342,6 +372,18 @@ $(document).ready(function() {
 		$('.msg-error').empty();
 		var items = '';
 		var valid=true;
+		if($("#billing_myfield18_field select").val()==null){
+			items+="<li>El campo Clase es requerido.";
+			valid=false;
+		}
+		if($("#billing_myfield19_field select").val()==null){
+			items+="<li>El campo Año es requerido.";
+			valid=false;
+		}
+		if($("#billing_myfield20_field select").val()==null){
+			items+="<li>El campo Marca es requerido.";
+			valid=false;
+		}
 		if($('.woocommerce-billing-fields #billing_myfield21').val()==''){
 			items+="<li>El campo Placa es requerido.";
 			valid=false;	
@@ -354,6 +396,10 @@ $(document).ready(function() {
 			items+="<li>El campo Color es requerido.";
 			valid=false;	
 		}
+		if($("#billing_myfield24_field select").val()==null){
+			items+="<li>El campo Tipo es requerido.";
+			valid=false;
+		}
 		if(valid==true){
 			$(".wpmc-step-item.wpmc-step-billing").removeClass("current");
 			$("#order_review").addClass("current");
@@ -364,6 +410,7 @@ $(document).ready(function() {
 			$(".msg-error").append(items);
 		}
 	});
+
 	$('.woocommerce-checkout .wpmc-footer-left a').on('click', function(){
 		$("#checkout_coupon").addClass('hide');
 		$('.woocommerce-billing-fields #billing_myfield12_field').removeClass('hide');
@@ -414,3 +461,6 @@ $(document).ready(function() {
 	1- Colocar nombre y apellido en el registro
 	1- Detalle del pedido en el titulo
 	*/
+function cambiarComo(){
+	$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
+}

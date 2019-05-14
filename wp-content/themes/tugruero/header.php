@@ -44,7 +44,7 @@
 				</nav>
 				<!-- #site-navigation -->
 			</div>
-			<div class="head-phone">
+			<!-- <div class="head-phone"> -->
 			<?php $query= new WP_Query('post_type=informacion');
 			if ($query->have_posts()) {
 			# code...
@@ -55,7 +55,7 @@
 				<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/TELEFONO.png" />
 				<span><a href="tel:<?php the_field("telefono"); ?>" style="color:#fff;"><?php the_field("telefono"); ?></a></span> -->
 			<?php }}?>
-			</div>
+			<!-- </div> -->
 		</div><!-- .site-branding -->
 
 		
