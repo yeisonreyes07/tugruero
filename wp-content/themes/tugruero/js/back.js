@@ -16,9 +16,36 @@ $(document).ready(function() {
 			var precio = parseInt(valor[1]).toLocaleString();
 			$(this).html(valor[0]+"Bs.S "+precio);
 		}
-	})
-
-	
+	});
+	$("#billing_state").hide();
+	$("#billing_state").after('<select class="" data-placeholder="" name="billing_estado_tr" id="billing_estado_tr" onchange="cambiarEstado()">'+
+		'<option>Amazonas</option>'+
+		'<option>Anzoátegui</option>'+
+		'<option>Apure</option>'+
+		'<option>Aragua</option>'+
+		'<option>Barinas</option>'+
+		'<option>Bolívar</option>'+
+		'<option>Carabobo</option>'+
+		'<option>Cojedes</option>'+
+		'<option>Delta Amacuro</option>'+
+		'<option>Distrito Capital</option>'+
+		'<option>Falcón</option>'+
+		'<option>Guárico</option>'+
+		'<option>Lara</option>'+
+		'<option>Mérida</option>'+
+		'<option>Miranda</option>'+
+		'<option>Monagas</option>'+
+		'<option>Nueva Esparta</option>'+
+		'<option>Portuguesa</option>'+
+		'<option>Sucre</option>'+
+		'<option>Táchira</option>'+
+		'<option>Trujillo</option>'+
+		'<option>Vargas</option>'+
+		'<option>Yaracuy</option>'+
+		'<option>Zulia</option>'+
+		'<option>Dependencias Federales</option>'+
+	'</select>');
+	$("#billing_state").val($("#billing_estado_tr option:selected").html());
 	// body...
 	$('article .entry-header .entry-title').text("");
 			
@@ -392,6 +419,10 @@ $(document).ready(function() {
 			items+="<li>El campo Placa deber ser de 6 o 7 dígitos.";
 			valid=false;	
 		}
+		if($('.woocommerce-billing-fields #billing_myfield22').val()==''){
+			items+="<li>El campo Modelo es requerido.";
+			valid=false;	
+		}
 		if($('.woocommerce-billing-fields #billing_myfield23').val()==''){
 			items+="<li>El campo Color es requerido.";
 			valid=false;	
@@ -463,4 +494,7 @@ $(document).ready(function() {
 	*/
 function cambiarComo(){
 	$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
+}
+function cambiarEstado(){
+	$("#billing_state").val($("#billing_estado_tr option:selected").html());
 }

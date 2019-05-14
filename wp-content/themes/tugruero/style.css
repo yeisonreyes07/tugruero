@@ -1387,7 +1387,7 @@ header.site-header.scrolling{
 	line-height: 1em;
 	font-family: 'Nunito-Bold', sans-serif;
 	text-align: center;
-	margin: 0px auto 80px auto;
+	margin: 0px auto 30px auto;
 	width: 40%;
 }
 .contacto form{
@@ -1492,7 +1492,7 @@ header.site-header.scrolling{
 	font-family: 'Nunito-Light', sans-serif;
 }
 .planes{
-	padding: 5% 0px 7% 0px;
+	padding: 3% 0px 7% 0px;
 	background-image: url(images/NUESTROSPLANES.png);
 	background-repeat: no-repeat;
 	background-size: cover;
