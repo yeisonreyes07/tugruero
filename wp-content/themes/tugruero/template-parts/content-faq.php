@@ -9,6 +9,7 @@
  */
 get_header();
 ?>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>	
     <h1 class="title">Preguntas frecuentes</h1>
     <div class="content-faqs">
@@ -22,7 +23,7 @@ get_header();
         ?>
         <div class="faq">
             <p><a class="title-faq" data-toggle="collapse" href="#a<?php echo $i;?>" role="button" aria-expanded="false" aria-controls="a<?php echo $i; ?>">
-                <?php echo get_the_title();?>
+                <i class="fas fa-question-circle" style="color:rgb(250, 105, 60);"></i> <?php echo get_the_title();?>
             </a></p>
             <div class="collapse" id="a<?php echo $i;?>">
                 <div class="card card-body">
