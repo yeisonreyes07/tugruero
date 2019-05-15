@@ -1756,7 +1756,7 @@ body:not(.home) .site-content{
 .woocommerce-cart #content form input[type=number], .woocommerce-checkout #content form select, 
 .page-template-content-plan #content .form-cart input[type=number], .page-template-content-plan #content .form-cart select,
 .planes .widget_wmc_widget select, .page-template-content-plan .widget_wmc_widget select{
-	padding:8px 10px 8px 20px;
+	padding:7px 10px 7px 20px;
 	background: #e6e6e6;
 	border-radius: 10px;
 	font-size: 14px;
@@ -1766,7 +1766,7 @@ body:not(.home) .site-content{
 }
 .woocommerce-checkout #content form select, .planes .widget_wmc_widget select,
 .page-template-content-plan .widget_wmc_widget select{
-	padding:7px 10px 7px 20px;
+	padding:6px 10px 6px 20px;
 }
 .woocommerce-checkout form .form-row label, .tml-action form label, .woocommerce-cart #content form label,
 .page-template-content-plan #content .form-cart label,
