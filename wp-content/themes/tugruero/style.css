@@ -2278,13 +2278,15 @@ body:not(.home) .site-content{
 .woocommerce-Price-currencySymbol{
 	margin-right: 10px;
 }
-.modal {
-	background: rgba(0, 0, 0, 0.9);
-	color: #fff;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	transition: all .5s;
+.modal-body{
+	color: #333;
+}
+.modal-title{
+	color:#222;
+	width: 100%;
+}
+.modal-header .close {
+    position: absolute;
+    top: 22px;
+    right: 20px;
 }

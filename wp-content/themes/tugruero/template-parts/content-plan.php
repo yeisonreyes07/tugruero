@@ -47,8 +47,21 @@ get_header();
             </div>
         </div>
 	</div>
-	<div class="modal">
-		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nihil id commodi ipsa vitae dolore molestiae minus enim. Nulla ut recusandae nemo quam autem minus totam impedit, quod accusamus optio?</p>
+	<div class="modal fade" id="ModalChange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Canjea tu tarjeta</h4>
+			</div>
+			<div class="modal-body">
+				<p>Al final del proceso de registro podrás canjear el código de tu tarjeta.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+			</div>
+			</div>
+		</div>
 	</div>
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
@@ -58,6 +71,10 @@ get_header();
 
 <script>
 	$(document).ready(function(){
+		var pathname = window.location.search;
+		if(pathname=='?canjear=true'){
+			$('#ModalChange').modal('show');
+		}
 		$("#wmc_widget-2").hide();
 		$("#wmc_widget-2").before('<input type="text" value="'+$("#wmc_widget-2 select option:selected").html()+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;background:#ccc">');
 		$("#wmc_widget-2").after('<small>¿Desea cambiar la moneda, <a href="../">haz click aquí</a>?</small>');
