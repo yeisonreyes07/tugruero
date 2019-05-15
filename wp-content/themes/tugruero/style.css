@@ -1113,6 +1113,19 @@ header.site-header.scrolling{
 	margin-top: 60px;
 	display: inline-block;
 	box-shadow: 5px 3px 3px rgba(0,0,0,0.5);
+	visibility: hidden;
+}
+.section-banner .banner .content-banner .boton-tg{
+	background: rgb(213, 118, 56);
+	color: white;
+	font-family: 'Montserrat-Bold', sans-serif;
+	border-radius: 20px;
+	padding: 10px 50px;
+	font-size: 1.1em;
+	text-decoration: none;
+	margin-top: 60px;
+	display: inline-block;
+	box-shadow: 5px 3px 3px rgba(0,0,0,0.5);
 }
 .liston{
 	background: rgb(213, 118, 56);
