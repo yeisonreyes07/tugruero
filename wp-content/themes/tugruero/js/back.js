@@ -400,34 +400,66 @@ $(document).ready(function() {
 		var items = '';
 		var valid=true;
 		if($("#billing_myfield18_field select").val()==null){
+			$('#billing_myfield18_field select').addClass("invalido");
+			$('#billing_myfield18_field select').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Clase es requerido.";
 			valid=false;
 		}
 		if($("#billing_myfield19_field select").val()==null){
+			$('#billing_myfield19_field select').addClass("invalido");
+			$('#billing_myfield19_field select').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Año es requerido.";
 			valid=false;
 		}
 		if($("#billing_myfield20_field select").val()==null){
+			$('#billing_myfield20_field select').addClass("invalido");
+			$('#billing_myfield20_field select').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Marca es requerido.";
 			valid=false;
 		}
 		if($('.woocommerce-billing-fields #billing_myfield21').val()==''){
+			$('.woocommerce-billing-fields #billing_myfield21').addClass("invalido");
+			$('.woocommerce-billing-fields #billing_myfield21').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Placa es requerido.";
 			valid=false;	
 		}
 		if($('.woocommerce-billing-fields #billing_myfield21').val().length < 6 || $('.woocommerce-billing-fields #billing_myfield21').val().length > 7){
+			$('.woocommerce-billing-fields #billing_myfield21').addClass("invalido");
+			$('.woocommerce-billing-fields #billing_myfield21').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Placa deber ser de 6 o 7 dígitos.";
 			valid=false;	
 		}
 		if($('.woocommerce-billing-fields #billing_myfield22').val()==''){
+			$('.woocommerce-billing-fields #billing_myfield22').addClass("invalido");
+			$('.woocommerce-billing-fields #billing_myfield22').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Modelo es requerido.";
 			valid=false;	
 		}
 		if($('.woocommerce-billing-fields #billing_myfield23').val()==''){
+			$('.woocommerce-billing-fields #billing_myfield23').addClass("invalido");
+			$('.woocommerce-billing-fields #billing_myfield23').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Color es requerido.";
 			valid=false;	
 		}
 		if($("#billing_myfield24_field select").val()==null){
+			$('#billing_myfield24_field select').addClass("invalido");
+			$('#billing_myfield24_field select').focus(function(){
+				$(this).removeClass('invalido');
+			})
 			items+="<li>El campo Tipo es requerido.";
 			valid=false;
 		}
