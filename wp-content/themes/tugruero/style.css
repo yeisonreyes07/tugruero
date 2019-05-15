@@ -2207,6 +2207,7 @@ body:not(.home) .site-content{
 .resumen-cart{
 	position: fixed;
 	right: 40px;
+	padding-left: 50px !important;
 	top: 100px;
 	font-family: 'Nunito-Bold', sans-serif;
 	background: rgba(213,118,56,0.7);
@@ -2215,9 +2216,17 @@ body:not(.home) .site-content{
 	top: 130px;
 	z-index: 1000;
 }
+.resumen-cart *{
+	text-align: right;
+}
 .resumen-cart .paso{
 	font-size: 25px;
 	font-family: 'Nunito-Bold', sans-serif;
+}
+.resumen-cart .pago{
+	border-top: 1px solid rgb(245, 151, 90);
+	padding-top: 5px;
+	margin-top: 5px;
 }
 .woo-multi-currency.wmc-right{
 	display: none;
