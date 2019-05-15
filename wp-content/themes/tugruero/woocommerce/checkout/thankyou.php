@@ -21,17 +21,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="order-finish">
 	<div class="texto-pago">
-		<h1>Gracias por tu compra!</h1>
+		<h1>¡Gracias por tu compra!</h1>
 		<br>
 		<br>
 	</div>
 	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gruas.png"/>
 	<div class="texto-pago">
-		<h1>Su pago se ha</h1>
-		<h1>efectuado éxitosamente</h1>
+		<h1>Su pago se ha efectuado éxitosamente</h1>
 		<br>
 		<br>
-		<p>En un plazo de max 48 horas nuestro departamento de comercializacion validara toda la informacion y te enviaremos el contrato de servicio a tu correo.</p>
+		<p>En un plazo de máximo 48 horas nuestro departamento de comercialización validará <br>toda la información y te enviaremos el contrato de servicio a tu correo.</p>
 		<br>
 		<a href="<?php echo get_home_url();?>">Finalizar</a>
 	</div>

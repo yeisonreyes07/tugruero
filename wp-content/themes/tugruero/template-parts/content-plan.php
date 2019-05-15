@@ -47,10 +47,12 @@ get_header();
             </div>
         </div>
 	</div>
-	
+	<div class="modal">
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nihil id commodi ipsa vitae dolore molestiae minus enim. Nulla ut recusandae nemo quam autem minus totam impedit, quod accusamus optio?</p>
+	</div>
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
- 
+
 <?php endif; ?>
 <?php get_footer(); ?>
 
