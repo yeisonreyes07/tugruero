@@ -221,7 +221,7 @@ get_header();
 			</div>
 			<div class="contacto" id="contacto">
 				<h1>TU/Gruero Corporativo</h1>
-				<p class="subt">No trabajamos con otras compañías de asistencia, pero en comparación de otro servicios ustedes son más atentos y responsables</p>
+				<p class="subt">Ofrecemos excelentes descuentos y beneficios para planes corporativos (flotas) y asi los colaboradores de tu empresa u organizacion pueden disfrutar de nuestros servicios. Déjanos tus datos y te contactaremos.</p>
 				<?php echo do_shortcode('[contact-form-7 id="5" title="Formulario de contacto 1"]'); ?>
 			</div>
 		</main><!-- #main -->
