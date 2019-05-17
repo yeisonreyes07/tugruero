@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	$("#btnplanes").on('click', function() {
+		var position = $("#planes").offset().top; 
+		$("HTML, BODY").animate({ scrollTop: position }, 1000); 
+	}); 
+
 	$("#wmc_widget-2 select option").each(function(i,v){
 		if($(this).html()=="Bolívar soberano"){
 			$(this).html("Bolívar soberano (Bs.S)")

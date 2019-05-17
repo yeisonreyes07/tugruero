@@ -272,14 +272,14 @@ function woocommerce_button_proceed_to_checkout() {
 		}*/
 		return $address_fields;
   }
-  function cosas()
+  function cosas($id = "")
 	{
 		global $woocommerce;
 		$items = $woocommerce->cart->get_cart();
-		echo '<div class="resumen-cart">';
+		echo '<div class="resumen-cart '.$id.'">';
 		foreach($items as $item => $values) { 
-			echo "<h6>Resumen de compra</h6>";
 			echo "<div class='paso'>Paso <span class='pas'>1</span><span class='pastotal'>/3</span></div>";
+			echo "<h6>Resumen de compra</h6>";
 			$_product =  wc_get_product( $values['data']->get_id()); 
 			echo "<div class='producto'>".$_product->get_title().'</div>'; 
 			// $price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());

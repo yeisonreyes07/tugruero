@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<?php cosas();?>
+<?php cosas(2);?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
 		<tr>
@@ -112,3 +112,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</tfoot>
 </table>
+<script>
+	$(document).ready(function(){
+		console.log($(".resumen-cart.2"));
+		$(".resumen-cart.2").each(function(i,v){
+			if(i>=1){
+				$(this).hide();
+			}
+		})
+	})
+</script>

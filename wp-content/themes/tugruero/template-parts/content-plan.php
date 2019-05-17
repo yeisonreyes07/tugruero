@@ -34,7 +34,7 @@ get_header();
 			<input type="number" id="cantidad" value="1"/>					
         </div>
         <div class="form-row">
-        	<label>Haz seleccionado la moneda</label>
+        	<label>Has seleccionado la moneda</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
         </div>
@@ -56,9 +56,9 @@ get_header();
 			</div>
 			<div class="modal-body">
 				<p>Al final del proceso de registro podrás canjear el código de tu tarjeta.</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+				<div class="footer-in-body">
+					<button type="button" class="btn btn-default pull-right" data-dismiss="modal">OK</button>
+				</div>
 			</div>
 			</div>
 		</div>
@@ -75,8 +75,18 @@ get_header();
 		if(pathname=='?canjear=true'){
 			$('#ModalChange').modal('show');
 		}
+		var variables = pathname.split("?");
+		var varT;
+		varT = variables[1].split("&");
+		for(var i=0; i<varT.length; i++){
+			var id=varT[i].split("=");
+			if(id[0]=='id'){
+				$("#plan option[value="+id[1]+"]").prop("selected",true);
+				break;
+			}
+		}
 		$("#wmc_widget-2").hide();
 		$("#wmc_widget-2").before('<input type="text" value="'+$("#wmc_widget-2 select option:selected").html()+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;background:#ccc">');
-		$("#wmc_widget-2").after('<small>¿Desea cambiar la moneda, <a href="../">haz click aquí</a>?</small>');
+		$("#wmc_widget-2").after('<small>Si deseas cambiar la moneda, <a href="../" class="atr">haz click aquí</a></small>');
 	})
 </script>
