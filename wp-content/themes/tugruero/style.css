@@ -1130,6 +1130,11 @@ header.site-header.scrolling{
 	display: inline-block;
 	box-shadow: 5px 3px 3px rgba(0,0,0,0.5);
 }
+.section-banner .banner .content-banner .boton-tg img{
+	height: 25px;
+	margin-right: 5px;
+	float: left;
+}
 .liston{
 	background: rgb(213, 118, 56);
 	padding: 10px 0%;
@@ -1875,14 +1880,29 @@ body:not(.home) .site-content{
 	float: left;
 }
 .woocommerce-checkout form.woocommerce-checkout{
-	width: 70%;
+	width: 60%;
 	margin: 0px auto;
+	/* width: 70%; */
+	/* margin-left: 10%; */
 }
 .woocommerce-checkout form.woocommerce-checkout #billing_country_field{
 	display: none;
 }
 .woocommerce-checkout .wpmc-nav-wrapper{
 	margin-top: 20px;
+}
+@media (max-width: 600px) {
+	.woocommerce-checkout form.woocommerce-checkout{
+		width: 90%;
+		margin: 0px auto;
+	}
+	.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last{
+		width: 100% !important;
+		margin-left: 0px !important;
+	}
+	#billing_phone_field{
+		width: 100% !important;
+	}
 }
 .tml-action #content{
 	background-image: url(images/fondo-login.png);
@@ -2099,7 +2119,7 @@ body:not(.home) .site-content{
  	display: none;
  }
 #billing_myfield12_field{
-	width: 100px;
+	width: 11%;
 	margin-left: 6%;
 }
 #billing_phone_field{
@@ -2111,10 +2131,10 @@ body:not(.home) .site-content{
 	opacity: 0;
 }
 #billing_myfield13_field{
-	width: 100px;
+	width: 11%;
 }
 #billing_myfield14_field{
-	width: 38%;
+	width: 36%;
 	margin-right: 5%;
 }
 #billing_city_field{

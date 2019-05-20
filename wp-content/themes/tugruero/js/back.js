@@ -85,7 +85,7 @@ $(document).ready(function() {
 				}]
 	});
 	if($('body').hasClass('home')){
-		if($('.wmc-list-currencies .wmc-currency.wmc-active span:nth-child(1)').text() == "VEF"){
+		if($('.wmc-list-currencies .wmc-currency.wmc-active span:nth-child(1)').text() == "VES"){
 			$('.tachado span.dolar').addClass('hide');
 		}else if($('.wmc-list-currencies .wmc-currency.wmc-active span:nth-child(1)').text() == "USD"){
 			$('.tachado span.vef').addClass('hide');

@@ -60,3 +60,4 @@ if ( ! is_ajax() ) {
 if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_after_payment' );
 }
+?>

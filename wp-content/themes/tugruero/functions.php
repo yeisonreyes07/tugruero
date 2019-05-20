@@ -284,7 +284,10 @@ function woocommerce_button_proceed_to_checkout() {
 			echo "<div class='producto'>".$_product->get_title().'</div>'; 
 			// $price = get_woocommerce_currency_symbol()." ".money_format('%i',$values['quantity']*$_product->get_price());
 			$price = get_woocommerce_currency_symbol()." ".$values['quantity']*$_product->get_price();
-			echo "<div class='pago'>Total a pagar: ".$price."</div>";
+			// $price = number_format($price, 2, ',', '.');
+			$axu=explode(" ",$price);
+			$prece2= number_format($axu[1], 2, ',', '.');
+			echo "<div class='pago'>Total a pagar: ".$prece2."</div>";
 		}
 		echo "</div>"; 
 	}
