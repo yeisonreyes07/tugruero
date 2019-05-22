@@ -34,7 +34,7 @@ get_header();
 			<input type="number" id="cantidad" value="1"/>					
         </div>
         <div class="form-row">
-        	<label>Has seleccionado la moneda</label>
+        	<label>Meneda seleccionada</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
         </div>
