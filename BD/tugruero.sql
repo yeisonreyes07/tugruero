@@ -173,8 +173,8 @@ CREATE TABLE `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://127.0.0.1/tugruero/', 'yes'),
-(2, 'home', 'http://127.0.0.1/tugruero/', 'yes'),
+(1, 'siteurl', 'http://67.205.188.242/tugruero/', 'yes'),
+(2, 'home', 'http://67.205.188.242/tugruero/', 'yes'),
 (3, 'blogname', 'TuGruero.com', 'yes'),
 (4, 'blogdescription', 'Otro sitio realizado con WordPress', 'yes'),
 (5, 'users_can_register', '1', 'yes'),
