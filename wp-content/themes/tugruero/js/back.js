@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$("input[type='radio'][value='Si']").prop("checked",true);
+	$("#billing_myfield17_field").hide();
 	$("#btnplanes").on('click', function() {
 		var position = $("#planes").offset().top; 
 		$("HTML, BODY").animate({ scrollTop: position }, 1000); 
