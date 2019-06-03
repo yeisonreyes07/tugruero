@@ -22,7 +22,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
         if(isset($_GET['id'])){
             $query = new WC_Order($_GET['id']);
             $_SESSION['data_wc_lwc']=json_decode($query);
-            var_dump($_SESSION['data_wc_lwc']);
+            // var_dump($_SESSION['data_wc_lwc']);
             echo '<br><a href="./../generarpdf.php" class="button">Enviar Correo</a>';
             echo '<a href="./../generarpdf.php" class="button">Generar PDF</a>';
         }else{
