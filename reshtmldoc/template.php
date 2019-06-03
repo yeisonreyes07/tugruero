@@ -18,5 +18,32 @@
     table.bordertitulo{border-bottom: solid 1mm #222;}
 </style>
 <page backtop="28mm" backbottom="18mm" backleft="10mm" backright="10mm" style="font-size: 9pt">
+    <page_header>
+        <table class="page_header">
+            <tr>
+                <td style="width: 70%; text-align: left">
+                    <img src="http://67.205.188.242/tugruero/wp-content/themes/tugruero/images/logo.png" alt="" class="logo">
+                    <br>SOLUCIONES TU GRUERO C.A.<br>
+                    RIF: J-40680605-6
+                </td>
+                <td style="width: 40%; text-align: right">
+                    <table class="info">
+                        <tr>
+                            <td>Duración del Producto</td>
+                            <td>N° Producto</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">
+                                Anual
+                            </td>
+                            <td style="text-align: center">
+                                <?= $_SESSION['data_wc_lwc']->id; ?>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </page_header>
     
 </page>
