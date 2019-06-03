@@ -26,6 +26,7 @@
             $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
             $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->SMTPDebug = 2; 
             $mail->Host = "smtp.gmail.com";  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = "tugruerodesarrollo@gmail.com";                 // SMTP username
