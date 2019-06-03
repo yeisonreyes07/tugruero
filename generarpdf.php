@@ -1,14 +1,14 @@
 <?php
     require_once 'vendor/autoload.php';
 
-    // session_start();
+    session_start();
 
-    // use Spipu\Html2Pdf\Html2Pdf;
-    // use Spipu\Html2Pdf\Exception\Html2PdfException;
-    // use Spipu\Html2Pdf\Exception\ExceptionFormatter;
+    use Spipu\Html2Pdf\Html2Pdf;
+    use Spipu\Html2Pdf\Exception\Html2PdfException;
+    use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
     // // var_dump($_SESSION['data_wc_lwc']);
 
