@@ -21,7 +21,11 @@
     <page_header>
         <table class="page_header">
             <tr>
-                
+                <td style="width: 70%; text-align: left">
+                    
+                    <br>SOLUCIONES TU GRUERO C.A.<br>
+                    RIF: J-40680605-6
+                </td>
                 <td style="width: 40%; text-align: right">
                     <table class="info">
                         <tr>
