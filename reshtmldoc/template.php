@@ -19,7 +19,27 @@
 </style>
 <page backtop="28mm" backbottom="18mm" backleft="10mm" backright="10mm" style="font-size: 9pt">
     <page_header>
-        
+        <table class="page_header">
+            <tr>
+                
+                <td style="width: 40%; text-align: right">
+                    <table class="info">
+                        <tr>
+                            <td>Duración del Producto</td>
+                            <td>N° Producto</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">
+                                Anual
+                            </td>
+                            <td style="text-align: center">
+                                <?= $_SESSION['data_wc_lwc']->id; ?>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </page_header>
     <page_footer>
         <table class="page_footer">
