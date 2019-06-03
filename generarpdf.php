@@ -10,7 +10,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    // // var_dump($_SESSION['data_wc_lwc']);
+    var_dump($_SESSION['data_wc_lwc']);
 
     // if(!empty($_SESSION['data_wc_lwc'])){
     //     ob_start();
