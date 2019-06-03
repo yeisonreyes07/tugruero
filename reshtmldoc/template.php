@@ -22,7 +22,7 @@
         <table class="page_header">
             <tr>
                 <td style="width: 70%; text-align: left">
-                    
+                    <!-- <img src="http://67.205.188.242/tugruero/wp-content/themes/tugruero/images/logo.png" alt="" class="logo"> -->
                     <br>SOLUCIONES TU GRUERO C.A.<br>
                     RIF: J-40680605-6
                 </td>
