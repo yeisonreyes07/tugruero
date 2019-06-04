@@ -1818,8 +1818,8 @@ class TCPDF_STATIC {
 		} elseif (stream_is_local($filename) !== true) {
 			return false;
 		}
-		echo $_SERVER['DOCUMENT_ROOT']."tugruero/".$filename;
-		return fopen($_SERVER['DOCUMENT_ROOT']."tugruero/".$filename, $mode);
+		return fopen("tugruero/".$filename, $mode);
+		// return fopen($_SERVER['DOCUMENT_ROOT']."tugruero/".$filename, $mode);
 	}
 
 	/**
