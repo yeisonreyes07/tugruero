@@ -22,7 +22,7 @@
             $html2pdf = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
-            // $html2pdf->writeHTML($content);
+            $html2pdf->writeHTML("<h1>asd</h1>");
             $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
             $mail->isSMTP();                                      // Set mailer to use SMTP
