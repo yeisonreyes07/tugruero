@@ -25,6 +25,15 @@
             $html2pdf->writeHTML($content);
             $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
+            include "reshtmldoc/templatersv.php";
+            $content = ob_get_clean();
+
+            $html2pdf2 = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
+            $html2pdf2->pdf->SetDisplayMode('fullpage');
+            $html2pdf2->setDefaultFont('Arial');
+            $html2pdf2->writeHTML($content);
+            $html2pdf2->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
+
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->SMTPDebug = 2; 
             $mail->Host = "smtp.gmail.com";  // Specify main and backup SMTP servers
@@ -34,6 +43,7 @@
             $mail->SMTPSecure = "tls";                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = "587";                                    // TCP port to connect to
             $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
         
             //Recipients
             $mail->setFrom("tugruerodesarrollo@gmail.com", "TuGruero");
