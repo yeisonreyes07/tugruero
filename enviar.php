@@ -27,7 +27,7 @@
 
             
             $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->SMTPDebug = 2; 
+            $mail->SMTPDebug = 0; 
             $mail->Host = "smtp.gmail.com";  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = "noreplysolcripto@gmail.com";                 // SMTP username
@@ -56,6 +56,7 @@
         unlink('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
         unlink('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
         $_SESSION['data_wc_lwc'] = "";
+        echo '<script>window.close()</script>';
     }else{
         header("location: ./");
     }
