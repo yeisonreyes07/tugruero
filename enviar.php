@@ -39,7 +39,7 @@
         
             //Recipients
             $mail->setFrom("tugruerodesarrollo@gmail.com", "TuGruero");
-            $mail->addAddress("ing.leonardo.hp@gmail.com", "Leonardo Hernandez");
+            $mail->addAddress($_SESSION['data_wc_lwc']->billing->email, $_SESSION['data_wc_lwc']->billing->first_name. " " .$_SESSION['data_wc_lwc']->billing->last_name);
 
             //Suje
             $mail->Subject = 'Documentos';
