@@ -18,7 +18,7 @@
         $content = ob_get_clean();
         // echo $content;
         try {
-            $html2pdf = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
+            $html2pdf = new Html2Pdf('P', 'letter', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);

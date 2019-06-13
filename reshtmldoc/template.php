@@ -69,7 +69,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
             <td style="width: 25%">Nombre: <?= $_SESSION['data_wc_lwc']->billing->first_name; ?></td>
             <td style="width: 25%">Apellido: <?= $_SESSION['data_wc_lwc']->billing->last_name; ?></td>
@@ -95,7 +95,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
             <td style="width: 25%">Clase: <?= $_SESSION['data_wc_lwc']->meta_data[7]->value; ?></td>
             <td style="width: 25%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[8]->value; ?></td>
@@ -117,7 +117,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
             <td style="width: 33%">Nombre Producto: Plan Classic</td>
             <td style="width: 33%">Precio: <?= $_SESSION['data_wc_lwc']->total. " ". $_SESSION['data_wc_lwc']->currency; ?></td>
@@ -140,7 +140,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
             <td style="width: 100%; padding-bottom:10px; font-size:9px">1- PRIMERA: El presente contrato de adhesión versa sobre un plan pre-pagado de servicio de auxilio vial (grúa anual), adquirido sólo y únicamente para el vehículo identificado arriba (no es por persona, sino por vehículo).</td>
         </tr>
@@ -211,7 +211,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
             <td style="width: 100%; padding-bottom:10px; font-size:9px">17- DECIMA SEPTIMA: Los traslados de grúas autorizados por Soluciones Tu Gruero C.A. deben tener las siguientes características: 1. Plena vía/Resguardo - Domicilio, 2. Plena vía/ Resguardo - Taller, 3. Domicilio - Taller y 4. Taller - Taller.</td>
         </tr>
