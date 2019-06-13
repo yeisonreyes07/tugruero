@@ -57,7 +57,7 @@
         <table class="page_footer">
             <tr>
                 <td style="width: 100%; text-align: center;">
-                    Caracas, Venezuela.<br> Tlf: 0500-GRUERO-0 (0500-478376-0) / 0212-2379227 / 0212-4190105 · comercializacion@tugruero.io 
+                    Caracas, Venezuela.<br> (212) 2379227 / 0500 GRUERO - 0 (0500 478376 - 0) ·  comercializacion@tugruero.io · www.tugruero.io
                 </td>
             </tr>
         </table>
