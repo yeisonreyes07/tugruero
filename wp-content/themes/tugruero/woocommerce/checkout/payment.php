@@ -23,6 +23,35 @@ if ( ! is_ajax() ) {
 ?>
 <?php cosas();?>
 <div id="payment" class="woocommerce-checkout-payment">
+	<div class="row">
+		<div class="col l4">
+			<div class="col l12 logo-payment select" onclick="transferencia();select(this)">
+				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
+			</div>
+			<div class="col l12">
+				<br>
+				<p class="align-center"><b>Transferencia Bancaria</b></p>
+			</div>
+		</div>
+		<div class="col l4">
+			<div class="col l12 logo-payment" onclick="paypal();select(this)">
+				<img src="../wp-content/themes/tugruero/images/brand2.svg" alt="">
+			</div>
+			<div class="col l12">
+				<br>
+				<p class="align-center"><b>PayPal</b></p>
+			</div>
+		</div>
+		<div class="col l4">
+			<a href="#" class="showcoupon"><div class="col l12 logo-payment" onclick="select(this);">
+				<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="">
+			</div></a>
+			<div class="col l12">
+				<br>
+				<p class="align-center"><b>Cupones</b></p>
+			</div>
+		</div>
+	</div>
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">
 			<?php
@@ -61,3 +90,19 @@ if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_after_payment' );
 }
 ?>
+<script>
+	function paypal(){
+		$("#payment_method_paypal").click();
+	}
+
+	function transferencia(){
+		$("#payment_method_bacs").click();
+	}
+
+	function select(obj){
+		$(".logo-payment").each(function(e,v){
+			$(this).removeClass("select");
+		})
+		$(obj).addClass("select");
+	}
+</script>

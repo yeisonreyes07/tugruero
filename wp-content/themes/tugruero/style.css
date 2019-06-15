@@ -2110,7 +2110,7 @@ body:not(.home) .site-content{
  	margin-bottom: 100px;
  }
  .woocommerce-checkout #payment div.form-row{
- 	margin-top: 350px;
+ 	margin-top: 150px;
  }
  #payment div.payment_box::before{
  	display: none !important;
@@ -2362,4 +2362,25 @@ a.atr, a.atr:visited, a.atr:hover{
 }
 .woocommerce form .form-row.woocommerce-invalid label{
 	color:#fff;
+}
+.logo-payment{
+	background: #fff;
+	border-radius: 20px;
+	height: 130px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	border: 2px solid rgb(255,255,255);
+}
+.logo-payment:hover{
+	border: 2px solid rgb(213,118,56);
+}
+.logo-payment.select{
+	border: 2px solid rgb(213,118,56);
+}
+.logo-payment img{
+	height: 100px !important;
+}
+.align-center{
+	text-align: center;
 }
