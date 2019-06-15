@@ -6,17 +6,17 @@
     // var_dump($_SESSION['data_wc_lwc']);
     $fecha_inicio = $_SESSION['data_wc_lwc']->date_created->date;
 
-    $fecha_ini = strtotime ( '+10 day' , strtotime ( $fecha_inicio ) ) ;
+    $fecha_ini = strtotime ( '+20 day' , strtotime ( $fecha_inicio ) ) ;
     $fecha_ini = date ( 'd-m-Y' , $fecha_ini );
 
-    $fecha_fin = strtotime ( '+1 year' , strtotime ( $fecha_inicio ) ) ;
+    $fecha_fin = strtotime ( '+1 year' , strtotime ( $fecha_ini ) ) ;
     $fecha_fin = date ( 'd-m-Y' , $fecha_fin );
 ?>
 <style type="text/css">
     table.page_header {width: 100%; border: none; background-color: #eee; border-bottom: solid 1mm #ccc; padding: 2mm; color:#000 }
-    table.page_header img {height: 60px; float: left; margin-right: 10px}
+    table.page_header img {height: 60px; float: left; margin-right: 10px; margin-left:30px}
     table.page_footer {width: 100%; border: none; background-color: #eee; border-top: solid 1mm #ccc; padding: 2mm; color:#000}
-    img.firma {width: 100px;}
+    img.firma {width: 150px;}
     div.note {border: solid 1mm #DDDDDD;background-color: #EEEEEE; padding: 2mm; border-radius: 2mm; width: 100%; }
     ul.main { width: 95%; list-style-type: square; }
     ul.main li { padding-bottom: 2mm; }
@@ -30,7 +30,7 @@
         <table class="page_header">
             <tr>
                 <td style="width: 60%; text-align: left">
-                    <img src="wp-content/themes/tugruero/images/logo.png" alt="" class="logo">
+                    <img src="wp-content/themes/tugruero/images/logopdf.png" alt="" class="logo">
                     <br>SOLUCIONES TU GRUERO C.A.<br>
                     RIF: J-40680605-6
                 </td>
@@ -57,7 +57,7 @@
         <table class="page_footer">
             <tr>
                 <td style="width: 100%; text-align: center;">
-                    Caracas, Venezuela.<br> (212) 2379227 / 0500 GRUERO - 0 (0500 478376 - 0) ·  comercializacion@tugruero.io · www.tugruero.io
+                    Caracas, Venezuela.<br> (0212) 2379227 / 0500 GRUERO - 0 (0500 478376 - 0) ·  comercializacion@tugruero.io · www.tugruero.io
                 </td>
             </tr>
         </table>
@@ -197,10 +197,6 @@
             </td>
         </tr>
     </table>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>
