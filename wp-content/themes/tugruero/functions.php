@@ -287,7 +287,7 @@ function woocommerce_button_proceed_to_checkout() {
 			// $price = number_format($price, 2, ',', '.');
 			$axu=explode(" ",$price);
 			$prece2= number_format($axu[1], 2, ',', '.');
-			echo "<div class='pago'>Total a pagar: ".$prece2."</div>";
+			echo "<div class='pago'>Total a pagar: ".$prece2." ".$axu[0]."</div>";
 		}
 		echo "</div>"; 
 	}
