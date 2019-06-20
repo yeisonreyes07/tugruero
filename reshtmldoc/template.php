@@ -85,7 +85,7 @@
         </tr>
         <tr>
             <td style="width: 50%" colspan="2">Domicilio: <?= $_SESSION['data_wc_lwc']->billing->address_1." ".$_SESSION['data_wc_lwc']->billing->address_2; ?></td>
-            <td style="width: 25%">Estado: <?= $_SESSION['data_wc_lwc']->meta_data[5]->value; ?></td>
+            <td style="width: 25%">Estado: <?= $_SESSION['data_wc_lwc']->billing->state; ?></td>
             <td style="width: 25%">Ciudad: <?= $_SESSION['data_wc_lwc']->billing->city; ?></td>
         </tr>
     </table>

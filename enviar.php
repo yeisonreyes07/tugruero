@@ -46,9 +46,8 @@
 
             $mail->msgHTML("Hola ".$_SESSION['data_wc_lwc']->billing->first_name. " " .$_SESSION['data_wc_lwc']->billing->last_name.", este es el paso final. Adjunto te enviamos los documentos de tu compra:<br><br>
             1- Contrato de plan de Grúa.<br>
-            2- Póliza del seguro de Responsabilidad Civil Vehicular.<br>
-            En ellos tendrás información detallada y los pasos a seguir en caso de que<br>
-            requieras nuestros servicios<br><br>
+            2- Póliza del seguro de Responsabilidad Civil Vehicular.<br><br>
+            En ellos tendrás información detallada y los pasos a seguir en caso de que requieras nuestros servicios<br><br>
             ¡De ahora en adelante maneja tranquilo, estamos contigo!");
             $mail->CharSet = 'UTF-8';
             $mail->AltBody = 'TuGruero';
