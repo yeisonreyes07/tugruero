@@ -91,7 +91,7 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%; border:1px solid #000" class="border">
+    <table style="width: 100%; border:1px solid #000">
         <tr style="vertical-align: top">
             <td style="width: 52%" colspan="2"><b>Dirección de Cobro:</b><br>
                 <?= $_SESSION['data_wc_lwc']->billing->address_1." ".$_SESSION['data_wc_lwc']->billing->address_2; ?>
@@ -112,7 +112,7 @@
             <td style="width: 100%;"><b>ASEGURADO</b></td>
         </tr>
     </table>
-    <table style="width: 100%; border:1px solid #000">
+    <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
             <td style="width: 26%"><b>Apellidos y Nombres / Razón Social:</b><br>
                 <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?>
@@ -258,12 +258,12 @@
                     <tr>
                         <td style="width: 40%">
                             Lugar y Fecha:<br>
-                            Caracas. <?= $_SESSION['data_wc_lwc']->date_created->date; ?>
+                            Caracas. <?= strtotime ( '+20 day' , strtotime ( $_SESSION['data_wc_lwc']->date_created->date ) ) ; ?>
                         </td>
                         <td style="width: 60%">
                             EL TOMADOR<br>
-                            NOMBRE Y APELLIDO:<br>
-                            C.I./R.I.F. No.:<br>
+                            NOMBRE Y APELLIDO: <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?><br>
+                            C.I./R.I.F. No.: <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?><br>
                             <br>
                             <br>
                             Firma: ____________________________________________
@@ -283,11 +283,11 @@
                                     <td style="width: 100%;" colspan="2">Por Universal De Seguros C.A. Representante </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%;">Nombre y Apellido: <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?></td>
+                                    <td style="width: 40%;">Nombre y Apellido:</td>
                                     <td style="width: 60%;"></td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%;">C.I. No.: <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?></td>
+                                    <td style="width: 40%;">C.I. No.:</td>
                                     <td style="width: 60%;">
                                         <img src="wp-content/themes/tugruero/images/firma2.png" style="width: 100px" alt="">
                                     </td>
