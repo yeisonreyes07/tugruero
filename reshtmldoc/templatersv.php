@@ -25,6 +25,9 @@
     table.bordertitulo{border: solid 1px #222;}
     bordertitulo{border: solid 1px #222;}
     .grey{background: #ddd}
+    table.border tr td{border:1px solid #000;}
+    table.border {border-collapse: collapse;}
+    table.no-border tr td{border:0px solid #000;}
 </style>
 <page backtop="10mm" backbottom="10mm" backleft="10mm" backright="10mm" style="font-size: 11px">
     <table style="width: 100%">
@@ -41,14 +44,14 @@
     </table>
     <table style="width: 100%" class="bordertitulo">
         <tr>
-            <td style="width: 100%;"><b>Tipo de Movimiento:</b> <?= $_SESSION['data_wc_lwc']->id; ?> </td>
+            <td style="width: 100%;"><b>Tipo de Movimiento:</b> Nuevo </td>
         </tr>
     </table>
-    <table style="width: 100%; border:1px solid #000">
+    <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
             <td style="width: 20%"><b>N° de Poliza</b><br><?= $_SESSION['data_wc_lwc']->id; ?></td>
             <td style="width: 40%"><b>Vigencia de la Póliza</b><br>
-                <table style="width: 100%">
+                <table style="width: 100%" class="no-border">
                     <tr>
                         <td style="width: 50%">Desde: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
                         <td style="width: 50%">Hasta: <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
@@ -64,15 +67,15 @@
             <td style="width: 100%;"><b>TOMADOR</b></td>
         </tr>
     </table>
-    <table style="width: 100%; border:1px solid #000">
+    <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
             <td style="width: 26%"><b>Apellidos y Nombres / Razón Social:</b><br>
                 <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?>
             </td>
-            <td style="width: 12%"><b>C.I. / R.I.F:</b><br>
+            <td style="width: 12%"><b>C.I. / R.I.F:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?>
             </td>
-            <td style="width: 14%"><b>Nacionalidad:</b><br>
+            <td style="width: 14%"><b>Nacionalidad:</b><br><br>
                 Venezolano (a)            
             </td>
             <td style="width: 16%"><b>Fecha de Nacimiento:</b><br>
@@ -80,15 +83,15 @@
                     echo date("d/m/Y", strtotime($_SESSION['data_wc_lwc']->meta_data[4]->value));
                 ?>             
             </td>
-            <td style="width: 16%"><b>Estado Civil:</b><br>
+            <td style="width: 16%"><b>Estado Civil:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[5]->value; ?>               
             </td>
-            <td style="width: 16%"><b>Sexo:</b><br>
+            <td style="width: 16%"><b>Sexo:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[0]->value; ?>              
             </td>
         </tr>
     </table>
-    <table style="width: 100%; border:1px solid #000">
+    <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
             <td style="width: 52%" colspan="2"><b>Dirección de Cobro:</b><br>
                 <?= $_SESSION['data_wc_lwc']->billing->address_1." ".$_SESSION['data_wc_lwc']->billing->address_2; ?>
@@ -114,10 +117,10 @@
             <td style="width: 26%"><b>Apellidos y Nombres / Razón Social:</b><br>
                 <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?>
             </td>
-            <td style="width: 12%"><b>C.I. / R.I.F:</b><br>
+            <td style="width: 12%"><b>C.I. / R.I.F:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?>
             </td>
-            <td style="width: 14%"><b>Nacionalidad:</b><br>
+            <td style="width: 14%"><b>Nacionalidad:</b><br><br>
                 Venezolano (a)            
             </td>
             <td style="width: 16%"><b>Fecha de Nacimiento:</b><br>
@@ -125,10 +128,10 @@
                     echo date("d/m/Y", strtotime($_SESSION['data_wc_lwc']->meta_data[4]->value));
                 ?>             
             </td>
-            <td style="width: 16%"><b>Estado Civil:</b><br>
+            <td style="width: 16%"><b>Estado Civil:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[5]->value; ?>               
             </td>
-            <td style="width: 16%"><b>Sexo:</b><br>
+            <td style="width: 16%"><b>Sexo:</b><br><br>
                 <?= $_SESSION['data_wc_lwc']->meta_data[0]->value; ?>              
             </td>
         </tr>
@@ -159,19 +162,19 @@
             <td colspan="3"><b>Vehículo</b></td>
         </tr>
         <tr style="vertical-align: top">
-            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[7]->value; ?></td>
-            <td style="width: 33%">Modelo: <?= $_SESSION['data_wc_lwc']->meta_data[3]->value; ?></td>
-            <td style="width: 33%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[12]->value; ?></td>
+            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 33%">Modelo: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 33%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[8]->value; ?></td>
         </tr>
         <tr>
-            <td style="width: 34%">Clase: <?= $_SESSION['data_wc_lwc']->meta_data[10]->value; ?></td>
-            <td style="width: 33%">Placa: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
-            <td style="width: 33%">Tipo: </td>
+            <td style="width: 34%">Clase: <?= $_SESSION['data_wc_lwc']->meta_data[7]->value; ?></td>
+            <td style="width: 33%">Placa: <?= $_SESSION['data_wc_lwc']->meta_data[10]->value; ?></td>
+            <td style="width: 33%">Tipo: <?= $_SESSION['data_wc_lwc']->meta_data[13]->value; ?></td>
         </tr>
         <tr style="vertical-align: top">
-            <td style="width: 34%">Color: <?= $_SESSION['data_wc_lwc']->meta_data[7]->value; ?></td>
-            <td style="width: 33%">Nro. de puestos: <?= $_SESSION['data_wc_lwc']->meta_data[3]->value; ?></td>
-            <td style="width: 33%">Uso: <?= $_SESSION['data_wc_lwc']->meta_data[12]->value; ?></td>
+            <td style="width: 34%">Color: <?= $_SESSION['data_wc_lwc']->meta_data[12]->value; ?></td>
+            <td style="width: 33%">Nro. de puestos: 5</td>
+            <td style="width: 33%">Uso: Particular</td>
         </tr>
     </table>
     <table style="width: 100%" class="bordertitulo grey">
@@ -255,7 +258,7 @@
                     <tr>
                         <td style="width: 40%">
                             Lugar y Fecha:<br>
-                            Caracas.
+                            Caracas. <?= $_SESSION['data_wc_lwc']->date_created->date; ?>
                         </td>
                         <td style="width: 60%">
                             EL TOMADOR<br>
@@ -280,11 +283,11 @@
                                     <td style="width: 100%;" colspan="2">Por Universal De Seguros C.A. Representante </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%;">Nombre y Apellido:</td>
+                                    <td style="width: 40%;">Nombre y Apellido: <?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?></td>
                                     <td style="width: 60%;"></td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%;">C.I. No.:</td>
+                                    <td style="width: 40%;">C.I. No.: <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?></td>
                                     <td style="width: 60%;">
                                         <img src="wp-content/themes/tugruero/images/firma2.png" style="width: 100px" alt="">
                                     </td>
