@@ -50,7 +50,7 @@
     <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
             <td style="width: 20%"><b>N° de Poliza</b><br><?= $_SESSION['data_wc_lwc']->id; ?></td>
-            <td style="width: 40%"><b>Vigencia de la Póliza</b><br>
+            <td style="width: 32%"><b>Vigencia de la Póliza</b><br>
                 <table style="width: 100%" class="no-border">
                     <tr>
                         <td style="width: 50%">Desde: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
@@ -58,8 +58,8 @@
                     </tr>
                 </table>
             </td>
-            <td style="width: 20%"><b>Frecuencia de Pago</b><br>Anual</td>
-            <td style="width: 20%"><b>Sucursal Suscriptora</b><br>UniCaracas</td>
+            <td style="width: 16%"><b>Frecuencia de Pago</b><br>Anual</td>
+            <td style="width: 32%"><b>Sucursal Suscriptora</b><br>UniCaracas</td>
         </tr>
     </table>
     <table style="width: 100%" class="bordertitulo grey">
@@ -162,7 +162,7 @@
             <td colspan="3"><b>Vehículo</b></td>
         </tr>
         <tr style="vertical-align: top">
-            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[11]->value; ?></td>
             <td style="width: 33%">Modelo: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
             <td style="width: 33%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[8]->value; ?></td>
         </tr>
@@ -258,7 +258,7 @@
                     <tr>
                         <td style="width: 40%">
                             Lugar y Fecha:<br>
-                            Caracas. <?= strtotime ( '+20 day' , strtotime ( $_SESSION['data_wc_lwc']->date_created->date ) ) ; ?>
+                            Caracas. <?= date('d-m-Y',strtotime ( $_SESSION['data_wc_lwc']->date_created->date )) ; ?>
                         </td>
                         <td style="width: 60%">
                             EL TOMADOR<br>

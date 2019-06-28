@@ -101,7 +101,7 @@
         <tr style="vertical-align: top">
             <td style="width: 25%">Clase: <?= $_SESSION['data_wc_lwc']->meta_data[7]->value; ?></td>
             <td style="width: 25%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[8]->value; ?></td>
-            <td style="width: 25%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 25%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[11]->value; ?></td>
             <td style="width: 25%">Placa: <?= $_SESSION['data_wc_lwc']->meta_data[10]->value; ?></td>
         </tr>
         <tr>

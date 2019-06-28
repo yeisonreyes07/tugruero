@@ -33,7 +33,7 @@ get_header();
 			<label>Escoja la cantidad de carros que desea afiliar</label>
 			<input type="number" id="cantidad" value="1"/>					
         </div>
-        <div class="form-row">
+        <div class="form-row" id="moneda-con">
         	<label>Meneda seleccionada</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
@@ -74,6 +74,11 @@ get_header();
 		var pathname = window.location.search;
 		if(pathname=='?canjear=true'){
 			$('#ModalChange').modal('show');
+			$("#cantidad").prop("disabled",true);
+			$("#moneda-con input").val("Canjear Tarjeta");
+			sessionStorage.setItem("cupon", "true");
+		}else{
+			sessionStorage.setItem("cupon", "false");
 		}
 		var variables = pathname.split("?");
 		var varT;
@@ -85,8 +90,14 @@ get_header();
 				break;
 			}
 		}
+
+		var mostrar = $("#wmc_widget-2 select option:selected").html();
+		if(sessionStorage.getItem("cupon")=="true"){
+			mostrar="Canjear Tarjeta";
+		}
+
 		$("#wmc_widget-2").hide();
-		$("#wmc_widget-2").before('<input type="text" value="'+$("#wmc_widget-2 select option:selected").html()+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;background:#ccc">');
+		$("#wmc_widget-2").before('<input type="text" value="'+mostrar+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;background:#ccc">');
 		$("#wmc_widget-2").after('<small>Si deseas cambiar la moneda, <a href="../" class="atr">haz click aquí</a></small>');
 	})
 </script>
