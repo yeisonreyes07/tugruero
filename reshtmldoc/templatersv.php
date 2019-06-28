@@ -266,7 +266,7 @@
                             C.I./R.I.F. No.: <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?><br>
                             <br>
                             <br>
-                            Firma: ____________________________________________
+                            Firma: <span style="text-decoration: underline; "><?= $_SESSION['data_wc_lwc']->billing->first_name." ".$_SESSION['data_wc_lwc']->billing->last_name; ?></span>
                         </td>
                     </tr>
                 </table>
