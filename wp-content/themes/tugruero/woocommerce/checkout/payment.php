@@ -24,7 +24,7 @@ if ( ! is_ajax() ) {
 <?php cosas();?>
 <div id="payment" class="woocommerce-checkout-payment">
 	<div class="row">
-		<div class="col l4">
+		<div class="col l4 no-cupon">
 			<div class="col l12 logo-payment select" onclick="transferencia();select(this)">
 				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
 			</div>
@@ -33,7 +33,7 @@ if ( ! is_ajax() ) {
 				<p class="align-center"><b>Transferencia Bancaria</b></p>
 			</div>
 		</div>
-		<div class="col l4">
+		<div class="col l4 no-cupon">
 			<div class="col l12 logo-payment" onclick="paypal();select(this)">
 				<img src="../wp-content/themes/tugruero/images/brand2.svg" alt="">
 			</div>
@@ -105,4 +105,12 @@ if ( ! is_ajax() ) {
 		})
 		$(obj).addClass("select");
 	}
+	$(document).ready(function(){
+		if(sessionStorage.getItem("cupon")=="true"){
+			$(".pago").html("Canjear tarjeta");
+			$(".no-cupon").each(function(){
+				$(this).remove();
+			})
+		}
+	})
 </script>

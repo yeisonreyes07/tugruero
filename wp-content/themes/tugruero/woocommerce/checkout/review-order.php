@@ -114,11 +114,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>
 <script>
 	$(document).ready(function(){
-		console.log($(".resumen-cart.2"));
 		$(".resumen-cart.2").each(function(i,v){
 			if(i>=1){
 				$(this).hide();
 			}
 		})
+		if(sessionStorage.getItem("cupon")=="true"){
+			$(".amount").each(function(){
+				$(this).html("Canjear tarjeta");
+			})
+		}
 	})
 </script>

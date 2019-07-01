@@ -2384,3 +2384,6 @@ a.atr, a.atr:visited, a.atr:hover{
 .align-center{
 	text-align: center;
 }
+.woocommerce-form-coupon-toggle{
+	visibility: hidden;
+}
