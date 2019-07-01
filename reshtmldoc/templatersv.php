@@ -162,8 +162,8 @@
             <td colspan="3"><b>Vehículo</b></td>
         </tr>
         <tr style="vertical-align: top">
-            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[11]->value; ?></td>
-            <td style="width: 33%">Modelo: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 34%">Marca: <?= $_SESSION['data_wc_lwc']->meta_data[9]->value; ?></td>
+            <td style="width: 33%">Modelo: <?= $_SESSION['data_wc_lwc']->meta_data[11]->value; ?></td>
             <td style="width: 33%">Año: <?= $_SESSION['data_wc_lwc']->meta_data[8]->value; ?></td>
         </tr>
         <tr>
