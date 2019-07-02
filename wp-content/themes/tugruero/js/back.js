@@ -13,6 +13,7 @@ $(document).ready(function() {
 	});
 	if(sessionStorage.getItem("cupon")=="true"){
 		$(".pago").html("Canjear tarjeta");
+		$("#payment_heading").hide();
 	}
 	$("#billing_myfield18_field select").prepend("<option selected disabled value='0'>-</option>");
 	$("#billing_myfield19_field select").prepend("<option selected disabled value='0'>-</option>");
