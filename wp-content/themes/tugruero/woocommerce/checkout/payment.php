@@ -107,6 +107,8 @@ if ( ! is_ajax() ) {
 	}
 	$(document).ready(function(){
 		if(sessionStorage.getItem("cupon")=="true"){
+			$("#payment_heading").hide();
+			$(".entry-title").html("Canjeo de tarjeta");
 			$(".pago").html("Canjear tarjeta");
 			$(".no-cupon").each(function(){
 				$(this).remove();
