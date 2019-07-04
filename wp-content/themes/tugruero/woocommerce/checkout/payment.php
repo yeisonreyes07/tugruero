@@ -43,17 +43,19 @@ if ( ! is_ajax() ) {
 			</div>
 		</div>
 		<div class="col l4">
-			<a href="#" class="showcoupon"><div class="col l12 logo-payment" id="containercoupon" onclick="select(this);">
-				<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
-				<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta TuGruero</b></p>
-			</div></a>
+			<!-- <a href="#" class="showcoupon"> -->
+				<div class="col l12 logo-payment" id="containercoupon" onclick="cupon();select(this);">
+					<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
+					<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta TuGruero</b></p>
+				</div>
+			<!-- </a> -->
 			<div class="col l12">
 				<br>
 				<p class="align-center"><b>Tarjeta TuGruero</b></p>
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" id="tarjetatugruero" style="display:none;">
 		<div class="col l12">
 			<div class="col l4 offset-l4">
 				<p class="form-row form-row-first validate-required validate-required" style="width:100%;">
@@ -61,7 +63,7 @@ if ( ! is_ajax() ) {
 					<input type="text" class="input-text " name="cuponid" id="cuponid" placeholder="">
 				</p>
 				<p>
-					<button class="button alt">Aplicar Tarjeta TuGruero</button>
+					<button class="button alt button-tg" id="tarjetaTugrueroBtn">Aplicar Tarjeta TuGruero</button>
 				</p>
 			</div>
 		</div>
@@ -113,13 +115,25 @@ if ( ! is_ajax() ) {
 		$("#payment_method_bacs").click();
 	}
 
+	function cupon(){
+		$("#tarjetatugruero").toggle();
+	}
+
 	function select(obj){
 		$(".logo-payment").each(function(e,v){
 			$(this).removeClass("select");
 		})
 		$(obj).addClass("select");
 	}
+
 	$(document).ready(function(){
+		$("#tarjetaTugrueroBtn").click(function(event){
+			event.preventDefault();
+			$("#coupon_code").val($("#cuponid").val());
+			$("button[name=apply_coupon]").click();
+			$("button[name=apply_coupon]").prop("disable",true);
+			$("button[name=apply_coupon]").html("Cargando...");
+		});
 		if(sessionStorage.getItem("cupon")=="true"){
 			$("#payment_heading").hide();
 			$(".pago").html("Tarjeta TuGruero");

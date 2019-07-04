@@ -2394,3 +2394,10 @@ a.atr, a.atr:visited, a.atr:hover{
 .col.l4.offset-l4{
 	margin-left: 33.3%;
 }
+.button-tg{
+    font-family: 'Nunito-Bold', sans-serif !important;
+    border-radius: 20px !important;
+    display: block !important;
+    border: 0px solid !important;
+    margin: 20px auto 30px auto !important;
+}
