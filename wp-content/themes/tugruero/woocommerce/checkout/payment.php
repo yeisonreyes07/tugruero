@@ -53,8 +53,21 @@ if ( ! is_ajax() ) {
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col l12">
+			<div class="col l4 offset-l4">
+				<p class="form-row form-row-first validate-required validate-required" style="width:100%;">
+					<label for="cuponid" class="">Ingresa el código de la Tarjeta TuGuero &nbsp;<abbr class="required" title="obligatorio">*</abbr></label>
+					<input type="text" class="input-text " name="cuponid" id="cuponid" placeholder="">
+				</p>
+				<p>
+					<button class="button alt">Aplicar Tarjeta TuGruero</button>
+				</p>
+			</div>
+		</div>
+	</div>
 	<?php if ( WC()->cart->needs_payment() ) : ?>
-		<ul class="wc_payment_methods payment_methods methods">
+		<ul id="metodos" class="wc_payment_methods payment_methods methods">
 			<?php
 			if ( ! empty( $available_gateways ) ) {
 				foreach ( $available_gateways as $gateway ) {
@@ -117,6 +130,13 @@ if ( ! is_ajax() ) {
 				"width": "33%",
 				"margin": "auto"
 			});
+			$("#payment").prepend("<ul class='wc_payment_methods payment_methods method' style=\"margin-bottom: 80px;\">"+
+				"<li><div class='payment_box'>"+
+					"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio modi magni iste consequuntur ex distinctio voluptatum dolorem animi, deleniti ipsa asperiores, illo inventore? Aliquid quasi deserunt dolor minima eos fugit!</p>"+
+				"</div></li>"+
+			"</ul>");
+			$("#metodos").hide();
+			$("#place_order").html("Finalizar");
 		}
 	})
 </script>

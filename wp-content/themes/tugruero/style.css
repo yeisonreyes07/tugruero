@@ -2387,3 +2387,10 @@ a.atr, a.atr:visited, a.atr:hover{
 .woocommerce-form-coupon-toggle{
 	visibility: hidden;
 }
+.col.l4{
+	float: left;
+	width: 33.3%;
+}
+.col.l4.offset-l4{
+	margin-left: 33.3%;
+}
