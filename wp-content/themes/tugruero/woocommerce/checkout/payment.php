@@ -43,12 +43,13 @@ if ( ! is_ajax() ) {
 			</div>
 		</div>
 		<div class="col l4">
-			<a href="#" class="showcoupon"><div class="col l12 logo-payment" onclick="select(this);">
-				<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="">
+			<a href="#" class="showcoupon"><div class="col l12 logo-payment" id="containercoupon" onclick="select(this);">
+				<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
+				<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta TuGruero</b></p>
 			</div></a>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Cupones</b></p>
+				<p class="align-center"><b>Tarjeta TuGruero</b></p>
 			</div>
 		</div>
 	</div>
@@ -108,11 +109,14 @@ if ( ! is_ajax() ) {
 	$(document).ready(function(){
 		if(sessionStorage.getItem("cupon")=="true"){
 			$("#payment_heading").hide();
-			$(".entry-title").html("Canjeo de tarjeta");
-			$(".pago").html("Canjear tarjeta");
+			$(".pago").html("Tarjeta TuGruero");
 			$(".no-cupon").each(function(){
 				$(this).remove();
-			})
+			});
+			$("#containercoupon").css({
+				"width": "33%",
+				"margin": "auto"
+			});
 		}
 	})
 </script>

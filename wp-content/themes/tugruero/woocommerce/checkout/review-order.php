@@ -121,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		})
 		if(sessionStorage.getItem("cupon")=="true"){
 			$(".amount").each(function(){
-				$(this).html("Canjear tarjeta");
+				$(this).html("Tarjeta TuGruero");
 			})
 		}
 	})

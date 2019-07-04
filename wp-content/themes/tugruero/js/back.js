@@ -12,7 +12,7 @@ $(document).ready(function() {
 		}
 	});
 	if(sessionStorage.getItem("cupon")=="true"){
-		$(".pago").html("Canjear tarjeta");
+		$(".pago").html("Tarjeta TuGruero");
 	}
 	$("#billing_myfield18_field select").prepend("<option selected disabled value='0'>-</option>");
 	$("#billing_myfield19_field select").prepend("<option selected disabled value='0'>-</option>");
@@ -501,7 +501,7 @@ $(document).ready(function() {
 		
 	});
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
-		$('article .entry-header .entry-title').text("Pago");
+		$('article .entry-header .entry-title').text("Canjeo de tarjeta");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 		$('#wpmc-next').remove();

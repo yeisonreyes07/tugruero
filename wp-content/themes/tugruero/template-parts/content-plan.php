@@ -34,7 +34,7 @@ get_header();
 			<input type="number" id="cantidad" value="1"/>					
         </div>
         <div class="form-row" id="moneda-con">
-        	<label>Meneda seleccionada</label>
+        	<label>Modo de pago seleccionado</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
         </div>
@@ -75,7 +75,7 @@ get_header();
 		if(pathname=='?canjear=true'){
 			$('#ModalChange').modal('show');
 			$("#cantidad").prop("disabled",true);
-			$("#moneda-con input").val("Canjear Tarjeta");
+			$("#moneda-con input").val("Tarjeta TuGruero");
 			sessionStorage.setItem("cupon", "true");
 		}else{
 			sessionStorage.setItem("cupon", "false");
@@ -93,11 +93,13 @@ get_header();
 
 		var mostrar = $("#wmc_widget-2 select option:selected").html();
 		if(sessionStorage.getItem("cupon")=="true"){
-			mostrar="Canjear Tarjeta";
+			mostrar="Tarjeta TuGruero";
 		}
 
 		$("#wmc_widget-2").hide();
 		$("#wmc_widget-2").before('<input type="text" value="'+mostrar+'" disabled class="input-text" style="width:100%;border-radius: 10px;padding: 8px 10px 8px 20px;background:#ccc">');
-		$("#wmc_widget-2").after('<small>Si deseas cambiar la moneda, <a href="../" class="atr">haz click aquí</a></small>');
+		if(sessionStorage.getItem("cupon")=="false"){
+			$("#wmc_widget-2").after('<small>Si deseas cambiar la moneda, <a href="../" class="atr">haz click aquí</a></small>');
+		}
 	})
 </script>
