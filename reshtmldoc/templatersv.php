@@ -49,7 +49,13 @@
     </table>
     <table style="width: 100%; border:1px solid #000" class="border">
         <tr style="vertical-align: top">
-            <td style="width: 20%"><b>N° de Poliza</b><br><?= $_SESSION['data_wc_lwc']->id; ?></td>
+            <td style="width: 20%"><b>N° de Poliza</b><br>
+                <table style="width: 100%" class="no-border">
+                    <tr>
+                        <td style="width: 100%"><?= $_SESSION['data_wc_lwc']->id; ?></td>
+                    </tr>
+                </table>
+            </td>
             <td style="width: 32%"><b>Vigencia de la Póliza</b><br>
                 <table style="width: 100%" class="no-border">
                     <tr>
@@ -58,8 +64,20 @@
                     </tr>
                 </table>
             </td>
-            <td style="width: 16%"><b>Frecuencia de Pago</b><br>Anual</td>
-            <td style="width: 32%"><b>Sucursal Suscriptora</b><br>UniCaracas</td>
+            <td style="width: 16%"><b>Frecuencia de Pago</b><br>
+                <table style="width: 100%" class="no-border">
+                    <tr>
+                        <td style="width: 100%">Anual</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 32%"><b>Sucursal Suscriptora</b><br>
+                <table style="width: 100%" class="no-border">
+                    <tr>
+                        <td style="width: 100%">UniCaracas</td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
     <table style="width: 100%" class="bordertitulo grey">
