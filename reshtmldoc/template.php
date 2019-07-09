@@ -121,7 +121,7 @@
     </table>
     <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
-            <td style="width: 33%">Nombre Producto: Plan Classic</td>
+            <td style="width: 33%">Nombre Producto: <?= $_SESSION['data_wc_lwc']->producto ?></td>
             <td style="width: 33%">Precio: <?= number_format($_SESSION['data_wc_lwc']->total, 2, ',', '.'). " ". $_SESSION['data_wc_lwc']->currency; ?></td>
             <td style="width: 33%">Inic. Vig: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
         </tr>
