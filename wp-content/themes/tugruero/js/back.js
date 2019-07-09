@@ -1,4 +1,6 @@
+var ban=0;
 $(document).ready(function() {
+	$("#place_order").hide();
 	$("input[type='radio'][value='Si']").prop("checked",true);
 	$("#billing_myfield17_field").hide();
 	$("#btnplanes").on('click', function() {
@@ -479,6 +481,7 @@ $(document).ready(function() {
 			$('article .entry-header .entry-title').text("Resumen de Compra");
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 			$('.resumen-cart .paso .pas').text("3");
+			ban=1;
 		}else{
 			$(".msg-error").append(items);
 		}
@@ -500,17 +503,31 @@ $(document).ready(function() {
 		$('.resumen-cart .paso .pas').text("2");
 		
 	});
+	
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
 		$('article .entry-header .entry-title').text("Canjeo de tarjeta");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
-		$('#wpmc-next').remove();
-		$("#place_order").html("Procesar pago");
+		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
+		$("#place_order").html("Realizar pedido");
+		$('#wpmc-next').text("Realizar pedido");
+		if(ban==2 && $(".cart-discount").length>0){
+			$("#place_order").click();
+		}
+		ban++;
+		if(ban==2 && $(".cart-discount").length==0){
+			$('#wpmc-next').prop("disabled",true);
+		}
 	});
 	$("#wpmc-prev").on('click', function(){
+		$('#wpmc-next').prop("disabled",false);
 		$("#checkout_coupon").addClass('hide');
-		$('article .entry-header .entry-title').text("Datos del Vehículo");
-		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','none');
+		$('article .entry-header .entry-title').text("Resumen de Compra");
+		$('#wpmc-next').text("Siguiente");
+		ban--;
+		if(ban==0){
+			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','none');
+		}
 	});
 	$(document).on('change', function(){
 		if($('.wpmc-step-login').hasClass('current')){

@@ -46,12 +46,12 @@ if ( ! is_ajax() ) {
 			<!-- <a href="#" class="showcoupon"> -->
 				<div class="col l12 logo-payment" id="containercoupon" onclick="cupon();select(this);">
 					<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
-					<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta TuGruero</b></p>
+					<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta</b></p>
 				</div>
 			<!-- </a> -->
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Tarjeta TuGruero</b></p>
+				<p class="align-center" style="margin-bottom: 5px;"><b>Tarjeta TuGruero</b></p>
 			</div>
 		</div>
 	</div>
@@ -59,11 +59,11 @@ if ( ! is_ajax() ) {
 		<div class="col l12">
 			<div class="col l4 offset-l4">
 				<p class="form-row form-row-first validate-required validate-required" style="width:100%;">
-					<label for="cuponid" class="">Ingresa el código de la Tarjeta TuGuero &nbsp;<abbr class="required" title="obligatorio">*</abbr></label>
+					<label for="cuponid" class="">Raspa e ingresa el código de tu Tarjeta &nbsp;<abbr class="required" title="obligatorio">*</abbr></label>
 					<input type="text" class="input-text " name="cuponid" id="cuponid" placeholder="">
 				</p>
 				<p>
-					<button class="button alt button-tg" id="tarjetaTugrueroBtn">Aplicar Tarjeta TuGruero</button>
+					<button class="button alt button-tg" id="tarjetaTugrueroBtn">Canjear Tarjeta TuGruero</button>
 				</p>
 			</div>
 		</div>
@@ -127,12 +127,18 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		if($(".cart-discount").length>0){
+			$('#wpmc-next').prop("disabled",false);
+		}
+		$("#coupon_code").val("");
+		// $(".woocommerce-error li").html("Por favor, introduce un código de Tarjeta");
+		$(".woocommerce-privacy-policy-text").hide();
 		$("#tarjetaTugrueroBtn").click(function(event){
 			event.preventDefault();
+			$("#tarjetaTugrueroBtn").prop("disable",true);
+			$("#tarjetaTugrueroBtn").html("Cargando...");
 			$("#coupon_code").val($("#cuponid").val());
 			$("button[name=apply_coupon]").click();
-			$("button[name=apply_coupon]").prop("disable",true);
-			$("button[name=apply_coupon]").html("Cargando...");
 		});
 		if(sessionStorage.getItem("cupon")=="true"){
 			$("#payment_heading").hide();
@@ -145,12 +151,13 @@ if ( ! is_ajax() ) {
 				"margin": "auto"
 			});
 			$("#payment").prepend("<ul class='wc_payment_methods payment_methods method' style=\"margin-bottom: 80px;\">"+
-				"<li><div class='payment_box'>"+
-					"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio modi magni iste consequuntur ex distinctio voluptatum dolorem animi, deleniti ipsa asperiores, illo inventore? Aliquid quasi deserunt dolor minima eos fugit!</p>"+
+				"<li><div class='payment_box' style='margin:0px;'>"+
+					"<p>Finalmente para canjear tu tarjeta haz click en el cuadro de abajo, raspa e ingresa el código. Luego recibirás nuestro correo de confirmación.</p>"+
 				"</div></li>"+
 			"</ul>");
 			$("#metodos").hide();
-			$("#place_order").html("Finalizar");
+			$("#place_order").hide();
+			$("#place_order").html("Realizar pedido");
 		}
 	})
 </script>

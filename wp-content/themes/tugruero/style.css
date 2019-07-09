@@ -2069,13 +2069,15 @@ body:not(.home) .site-content{
 	text-align: center;
     display: inline;
 	float: none;
-	margin-left: 4%;
+	margin-right: 2%;
+	margin-left: 2%;
 }
 #wpmc-prev{
 	text-align: center;
     display: inline;
 	float: none;
-	margin-right: 3%;
+	margin-right: 2%;
+	margin-left: 2%;
 }
 .woo-multi-currency.wmc-sidebar.style-1 .wmc-list-currencies .wmc-currency{
 	background: rgb(45, 48, 51) !important;
@@ -2110,7 +2112,7 @@ body:not(.home) .site-content{
  	margin-bottom: 100px;
  }
  .woocommerce-checkout #payment div.form-row{
- 	margin-top: 150px;
+ 	margin-top: 0px;
  }
  #payment div.payment_box::before{
  	display: none !important;
@@ -2400,4 +2402,7 @@ a.atr, a.atr:visited, a.atr:hover{
     display: block !important;
     border: 0px solid !important;
     margin: 20px auto 30px auto !important;
+}
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+	float: initial !important;
 }
