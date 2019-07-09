@@ -517,6 +517,9 @@ $(document).ready(function() {
 		ban++;
 		if(ban==2 && $(".cart-discount").length==0){
 			$('#wpmc-next').prop("disabled",true);
+			if(sessionStorage.getItem("cupon")=="false"){
+				$('#wpmc-next').prop("disabled",false);
+			}
 		}
 	});
 	$("#wpmc-prev").on('click', function(){

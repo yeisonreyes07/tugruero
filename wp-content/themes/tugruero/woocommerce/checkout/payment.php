@@ -107,16 +107,32 @@ if ( ! is_ajax() ) {
 }
 ?>
 <script>
+	var cuponseleccionado=0;
 	function paypal(){
 		$("#payment_method_paypal").click();
+		$('#wpmc-next').text("Ir a PayPal");
+		$("#tarjetatugruero").toggle(false);
+		$('#wpmc-next').prop("disabled",false);
+		cuponseleccionado=0;
 	}
 
 	function transferencia(){
 		$("#payment_method_bacs").click();
+		$('#wpmc-next').text("Realizar pedido");
+		$("#tarjetatugruero").toggle(false);
+		$('#wpmc-next').prop("disabled",false);
+		cuponseleccionado=0;
 	}
 
 	function cupon(){
 		$("#tarjetatugruero").toggle();
+		$('#wpmc-next').text("Realizar pedido");
+		if($(".cart-discount").length>0){
+			$('#wpmc-next').prop("disabled",false);
+		}else{
+			$('#wpmc-next').prop("disabled",true);
+		}
+		cuponseleccionado=1;
 	}
 
 	function select(obj){
@@ -127,8 +143,11 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		$("#place_order").hide();
+		$("#place_order").html("Realizar pedido");
 		if($(".cart-discount").length>0){
 			$('#wpmc-next').prop("disabled",false);
+			select($("#containercoupon"));
 		}
 		$("#coupon_code").val("");
 		// $(".woocommerce-error li").html("Por favor, introduce un código de Tarjeta");
@@ -141,6 +160,7 @@ if ( ! is_ajax() ) {
 			$("button[name=apply_coupon]").click();
 		});
 		if(sessionStorage.getItem("cupon")=="true"){
+			cuponseleccionado=1;
 			$("#payment_heading").hide();
 			$(".pago").html("Tarjeta TuGruero");
 			$(".no-cupon").each(function(){
@@ -156,8 +176,8 @@ if ( ! is_ajax() ) {
 				"</div></li>"+
 			"</ul>");
 			$("#metodos").hide();
-			$("#place_order").hide();
-			$("#place_order").html("Realizar pedido");
+		}else{
+			$('#wpmc-next').prop("disabled",false);
 		}
 	})
 </script>
