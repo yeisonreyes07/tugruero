@@ -37,7 +37,46 @@ get_header();
         	<label>Modo de pago seleccionado</label>
       	    <?php dynamic_sidebar('sidebar-2'); ?>
 
-        </div>
+        </div> 	
+		<div class="form-row">
+			<label>Canal de venta</label>
+			<select id="canal" onchange="changeCanal()">
+				<option value="PAG">Página Web</option>
+				<option value="CP">Centro Plaza</option>
+				<option value="CCCT">Centro Ciudad Comercial Tamanaco</option>
+				<option value="FM">Francisco de Miranda</option>
+				<option value="OFIC">Oficina</option>
+				<option value="CCLP">Centro Comercial Los Proceres</option>
+				<option value="Corp">Corporativo</option>
+				<option value="AV01">Agentes de venta - AV01</option>
+				<option value="AV02">Agentes de venta - AV02</option>
+				<option value="AV03">Agentes de venta - AV03</option>
+				<option value="AV04">Agentes de venta - AV04</option>
+				<option value="AV05">Agentes de venta - AV05</option>
+				<option value="AV06">Agentes de venta - AV06</option>
+				<option value="AV07">Agentes de venta - AV07</option>
+				<option value="AV08">Agentes de venta - AV08</option>
+				<option value="AV09">Agentes de venta - AV09</option>
+				<option value="AV010">Agentes de venta - AV010</option>
+				<option value="AV011">Agentes de venta - AV011</option>
+				<option value="AV012">Agentes de venta - AV012</option>
+				<option value="AV013">Agentes de venta - AV013</option>
+				<option value="AV014">Agentes de venta - AV014</option>
+				<option value="AV015">Agentes de venta - AV015</option>
+				<option value="AV016">Agentes de venta - AV016</option>
+				<option value="AV017">Agentes de venta - AV017</option>
+				<option value="AV018">Agentes de venta - AV018</option>
+				<option value="AV019">Agentes de venta - AV019</option>
+				<option value="AV020">Agentes de venta - AV020</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label>Tipo de venta</label>
+			<select id="tipoventa" onchange="changeTipo()">
+				<option value="Nuevo">Nuevo</option>
+				<option value="Renovación">Renovación</option>
+			</select>
+		</div>
         <div class="btns-cart">
             <div class="izq">
                 <a href="<?php echo get_home_url();?>">Regresar</a>
@@ -70,6 +109,8 @@ get_header();
 <?php get_footer(); ?>
 
 <script>
+	sessionStorage.setItem("canal", "PAG");
+	sessionStorage.setItem("tipo", "Nuevo");
 	$(document).ready(function(){
 		var pathname = window.location.search;
 		if(pathname=='?canjear=true'){
@@ -102,4 +143,12 @@ get_header();
 			$("#wmc_widget-2").after('<small>Si deseas cambiar la moneda, <a href="../" class="atr">haz click aquí</a></small>');
 		}
 	})
+
+	function changeCanal(){
+		sessionStorage.setItem("canal", $("#canal").val());
+	}
+
+	function changeTipo(){
+		sessionStorage.setItem("tipo", $("#tipoventa").val());
+	}
 </script>

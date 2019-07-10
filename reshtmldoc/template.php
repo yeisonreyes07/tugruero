@@ -37,15 +37,33 @@
                 <td style="width: 40%; text-align: right">
                     <table class="info" style="width: 100%">
                         <tr>
-                            <td style="border-right: 1px solid #ccc; padding-right: 10px">Duración del Producto</td>
-                            <td style="padding-left: 10px">N° Producto</td>
+                            <td style="width: 50%; text-align: center; border-right: 1px solid #ccc; padding-right: 10px">Tipo de venta</td>
+                            <td style="width: 50%; text-align: center; padding-left: 10px">N° Producto</td>
                         </tr>
                         <tr>
-                            <td style="text-align: center; border-right: 1px solid #ccc; padding-right: 10px">
-                                Anual
+                            <td style="width: 50%; text-align: center; border-right: 1px solid #ccc; padding-right: 10px">
+                                <?= $_SESSION['data_wc_lwc']->meta_data[16]->value ?>
                             </td>
-                            <td style="text-align: center; padding-left: 10px">
-                                <?= $_SESSION['data_wc_lwc']->id; ?>
+                            <td style="width: 50%; text-align: center; padding-left: 10px">
+                                <?php 
+                                    switch($_SESSION['data_wc_lwc']->producto){
+                                        case "Plan Classic":{
+                                            echo "TGB-";
+                                            break;
+                                        }
+                                        case "Plan Plus":{
+                                            echo "TGP-";
+                                            break;
+                                        }
+                                        case "Plan Gold":{
+                                            echo "TGG-";
+                                            break;
+                                        }
+                                    }
+                                    echo $_SESSION['data_wc_lwc']->meta_data[15]->value."-";
+                                    echo $_SESSION['data_wc_lwc']->id;
+
+                                ?>
                             </td>
                         </tr>
                     </table>

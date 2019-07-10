@@ -1,5 +1,7 @@
 var ban=0;
 $(document).ready(function() {
+	$("#billing_canal_field").hide();
+	$("#billing_tipovental_field").hide();
 	$("#place_order").hide();
 	$("input[type='radio'][value='Si']").prop("checked",true);
 	$("#billing_myfield17_field").hide();
@@ -144,6 +146,10 @@ $(document).ready(function() {
 			'</select>'+
 		'</p>');
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
+
+		$("#billing_canal").val(sessionStorage.getItem("canal"));
+		$("#billing_tipovental").val(sessionStorage.getItem("tipo"));
+
 		//$('.btn-carro .der').append($('.woocommerce-checkout .wpmc-nav-buttons button#wpmc-next'));
 		//$('.btn-carro .der button').text("Siguiente")
 		$('.woocommerce-checkout .btn-carro').addClass('hide');
@@ -511,8 +517,14 @@ $(document).ready(function() {
 		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
 		$("#place_order").html("Realizar pedido");
 		$('#wpmc-next').text("Realizar pedido");
-		if(ban==2 && $(".cart-discount").length>0){
-			$("#place_order").click();
+		if(sessionStorage.getItem("cupon")=="true"){
+			if(ban==2 && $(".cart-discount").length>0){
+				$("#place_order").click();
+			}
+		}else{
+			if(ban==2){
+				$("#place_order").click();
+			}
 		}
 		ban++;
 		if(ban==2 && $(".cart-discount").length==0){
