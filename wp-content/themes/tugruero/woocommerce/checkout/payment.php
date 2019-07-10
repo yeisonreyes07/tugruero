@@ -59,7 +59,7 @@ if ( ! is_ajax() ) {
 		<div class="col l12">
 			<div class="col l4 offset-l4">
 				<p class="form-row form-row-first validate-required validate-required" style="width:100%;">
-					<label for="cuponid" class="">Raspa e ingresa el código de tu Tarjeta &nbsp;<abbr class="required" title="obligatorio">*</abbr></label>
+					<label for="cuponid" class="">Raspa e ingresa el código de tu Tarjeta</label>
 					<input type="text" class="input-text " name="cuponid" id="cuponid" placeholder="">
 				</p>
 				<p>
