@@ -22,10 +22,8 @@ if(!function_exists("lwc_get_opciones_de_admin")){
         if(isset($_GET['id'])){
             $query = new WC_Order($_GET['id']);
             $_SESSION['data_wc_lwc']=json_decode($query);
-            if($_SESSION['data_wc_lwc']->meta_data[15]->value){
-                $_SESSION['data_wc_lwc']->meta_data[15]->value = null; 
-            }
             if($_SESSION['data_wc_lwc']->meta_data[16]->value){
+                $_SESSION['data_wc_lwc']->meta_data[15]->value = null; 
                 $_SESSION['data_wc_lwc']->meta_data[16]->value = null; 
             }
             $items = $query->get_items();
