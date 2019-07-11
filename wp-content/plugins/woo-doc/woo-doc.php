@@ -23,7 +23,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
             $query = new WC_Order($_GET['id']);
             $_SESSION['data_wc_lwc']=json_decode($query);
             var_dump($_SESSION['data_wc_lwc']);
-            if($_SESSION['data_wc_lwc']->meta_data[16]->value){
+            if(!$_SESSION['data_wc_lwc']->meta_data[16]->value){
                 $_SESSION['data_wc_lwc']->meta_data[15]->value = null; 
                 $_SESSION['data_wc_lwc']->meta_data[16]->value = null; 
             }
