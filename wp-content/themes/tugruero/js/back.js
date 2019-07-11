@@ -511,17 +511,18 @@ $(document).ready(function() {
 	});
 	
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
-		$('article .entry-header .entry-title').text("Canjeo de tarjeta");
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
 		$("#place_order").html("Realizar pedido");
 		$('#wpmc-next').text("Realizar pedido");
 		if(sessionStorage.getItem("cupon")=="true"){
+			$('article .entry-header .entry-title').text("Canjeo de tarjeta");
 			if(ban==2 && $(".cart-discount").length>0){
 				$("#place_order").click();
 			}
 		}else{
+			$('article .entry-header .entry-title').text("Pago");
 			if(ban==2){
 				$("#place_order").click();
 			}
