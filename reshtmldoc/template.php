@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <td style="width: 50%; text-align: center; border-right: 1px solid #ccc; padding-right: 10px">
-                                <?= $_SESSION['data_wc_lwc']->meta_data[16]->value ?>
+                                <?= $_SESSION['data_wc_lwc']->tipoventa ?>
                             </td>
                             <td style="width: 50%; text-align: center; padding-left: 10px">
                                 <?php 
@@ -60,7 +60,7 @@
                                             break;
                                         }
                                     }
-                                    echo $_SESSION['data_wc_lwc']->meta_data[15]->value."-";
+                                    echo $_SESSION['data_wc_lwc']->canal."-";
                                     echo $_SESSION['data_wc_lwc']->id;
 
                                 ?>

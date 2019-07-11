@@ -29,7 +29,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                 $_SESSION['data_wc_lwc']->tipoventa = $_SESSION['data_wc_lwc']->meta_data[16]->value; 
                 $_SESSION['data_wc_lwc']->canal = $_SESSION['data_wc_lwc']->meta_data[15]->value; 
             }
-            var_dump($_SESSION['data_wc_lwc']);
+            // var_dump($_SESSION['data_wc_lwc']);
             $items = $query->get_items();
             foreach ( $items as $item ) {
                 $product_name = $item['name'];
