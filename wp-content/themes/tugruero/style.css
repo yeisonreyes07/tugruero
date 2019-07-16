@@ -2406,3 +2406,11 @@ a.atr, a.atr:visited, a.atr:hover{
 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
 	float: initial !important;
 }
+a.btn{
+	border:1px solid rgb(250, 105, 60);
+	color:#fff;
+}
+a.btn:hover{
+	background: rgb(250, 105, 60);
+	color:#fff;
+}

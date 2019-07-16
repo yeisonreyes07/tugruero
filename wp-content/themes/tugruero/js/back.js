@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$("#place_order").hide();
 	$("input[type='radio'][value='Si']").prop("checked",true);
 	$("#billing_myfield17_field").hide();
+
 	$("#btnplanes").on('click', function() {
 		var position = $("#planes").offset().top; 
 		$("HTML, BODY").animate({ scrollTop: position }, 1000); 
@@ -145,6 +146,9 @@ $(document).ready(function() {
 				'<option>Stands de venta</option><option>Instagram</option><option>Facebook</option><option>Familiar o Amigo</option><option>Busqueda en Google</option><option>Mercadolibre</option><option>Volanteo (calle)</option>'+
 			'</select>'+
 		'</p>');
+		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar()">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
+
+
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
 
 		$("#billing_canal").val(sessionStorage.getItem("canal"));
@@ -572,4 +576,8 @@ function cambiarComo(){
 }
 function cambiarEstado(){
 	$("#billing_state").val($("#billing_estado_tr option:selected").html());
+}
+
+function adjuntar(){
+	$("a.upload-file")[0].click();
 }
