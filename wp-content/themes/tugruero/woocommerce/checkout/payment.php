@@ -109,6 +109,9 @@ if ( ! is_ajax() ) {
 <script>
 	var cuponseleccionado=0;
 	function paypal(){
+		$("#metodos").css(
+			"padding-bottom","1em"
+		)
 		$("#payment_method_paypal").click();
 		$('#wpmc-next').text("Ir a PayPal");
 		$("#tarjetatugruero").toggle(false);
@@ -117,6 +120,9 @@ if ( ! is_ajax() ) {
 	}
 
 	function transferencia(){
+		$("#metodos").css(
+			"padding-bottom","3em"
+		)
 		$("#payment_method_bacs").click();
 		$('#wpmc-next').text("Realizar pedido");
 		$("#tarjetatugruero").toggle(false);
@@ -125,6 +131,9 @@ if ( ! is_ajax() ) {
 	}
 
 	function cupon(){
+		$("#metodos").css(
+			"padding-bottom","1em"
+		)
 		$("#tarjetatugruero").toggle();
 		$('#wpmc-next').text("Realizar pedido");
 		if($(".cart-discount").length>0){
@@ -143,6 +152,7 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		$("div.payment_method_bacs").append('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
 		$("#place_order").hide();
 		$("#place_order").html("Realizar pedido");
 		if($(".cart-discount").length>0){
@@ -177,6 +187,9 @@ if ( ! is_ajax() ) {
 			"</ul>");
 			$("#metodos").hide();
 		}else{
+			$("#metodos").css(
+				"padding-bottom","3em"
+			)
 			$('#wpmc-next').prop("disabled",false);
 		}
 	})

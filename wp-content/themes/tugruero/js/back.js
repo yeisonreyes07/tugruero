@@ -1,4 +1,7 @@
 var ban=0;
+var inputsRemenber = [];
+var selectRemenber = [];
+
 $(document).ready(function() {
 	$("#billing_canal_field").hide();
 	$("#billing_tipovental_field").hide();
@@ -19,10 +22,24 @@ $(document).ready(function() {
 	if(sessionStorage.getItem("cupon")=="true"){
 		$(".pago").html("Tarjeta TuGruero");
 	}
-	$("#billing_myfield18_field select").prepend("<option selected disabled value='0'>-</option>");
-	$("#billing_myfield19_field select").prepend("<option selected disabled value='0'>-</option>");
-	$("#billing_myfield20_field select").prepend("<option selected disabled value='0'>-</option>");
-	$("#billing_myfield24_field select").prepend("<option selected disabled value='0'>-</option>");
+	$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+	$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+	$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+	$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
+
+	inputsRemenber = JSON.parse(sessionStorage.getItem("inputs"));
+	if(inputsRemenber != null){
+		for(var i=0;i<inputsRemenber.length;i++){
+			$("#"+inputsRemenber[i].id).val(inputsRemenber[i].val);
+		}
+	}
+
+	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
+	if(selectRemenber != null){
+		for(var i=0;i<selectRemenber.length;i++){
+			$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+		}
+	}
 
 	$(".resumen-cart .pago").each(function(i,v){
 		var valor_ofice = $(this).html()
@@ -146,7 +163,7 @@ $(document).ready(function() {
 				'<option>Stands de venta</option><option>Instagram</option><option>Facebook</option><option>Familiar o Amigo</option><option>Busqueda en Google</option><option>Mercadolibre</option><option>Volanteo (calle)</option>'+
 			'</select>'+
 		'</p>');
-		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar()">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
+		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
 
 
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
@@ -190,11 +207,11 @@ $(document).ready(function() {
 		
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','none');
 		$('.btn-conductor .der a').on('click', function(){
+			sessionStorage.setItem('posicion', 2);
 			$('.msg-error').empty();
 			$("#checkout_coupon").addClass('hide');
 			var items = '';
 			var valid=true;
-			console.log($('.woocommerce-billing-fields #billing_first_name').val());
 			if($('.woocommerce-billing-fields #billing_first_name').val()==''){
 				$('.woocommerce-billing-fields #billing_first_name').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_first_name').focus(function(){
@@ -358,6 +375,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_myfield15_field').addClass('hide');
 				$('.woocommerce-billing-fields #billing_myfield16_field').addClass('hide');
 				$('.woocommerce-billing-fields #billing_myfield17_field').addClass('hide');
+				$(".woocommerce-billing-fields #billing_myfield39_field").addClass('hide');
 				
 				
 				$('.woocommerce-checkout .btn-conductor').addClass('hide');
@@ -380,6 +398,7 @@ $(document).ready(function() {
 		});
 
 		$('.woocommerce-checkout .btn-carro .izq a').on('click', function(){
+			sessionStorage.setItem('posicion', 1);
 			$(".msg-error").empty();
 			$("#checkout_coupon").addClass('hide');
 			$('.woocommerce-billing-fields #billing_first_name_field').removeClass('hide');
@@ -400,6 +419,7 @@ $(document).ready(function() {
 			$('.woocommerce-billing-fields #billing_myfield15_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield16_field').removeClass('hide');
 			$('.woocommerce-billing-fields #billing_myfield17_field').removeClass('hide');
+			$(".woocommerce-billing-fields #billing_myfield39_field").removeClass('hide');
 			
 			
 			$('.woocommerce-checkout .btn-conductor').removeClass('hide');
@@ -417,6 +437,7 @@ $(document).ready(function() {
 			$('.resumen-cart .paso .pas').text("1");
 	});
 	$('.woocommerce-checkout .btn-carro .der a').on('click', function(){
+		sessionStorage.setItem('posicion', 3);
 		$("#checkout_coupon").addClass('hide');
 		$('.msg-error').empty();
 		var items = '';
@@ -515,6 +536,7 @@ $(document).ready(function() {
 	});
 	
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
+		sessionStorage.setItem('posicion', 4);
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
@@ -540,12 +562,14 @@ $(document).ready(function() {
 		}
 	});
 	$("#wpmc-prev").on('click', function(){
+		sessionStorage.setItem('posicion', 3);
 		$('#wpmc-next').prop("disabled",false);
 		$("#checkout_coupon").addClass('hide');
 		$('article .entry-header .entry-title').text("Resumen de Compra");
 		$('#wpmc-next').text("Siguiente");
 		ban--;
 		if(ban==0){
+			sessionStorage.setItem('posicion', 2);
 			$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','none');
 		}
 	});
@@ -566,6 +590,32 @@ $(document).ready(function() {
 		}
 	});
 	console.log(window.location.pathname);
+
+	switch(sessionStorage.getItem('posicion')){
+		case "1":{
+			break;
+		}
+		case "2":{
+			$('.btn-conductor .der a').click();
+			break;
+		}
+		case "3":{
+			$('.btn-conductor .der a').click();
+			$('.woocommerce-checkout .btn-carro .der a').click();
+			break;
+		}
+		case "4":{
+			$('.btn-conductor .der a').click();
+			$('.woocommerce-checkout .btn-carro .der a').click();
+			$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').click();
+			break;
+		}
+		default:{
+			// $('.btn-conductor .der a').click();
+			// $('.woocommerce-checkout .btn-carro .izq a').click();
+			break;
+		}
+	}
 })
 	/*
 	1- Colocar nombre y apellido en el registro
@@ -577,7 +627,51 @@ function cambiarComo(){
 function cambiarEstado(){
 	$("#billing_state").val($("#billing_estado_tr option:selected").html());
 }
+var time;
+function adjuntar(pos=0){
+	selectRemenber = [];
+	inputsRemenber = [];
 
-function adjuntar(){
+	selectRemenber.push({
+		id:"billing_phone",
+		val:$("#billing_phone").val(),
+	});
+	selectRemenber.push({
+		id:"billing_myfield15",
+		val:$("#billing_myfield15").val(),
+	});
+
+	$(".woocommerce-checkout select").each(function(e,v){
+		selectRemenber.push({
+			id:$(this)[0].id,
+			val:$(this).val(),
+		});
+		sessionStorage.setItem('selects', JSON.stringify(selectRemenber));
+	});
+	$(".woocommerce-checkout input[type=text]").each(function(e,v){
+		inputsRemenber.push({
+			id:$(this)[0].id,
+			val:$(this).val(),
+		});
+		sessionStorage.setItem('inputs', JSON.stringify(inputsRemenber));
+	});
 	$("a.upload-file")[0].click();
+	time = setInterval(function(){
+		if(pos==0){
+			var i = $(".upload-rule").length-1;
+			$($(".upload-rule")[i]).addClass("hide");
+			$($(".upload-rule")[i-1]).removeClass("hide");
+			$($(".upload-rule")[i-2]).removeClass("hide");
+		}else{
+			var i = $(".upload-rule").length-1;
+			$($(".upload-rule")[i]).removeClass("hide");
+			$($(".upload-rule")[i-1]).addClass("hide");
+			$($(".upload-rule")[i-2]).addClass("hide");
+		}
+		$(".upload-rule")
+	},200);
+
+	setTimeout(() => {
+		window.clearInterval(time);
+	}, 5000);
 }
