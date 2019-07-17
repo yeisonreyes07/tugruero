@@ -48,7 +48,7 @@
                                 <?php 
                                     switch($_SESSION['data_wc_lwc']->producto){
                                         case "Plan Classic":{
-                                            echo "TGB-";
+                                            echo "TGC-";
                                             break;
                                         }
                                         case "Plan Plus":{

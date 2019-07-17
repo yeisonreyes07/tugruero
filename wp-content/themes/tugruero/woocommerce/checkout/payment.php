@@ -121,7 +121,7 @@ if ( ! is_ajax() ) {
 
 	function transferencia(){
 		$("#metodos").css(
-			"padding-bottom","3em"
+			"padding-bottom","32em"
 		)
 		$("#payment_method_bacs").click();
 		$('#wpmc-next').text("Realizar pedido");
@@ -152,7 +152,19 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
-		$("div.payment_method_bacs").append('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
+		$("div.payment_method_bacs").append('<p><b>Para transferencia en Bolívares (BsS):</b><br><br>'+
+				'Soluciones Tu Gruero, C.A.<br>'+
+				'Rif: J-40680605-6<br><br>'+
+				'Cuentas Bancarias: <br><br>'+
+				'BANESCO: 0134 0371 6837 1103 9012<br>'+
+				'MERCANTIL: 0105 0277 2012 7707 6227<br>'+
+				'PROVINCIAL: 0108 0001 3101 0055 0488<br>'+
+				'VENEZOLANO DE CREDITO: 0104 0043 1104 3006 6994</p>');
+		$("div.payment_method_bacs").append('<hr><p><b>Para transferencia en Dólares (USD):</b><br><br>'+
+				'Nombre: TAKO LLC<br>'+
+				'Num cuenta: 229054907969 <br><br>'+
+				'Zelle: pagostugruero@gmail.com</p>');
+		$("div.payment_method_bacs").append('<hr><p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
 		$("#place_order").hide();
 		$("#place_order").html("Realizar pedido");
 		if($(".cart-discount").length>0){
@@ -188,7 +200,7 @@ if ( ! is_ajax() ) {
 			$("#metodos").hide();
 		}else{
 			$("#metodos").css(
-				"padding-bottom","3em"
+				"padding-bottom","32em"
 			)
 			$('#wpmc-next').prop("disabled",false);
 		}

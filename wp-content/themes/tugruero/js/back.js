@@ -3,6 +3,7 @@ var inputsRemenber = [];
 var selectRemenber = [];
 
 $(document).ready(function() {
+	$($("a.upload-file")[0]).hide();
 	$("#billing_canal_field").hide();
 	$("#billing_tipovental_field").hide();
 	$("#place_order").hide();
@@ -668,7 +669,6 @@ function adjuntar(pos=0){
 			$($(".upload-rule")[i-1]).addClass("hide");
 			$($(".upload-rule")[i-2]).addClass("hide");
 		}
-		$(".upload-rule")
 	},200);
 
 	setTimeout(() => {
