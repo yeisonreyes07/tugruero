@@ -3,7 +3,7 @@ var inputsRemenber = [];
 var selectRemenber = [];
 
 $(document).ready(function() {
-	$($("a.upload-file")[0]).hide();
+	$($("a.upload-file")[0]).addClass("hide");
 	$("#billing_canal_field").hide();
 	$("#billing_tipovental_field").hide();
 	$("#place_order").hide();

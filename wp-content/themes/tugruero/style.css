@@ -2414,3 +2414,27 @@ a.btn:hover{
 	background: rgb(250, 105, 60);
 	color:#fff;
 }
+.pp_content{
+	height: 550px !important;
+	overflow-y: auto;
+}
+.pp_content_container{
+	color: #fff;
+	background-image: url(images/fondo-checkout.png) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+}
+span.rule-allowed-extension, span.rule-max-size{
+	color: #ccc;
+}
+div.upload-items .select-file{
+	background-color: rgb(250, 105, 60) !important;
+	border: 1px solid rgb(250, 105, 60) !important;
+}
+div.submit-files input[type="submit"]{
+	background-color: rgb(250, 105, 60) !important;
+}
+a.upload-file{
+	display: none !important;
+}
