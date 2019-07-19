@@ -1990,7 +1990,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 									$current_image = imagecreatefromjpeg ( $upload_file_path );
 								}else{
 									$current_image = null;
-									throw new Exception("The file is corrupted");
+									// throw new Exception("The file is corrupted");
 								}
 								break;
 							case 'image/png':
@@ -1998,7 +1998,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 									$current_image = imagecreatefrompng ( $upload_file_path );
 								}else{
 									$current_image = null;
-									throw new Exception("The file is corrupted");
+									// throw new Exception("The file is corrupted");
 								}
 								break;
 							case 'image/gif':
@@ -2006,7 +2006,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 									$current_image = imagecreatefromgif ( $upload_file_path );
 								}else{
 									$current_image = null;
-									throw new Exception("The file is corrupted");
+									// throw new Exception("The file is corrupted");
 								}
 								break;
 							default:
