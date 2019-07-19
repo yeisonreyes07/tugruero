@@ -1,4 +1,5 @@
 var ban=0;
+var ban_cor=1;
 var inputsRemenber = [];
 var selectRemenber = [];
 
@@ -218,7 +219,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_first_name').focus(function(){
 					$(this).removeClass('invalido');
 				})
-				items+="<li>El campo Nombres es requerido.";
+				items+="<li>El campo Nombre es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_last_name').val()==''){
@@ -226,7 +227,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_last_name').focus(function(){
 					$(this).removeClass('invalido');
 				})
-				items+="<li>El campo Apellidos es requerido.";
+				items+="<li>El campo Apellido es requerido.";
 				valid=false;
 			}
 			if($('.woocommerce-billing-fields #billing_myfield11').val()==''){
@@ -279,20 +280,23 @@ $(document).ready(function() {
 					$(this).removeClass('invalido');
 				})
 				items+="<li>El campo Correo Electrónico es requerido.";
+				ban_cor=0;
 				valid=false;
 			}
 
-			campo = $('.woocommerce-billing-fields #billing_email');
-				
-			emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-			//Se muestra un texto a modo de ejemplo, luego va a ser un icono
-			if (!emailRegex.test(campo.val())) {
-				$('.woocommerce-billing-fields #billing_email').addClass("invalido");
-				$('.woocommerce-billing-fields #billing_email').focus(function(){
-					$(this).removeClass('invalido');
-				})
-				items+="<li>El campo Correo Electrónico no es valido..";
-				valid=false;
+			if(ban_cor==1){
+				campo = $('.woocommerce-billing-fields #billing_email');
+					
+				emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+				//Se muestra un texto a modo de ejemplo, luego va a ser un icono
+				if (!emailRegex.test(campo.val())) {
+					$('.woocommerce-billing-fields #billing_email').addClass("invalido");
+					$('.woocommerce-billing-fields #billing_email').focus(function(){
+						$(this).removeClass('invalido');
+					})
+					items+="<li>El campo Correo Electrónico no es valido..";
+					valid=false;
+				}
 			}
 			
 			if($('.woocommerce-billing-fields #billing_myfield15').val()==''){
@@ -309,7 +313,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_address_1').focus(function(){
 					$(this).removeClass('invalido');
 				})
-				items+="<li>El campo Dirección es requerido.";
+				items+="<li>El campo Dirección de Domicilio es requerido.";
 				valid=false;
 			}
 
@@ -322,7 +326,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_city').focus(function(){
 					$(this).removeClass('invalido');
 				})
-				items+="<li>El campo Cíudad es requerido.";
+				items+="<li>El campo Ciudad es requerido.";
 				valid=false;
 			
 			}

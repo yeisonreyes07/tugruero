@@ -135,6 +135,8 @@ if ( ! is_ajax() ) {
 			"padding-bottom","1em"
 		)
 		$("#tarjetatugruero").toggle();
+		$("div.payment_method_paypal").css("display","none");
+		$("div.payment_method_bacs").css("display","none");
 		$('#wpmc-next').text("Realizar pedido");
 		if($(".cart-discount").length>0){
 			$('#wpmc-next').prop("disabled",false);

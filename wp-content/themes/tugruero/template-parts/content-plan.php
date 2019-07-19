@@ -28,6 +28,7 @@ get_header();
                 <option value="<?php echo $product->id; ?>"><?php echo $product->name; ?></option>
 		    <?php }#}?>
             </select>
+			<small>(incluye RCV)</small>
 		</div>
 		<div class="form-row">
 			<label>Escoja la cantidad de carros que desea afiliar</label>

@@ -2231,7 +2231,7 @@ body:not(.home) .site-content{
 }
 .resumen-cart{
 	position: fixed;
-	right: 40px;
+	right: 10px;
 	padding-left: 20px !important;
 	top: 100px;
 	font-family: 'Nunito-Bold', sans-serif;
