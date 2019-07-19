@@ -1961,12 +1961,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 				$folder );
 
 			if ( ! file_exists ( $order_dir ) ) {
-				if(wp_mkdir_p ( $order_dir )){
-					echo "creado";
-				}else{
-					echo "no creado";
-				}
-				
+				wp_mkdir_p ( $order_dir );
 			}
 
 			$upload_file_path = sprintf ( "%s/%s", $order_dir, $filename );
@@ -1987,7 +1982,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 					$crop_height = $this->thumbnail_height;
 
 					$canvas = imagecreatetruecolor ( $crop_width, $crop_height );
-					echo $upload_file_path;
+					
 					try{
 						switch ( $mime_type ) {
 							case 'image/jpeg':
