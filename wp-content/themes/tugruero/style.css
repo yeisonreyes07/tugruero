@@ -2438,3 +2438,6 @@ div.submit-files input[type="submit"]{
 a.upload-file{
 	display: none !important;
 }
+.woocommerce-checkout form .form-row input[type=text], .woocommerce-checkout form .form-row input[type=date], .woocommerce-checkout form .form-row input[type=password], .woocommerce-checkout form .form-row input[type=number], .woocommerce-checkout form .form-row input[type=email], .woocommerce-checkout form .form-row textarea, .woocommerce-checkout form .form-row input[type=tel], .tml-action form input[type=text], .tml-action form input[type=password], .tml-action form input[type=number], .tml-action form input[type=email], .tml-action form textarea, .woocommerce-cart #content form input[type=text], .woocommerce-cart #content form input[type=number], .woocommerce-checkout #content form select, .page-template-content-plan #content .form-cart input[type=number], .page-template-content-plan #content .form-cart select, .planes .widget_wmc_widget select, .page-template-content-plan .widget_wmc_widget select{
+	border: 2px solid #fff;
+}

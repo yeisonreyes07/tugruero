@@ -282,6 +282,8 @@ $(document).ready(function() {
 				items+="<li>El campo Correo Electrónico es requerido.";
 				ban_cor=0;
 				valid=false;
+			}else{
+				ban_cor=1;
 			}
 
 			if(ban_cor==1){
@@ -294,7 +296,7 @@ $(document).ready(function() {
 					$('.woocommerce-billing-fields #billing_email').focus(function(){
 						$(this).removeClass('invalido');
 					})
-					items+="<li>El campo Correo Electrónico no es valido..";
+					items+="<li>El campo Correo Electrónico no es válido.";
 					valid=false;
 				}
 			}

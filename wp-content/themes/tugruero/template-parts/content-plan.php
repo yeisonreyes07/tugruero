@@ -14,7 +14,7 @@ get_header();
 
 	<div class="form-cart">
 		<div class="form-row">
-			<label>Escoja el plan de su preferencia</label>
+			<label>Escoja el plan de su preferencia (incluye RCV)</label>
 			<select id="plan">
             <?php #$query= new WP_Query('post_type=product&order=ASC');
 			$query = new WC_Product_Query( array(
@@ -28,7 +28,6 @@ get_header();
                 <option value="<?php echo $product->id; ?>"><?php echo $product->name; ?></option>
 		    <?php }#}?>
             </select>
-			<small>(incluye RCV)</small>
 		</div>
 		<div class="form-row">
 			<label>Escoja la cantidad de carros que desea afiliar</label>
