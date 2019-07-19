@@ -1964,6 +1964,8 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 				wp_mkdir_p ( $order_dir );
 			}
 
+			echo $order_dir;
+
 			$upload_file_path = sprintf ( "%s/%s", $order_dir, $filename );
 			$thumb_name       = pathinfo ( $filename, PATHINFO_FILENAME ) . "_thumb";
 			$thumb_ext        = pathinfo ( $filename, PATHINFO_EXTENSION );
