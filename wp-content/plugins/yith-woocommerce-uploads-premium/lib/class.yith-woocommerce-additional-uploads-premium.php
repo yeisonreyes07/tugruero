@@ -1982,7 +1982,7 @@ if ( ! class_exists ( 'YITH_WooCommerce_Additional_Uploads_Premium' ) ) {
 					$crop_height = $this->thumbnail_height;
 
 					$canvas = imagecreatetruecolor ( $crop_width, $crop_height );
-
+					echo $upload_file_path;
 					try{
 						switch ( $mime_type ) {
 							case 'image/jpeg':
