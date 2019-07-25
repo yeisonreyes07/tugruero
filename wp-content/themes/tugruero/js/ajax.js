@@ -10,7 +10,7 @@
                 quantity: $('input#cantidad').val()
             },
             success : function( response ) {
-                setTimeout(window.location="/tugruero/finalizar-compra", 1000);	
+                setTimeout(window.location="/tugruero/finalizar-compra/", 1000);	
                 // setTimeout(window.location="/finalizar-compra", 1000);	
             }
         });

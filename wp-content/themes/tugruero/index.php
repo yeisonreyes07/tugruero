@@ -13,6 +13,13 @@
  */
 
 get_header();
+if(!isset($_SESSION['currency'])){
+	$_SESSION['currency'] = "USD";
+}else{
+	if(isset($_GET['wmc-currency'])){
+		$_SESSION['currency'] = $_GET['wmc-currency'];
+	}
+}
 ?>
 
 	<div id="primary" class="content-area">

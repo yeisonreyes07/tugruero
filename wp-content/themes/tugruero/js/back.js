@@ -24,10 +24,6 @@ $(document).ready(function() {
 	if(sessionStorage.getItem("cupon")=="true"){
 		$(".pago").html("Tarjeta TuGruero");
 	}
-	$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
-	$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
-	$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
-	$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
 
 	inputsRemenber = JSON.parse(sessionStorage.getItem("inputs"));
 	if(inputsRemenber != null){
@@ -36,12 +32,29 @@ $(document).ready(function() {
 		}
 	}
 
+	$("#billing_myfield19").html("");
+	var d = new Date();
+	var anio = d.getFullYear();
+	for(var i=2000;i<=anio;i++){
+		$("#billing_myfield19").append("<option value='"+i+"'>"+i+"</option>");
+	}
+
 	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
 	if(selectRemenber != null){
+		$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
 		for(var i=0;i<selectRemenber.length;i++){
 			$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
 		}
+	}else{
+		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
 	}
+
 
 	$(".resumen-cart .pago").each(function(i,v){
 		var valor_ofice = $(this).html()

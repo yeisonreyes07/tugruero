@@ -23,7 +23,7 @@ get_header();
         ?>
         <div class="faq">
             <p><a class="title-faq" data-toggle="collapse" href="#a<?php echo $i;?>" role="button" aria-expanded="false" aria-controls="a<?php echo $i; ?>">
-                <i class="fas fa-asterisk" style="background:rgb(250, 105, 60); color:#fff; padding:5px;"></i> <?php echo get_the_title();?>
+                <i class="fas fa-asterisk" style="color:rgb(250, 105, 60); padding:5px;"></i> <?php echo get_the_title();?>
             </a></p>
             <div class="collapse" id="a<?php echo $i;?>">
                 <div class="card card-body">

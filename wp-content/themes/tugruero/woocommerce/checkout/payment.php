@@ -20,29 +20,75 @@ defined( 'ABSPATH' ) || exit;
 if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_before_payment' );
 }
+$woo_multi = get_option("woo_multi_currency_params");
+if($woo_multi['currency_rate'][0]>1){
+	$rate = $woo_multi['currency_rate'][0];
+}else{
+	$rate = $woo_multi['currency_rate'][1];
+}
 ?>
 <?php cosas();?>
 <div id="payment" class="woocommerce-checkout-payment">
 	<div class="row">
-		<div class="col l4 no-cupon">
+		<div class="col l12">
+			<table>
+				<tr>
+					<td>Bolívar soberano (Bs.S)</td>
+					<td>Dólar de los Estados Unidos (USD)</td>
+				</tr>
+				<?php
+					foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+						$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+						$query = new WC_Product($_product->id);
+						$bss=0;
+						$usd=0;
+						if($_SESSION['currency']=="VES"){
+							$bss= $query->get_price();
+							$usd= $query->get_price()/$rate;
+						}else{
+							$bss= $rate*$query->get_price();
+							$usd= $query->get_price();
+						}
+						?>
+							<tr>
+								<td><?= "Bs.S ".number_format($bss, 2, ',', '.'); ?></td>
+								<td><?= "$ ".number_format($usd, 2, ',', '.'); ?></td>
+							</tr>
+						<?php
+					}
+				?>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col l3 no-cupon">
 			<div class="col l12 logo-payment select" onclick="transferencia();select(this)">
 				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Transferencia Bancaria</b></p>
+				<p class="align-center"><b>Transferencia Bancaria</b><br>Para pagos en Bs.S y $</p>
 			</div>
 		</div>
-		<div class="col l4 no-cupon">
+		<div class="col l3 no-cupon">
+			<div class="col l12 logo-payment">
+				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
+			</div>
+			<div class="col l12">
+				<br>
+				<p class="align-center"><b>Tarjeta de crédito venezolana</b><br>Para pagos en Bs.S</p>
+			</div>
+		</div>
+		<div class="col l3 no-cupon">
 			<div class="col l12 logo-payment" onclick="paypal();select(this)">
 				<img src="../wp-content/themes/tugruero/images/brand2.svg" alt="">
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>PayPal</b></p>
+				<p class="align-center"><b>PayPal</b><br>Para pagos en $</p>
 			</div>
 		</div>
-		<div class="col l4">
+		<div class="col l3">
 			<!-- <a href="#" class="showcoupon"> -->
 				<div class="col l12 logo-payment" id="containercoupon" onclick="cupon();select(this);">
 					<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
@@ -154,19 +200,23 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
-		$("div.payment_method_bacs").append('<p><b>Para transferencia en Bolívares (BsS):</b><br><br>'+
+		$("div.payment_method_bacs").html('');
+		$("div.payment_method_bacs").append('<div class="row">'+
+				'<div class="col l6"><p><b>Para transferencia en Bolívares (BsS):</b><br><br>'+
 				'Soluciones Tu Gruero, C.A.<br>'+
 				'Rif: J-40680605-6<br><br>'+
 				'Cuentas Bancarias: <br><br>'+
 				'BANESCO: 0134 0371 6837 1103 9012<br>'+
 				'MERCANTIL: 0105 0277 2012 7707 6227<br>'+
 				'PROVINCIAL: 0108 0001 3101 0055 0488<br>'+
-				'VENEZOLANO DE CREDITO: 0104 0043 1104 3006 6994</p>');
-		$("div.payment_method_bacs").append('<hr><p><b>Para transferencia en Dólares (USD):</b><br><br>'+
+				'VENEZOLANO DE CREDITO: 0104 0043 1104 3006 6994</p></div>'+
+
+				'<div class="col l6"><p><b>Para transferencia en Dólares (USD):</b><br><br>'+
 				'Nombre: TAKO LLC<br>'+
 				'Num cuenta: 229054907969 <br><br>'+
-				'Zelle: pagostugruero@gmail.com</p>');
-		$("div.payment_method_bacs").append('<hr><p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
+				'Zelle: pagostugruero@gmail.com</p></div>'+
+			'</div>');
+		$("div.payment_method_bacs").append('<hr><p style="text-align: center;" class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
 		$("#place_order").hide();
 		$("#place_order").html("Realizar pedido");
 		if($(".cart-discount").length>0){
