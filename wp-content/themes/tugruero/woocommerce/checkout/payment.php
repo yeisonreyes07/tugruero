@@ -63,7 +63,7 @@ if($woo_multi['currency_rate'][0]>1){
 	<div class="row">
 		<div class="col l3 no-cupon">
 			<div class="col l12 logo-payment select" onclick="transferencia();select(this)">
-				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
+				<img src="../wp-content/themes/tugruero/images/Trans_icon_negro.png" alt="">
 			</div>
 			<div class="col l12">
 				<br>
@@ -72,7 +72,7 @@ if($woo_multi['currency_rate'][0]>1){
 		</div>
 		<div class="col l3 no-cupon">
 			<div class="col l12 logo-payment">
-				<img src="../wp-content/themes/tugruero/images/money-transfer3.svg" alt="">
+				<img src="../wp-content/themes/tugruero/images/Tarjeta_Credito-02.png" alt="">
 			</div>
 			<div class="col l12">
 				<br>
@@ -91,7 +91,7 @@ if($woo_multi['currency_rate'][0]>1){
 		<div class="col l3">
 			<!-- <a href="#" class="showcoupon"> -->
 				<div class="col l12 logo-payment" id="containercoupon" onclick="cupon();select(this);">
-					<img src="../wp-content/themes/tugruero/images/discount-voucher2.svg" alt="" style="height: 80px !important;">
+					<img src="../wp-content/themes/tugruero/images/TDC_iCON_NEGRO.png" alt="" style="height: 80px !important;">
 					<p style="color:#000; font-size:12px"><b>Haz click aquí para usar tu Tarjeta</b></p>
 				</div>
 			<!-- </a> -->

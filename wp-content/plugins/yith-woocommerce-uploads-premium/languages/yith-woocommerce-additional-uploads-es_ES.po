@@ -107,7 +107,7 @@ msgstr "Deshabilitar la carga de archivos"
 
 #: lib/class.yith-woocommerce-additional-uploads-premium.php:1534
 msgid "Allowed extension: %s."
-msgstr "Extensión permitida %s."
+msgstr "Formato permitido %s."
 
 #: lib/class.yith-woocommerce-additional-uploads-premium.php:1537
 msgid "Max allowed size: %s MB."
@@ -132,7 +132,7 @@ msgstr "Notas:"
 
 #: lib/class.yith-woocommerce-additional-uploads-premium.php:1603
 msgid "Submit"
-msgstr "Enviar"
+msgstr "Siguiente"
 
 #: lib/class.yith-woocommerce-additional-uploads-premium.php:1790
 msgid "Upload %s/%s file"
