@@ -66,7 +66,7 @@
 			<?php }}?>
 		</div><!-- .site-info -->
 		<div class="copyright">
-			Copyright 2016 © - Soluciones Tu Gruero, C.A.
+			Copyright 2019 © - Soluciones Tu Gruero, C.A.
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
