@@ -25,6 +25,8 @@ $(document).ready(function() {
 		$(".pago").html("Tarjeta TuGruero");
 	}
 
+	$("#billing_myfield20 option")[7].remove();
+
 	inputsRemenber = JSON.parse(sessionStorage.getItem("inputs"));
 	if(inputsRemenber != null){
 		for(var i=0;i<inputsRemenber.length;i++){

@@ -87,8 +87,8 @@ if ( ! class_exists( "YWAU_Order_Admin_Message" ) ) {
 			$this->replace['order-date']   = date_i18n( wc_date_format(), strtotime( yit_get_prop( $this->object, 'order_date' ) ) );
 			$this->replace['order-number'] = $this->object->get_order_number();
 
-			$result = $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
-
+			// $result = $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
+			$result = true;
 			return $result;
 		}
 

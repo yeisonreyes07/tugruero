@@ -67,7 +67,7 @@ if($woo_multi['currency_rate'][0]>1){
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Transferencia Bancaria</b><br>Para pagos en Bs.S y $</p>
+				<p class="align-center"><b>Transferencia Bancaria</b><br><small>Para pagos en Bs.S y $</small></p>
 			</div>
 		</div>
 		<div class="col l3 no-cupon">
@@ -76,7 +76,7 @@ if($woo_multi['currency_rate'][0]>1){
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Tarjeta de crédito venezolana</b><br>Para pagos en Bs.S</p>
+				<p class="align-center"><b>Tarjeta de crédito venezolana</b><br><small>Para pagos en Bs.S</small></p>
 			</div>
 		</div>
 		<div class="col l3 no-cupon">
@@ -85,7 +85,7 @@ if($woo_multi['currency_rate'][0]>1){
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>PayPal</b><br>Para pagos en $</p>
+				<p class="align-center"><b>PayPal</b><br><small>Para pagos en $</small></p>
 			</div>
 		</div>
 		<div class="col l3">
