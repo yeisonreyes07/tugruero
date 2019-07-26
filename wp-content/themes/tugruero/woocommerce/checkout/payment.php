@@ -71,21 +71,27 @@ if($woo_multi['currency_rate'][0]>1){
 			</div>
 		</div>
 		<div class="col l3 no-cupon">
-			<div class="col l12 logo-payment">
+			<div class="col l12 logo-payment disabled">
 				<img src="../wp-content/themes/tugruero/images/Tarjeta_Credito-02.png" alt="">
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>Tarjeta de crédito venezolana</b><br><small>Para pagos en Bs.S</small></p>
+				<p class="align-center"><b>Tarjeta de crédito venezolana</b><br>
+				<!-- <small>Para pagos en Bs.S</small> -->
+				<small>¡Muy pronto!</small>
+				</p>
 			</div>
 		</div>
 		<div class="col l3 no-cupon">
-			<div class="col l12 logo-payment" onclick="paypal();select(this)">
+			<div class="col l12 logo-payment disabled">
 				<img src="../wp-content/themes/tugruero/images/brand2.svg" alt="">
 			</div>
 			<div class="col l12">
 				<br>
-				<p class="align-center"><b>PayPal</b><br><small>Para pagos en $</small></p>
+				<p class="align-center"><b>PayPal</b><br>
+				<!-- <small>Para pagos en $</small> -->
+				<small>¡Muy pronto!</small>
+				</p>
 			</div>
 		</div>
 		<div class="col l3">
@@ -170,9 +176,15 @@ if ( ! is_ajax() ) {
 			"padding-bottom","32em"
 		)
 		$("#payment_method_bacs").click();
-		$('#wpmc-next').text("Realizar pedido");
+		var file2 = $("input[type=file]");
+		if(file2.length==0){
+			$('#wpmc-next').text("Realizar pedido");
+			$('#wpmc-next').prop("disabled",false);
+		}else{
+			$('#wpmc-next').text("Adjunte soporte de transferencia para continuar");
+			$('#wpmc-next').prop("disabled",true);
+		}
 		$("#tarjetatugruero").toggle(false);
-		$('#wpmc-next').prop("disabled",false);
 		cuponseleccionado=0;
 	}
 
@@ -200,6 +212,15 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		var file2 = $("input[type=file]");
+		if(file2.length==0){
+			$('#wpmc-next').text("Realizar pedido");
+			$('#wpmc-next').prop("disabled",false);
+		}else{
+			$('#wpmc-next').prop("disabled",true);
+			$('#wpmc-next').text("Adjunte soporte de transferencia para continuar");
+		}
+		
 		$("div.payment_method_bacs").html('');
 		$("div.payment_method_bacs").append('<div class="row">'+
 				'<div class="col l6"><p><b>Para transferencia en Bolívares (BsS):</b><br><br>'+
@@ -254,7 +275,6 @@ if ( ! is_ajax() ) {
 			$("#metodos").css(
 				"padding-bottom","32em"
 			)
-			$('#wpmc-next').prop("disabled",false);
 		}
 	})
 </script>

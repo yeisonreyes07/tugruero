@@ -2380,6 +2380,10 @@ a.atr, a.atr:visited, a.atr:hover{
 .logo-payment.select{
 	border: 2px solid rgb(213,118,56);
 }
+.logo-payment.disabled{
+	background: #ccc;
+	border: 2px solid rgb(196, 196, 196);
+}
 .logo-payment img{
 	height: 100px !important;
 }
