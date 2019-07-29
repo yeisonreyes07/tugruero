@@ -43,7 +43,7 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="#">Términos y condiciones</a>
+							<a href="wp-content/uploads/2019/07/Terminos-y-Condiciones-Julio-2019.pdf" target="_blank">Términos y condiciones</a>
 						</li>
 						<li>
 							<a href="#">Políticas de privacidad</a>
@@ -52,10 +52,10 @@
 							<a href="#">Políticas de uso</a>
 						</li>
 						<li>
-							<a href="#">Zonas Peligrosas</a>
+							<a href="wp-content/uploads/2019/07/zonas_peligrosas.pdf" target="_blank">Zonas Peligrosas</a>
 						</li>
 						<li>
-							<a href="#">Clasificación de vehiculos por peso</a>
+							<a href="wp-content/uploads/2019/07/clasificacion_peso.pdf" target="_blank">Clasificación de vehiculos por peso</a>
 						</li>
 						<li>
 							<a href="#">Preguntas frecuentes</a>
