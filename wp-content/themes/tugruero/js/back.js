@@ -231,6 +231,9 @@ $(document).ready(function() {
 			$("#checkout_coupon").addClass('hide');
 			var items = '';
 			var valid=true;
+
+			var file = $("input[type=file]");
+
 			if($('.woocommerce-billing-fields #billing_first_name').val()==''){
 				$('.woocommerce-billing-fields #billing_first_name').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_first_name').focus(function(){
@@ -291,6 +294,7 @@ $(document).ready(function() {
 				items+="<li>El campo Cédula/RIF debe tener entre 6 y 8 dígitos.";
 				valid=false;
 			}
+			
 			if($('.woocommerce-billing-fields #billing_email').val()==''){
 				$('.woocommerce-billing-fields #billing_email').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_email').focus(function(){
@@ -377,6 +381,11 @@ $(document).ready(function() {
 			}
 			if($("input:radio[name ='billing_myfield17']:checked").val()=='' || $("input:radio[name ='billing_myfield17']:checked").val()==null){
 				items+="<li>El campo RCV es requerido.";
+				valid=false;
+			}
+
+			if(file.length>2){
+				items+="<li>Debe adjuntar la Cedula de Identidad y Carnet de circulación";
 				valid=false;
 			}
 			
