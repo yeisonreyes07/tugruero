@@ -212,6 +212,7 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		alert(sessionStorage.getItem("posicion"));
 		var file2 = $("input[type=file]");
 		if(file2.length==0){
 			$('#wpmc-next').text("Realizar pedido");

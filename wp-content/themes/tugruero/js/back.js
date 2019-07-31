@@ -45,6 +45,7 @@ $(document).ready(function() {
 
 	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
 	if(selectRemenber != null){
+		alert("sin guiones");
 		$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
 		$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
 		$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
@@ -53,6 +54,7 @@ $(document).ready(function() {
 			$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
 		}
 	}else{
+		alert("con guiones seleccionado");
 		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
 		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
 		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
