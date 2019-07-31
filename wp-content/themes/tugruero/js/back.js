@@ -576,6 +576,7 @@ $(document).ready(function() {
 	
 	$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').on('click', function(){
 		sessionStorage.setItem('posicion', 4);
+		transferencia();
 		$('.woocommerce-checkout .wpmc-nav-wrapper').css('display','block');
 		$("#checkout_coupon").removeClass('hide');
 		$('.woocommerce-checkout .wpmc-nav-buttons #wpmc-next').hide();
