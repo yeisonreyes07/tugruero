@@ -2376,6 +2376,7 @@ a.atr, a.atr:visited, a.atr:hover{
 }
 .logo-payment:hover{
 	border: 2px solid rgb(213,118,56);
+	cursor: pointer;
 }
 .logo-payment.select{
 	border: 2px solid rgb(213,118,56);

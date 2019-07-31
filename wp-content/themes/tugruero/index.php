@@ -108,6 +108,10 @@ if(!isset($_SESSION['currency'])){
 					</div>
 					<?php }#}?>
 				</div>
+				<br>
+				<br>
+				<br>
+				<p class="subt">Todos nuestros planes incluyen RCV cubierto por Universal de Seguros C.A.</p>
 			</div>
 			<div class="services">
 				<h1>Nuestros servicios</h1>
