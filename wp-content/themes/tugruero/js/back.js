@@ -185,10 +185,10 @@ $(document).ready(function() {
 		'</p>');
 		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
 
-		var file = $("input[type=file]");
+		var file3 = $("input[type=file]");
 
-		if(file.length<2){
-			$("#billing_myfield39_field a").after('<i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
+		if(file3.length<2){
+			$("#billing_myfield39_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());

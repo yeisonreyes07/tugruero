@@ -237,7 +237,12 @@ if ( ! is_ajax() ) {
 				'Num cuenta: 229054907969 <br><br>'+
 				'Zelle: pagostugruero@gmail.com</p></div>'+
 			'</div>');
-		$("div.payment_method_bacs").append('<hr><p style="text-align: center;" class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
+		$("div.payment_method_bacs").append('<hr><p style="text-align: center;" class="form-row form-row-wide validate-required validate-required" id="billing_myfield41_field"><label for="billing_myfield16" class="">Soporte de transferencia &nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(1)">Adjuntar Soporte de transferencia</a></p>');
+		var file2 = $("input[type=file]");
+
+		if(file2.length==0){
+			$("#billing_myfield41_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
+		}
 		$("#place_order").hide();
 		$("#place_order").html("Realizar pedido");
 		if($(".cart-discount").length>0){
