@@ -114,6 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>
 <script>
 	$(document).ready(function(){
+		$('#wpmc-next').text("Siguiente");
 		$(".resumen-cart.2").each(function(i,v){
 			if(i>=1){
 				$(this).hide();
