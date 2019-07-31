@@ -99,3 +99,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 
 </div>-->
+<script>
+	$(document).ready(function(){
+		sessionStorage.setItem("posicion","");
+		sessionStorage.setItem("selects","");
+		sessionStorage.setItem("inputs","");
+	});
+</script>
