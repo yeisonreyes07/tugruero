@@ -45,12 +45,16 @@ $(document).ready(function() {
 
 	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
 	if(selectRemenber != null){
-		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+		$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
 		for(var i=0;i<selectRemenber.length;i++){
-			$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+			if(selectRemenber[i].val){
+				$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+			}else{
+				$("#"+selectRemenber[i].id).val(0);
+			}
 		}
 	}else{
 		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
