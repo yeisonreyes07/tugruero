@@ -24,5 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 echo esc_html( wc_strtoupper( __( 'Customer details', 'woocommerce' ) ) ) . "\n\n";
 
 foreach ( $fields as $field ) {
-	echo wp_kses_post( $field['label'] ) . ': ' . wp_kses_post( $field['value'] ) . "\n";
+	if(wp_kses_post( $field['label'] )=='Identificacion'){
+		$label = "";
+	}else{
+		$label = wp_kses_post( $field['label'] );
+	}
+	echo $label . ': ' . wp_kses_post( $field['value'] ) . "\n";
 }
