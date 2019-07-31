@@ -29,5 +29,5 @@ foreach ( $fields as $field ) {
 	}else{
 		$label = wp_kses_post( $field['label'] );
 	}
-	echo $label . ': ' . wp_kses_post( $field['value'] ) . "\n";
+	echo $field['label']."-".$label . ': ' . wp_kses_post( $field['value'] ) . "\n";
 }
