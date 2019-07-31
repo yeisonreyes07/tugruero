@@ -216,10 +216,11 @@ if ( ! is_ajax() ) {
 		if(file2.length==0){
 			$('#wpmc-next').text("Realizar pedido");
 			$('#wpmc-next').prop("disabled",false);
-		}else{
-			$('#wpmc-next').prop("disabled",true);
-			$('#wpmc-next').text("Adjunte soporte de transferencia para continuar");
 		}
+		// else{
+		// 	$('#wpmc-next').prop("disabled",true);
+		// 	$('#wpmc-next').text("Adjunte soporte de transferencia para continuar");
+		// }
 		
 		$("div.payment_method_bacs").html('');
 		$("div.payment_method_bacs").append('<div class="row">'+
