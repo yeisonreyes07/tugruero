@@ -59,6 +59,7 @@ $(document).ready(function() {
 		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
 	}
 
+	
 
 	$(".resumen-cart .pago").each(function(i,v){
 		var valor_ofice = $(this).html()
@@ -184,6 +185,11 @@ $(document).ready(function() {
 		'</p>');
 		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
 
+		var file = $("input[type=file]");
+
+		if(file.length<2){
+			$("#billing_myfield39_field a").append('<i class="fas fa-check"></i>');
+		}
 
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
 
