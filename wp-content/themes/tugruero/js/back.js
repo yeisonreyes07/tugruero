@@ -188,7 +188,7 @@ $(document).ready(function() {
 		var file = $("input[type=file]");
 
 		if(file.length<2){
-			$("#billing_myfield39_field a").append('<i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
+			$("#billing_myfield39_field a").after('<i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
 		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
