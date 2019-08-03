@@ -111,6 +111,9 @@ get_header();
 <script>
 	sessionStorage.setItem("canal", "PAG");
 	sessionStorage.setItem("tipo", "Nuevo");
+	console.log(sessionStorage.getItem("posicion"));
+	console.log(sessionStorage.getItem("selects"));
+	console.log(sessionStorage.getItem("inputs"));
 	$(document).ready(function(){
 		var pathname = window.location.search;
 		if(pathname=='?canjear=true'){

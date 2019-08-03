@@ -35,6 +35,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="<?php echo get_home_url();?>">Finalizar</a>
 	</div>
 </div>
+<script>
+	var arrayEmpty = [];
+	sessionStorage.setItem("posicion",1);
+	sessionStorage.setItem("inputs",JSON.stringify(arrayEmpty));
+	sessionStorage.setItem("selects",JSON.stringify(arrayEmpty));
+	console.log(sessionStorage.getItem("posicion"));
+	$(document).ready(function(){
+		sessionStorage.setItem("posicion",1);
+		sessionStorage.setItem("inputs",JSON.stringify(arrayEmpty));
+		sessionStorage.setItem("selects",JSON.stringify(arrayEmpty));
+		console.log(sessionStorage.getItem("posicion"));
+		console.log(sessionStorage.getItem("inputs"));
+		console.log(sessionStorage.getItem("selects"));
+	})
+</script>
 <!--<div class="woocommerce-order">
 
 	<?php if ( $order ) : ?>
@@ -99,10 +114,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 
 </div>-->
-<script>
-	$(document).ready(function(){
-		sessionStorage.setItem("posicion","");
-		sessionStorage.setItem("selects","");
-		sessionStorage.setItem("inputs","");
-	});
-</script>
