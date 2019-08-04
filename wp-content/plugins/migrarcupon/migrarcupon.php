@@ -8,6 +8,7 @@
  * Author URI: https://osba.com.ve
  * Copyright 2019-2020. All rights reserved.
  */
+set_time_limit(16200);
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -23,6 +24,8 @@ if(!function_exists("lwcupon_migrate")){
         if(isset($_GET['file'])){
             $inputFileType = 'Xlsx';
             $inputFileName = __DIR__.'/files/'.$_GET['file'];
+
+            $id = $_GET['id_products'];
 
             $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileName);
             $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
@@ -46,7 +49,7 @@ if(!function_exists("lwcupon_migrate")){
                 update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
                 update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
                 update_post_meta( $new_coupon_id, 'individual_use', 'no' );
-                update_post_meta( $new_coupon_id, 'product_ids', '10' );
+                update_post_meta( $new_coupon_id, 'product_ids', $id );
                 update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
                 update_post_meta( $new_coupon_id, 'usage_limit', '1' );
                 update_post_meta( $new_coupon_id, 'expiry_date', '2025-12-31' );
@@ -58,9 +61,25 @@ if(!function_exists("lwcupon_migrate")){
 
             echo '<h3>Migrado con exito</h3>';
         }
+        $query = new WC_Product_Query( array(
+            'limit' => 10,
+            'orderby' => 'date',
+            'order' => 'ASC',
+        ));
+        $products = $query->get_products();
         ?>
             <form action="subir_archivo.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="archivo">
+                Seleccione el Producto
+                <select name="id_products">
+                    <?php
+                        foreach($products as $product){
+                            ?>
+                                <option value="<?php echo $product->id; ?>"><?php echo $product->name; ?></option>
+                            <?php
+                        }
+                    ?>
+                </select><br>
+                <input type="file" name="archivo"><br>
                 <button class="button">Subir</button>
             </form>
         <?php
