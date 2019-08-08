@@ -82,6 +82,7 @@ $(document).ready(function() {
 	});
 	$("#billing_state").hide();
 	$("#billing_state").after('<select class="" data-placeholder="" name="billing_estado_tr" id="billing_estado_tr" onchange="cambiarEstado()">'+
+		'<option selected disabled value="">-</option>'+
 		'<option>Amazonas</option>'+
 		'<option>Anzoátegui</option>'+
 		'<option>Apure</option>'+
@@ -108,7 +109,7 @@ $(document).ready(function() {
 		'<option>Zulia</option>'+
 		'<option>Dependencias Federales</option>'+
 	'</select>');
-	$("#billing_state").val($("#billing_estado_tr option:selected").html());
+	$("#billing_state").val("");
 	// body...
 	$('article .entry-header .entry-title').text("");
 			
@@ -191,7 +192,7 @@ $(document).ready(function() {
 		}
 		$("#billing_myfield17_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield16_field"><label for="billing_myfield16" class="">¿Cómo te enteraste de nosotros?&nbsp;<abbr class="required" title="obligatorio">*</abbr></label>'+
 			'<select class="" data-placeholder="" name="billing_como_te_enterastes" id="billing_como_te_enterastes" onchange="cambiarComo()">'+
-				'<option>Stands de venta</option><option>Instagram</option><option>Facebook</option><option>Familiar o Amigo</option><option>Busqueda en Google</option><option>Mercadolibre</option><option>Volanteo (calle)</option>'+
+				'<option selected disabled value="">-</option><option>Stands de venta</option><option>Instagram</option><option>Facebook</option><option>Familiar o Amigo</option><option>Busqueda en Google</option><option>Mercadolibre</option><option>Volanteo (calle)</option>'+
 			'</select>'+
 		'</p>');
 		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
@@ -202,7 +203,7 @@ $(document).ready(function() {
 			$("#billing_myfield39_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
-		$("#billing_myfield25").val($("#billing_como_te_enterastes option:selected").html());
+		$("#billing_myfield25").val("-");
 
 		$("#billing_canal").val(sessionStorage.getItem("canal"));
 		$("#billing_tipovental").val(sessionStorage.getItem("tipo"));
@@ -377,6 +378,15 @@ $(document).ready(function() {
 					$(this).removeClass('invalido');
 				})
 				items+="<li>El campo Estado es requerido.";
+				valid=false;
+			}
+
+			if($('.woocommerce-billing-fields #billing_myfield25').val()==''){
+				$('.woocommerce-billing-fields #billing_myfield25').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_myfield25').focus(function(){
+					$(this).removeClass('invalido');
+				})
+				items+="<li>El campo ¿Cómo te enteraste de nosotros? es requerido.";
 				valid=false;
 			}
 			
