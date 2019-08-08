@@ -203,7 +203,7 @@ $(document).ready(function() {
 			$("#billing_myfield39_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
-		$("#billing_myfield25").val("-");
+		$("#billing_myfield25").val("");
 
 		$("#billing_canal").val(sessionStorage.getItem("canal"));
 		$("#billing_tipovental").val(sessionStorage.getItem("tipo"));
