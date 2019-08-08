@@ -45,12 +45,12 @@
 						<li>
 							<a href="wp-content/uploads/2019/07/Terminos-y-Condiciones-Julio-2019.pdf" target="_blank">Términos y condiciones</a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="#">Políticas de privacidad</a>
 						</li>
 						<li>
 							<a href="#">Políticas de uso</a>
-						</li>
+						</li> -->
 						<li>
 							<a href="wp-content/uploads/2019/07/zonas_peligrosas.pdf" target="_blank">Zonas Peligrosas</a>
 						</li>
