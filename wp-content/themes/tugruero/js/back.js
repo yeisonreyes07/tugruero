@@ -373,8 +373,8 @@ $(document).ready(function() {
 			}
 			
 			if($('.woocommerce-billing-fields #billing_state').val()==''){
-				$('.woocommerce-billing-fields #billing_state').addClass("invalido");
-				$('.woocommerce-billing-fields #billing_state').focus(function(){
+				$('.woocommerce-billing-fields #billing_estado_tr').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_estado_tr').focus(function(){
 					$(this).removeClass('invalido');
 				})
 				items+="<li>El campo Estado es requerido.";
@@ -382,8 +382,8 @@ $(document).ready(function() {
 			}
 
 			if($('.woocommerce-billing-fields #billing_myfield25').val()==''){
-				$('.woocommerce-billing-fields #billing_myfield25').addClass("invalido");
-				$('.woocommerce-billing-fields #billing_myfield25').focus(function(){
+				$('.woocommerce-billing-fields #billing_como_te_enterastes').addClass("invalido");
+				$('.woocommerce-billing-fields #billing_como_te_enterastes').focus(function(){
 					$(this).removeClass('invalido');
 				})
 				items+="<li>El campo ¿Cómo te enteraste de nosotros? es requerido.";
