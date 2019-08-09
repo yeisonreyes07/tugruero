@@ -59,7 +59,7 @@
             <td style="width: 32%"><b>Vigencia de la Póliza</b><br>
                 <table style="width: 100%" class="no-border">
                     <tr>
-                        <td style="width: 50%">Desde: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
+                        <td style="width: 50%">Desde: <?= date("d/m/Y", strtotime($fecha_inicio)); ?></td>
                         <td style="width: 50%">Hasta: <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
                     </tr>
                 </table>
