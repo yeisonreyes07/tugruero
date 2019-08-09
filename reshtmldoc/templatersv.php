@@ -9,7 +9,7 @@
     $fecha_ini = strtotime ( '+20 day' , strtotime ( $fecha_inicio ) ) ;
     $fecha_ini = date ( 'd-m-Y' , $fecha_ini );
 
-    $fecha_fin = strtotime ( '+1 year' , strtotime ( $fecha_ini ) ) ;
+    $fecha_fin = strtotime ( '+1 year' , strtotime ( $fecha_inicio ) ) ;
     $fecha_fin = date ( 'd-m-Y' , $fecha_fin );
 ?>
 <style type="text/css">
