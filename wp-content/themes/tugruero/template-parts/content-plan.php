@@ -39,7 +39,7 @@ get_header();
 
         </div> 	
 		<div class="form-row">
-			<label>Canal de venta</label>
+			<label>Canal de venta (No cambiar)</label>
 			<select id="canal" onchange="changeCanal()">
 				<option value="PAG">Página Web</option>
 				<option value="CP">Centro Plaza</option>

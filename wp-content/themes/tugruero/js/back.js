@@ -4,6 +4,9 @@ var inputsRemenber = [];
 var selectRemenber = [];
 
 $(document).ready(function() {
+	$("input[type='text']").blur(function(){
+		$(this).val($(this).val().toUpperCase());
+	});
 	$($("a.upload-file")[0]).addClass("hide");
 	$("#billing_canal_field").hide();
 	$("#billing_tipovental_field").hide();
