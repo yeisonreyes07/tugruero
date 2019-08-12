@@ -254,6 +254,8 @@ $(document).ready(function() {
 			var valid=true;
 
 			var file = $("input[type=file]");
+			var successFile = $(".upload-result.success");
+			console.log(successFile.length);
 
 			if($('.woocommerce-billing-fields #billing_first_name').val()==''){
 				$('.woocommerce-billing-fields #billing_first_name').addClass("invalido");
