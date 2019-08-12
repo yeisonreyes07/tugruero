@@ -2,6 +2,7 @@ var ban=0;
 var ban_cor=1;
 var inputsRemenber = [];
 var selectRemenber = [];
+var file=false;
 
 $(document).ready(function() {
 	$("input[type='text']").blur(function(){
@@ -168,6 +169,7 @@ $(document).ready(function() {
 		var file3 = $("input[type=file]");
 
 		if(file3.length<2){
+			file=true;
 			$("#billing_myfield39_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
@@ -377,8 +379,7 @@ $(document).ready(function() {
 				valid=false;
 			}
 
-			var successFile = $(".upload-result.success");
-			if(successFile.length>=1){
+			if(file){
 				items+="<li>Debe adjuntar la Cedula de Identidad y Carnet de circulación";
 				valid=false;
 			}
