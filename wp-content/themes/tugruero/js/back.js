@@ -175,6 +175,8 @@ $(document).ready(function() {
 		selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
 		if(selectRemenber != null){
 			if(selectRemenber.length>0){
+				cambiarComo();
+				cambiarEstado();
 				$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
 				$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
 				$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
@@ -411,9 +413,8 @@ $(document).ready(function() {
 				valid=false;
 			}
 
-			var file = $("input[type=file]");
 			var successFile = $(".upload-result.success");
-			if(successFile.length==2){
+			if(successFile.length>=1){
 				items+="<li>Debe adjuntar la Cedula de Identidad y Carnet de circulación";
 				valid=false;
 			}
