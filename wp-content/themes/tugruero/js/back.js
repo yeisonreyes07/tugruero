@@ -253,10 +253,6 @@ $(document).ready(function() {
 			var items = '';
 			var valid=true;
 
-			var file = $("input[type=file]");
-			var successFile = $(".upload-result.success");
-			console.log(successFile.length);
-
 			if($('.woocommerce-billing-fields #billing_first_name').val()==''){
 				$('.woocommerce-billing-fields #billing_first_name').addClass("invalido");
 				$('.woocommerce-billing-fields #billing_first_name').focus(function(){
@@ -416,7 +412,9 @@ $(document).ready(function() {
 				valid=false;
 			}
 
-			if(file.length>1){
+			var file = $("input[type=file]");
+			var successFile = $(".upload-result.success");
+			if(successFile.length==2){
 				items+="<li>Debe adjuntar la Cedula de Identidad y Carnet de circulación";
 				valid=false;
 			}
