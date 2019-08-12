@@ -193,6 +193,8 @@ $(document).ready(function() {
 					$("#"+selectRemenber[i].id).val(0);
 				}
 			}
+			cambiarComo();
+			cambiarEstado();
 		}else{
 			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
 			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
