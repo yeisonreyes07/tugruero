@@ -139,12 +139,11 @@
     </table>
     <table style="width: 100%; border:1px solid #000;">
         <tr style="vertical-align: top">
-            <td style="width: 65%">Nombre Producto: <?= $_SESSION['data_wc_lwc']->producto ?></td>
-            <td style="width: 1%"></td>
-            <td style="width: 33%">Inic. Vig: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
+            <td style="width: 50%">Nombre Producto: <?= $_SESSION['data_wc_lwc']->producto ?></td>
+            <td style="width: 50%">Inic. Vig: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
         </tr>
         <tr>
-            <td style="width: 33%">Cantidad de servicios: 
+            <td style="width: 50%">Cantidad de servicios: 
                 <?php 
                     switch($_SESSION['data_wc_lwc']->producto){
                         case "Plan Classic":{
@@ -162,8 +161,7 @@
                     }
                 ?>
             </td>
-            <td style="width: 33%"></td>
-            <td style="width: 33%">Fin. Vig. <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
+            <td style="width: 50%">Fin. Vig. <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
         </tr>
         <tr>
             <td style="width: 100%" colspan="3"><b>TELEFONO AUXILIO VIAL: 0500 GRUERO - 0 (0500 478376 - 0) / (0212) 2379227. Número de contingencia:  (0424) 1357579.</b></td>
