@@ -165,43 +165,6 @@ $(document).ready(function() {
 		'</p>');
 		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
 
-		inputsRemenber = JSON.parse(sessionStorage.getItem("inputs"));
-		if(inputsRemenber != null){
-			for(var i=0;i<inputsRemenber.length;i++){
-				$("#"+inputsRemenber[i].id).val(inputsRemenber[i].val);
-				console.log(inputsRemenber[i].id+"==="+inputsRemenber[i].val);
-			}
-		}
-		
-		selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
-		if(selectRemenber != null){
-			if(selectRemenber.length>0){
-				$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
-				$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
-				$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
-				$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
-			}else{
-				$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-				$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-				$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-				$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-			}
-			for(var i=0;i<selectRemenber.length;i++){
-				if(selectRemenber[i].val){
-					$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
-				}else{
-					$("#"+selectRemenber[i].id).val(0);
-				}
-			}
-			cambiarComo();
-			cambiarEstado();
-		}else{
-			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-		}
-
 		var file3 = $("input[type=file]");
 
 		if(file3.length<2){
@@ -654,7 +617,43 @@ $(document).ready(function() {
 			$('header.site-header').removeClass('scrolling');	
 		}
 	});
-	console.log(window.location.pathname);
+
+	inputsRemenber = JSON.parse(sessionStorage.getItem("inputs"));
+	if(inputsRemenber != null){
+		for(var i=0;i<inputsRemenber.length;i++){
+			$("#"+inputsRemenber[i].id).val(inputsRemenber[i].val);
+			console.log(inputsRemenber[i].id+"==="+inputsRemenber[i].val);
+		}
+	}
+	
+	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
+	if(selectRemenber != null){
+		if(selectRemenber.length>0){
+			$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
+		}else{
+			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+		}
+		for(var i=0;i<selectRemenber.length;i++){
+			if(selectRemenber[i].val){
+				$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+			}else{
+				$("#"+selectRemenber[i].id).val(0);
+			}
+		}
+		cambiarComo();
+		cambiarEstado();
+	}else{
+		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+	}
 
 	switch(sessionStorage.getItem('posicion')){
 		case "1":{
