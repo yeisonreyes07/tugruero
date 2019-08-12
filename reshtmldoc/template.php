@@ -144,7 +144,24 @@
             <td style="width: 33%">Inic. Vig: <?= date("d/m/Y", strtotime($fecha_ini)); ?></td>
         </tr>
         <tr>
-            <td style="width: 33%">Cantidad de servicios: 3 servicios de 25km</td>
+            <td style="width: 33%">Cantidad de servicios: 
+                <?php 
+                    switch($_SESSION['data_wc_lwc']->producto){
+                        case "Plan Classic":{
+                            echo "3 servicios de 25km";
+                            break;
+                        }
+                        case "Plan Plus":{
+                            echo "Servicios ilimitados de 50km";
+                            break;
+                        }
+                        case "Plan Gold":{
+                            echo "Servicios ilimitados de 50km + 1 serv. de 100mm";
+                            break;
+                        }
+                    }
+                ?>
+            </td>
             <td style="width: 33%"></td>
             <td style="width: 33%">Fin. Vig. <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
         </tr>
@@ -186,7 +203,7 @@
             <td style="width: 100%; padding-bottom:10px; font-size:8px">8- OCTAVA: Los servicios desde el estado Nueva Esparta hacia cualquier estado o puerto perteneciente al territorio continental de la República Bolivariana de Venezuela, o viceversa, no están cubiertos por el plan adquirido por su persona. Así como no están cubiertos los estados Amazonas y Delta Amacuro.</td>
         </tr>
         <tr style="vertical-align: top">
-            <td style="width: 100%; padding-bottom:10px; font-size:8px">9- NOVENA: El servicio de grúas contratado estará activo, y el cliente lo podrá disfrutar luego de veinte (20) días hábiles del pago del mismo.</td>
+            <td style="width: 100%; padding-bottom:10px; font-size:8px">9- NOVENA: El servicio de grúas contratado estará activo, y el cliente lo podrá disfrutar luego de veinte (20) días continuos del pago del mismo.</td>
         </tr>
         <tr style="vertical-align: top">
             <td style="width: 100%; padding-bottom:10px; font-size:8px">10- DECIMA: El servicio de grúas contratado por el cliente será responsabilidad plena y absoluta de Soluciones Tu Gruero, C.A. entendiéndose así que cualquier reclamo, crítica y/o sugerencia del servicio debe ser comunicado a esta compañía.</td>
