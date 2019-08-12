@@ -414,7 +414,7 @@ $(document).ready(function() {
 				valid=false;
 			}
 
-			if(file.length>2){
+			if(file.length>1){
 				items+="<li>Debe adjuntar la Cedula de Identidad y Carnet de circulación";
 				valid=false;
 			}
