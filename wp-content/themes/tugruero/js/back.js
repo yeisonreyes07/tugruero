@@ -76,7 +76,7 @@ $(document).ready(function() {
 		'<option>Zulia</option>'+
 		'<option>Dependencias Federales</option>'+
 	'</select>');
-	// $("#billing_state").val("");
+	$("#billing_state").val("");
 
 	// body...
 	$('article .entry-header .entry-title').text("");
@@ -169,6 +169,7 @@ $(document).ready(function() {
 		if(inputsRemenber != null){
 			for(var i=0;i<inputsRemenber.length;i++){
 				$("#"+inputsRemenber[i].id).val(inputsRemenber[i].val);
+				console.log(inputsRemenber[i].id+"==="+inputsRemenber[i].val);
 			}
 		}
 		
@@ -205,7 +206,7 @@ $(document).ready(function() {
 			$("#billing_myfield39_field a").after(' <i class="fas fa-check" style="color: rgb(250, 105, 60);border: 1px solid rgb(250, 105, 60);border-radius: 50%;padding: 5px;""></i>');
 		}
 
-		// $("#billing_myfield25").val("");
+		$("#billing_myfield25").val("");
 
 		$("#billing_canal").val(sessionStorage.getItem("canal"));
 		$("#billing_tipovental").val(sessionStorage.getItem("tipo"));
