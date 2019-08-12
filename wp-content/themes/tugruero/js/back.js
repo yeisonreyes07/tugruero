@@ -623,7 +623,6 @@ $(document).ready(function() {
 	if(inputsRemenber != null){
 		for(var i=0;i<inputsRemenber.length;i++){
 			$("#"+inputsRemenber[i].id).val(inputsRemenber[i].val);
-			console.log(inputsRemenber[i].id+"==="+inputsRemenber[i].val);
 		}
 	}
 	
