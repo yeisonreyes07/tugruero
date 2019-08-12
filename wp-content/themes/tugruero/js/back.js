@@ -46,35 +46,6 @@ $(document).ready(function() {
 		$("#billing_myfield19").append("<option value='"+i+"'>"+i+"</option>");
 	}
 
-	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
-	if(selectRemenber != null){
-		if(selectRemenber.length>0){
-			$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
-		}else{
-			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-		}
-		for(var i=0;i<selectRemenber.length;i++){
-			if(selectRemenber[i].val){
-				$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
-			}else{
-				$("#"+selectRemenber[i].id).val(0);
-			}
-		}
-	}else{
-		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-	}
-
-	
-
 	$(".resumen-cart .pago").each(function(i,v){
 		var valor_ofice = $(this).html()
 		var valor = valor_ofice.split("Bs.S ");
@@ -113,6 +84,34 @@ $(document).ready(function() {
 		'<option>Dependencias Federales</option>'+
 	'</select>');
 	$("#billing_state").val("");
+
+	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
+	if(selectRemenber != null){
+		if(selectRemenber.length>0){
+			$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+			$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
+		}else{
+			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+		}
+		for(var i=0;i<selectRemenber.length;i++){
+			if(selectRemenber[i].val){
+				$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+			}else{
+				$("#"+selectRemenber[i].id).val(0);
+			}
+		}
+	}else{
+		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+	}
+	
 	// body...
 	$('article .entry-header .entry-title').text("");
 			
