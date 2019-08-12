@@ -85,33 +85,6 @@ $(document).ready(function() {
 	'</select>');
 	$("#billing_state").val("");
 
-	selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
-	if(selectRemenber != null){
-		if(selectRemenber.length>0){
-			$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
-			$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
-		}else{
-			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-		}
-		for(var i=0;i<selectRemenber.length;i++){
-			if(selectRemenber[i].val){
-				$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
-			}else{
-				$("#"+selectRemenber[i].id).val(0);
-			}
-		}
-	}else{
-		$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
-		$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
-	}
-	
 	// body...
 	$('article .entry-header .entry-title').text("");
 			
@@ -198,6 +171,33 @@ $(document).ready(function() {
 			'</select>'+
 		'</p>');
 		$("#billing_myfield16_field").after('<p class="form-row form-row-wide validate-required validate-required" id="billing_myfield39_field"><label for="billing_myfield16" class="">Documentos de Identidad&nbsp;<abbr class="required" title="obligatorio">*</abbr></label><a href="#!" class="btn" onclick="adjuntar(0)">Adjuntar Cedula de Identidad y Carnet de circulación</a></p>');
+
+		selectRemenber = JSON.parse(sessionStorage.getItem("selects"));
+		if(selectRemenber != null){
+			if(selectRemenber.length>0){
+				$("#billing_myfield18_field select").prepend("<option disabled value='0'>-</option>");
+				$("#billing_myfield19_field select").prepend("<option disabled value='0'>-</option>");
+				$("#billing_myfield20_field select").prepend("<option disabled value='0'>-</option>");
+				$("#billing_myfield24_field select").prepend("<option disabled value='0'>-</option>");
+			}else{
+				$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+				$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+				$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+				$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+			}
+			for(var i=0;i<selectRemenber.length;i++){
+				if(selectRemenber[i].val){
+					$("#"+selectRemenber[i].id).val(selectRemenber[i].val);
+				}else{
+					$("#"+selectRemenber[i].id).val(0);
+				}
+			}
+		}else{
+			$("#billing_myfield18_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield19_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield20_field select").prepend("<option disabled value='0' selected>-</option>");
+			$("#billing_myfield24_field select").prepend("<option disabled value='0' selected>-</option>");
+		}
 
 		var file3 = $("input[type=file]");
 
