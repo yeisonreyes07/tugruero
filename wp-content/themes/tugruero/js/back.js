@@ -738,5 +738,5 @@ function adjuntar(pos=0){
 
 	setTimeout(() => {
 		window.clearInterval(time);
-	}, 7000);
+	}, 20000);
 }
