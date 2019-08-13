@@ -15,9 +15,9 @@
     if(!empty($_SESSION['data_wc_lwc'])){
         ob_start();
         include "reshtmldoc/templatersv.php";
-        // $content = ob_get_clean();
+        $content = ob_get_clean();
         // // echo $content;
-        // $mail = new PHPMailer;
+        $mail = new PHPMailer;
         // try {
         //     $html2pdf = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
         //     $html2pdf->pdf->SetDisplayMode('fullpage');
