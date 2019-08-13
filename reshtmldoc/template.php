@@ -164,7 +164,7 @@
             <td style="width: 50%">Fin. Vig. <?= date("d/m/Y", strtotime($fecha_fin)); ?></td>
         </tr>
         <tr>
-            <td style="width: 100%" colspan="3"><b>TELEFONO AUXILIO VIAL: 0500 GRUERO - 0 (0500 478376 - 0) / (0212) 2379227. Número de contingencia:  (0424) 1357579.</b></td>
+            <td style="width: 100%" colspan="2"><b>TELEFONO AUXILIO VIAL: 0500 GRUERO - 0 (0500 478376 - 0) / (0212) 2379227. Número de contingencia:  (0424) 1357579.</b></td>
         </tr>
     </table>
     <br>
