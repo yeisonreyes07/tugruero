@@ -18,7 +18,9 @@ add_action("admin_menu","lwc_opciones_admin");
 
 if(!function_exists("lwc_get_opciones_de_admin")){
     function lwc_get_opciones_de_admin(){
-        $query = new WC_Order_Query();
+        $query = new WC_Order_Query(array(
+            'limit' => 50,
+        ));
         if(isset($_GET['id'])){
             $query = new WC_Order($_GET['id']);
             $_SESSION['data_wc_lwc']=json_decode($query);
