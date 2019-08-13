@@ -23,7 +23,7 @@
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);
-            $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
+            // $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
             
             $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -34,8 +34,8 @@
             $mail->Password = "Vot01Sol.!dlL";                           // SMTP password
             $mail->SMTPSecure = "tls";                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = "587";                                    // TCP port to connect to
-            $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
-            $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            // $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            // $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
         
             //Recipients
             $mail->setFrom("tugruerodesarrollo@gmail.com", "TuGruero");
