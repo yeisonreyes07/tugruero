@@ -22,7 +22,8 @@
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);
-            $html2pdf->output('cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            // $html2pdf->output('cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
         } catch (Html2PdfException $e) {
             $html2pdf->clean();
             $formatter = new ExceptionFormatter($e);
