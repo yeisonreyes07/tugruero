@@ -13,8 +13,8 @@
     // var_dump($_SESSION['data_wc_lwc']);
 
     if(!empty($_SESSION['data_wc_lwc'])){
-        // ob_start();
-        // include "reshtmldoc/templatersv.php";
+        ob_start();
+        include "reshtmldoc/templatersv.php";
         // $content = ob_get_clean();
         // // echo $content;
         // $mail = new PHPMailer;
