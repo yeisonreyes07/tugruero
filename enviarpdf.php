@@ -23,7 +23,7 @@
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);
-            $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
+            // $html2pdf->output('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
             header("location: enviar.php");
         } catch (Html2PdfException $e) {
