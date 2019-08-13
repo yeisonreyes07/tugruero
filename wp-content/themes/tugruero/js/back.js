@@ -588,7 +588,9 @@ $(document).ready(function() {
 				$('#wpmc-next').prop("disabled",false);
 			}
 		}
-		transferencia();
+		if(sessionStorage.getItem("cupon")!="true"){
+			transferencia();
+		}
 	});
 	$("#wpmc-prev").on('click', function(){
 		sessionStorage.setItem('posicion', 3);
