@@ -29,7 +29,7 @@ if($woo_multi['currency_rate'][0]>1){
 ?>
 <?php cosas();?>
 <div id="payment" class="woocommerce-checkout-payment">
-	<div class="row">
+	<div class="row" id="shownotarjeta">
 		<div class="col l12">
 			<table>
 				<tr>
@@ -261,6 +261,7 @@ if ( ! is_ajax() ) {
 			$("button[name=apply_coupon]").click();
 		});
 		if(sessionStorage.getItem("cupon")=="true"){
+			$("#shownotarjeta").remove();
 			cuponseleccionado=1;
 			$("#payment_heading").hide();
 			$(".pago").html("Tarjeta TuGruero");
