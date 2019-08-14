@@ -277,7 +277,7 @@ $(document).ready(function() {
 				$('.woocommerce-billing-fields #billing_myfield14').focus(function(){
 					$(this).removeClass('invalido');
 				})
-				items+="<li>El campo Cédula/RIF debe tener entre 6 y 8 dígitos.";
+				items+="<li>El campo Cédula/RIF debe tener entre 6 y 9 dígitos.";
 				valid=false;
 			}
 			
