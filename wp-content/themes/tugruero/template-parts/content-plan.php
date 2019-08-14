@@ -107,19 +107,21 @@ get_header();
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">¡INFORMACION IMPORTANTE!</h4>
+				<h4 class="modal-title" id="myModalLabel"><b>¡INFORMACION IMPORTANTE!</b></h4>
 			</div>
 			<div class="modal-body">
 				<img src="../wp-content/themes/tugruero/images/tarjetastugruero-01.png" alt="">
 				<ul>
 					<li>Si vas a usar una Tarjeta TuGruero, haz click en "TARJETA TUGRUERO".</li>
-					<li>Si vas a pagar por Transferencia, Tarjeta de credito o Paypal, haz click en "TRANSFERENCIA, TARJETA CREDITO, PAYPAL"</li>
+					<li>Si vas a pagar por Transferencia, Tarjeta de credito o Paypal, haz click en "TRANSFERENCIA, SELLE, TARJETA CREDITO, PAYPAL"</li>
 				</ul>
 				<p> </p>
 				<p></p>
-				<div class="footer-in-body">
-					<a href="plan/?canjear=true" class="btn btn-default pull-right">TARJETA TUGRUERO</a>
-					<a href="#!" class="btn btn-default pull-right" data-dismiss="modal">TRANSFERENCIA, TARJETA CREDITO, PAYPAL</a>
+				<div class="footer-in-body center">
+					<center>
+						<a href="plan/?canjear=true" class="btn btn-default">TARJETA TUGRUERO</a>
+						<a href="#!" class="btn btn-default" data-dismiss="modal">TRANSFERENCIA, TARJETA CREDITO, PAYPAL</a>
+					</center>
 				</div>
 			</div>
 			</div>
