@@ -7,9 +7,6 @@
     use Spipu\Html2Pdf\Exception\Html2PdfException;
     use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
     // var_dump($_SESSION['data_wc_lwc']);
 
     if(!empty($_SESSION['data_wc_lwc'])){
@@ -17,20 +14,19 @@
         include "reshtmldoc/template.php";
         $content = ob_get_clean();
         // echo $content;
-        $mail = new PHPMailer;
-        try {
-            $html2pdf = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
-            $html2pdf->pdf->SetDisplayMode('fullpage');
-            $html2pdf->setDefaultFont('Arial');
-            $html2pdf->writeHTML($content);
-            $html2pdf->output(__DIR__.'reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
+        $html2pdf = new Html2Pdf('P', 'A4', 'fr',true, 'UTF-8', array(0, 0, 0, 0));
+        $html2pdf->pdf->SetDisplayMode('fullpage');
+        $html2pdf->setDefaultFont('Arial');
+        $html2pdf->writeHTML($content);
+        $html2pdf->output(__DIR__.'reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
 
-            header("location: enviar.php");
-        } catch (Html2PdfException $e) {
-            $html2pdf->clean();
-            $formatter = new ExceptionFormatter($e);
-            echo $formatter->getHtmlMessage();
-        }
+        header("location: enviar.php");
+        // try {
+        // } catch (Html2PdfException $e) {
+        //     $html2pdf->clean();
+        //     $formatter = new ExceptionFormatter($e);
+        //     echo $formatter->getHtmlMessage();
+        // }
         // $_SESSION['data_wc_lwc'] = "";
     }else{
         header("location: ./");
