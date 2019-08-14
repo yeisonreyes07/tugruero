@@ -102,6 +102,30 @@ get_header();
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="ModalCupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">¡INFORMACION IMPORTANTE!</h4>
+			</div>
+			<div class="modal-body">
+				<img src="../wp-content/themes/tugruero/images/tarjetastugruero-01.png" alt="">
+				<ul>
+					<li>Si vas a usar una Tarjeta TuGruero, haz click en "TARJETA TUGRUERO".</li>
+					<li>Si vas a pagar por Transferencia, Tarjeta de credito o Paypal, haz click en "TRANSFERENCIA, TARJETA CREDITO, PAYPAL"</li>
+				</ul>
+				<p> </p>
+				<p></p>
+				<div class="footer-in-body">
+					<a href="plan/?canjear=true" class="btn btn-default pull-right">TARJETA TUGRUERO</a>
+					<button type="button" class="btn btn-default pull-right" data-dismiss="modal">TRANSFERENCIA, TARJETA CREDITO, PAYPAL</button>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
@@ -111,9 +135,6 @@ get_header();
 <script>
 	sessionStorage.setItem("canal", "PAG");
 	sessionStorage.setItem("tipo", "Nuevo");
-	console.log(sessionStorage.getItem("posicion"));
-	console.log(sessionStorage.getItem("selects"));
-	console.log(sessionStorage.getItem("inputs"));
 	$(document).ready(function(){
 		var pathname = window.location.search;
 		if(pathname=='?canjear=true'){
@@ -123,6 +144,10 @@ get_header();
 			sessionStorage.setItem("cupon", "true");
 		}else{
 			sessionStorage.setItem("cupon", "false");
+			$('#ModalCupon').modal({
+				"backdrop":false,
+				"show":true
+			});
 		}
 		var variables = pathname.split("?");
 		var varT;
