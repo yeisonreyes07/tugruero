@@ -36,9 +36,21 @@ $(document).ready(function() {
 	$("#billing_myfield19").html("");
 	var d = new Date();
 	var anio = d.getFullYear();
-	for(var i=2000;i<=anio;i++){
+	for(var i=1980;i<=anio;i++){
 		$("#billing_myfield19").append("<option value='"+i+"'>"+i+"</option>");
 	}
+
+	// TIPO
+	$("#billing_myfield24").append('Paseo');
+	$("#billing_myfield24").append('Chopper');
+	$("#billing_myfield24").append('Scooter');
+	$("#billing_myfield24").append('Enduro');
+	$("#billing_myfield24").append('Pista');
+	// FIN TIPO
+
+	// MARCA
+	$("#billing_myfield20").append("Benelli");
+	// FIN MARCA
 
 	$(".resumen-cart .pago").each(function(i,v){
 		var valor_ofice = $(this).html()
