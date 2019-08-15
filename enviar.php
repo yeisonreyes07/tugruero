@@ -49,7 +49,7 @@
             2- Póliza del seguro de Responsabilidad Civil Vehicular.<br><br>
             En ellos tendrás información detallada y los pasos a seguir en caso de que requieras nuestros servicios<br><br>
             ¡De ahora en adelante maneja tranquilo, estamos contigo!<br><br>
-            Con <a href='http://tugruero.io/'>TU/GRUERO</a> quedarse accidentado ya no es un problema<br><a href='http://tugruero.io/'><img src='https://www.tugruero.io/wp-content/themes/tugruero/images/logo.png'></a>");
+            Con <a href='http://tugruero.io/'>TU/GRUERO</a> quedarse accidentado ya no es un problema<br><a href='http://tugruero.io/'><img src='https://www.tugruero.io/wp-content/themes/tugruero/images/logocorreo.png'></a>");
             $mail->CharSet = 'UTF-8';
             $mail->AltBody = 'TuGruero';
             $mail->send();
