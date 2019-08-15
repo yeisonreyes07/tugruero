@@ -30,15 +30,15 @@
             $mail->SMTPDebug = 0; 
             $mail->Host = "smtp.gmail.com";  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = "noreplysolcripto@gmail.com";                 // SMTP username
-            $mail->Password = "Vot01Sol.!dlL";                           // SMTP password
+            $mail->Username = "comercializacion@tugruero.io";                 // SMTP username
+            $mail->Password = "Tugruerovende123!";                           // SMTP password
             $mail->SMTPSecure = "tls";                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = "587";                                    // TCP port to connect to
             $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
             $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
         
             //Recipients
-            $mail->setFrom("tugruerodesarrollo@gmail.com", "TuGruero");
+            $mail->setFrom("comercializacion@tugruero.io", "TU/GRUERO");
             $mail->addAddress($_SESSION['data_wc_lwc']->billing->email, $_SESSION['data_wc_lwc']->billing->first_name. " " .$_SESSION['data_wc_lwc']->billing->last_name);
 
             //Suje
