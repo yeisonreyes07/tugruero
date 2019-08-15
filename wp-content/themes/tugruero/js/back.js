@@ -41,15 +41,15 @@ $(document).ready(function() {
 	}
 
 	// TIPO
-	$("#billing_myfield24").append('Paseo');
-	$("#billing_myfield24").append('Chopper');
-	$("#billing_myfield24").append('Scooter');
-	$("#billing_myfield24").append('Enduro');
-	$("#billing_myfield24").append('Pista');
+	$("#billing_myfield24").append('<option value="Paseo">Paseo</option>');
+	$("#billing_myfield24").append('<option value="Paseo">Chopper</option>');
+	$("#billing_myfield24").append('<option value="Paseo">Scooter</option>');
+	$("#billing_myfield24").append('<option value="Paseo">Enduro</option>');
+	$("#billing_myfield24").append('<option value="Paseo">Pista</option>');
 	// FIN TIPO
 
 	// MARCA
-	$("#billing_myfield20").append("Benelli");
+	$("#billing_myfield20").append("<option value='Benelli'>Benelli</option>");
 	// FIN MARCA
 
 	$(".resumen-cart .pago").each(function(i,v){
