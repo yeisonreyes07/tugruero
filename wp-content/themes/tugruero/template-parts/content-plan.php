@@ -119,7 +119,7 @@ get_header();
 				<p></p>
 				<div class="footer-in-body center">
 					<center>
-						<a href="plan/?canjear=true" class="btn btn-default">TARJETA TUGRUERO</a>
+						<a href="plan/?canjear=true" class="btn btn-default" style="margin-right: 10px;">TARJETA TUGRUERO</a>
 						<a href="#!" class="btn btn-default" data-dismiss="modal">TRANSFERENCIA, TARJETA CREDITO, PAYPAL</a>
 					</center>
 				</div>
