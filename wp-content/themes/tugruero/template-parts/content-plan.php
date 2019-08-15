@@ -113,7 +113,7 @@ get_header();
 				<img src="../wp-content/themes/tugruero/images/tarjetastugruero-01.png" alt="">
 				<ul>
 					<li>Si vas a usar una Tarjeta TuGruero, haz click en "TARJETA TUGRUERO".</li>
-					<li>Si vas a pagar por Transferencia, Tarjeta de credito o Paypal, haz click en "TRANSFERENCIA, SELLE, TARJETA CREDITO, PAYPAL"</li>
+					<li>Si vas a pagar por Transferencia, Tarjeta de credito o Paypal, haz click en "TRANSFERENCIA, ZELLE, TARJETA CREDITO, PAYPAL"</li>
 				</ul>
 				<p> </p>
 				<p></p>
