@@ -694,6 +694,20 @@ $(document).ready(function() {
 			break;
 		}
 	}
+
+	setTimeout(() => {
+		window.clearInterval(time);
+	}, 20000);
+
+	var time2;
+
+	time2 = setInterval(function(){
+		console.log($(".blockUI").length);
+	},200);
+
+	setTimeout(() => {
+		window.clearInterval(time2);
+	}, 5000);
 })
 	/*
 	1- Colocar nombre y apellido en el registro
@@ -747,8 +761,4 @@ function adjuntar(pos=0){
 			$($(".upload-rule")[i-2]).addClass("hide");
 		}
 	},200);
-
-	setTimeout(() => {
-		window.clearInterval(time);
-	}, 20000);
 }

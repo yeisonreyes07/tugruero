@@ -212,16 +212,6 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
-		var time2;
-
-		time2 = setInterval(function(){
-			console.log($(".blockUI").length);
-		},200);
-
-		setTimeout(() => {
-			window.clearInterval(time2);
-		}, 5000);
-
 		var file2 = $("input[type=file]");
 		if(file2.length==0){
 			$('#wpmc-next').text("Realizar pedido");
