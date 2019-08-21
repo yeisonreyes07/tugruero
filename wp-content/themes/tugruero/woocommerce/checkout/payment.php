@@ -212,15 +212,15 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
-		var time;
+		var time2;
 
-		time = setInterval(function(){
-			console.log($(".blockUI.blockOverlay").length);
+		time2 = setInterval(function(){
+			console.log($(".blockUI").length);
 		},200);
 
 		setTimeout(() => {
-			window.clearInterval(time);
-		}, 20000);
+			window.clearInterval(time2);
+		}, 5000);
 
 		var file2 = $("input[type=file]");
 		if(file2.length==0){
