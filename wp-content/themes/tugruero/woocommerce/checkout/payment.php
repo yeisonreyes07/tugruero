@@ -94,7 +94,7 @@ if($woo_multi['currency_rate'][0]>1){
 				</p>
 			</div>
 		</div>
-		<div class="col l3 cupon">
+		<div class="col l3 cupon hide">
 			<!-- <a href="#" class="showcoupon"> -->
 				<div class="col l12 logo-payment" id="containercoupon" onclick="cupon();select(this);">
 					<img src="../wp-content/themes/tugruero/images/TDC_iCON_NEGRO.png" alt="" style="height: 80px !important;">
@@ -261,6 +261,7 @@ if ( ! is_ajax() ) {
 			$("button[name=apply_coupon]").click();
 		});
 		if(sessionStorage.getItem("cupon")=="true"){
+			$(".cupon").removeClass('hide');
 			$("#shownotarjeta").remove();
 			cuponseleccionado=1;
 			$("#payment_heading").hide();
@@ -282,6 +283,7 @@ if ( ! is_ajax() ) {
 			$("#metodos").css(
 				"padding-bottom","32em"
 			)
+			$(".cupon").removeClass('hide');
 			$(".cupon").remove();
 		}
 	})
