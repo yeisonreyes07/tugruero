@@ -28,6 +28,23 @@ if($woo_multi['currency_rate'][0]>1){
 }
 ?>
 <?php cosas(3);?>
+<div class="modal fade" id="ModalInternetBajo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title" id="myModalLabel"><b>¡Internet inestable!</b></h4>
+		</div>
+		<div class="modal-body">
+			<p>Hemos detectado una conexión de internet inestable, refresque la pantalla e intente nuevamente.</p>
+			<div class="footer-in-body center">
+				<center>
+					<a href="/finalizar-compra/" class="btn btn-default" style="margin-right: 20px;">REFRESCAR</a>
+				</center>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
 <div id="payment" class="woocommerce-checkout-payment">
 	<div class="row" id="shownotarjeta">
 		<div class="col l12">

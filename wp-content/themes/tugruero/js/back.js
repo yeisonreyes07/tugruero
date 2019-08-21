@@ -700,14 +700,23 @@ $(document).ready(function() {
 	}, 20000);
 
 	var time2;
+	var cargandos=0;
 
 	time2 = setInterval(function(){
-		console.log($(".blockUI").length);
+		cargandos = $(".blockUI").length;
 	},200);
 
 	setTimeout(() => {
 		window.clearInterval(time2);
-	}, 5000);
+		if(cargandos>0){
+
+		}
+	}, 10000);
+
+	$('#ModalInternetBajo').modal({
+		"backdrop":false,
+		"show":true
+	});
 })
 	/*
 	1- Colocar nombre y apellido en el registro
