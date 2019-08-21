@@ -1,0 +1,274 @@
+# Copyright (C) 2019 YITH WooCommerce Sequential Order Number Premium
+# This file is distributed under the same license as the YITH WooCommerce Sequential Order Number Premium package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Sequential Order Number Premium 1.1.0-"
+"alpha1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
+"POT-Creation-Date: 2019-01-03 15:47+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#: includes/class.yith-sequential-order-number-admin.php:156
+msgid "Modules"
+msgstr ""
+
+#: includes/class.yith-sequential-order-number-admin.php:157
+msgid "Tools"
+msgstr ""
+
+#: includes/class.yith-sequential-order-number-admin.php:163
+msgid "Sequential Order Number"
+msgstr ""
+
+#: includes/class.yith-sequential-order-number-admin.php:298
+msgid "Order imported"
+msgid_plural "Orders imported"
+msgstr[0] ""
+msgstr[1] ""
+
+#: init.php:32
+msgid ""
+"YITH WooCommerce Sequential Order Numbers is enabled but not effective. It "
+"requires WooCommerce in order to work."
+msgstr ""
+
+#: plugin-options/general-options.php:7
+msgid "You can use these placehoders"
+msgstr ""
+
+#: plugin-options/general-options.php:8
+msgid "[D] Day without leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:9
+msgid "[DD] Day with leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:10
+msgid "[M] Month without leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:11
+msgid "[MM] Month with leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:12
+msgid "[YY] two-digit year"
+msgstr ""
+
+#: plugin-options/general-options.php:13
+msgid "[YYYY] Full year"
+msgstr ""
+
+#: plugin-options/general-options.php:14
+msgid "[h] 24-hour format of an hour without leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:15
+msgid "[hh] 24-hour format of an hour with leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:16
+msgid "[m] Minutes with leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:17
+msgid "[s] Seconds, with leading zeros"
+msgstr ""
+
+#: plugin-options/general-options.php:21
+msgid ""
+"If you enable this option, you can use a different numeration for your "
+"quotes."
+msgstr ""
+
+#: plugin-options/general-options.php:22
+msgctxt ""
+"This option is available if YITH WooCommerce Request a Quote Premium version "
+"1.5.6 or later is activated"
+msgid "This option is available if"
+msgstr ""
+
+#: plugin-options/general-options.php:24
+msgid "YITH WooCommerce Request a Quote Premium"
+msgstr ""
+
+#: plugin-options/general-options.php:25
+msgid "(version 1.5.7 or later) is activated"
+msgstr ""
+
+#: plugin-options/general-options.php:30
+msgid "Plugin Modules"
+msgstr ""
+
+#: plugin-options/general-options.php:34
+msgid "Base Module"
+msgstr ""
+
+#: plugin-options/general-options.php:41
+msgid "Numeration starting from"
+msgstr ""
+
+#: plugin-options/general-options.php:44
+msgid "Set the starting number for order numeration"
+msgstr ""
+
+#: plugin-options/general-options.php:55
+msgid "Order prefix"
+msgstr ""
+
+#: plugin-options/general-options.php:58
+msgid "Set a text to be used as prefix for order numbers."
+msgstr ""
+
+#: plugin-options/general-options.php:70
+msgid "Order suffix"
+msgstr ""
+
+#: plugin-options/general-options.php:73
+msgid "Set a text to be used as suffix for order numbers."
+msgstr ""
+
+#: plugin-options/general-options.php:92
+msgid "Free Order Module"
+msgstr ""
+
+#: plugin-options/general-options.php:95
+msgid ""
+"If this option has been activated, you can use a different numeration for "
+"your free orders."
+msgstr ""
+
+#: plugin-options/general-options.php:102
+#: plugin-options/general-options.php:189
+msgid "Numeration starting from:"
+msgstr ""
+
+#: plugin-options/general-options.php:105
+msgid "Set the starting number for free order numeration"
+msgstr ""
+
+#: plugin-options/general-options.php:116
+msgid "Free order prefix"
+msgstr ""
+
+#: plugin-options/general-options.php:120
+msgid "Set a text to be used as prefix for free order numbers."
+msgstr ""
+
+#: plugin-options/general-options.php:132
+msgid "Free order suffix"
+msgstr ""
+
+#: plugin-options/general-options.php:136
+msgid "Set a text to be used as suffix for free order numbers."
+msgstr ""
+
+#: plugin-options/general-options.php:148
+msgid "Set your free order type"
+msgstr ""
+
+#: plugin-options/general-options.php:153
+msgid ""
+"With this option, you can choose in which way orders have to be recognized "
+"as free."
+msgstr ""
+
+#: plugin-options/general-options.php:154
+msgid ""
+"Order total: your order is free if the total is 0 (coupon and shipping "
+"included)."
+msgstr ""
+
+#: plugin-options/general-options.php:155
+msgid ""
+"Order products: your order is free only if all products it contains are free "
+"(coupon and shipping excluded)."
+msgstr ""
+
+#: plugin-options/general-options.php:158
+msgid "Order Total"
+msgstr ""
+
+#: plugin-options/general-options.php:159
+msgid "Products in Order"
+msgstr ""
+
+#: plugin-options/general-options.php:181
+msgid "Quote Module"
+msgstr ""
+
+#: plugin-options/general-options.php:192
+msgid "Set the starting number for quote numeration"
+msgstr ""
+
+#: plugin-options/general-options.php:204
+msgid "Quote prefix"
+msgstr ""
+
+#: plugin-options/general-options.php:208
+msgid "Set a text to be used as prefix for quote numbers."
+msgstr ""
+
+#: plugin-options/general-options.php:219
+msgid "Quote suffix"
+msgstr ""
+
+#: plugin-options/general-options.php:223
+msgid "Set a text to be used as suffix for quote numbers."
+msgstr ""
+
+#: templates/admin/tools-tab.php:6
+msgid "Select a date"
+msgstr ""
+
+#: templates/admin/tools-tab.php:12
+msgid "Import Settings"
+msgstr ""
+
+#: templates/admin/tools-tab.php:16
+msgid "Import from WooCommerce Sequential Order Number"
+msgstr ""
+
+#: templates/admin/tools-tab.php:20
+msgid "Import"
+msgstr ""
+
+#: templates/admin/tools-tab.php:21
+msgid ""
+"This tool allows importing all existing sequential order numbers created by "
+"WooCommerce Sequential Order Number. Otherwise, order numbers are assigned "
+"by the plugin."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "YITH WooCommerce Sequential Order Number Premium"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://yithemes.com/themes/plugins/yith-woocommerce-sequential-order-number"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"<code><strong>YITH WooCommerce Sequential Order Number Premium</strong></"
+"code> allows you to create sequential numbers for your orders! You can add a "
+"prefix and suffix to your orders! <a href =\"https://yithemes.com\">Get more "
+"plugins for your e-commerce shop on <strong>YITH</strong></a>"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "YITH"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://yithemes.com/"
+msgstr ""

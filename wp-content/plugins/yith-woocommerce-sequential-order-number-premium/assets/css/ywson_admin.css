@@ -1,0 +1,46 @@
+#yith_wc_sequential_order_number_panel_general .form-table .titledesc {
+    width:auto !important;
+}
+
+#yith_wc_sequential_order_number_panel_general .yit-admin-panel-content-wrap{
+    width: 80%;
+    margin: 0 auto;
+}
+#yith_wc_sequential_order_number_panel_general tr.yith-plugin-fw-panel-wc-row.onoff{
+    box-shadow: 0 0 0 1px rgba(200, 215, 225, .5), 0 1px 2px #e9eff3;
+    transition: margin .15s linear;
+
+}
+#yith_wc_sequential_order_number_panel_general tr.yith-plugin-fw-panel-wc-row.onoff td.forminp.forminp-onoff{
+    text-align: right;
+}
+
+#yith_wc_sequential_order_number_panel_general tr.yith-plugin-fw-panel-wc-row.onoff button.expand-module{
+    min-height: 50px;
+    height: 100%;
+    background: none;
+    border: 0;
+    width: 48px;
+    cursor: pointer;
+    outline: 0;
+    color: #87a6bc;
+    margin-left: 2rem;
+}
+
+#yith_wc_sequential_order_number_panel_general tr.yith-plugin-fw-panel-wc-row.onoff.closed button.expand-module span
+{
+    transform: rotate(180deg);
+}
+
+#yith_wc_sequential_order_number_panel_general tr.yith-plugin-fw-panel-wc-row.closed_item{
+    display: none;
+
+}
+
+/**TOOLS TAB*/
+
+.ywson_imported{
+    line-height: 2;
+    margin-left: 5px;
+    font-style: italic;
+}
