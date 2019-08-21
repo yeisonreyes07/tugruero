@@ -709,14 +709,12 @@ $(document).ready(function() {
 	setTimeout(() => {
 		window.clearInterval(time2);
 		if(cargandos>0){
-
+			$('#ModalInternetBajo').modal({
+				"backdrop":false,
+				"show":true
+			});
 		}
 	}, 10000);
-
-	$('#ModalInternetBajo').modal({
-		"backdrop":false,
-		"show":true
-	});
 })
 	/*
 	1- Colocar nombre y apellido en el registro
