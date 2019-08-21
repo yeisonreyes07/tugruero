@@ -272,13 +272,13 @@ function woocommerce_button_proceed_to_checkout() {
 		}*/
 		return $address_fields;
   }
-  function cosas($id = "")
+  function cosas($id = "1")
 	{
 		global $woocommerce;
 		$items = $woocommerce->cart->get_cart();
 		echo '<div class="resumen-cart '.$id.'">';
 		foreach($items as $item => $values) { 
-			echo "<div class='paso'>Paso <span class='pas'>1</span><span class='pastotal'>/3</span></div>";
+			echo "<div class='paso'>Paso <span class='pas'>$id</span><span class='pastotal'>/3</span></div>";
 			echo "<h6>Resumen de compra</h6>";
 			$_product =  wc_get_product( $values['data']->get_id()); 
 			echo "<div class='producto'>".$_product->get_title().' (incluye RCV)</div>'; 
