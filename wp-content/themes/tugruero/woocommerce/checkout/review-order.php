@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<?php cosas(2);?>
+<?php //cosas(2);?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
 		<tr>
