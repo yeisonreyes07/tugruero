@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<?php //cosas(2);?>
+<?php cosas(2);?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
 		<tr>
@@ -114,6 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>
 <script>
 	$(document).ready(function(){
+		console.log("paso 3");
 		$('#wpmc-next').text("Siguiente");
 		$(".resumen-cart.2").each(function(i,v){
 			if(i>=1){

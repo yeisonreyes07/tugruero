@@ -27,7 +27,7 @@ if($woo_multi['currency_rate'][0]>1){
 	$rate = $woo_multi['currency_rate'][1];
 }
 ?>
-<?php //cosas();?>
+<?php cosas();?>
 <div id="payment" class="woocommerce-checkout-payment">
 	<div class="row" id="shownotarjeta">
 		<div class="col l12">
@@ -212,6 +212,7 @@ if ( ! is_ajax() ) {
 	}
 
 	$(document).ready(function(){
+		console.log("paso 3");
 		var file2 = $("input[type=file]");
 		if(file2.length==0){
 			$('#wpmc-next').text("Realizar pedido");
