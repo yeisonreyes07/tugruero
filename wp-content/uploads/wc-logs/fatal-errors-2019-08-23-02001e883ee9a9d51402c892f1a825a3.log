@@ -1,0 +1,10 @@
+2019-08-23T15:21:33+00:00 CRITICAL Uncaught Error: Call to a member function get_order_number() on null in D:\wamp64\www\tugruero\wp-content\plugins\woo-doc\woo-doc.php:26
+Stack trace:
+#0 D:\wamp64\www\tugruero\wp-includes\class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#1 D:\wamp64\www\tugruero\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\wamp64\www\tugruero\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 D:\wamp64\www\tugruero\wp-admin\admin.php(253): do_action('settings_page_l...')
+#4 D:\wamp64\www\tugruero\wp-admin\options-general.php(10): require_once('D:\\wamp64\\www\\t...')
+#5 {main}
+  thrown en D:\wamp64\www\tugruero\wp-content\plugins\woo-doc\woo-doc.php en la línea 26
+

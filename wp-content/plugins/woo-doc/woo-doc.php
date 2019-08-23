@@ -23,6 +23,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
         ));
         if(isset($_GET['id'])){
             $query = new WC_Order($_GET['id']);
+            $id_yi=$query->get_order_number();
             $_SESSION['data_wc_lwc']=json_decode($query);
             if($_SESSION['data_wc_lwc']->meta_data[16]->key!='_billing_tipovental'){
                 $_SESSION['data_wc_lwc']->tipoventa = ""; 
@@ -31,7 +32,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                 $_SESSION['data_wc_lwc']->tipoventa = $_SESSION['data_wc_lwc']->meta_data[16]->value; 
                 $_SESSION['data_wc_lwc']->canal = $_SESSION['data_wc_lwc']->meta_data[15]->value; 
             }
-            // var_dump($_SESSION['data_wc_lwc']);
+            $_SESSION['data_wc_lwc']->id_yi=$id_yi;
             $items = $query->get_items();
             foreach ( $items as $item ) {
                 $product_name = $item['name'];
@@ -53,7 +54,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                     foreach($query->get_orders() as $i => $val){
                         ?>
                         <tr>
-                            <td><?= $val->id ?></td>
+                            <td><?= $val->get_order_number(); ?></td>
                             <td><?= $val->data['date_created'] ?></td>
                             <td><?= $val->data['status'] ?></td>
                             <td><a href="?page=lwc&id=<?= $val->id ?>" target="_blank" class="button">Generar PDF</a></td>

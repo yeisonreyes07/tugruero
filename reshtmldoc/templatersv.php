@@ -52,7 +52,7 @@
             <td style="width: 20%"><b>N° de Poliza</b><br>
                 <table style="width: 100%" class="no-border">
                     <tr>
-                        <td style="width: 100%"><?= $_SESSION['data_wc_lwc']->id; ?></td>
+                        <td style="width: 100%"><?= $_SESSION['data_wc_lwc']->id_yi; ?></td>
                     </tr>
                 </table>
             </td>

@@ -23,7 +23,7 @@
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);
-            $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf',"F");
+            $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id_yi_yi.'.pdf',"F");
 
             
             $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -34,8 +34,8 @@
             $mail->Password = "Tugruerovende123!";                           // SMTP password
             $mail->SMTPSecure = "tls";                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = "587";                                    // TCP port to connect to
-            $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
-            $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
+            $mail->addAttachment('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id_yi.'.pdf', 'cuadro'.$_SESSION['data_wc_lwc']->id_yi.'.pdf');
+            $mail->addAttachment('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id_yi.'.pdf', 'rcv'.$_SESSION['data_wc_lwc']->id_yi.'.pdf');
         
             //Recipients
             $mail->setFrom("comercializacion@tugruero.io", "TU/GRUERO");
@@ -58,8 +58,8 @@
             $formatter = new ExceptionFormatter($e);
             echo $formatter->getHtmlMessage();
         }
-        unlink('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id.'.pdf');
-        unlink('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id.'.pdf');
+        unlink('reshtmldoc/cuadro'.$_SESSION['data_wc_lwc']->id_yi.'.pdf');
+        unlink('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id_yi.'.pdf');
         $_SESSION['data_wc_lwc'] = "";
         echo '<script>window.close()</script>';
     }else{

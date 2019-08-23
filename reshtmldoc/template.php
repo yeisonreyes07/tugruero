@@ -61,7 +61,7 @@
                                         }
                                     }
                                     echo $_SESSION['data_wc_lwc']->canal."-";
-                                    echo $_SESSION['data_wc_lwc']->id;
+                                    echo $_SESSION['data_wc_lwc']->id_yi;
 
                                 ?>
                             </td>
