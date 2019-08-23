@@ -23,7 +23,7 @@
             $html2pdf->pdf->SetDisplayMode('fullpage');
             $html2pdf->setDefaultFont('Arial');
             $html2pdf->writeHTML($content);
-            $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id_yi_yi.'.pdf',"F");
+            $html2pdf->output('reshtmldoc/rcv'.$_SESSION['data_wc_lwc']->id_yi.'.pdf',"F");
 
             
             $mail->isSMTP();                                      // Set mailer to use SMTP
