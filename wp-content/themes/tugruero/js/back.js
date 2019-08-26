@@ -49,6 +49,7 @@ $(document).ready(function() {
 	// FIN TIPO
 
 	// MARCA
+	$("#billing_myfield20").append("<option value='Benelli'>Mazda</option>");
 	$("#billing_myfield20").append("<option value='Benelli'>Benelli</option>");
 	// FIN MARCA
 
