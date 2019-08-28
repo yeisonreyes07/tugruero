@@ -1,0 +1,6 @@
+2019-08-28T19:55:59+00:00 CRITICAL Cannot redeclare registrar_campos_admin() (previously declared in D:\wamp64\www\tugruero\wp-content\plugins\woo-doc\woo-doc.php:71) en D:\wamp64\www\tugruero\wp-content\plugins\woo-edit_e\woo-edit.php en la línea 75
+
+2019-08-28T19:56:04+00:00 CRITICAL Cannot redeclare registrar_campos_admin() (previously declared in D:\wamp64\www\tugruero\wp-content\plugins\woo-doc\woo-doc.php:71) en D:\wamp64\www\tugruero\wp-content\plugins\woo-edit_e\woo-edit.php en la línea 75
+
+2019-08-28T19:56:07+00:00 CRITICAL Cannot redeclare registrar_campos_admin() (previously declared in D:\wamp64\www\tugruero\wp-content\plugins\woo-doc\woo-doc.php:71) en D:\wamp64\www\tugruero\wp-content\plugins\woo-edit_e\woo-edit.php en la línea 75
+
