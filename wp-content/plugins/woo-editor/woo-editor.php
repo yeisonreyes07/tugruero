@@ -26,6 +26,8 @@ if(!function_exists("lwc_get_editor")){
                 foreach($_POST as $i => $val){
                     update_post_meta( $_GET['id'], $i, $val );
                 }
+                echo '<h2>Cambios realizados con exito</h2>';
+                echo '<a href="?page=lwedit" class="button">Volver</a>';
             }else{
                 $data = get_post_meta($_GET['id']);
                 echo '<form action="?page=lwedit&data=true&id='.$_GET['id'].'" method="post">';
