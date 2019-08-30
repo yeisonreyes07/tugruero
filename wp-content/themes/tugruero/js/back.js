@@ -51,6 +51,11 @@ $(document).ready(function() {
 	// MARCA
 	$("#billing_myfield20").append("<option value='Benelli'>Mazda</option>");
 	$("#billing_myfield20").append("<option value='Benelli'>Benelli</option>");
+	var select = $('billing_myfield20');
+	select.html(select.find('option').sort(function(x, y) {
+		// to change to descending order switch "<" for ">"
+		return $(x).text() > $(y).text() ? 1 : -1;
+	}));
 	// FIN MARCA
 
 	$(".resumen-cart .pago").each(function(i,v){
