@@ -46,6 +46,18 @@ $(document).ready(function() {
 	$("#billing_myfield24").append('<option value="Paseo">Scooter</option>');
 	$("#billing_myfield24").append('<option value="Paseo">Enduro</option>');
 	$("#billing_myfield24").append('<option value="Paseo">Pista</option>');
+	var select = $('#billing_myfield24 option');
+	var items = [];
+	var itemsSor=[];
+	select.each(function(i,v){
+		var item = $(v);
+		items.push(item.html());
+	});
+	$("#billing_myfield24").html("");
+	itemsSor = items.sort();
+	for(var i=0;i<itemsSor.length;i++){
+		$("#billing_myfield24").append("<option value='"+itemsSor[i]+"'>"+itemsSor[i]+"</option>");
+	}
 	// FIN TIPO
 
 	// MARCA
