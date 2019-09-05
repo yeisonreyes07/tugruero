@@ -19,7 +19,7 @@ add_action("admin_menu","lwc_opciones_admin");
 if(!function_exists("lwc_get_opciones_de_admin")){
     function lwc_get_opciones_de_admin(){
         $query = new WC_Order_Query(array(
-            'limit' => 50,
+            'limit' => 100,
         ));
         if(isset($_GET['id'])){
             $query = new WC_Order($_GET['id']);
@@ -43,6 +43,12 @@ if(!function_exists("lwc_get_opciones_de_admin")){
             echo '<a href="./../generarpdfrcv.php" class="button">Generar PDF - RCV</a>';
         }else{
         ?>
+		<form method='get'>
+			<label for='buscar'>Buscar Pedido</label>
+			<input type='hidden' name='page' value='lwc'>
+			<input type='text' value='' name='id' id='buscar'>
+			<button class='button'>Buscar</button>
+		</form>
             <table width=100%>
                 <tr>
                     <td><b>Pedido</b></td>
@@ -57,7 +63,7 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                             <td><?= $val->get_order_number(); ?></td>
                             <td><?= $val->data['date_created'] ?></td>
                             <td><?= $val->data['status'] ?></td>
-                            <td><a href="?page=lwc&id=<?= $val->id ?>" target="_blank" class="button">Generar PDF</a></td>
+                            <td><a href="?page=lwc&id=<?= $val->id ?>" class="button">Generar PDF</a></td>
                         </tr>
                         <?php
                     }

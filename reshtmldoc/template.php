@@ -155,7 +155,7 @@
                             break;
                         }
                         case "Plan Gold":{
-                            echo "Servicios ilimitados de 50km + 1 serv. de 100mm";
+                            echo "Servicios ilimitados de 50km + 1 serv. de 100km";
                             break;
                         }
                     }

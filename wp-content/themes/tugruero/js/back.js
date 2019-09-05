@@ -46,16 +46,36 @@ $(document).ready(function() {
 	$("#billing_myfield24").append('<option value="Paseo">Scooter</option>');
 	$("#billing_myfield24").append('<option value="Paseo">Enduro</option>');
 	$("#billing_myfield24").append('<option value="Paseo">Pista</option>');
+	var select = $('#billing_myfield24 option');
+	var items = [];
+	var itemsSor=[];
+	select.each(function(i,v){
+		var item = $(v);
+		items.push(item.html());
+	});
+	$("#billing_myfield24").html("");
+	itemsSor = items.sort();
+	for(var i=0;i<itemsSor.length;i++){
+		$("#billing_myfield24").append("<option value='"+itemsSor[i]+"'>"+itemsSor[i]+"</option>");
+	}
 	// FIN TIPO
 
 	// MARCA
 	$("#billing_myfield20").append("<option value='Benelli'>Mazda</option>");
 	$("#billing_myfield20").append("<option value='Benelli'>Benelli</option>");
-	var select = $('billing_myfield20');
-	select.html(select.find('option').sort(function(x, y) {
-		// to change to descending order switch "<" for ">"
-		return $(x).text() > $(y).text() ? 1 : -1;
-	}));
+
+	var select = $('#billing_myfield20 option');
+	var items = [];
+	var itemsSor=[];
+	select.each(function(i,v){
+		var item = $(v);
+		items.push(item.html());
+	});
+	$("#billing_myfield20").html("");
+	itemsSor = items.sort();
+	for(var i=0;i<itemsSor.length;i++){
+		$("#billing_myfield20").append("<option value='"+itemsSor[i]+"'>"+itemsSor[i]+"</option>");
+	}
 	// FIN MARCA
 
 	$(".resumen-cart .pago").each(function(i,v){
