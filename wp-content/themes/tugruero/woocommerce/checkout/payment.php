@@ -50,8 +50,17 @@ if($woo_multi['currency_rate'][0]>1){
 		<div class="col l12">
 			<table>
 				<tr>
-					<td>Bolívar soberano (Bs.S)</td>
-					<td>Dólar de los Estados Unidos (USD)</td>
+					<?php
+						if($_SESSION['currency']=="VES"){
+							?>
+								<td>Bolívar soberano (Bs.S)</td>
+							<?php
+						}else{
+							?>
+								<td>Dólar de los Estados Unidos (USD)</td>
+							<?php
+						}
+					?>
 				</tr>
 				<?php
 					foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -62,16 +71,20 @@ if($woo_multi['currency_rate'][0]>1){
 						if($_SESSION['currency']=="VES"){
 							$bss= $query->get_price();
 							$usd= $query->get_price()/$rate;
+							?>
+								<tr>
+									<td><?= "Bs.S ".number_format($bss, 2, ',', '.'); ?></td>
+								</tr>
+							<?php
 						}else{
 							$bss= $rate*$query->get_price();
 							$usd= $query->get_price();
+							?>
+								<tr>
+									<td><?= "$ ".number_format($usd, 2, ',', '.'); ?></td>
+								</tr>
+							<?php
 						}
-						?>
-							<tr>
-								<td><?= "Bs.S ".number_format($bss, 2, ',', '.'); ?></td>
-								<td><?= "$ ".number_format($usd, 2, ',', '.'); ?></td>
-							</tr>
-						<?php
 					}
 				?>
 			</table>

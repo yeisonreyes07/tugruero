@@ -1,0 +1,60 @@
+2019-09-12T21:02:17+00:00 CRITICAL Uncaught Exception: Pedido no válido. in /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php:101
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): Abstract_WC_Order_Data_Store_CPT->read(Object(WC_Order))
+#1 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-order.php(111): WC_Data_Store->read(Object(WC_Order))
+#2 /var/www/html/tugruero/wp-content/plugins/woo-doc/woo-doc.php(25): WC_Abstract_Order->__construct('3074')
+#3 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#4 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#6 /var/www/html/tugruero/wp-admin/admin.php(253): do_action('settings_page_l...')
+#7 /var/www/html/tugruero/wp-admin/options-general.php(10): require_once('/var/www/html/t...')
+#8 en /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php en la línea 101
+
+2019-09-12T21:03:16+00:00 CRITICAL Uncaught Exception: Pedido no válido. in /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php:101
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): Abstract_WC_Order_Data_Store_CPT->read(Object(WC_Order))
+#1 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-order.php(111): WC_Data_Store->read(Object(WC_Order))
+#2 /var/www/html/tugruero/wp-content/plugins/woo-doc/woo-doc.php(25): WC_Abstract_Order->__construct('3072')
+#3 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#4 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#6 /var/www/html/tugruero/wp-admin/admin.php(253): do_action('settings_page_l...')
+#7 /var/www/html/tugruero/wp-admin/options-general.php(10): require_once('/var/www/html/t...')
+#8 en /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php en la línea 101
+
+2019-09-12T21:04:10+00:00 CRITICAL Uncaught Exception: Pedido no válido. in /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php:101
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): Abstract_WC_Order_Data_Store_CPT->read(Object(WC_Order))
+#1 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-order.php(111): WC_Data_Store->read(Object(WC_Order))
+#2 /var/www/html/tugruero/wp-content/plugins/woo-doc/woo-doc.php(25): WC_Abstract_Order->__construct('3072')
+#3 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#4 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#6 /var/www/html/tugruero/wp-admin/admin.php(253): do_action('settings_page_l...')
+#7 /var/www/html/tugruero/wp-admin/options-general.php(10): require_once('/var/www/html/t...')
+#8 en /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php en la línea 101
+
+2019-09-12T21:04:20+00:00 CRITICAL Uncaught Exception: Pedido no válido. in /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php:101
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): Abstract_WC_Order_Data_Store_CPT->read(Object(WC_Order))
+#1 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-order.php(111): WC_Data_Store->read(Object(WC_Order))
+#2 /var/www/html/tugruero/wp-content/plugins/woo-doc/woo-doc.php(25): WC_Abstract_Order->__construct('3040')
+#3 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#4 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#6 /var/www/html/tugruero/wp-admin/admin.php(253): do_action('settings_page_l...')
+#7 /var/www/html/tugruero/wp-admin/options-general.php(10): require_once('/var/www/html/t...')
+#8 en /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php en la línea 101
+
+2019-09-12T21:11:43+00:00 CRITICAL Uncaught Exception: Pedido no válido. in /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php:101
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): Abstract_WC_Order_Data_Store_CPT->read(Object(WC_Order))
+#1 /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-order.php(111): WC_Data_Store->read(Object(WC_Order))
+#2 /var/www/html/tugruero/wp-content/plugins/woo-doc/woo-doc.php(25): WC_Abstract_Order->__construct('3156')
+#3 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): lwc_get_opciones_de_admin('')
+#4 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#6 /var/www/html/tugruero/wp-admin/admin.php(253): do_action('settings_page_l...')
+#7 /var/www/html/tugruero/wp-admin/options-general.php(10): require_once('/var/www/html/t...')
+#8 en /var/www/html/tugruero/wp-content/plugins/woocommerce/includes/data-stores/abstract-wc-order-data-store-cpt.php en la línea 101
+
