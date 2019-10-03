@@ -19,7 +19,7 @@ add_action("admin_menu","lw_editor");
 if(!function_exists("lwc_get_editor")){
     function lwc_get_editor(){
         $query = new WC_Order_Query(array(
-            'limit' => 50,
+            'limit' => 1000,
         ));
         if(isset($_GET['id'])){
             if(isset($_GET['data'])){

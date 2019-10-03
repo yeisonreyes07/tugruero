@@ -19,9 +19,10 @@ add_action("admin_menu","lwc_opciones_admin");
 if(!function_exists("lwc_get_opciones_de_admin")){
     function lwc_get_opciones_de_admin(){
         $query = new WC_Order_Query(array(
-            'limit' => 300,
+            'limit' => 1000,
         ));
         if(isset($_GET['id'])){
+	    $issues=0;
             foreach($query->get_orders() as $i => $val){
                 if($val->get_order_number()==$_GET['id']){
 		    $query2 = new WC_Order($val->id);
@@ -43,9 +44,33 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                     echo '<br><a href="./../enviarpdf.php" class="button">Enviar Correo</a>';
                     echo '<a href="./../generarpdf.php" class="button">Generar PDF - Cuadro Producto</a>';
                     echo '<a href="./../generarpdfrcv.php" class="button">Generar PDF - RCV</a>';
+		    $issues=0;
                     break;
-                }
-            }
+                }else{
+		    $issues++;
+		}
+	    }
+	    if($issues>0){
+	    	$query = new WC_Order($_GET['id']);
+                $id_yi=$query->get_order_number();
+                $_SESSION['data_wc_lwc']=json_decode($query);
+               if($_SESSION['data_wc_lwc']->meta_data[16]->key!='_billing_tipovental'){
+                    $_SESSION['data_wc_lwc']->tipoventa = ""; 
+                    $_SESSION['data_wc_lwc']->canal = ""; 
+               }else{
+                    $_SESSION['data_wc_lwc']->tipoventa = $_SESSION['data_wc_lwc']->meta_data[16]->value; 
+                    $_SESSION['data_wc_lwc']->canal = $_SESSION['data_wc_lwc']->meta_data[15]->value; 
+               }
+               $_SESSION['data_wc_lwc']->id_yi=$id_yi;
+               $items = $query->get_items();
+               foreach ( $items as $item ) {
+                    $product_name = $item['name'];
+               }
+               $_SESSION['data_wc_lwc']->producto = $product_name;
+               echo '<br><a href="./../enviarpdf.php" class="button">Enviar Correo</a>';
+               echo '<a href="./../generarpdf.php" class="button">Generar PDF - Cuadro Producto</a>';
+               echo '<a href="./../generarpdfrcv.php" class="button">Generar PDF - RCV</a>';
+	    }
         }else{
         ?>
 		<form method='get'>

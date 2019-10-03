@@ -113,7 +113,7 @@ if($woo_multi['currency_rate'][0]>1){
 			</div>
 		</div>
 		<div class="col l3 no-cupon">
-			<div class="col l12 logo-payment disabled">
+			<div class="col l12 logo-payment" onclick="paypal();select(this)">
 				<img src="../wp-content/themes/tugruero/images/brand2.svg" alt="">
 			</div>
 			<div class="col l12">
