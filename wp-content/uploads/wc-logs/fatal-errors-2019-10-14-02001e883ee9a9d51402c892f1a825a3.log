@@ -1,0 +1,10 @@
+2019-10-14T07:24:31+00:00 CRITICAL Uncaught Error: Call to undefined function curl_init() in /var/www/html/tugruero/wp-content/plugins/yith-woocommerce-sequential-order-number-premium/plugin-fw/lib/yith-system-status.php:299
+Stack trace:
+#0 /var/www/html/tugruero/wp-content/plugins/yith-woocommerce-sequential-order-number-premium/plugin-fw/lib/yith-system-status.php(166): YITH_System_Status->get_system_info()
+#1 /var/www/html/tugruero/wp-includes/class-wp-hook.php(286): YITH_System_Status->check_system_status('')
+#2 /var/www/html/tugruero/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 /var/www/html/tugruero/wp-includes/plugin.php(465): WP_Hook->do_action(Array)
+#4 /var/www/html/tugruero/wp-admin/admin.php(169): do_action('admin_init')
+#5 {main}
+  thrown en /var/www/html/tugruero/wp-content/plugins/yith-woocommerce-sequential-order-number-premium/plugin-fw/lib/yith-system-status.php en la línea 299
+

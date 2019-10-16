@@ -1,4 +1,5 @@
 <?php
+ini_set( 'upload_max_size' , '10M' );
 /**
  * tugruero functions and definitions
  *
