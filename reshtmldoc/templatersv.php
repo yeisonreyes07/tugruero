@@ -94,7 +94,13 @@
                 <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?>
             </td>
             <td style="width: 14%"><b>Nacionalidad:</b><br><br>
-                Venezolano (a)            
+                <?php
+                    if($_SESSION['data_wc_lwc']->meta_data[2]->value=="E-"){
+                        echo "Extranjero";
+                    }else{
+                        echo "Venezolano (a)";
+                    }
+                ?>
             </td>
             <td style="width: 16%"><b>Fecha de Nacimiento:</b><br>
                 <?php
@@ -139,7 +145,13 @@
                 <?= $_SESSION['data_wc_lwc']->meta_data[2]->value.$_SESSION['data_wc_lwc']->meta_data[3]->value; ?>
             </td>
             <td style="width: 14%"><b>Nacionalidad:</b><br><br>
-                Venezolano (a)            
+                <?php
+                    if($_SESSION['data_wc_lwc']->meta_data[2]->value=="E-"){
+                        echo "Extranjero";
+                    }else{
+                        echo "Venezolano (a)";
+                    }
+                ?>
             </td>
             <td style="width: 16%"><b>Fecha de Nacimiento:</b><br>
                 <?php

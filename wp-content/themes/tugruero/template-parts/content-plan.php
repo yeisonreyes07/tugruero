@@ -39,8 +39,9 @@ get_header();
 
         </div> 	
 		<div class="form-row">
-			<label>Canal de venta (No cambiar)</label>
+			<label>Seleccionar canal de venta</label>
 			<select id="canal" onchange="changeCanal()">
+				<option value="FTD">Farmatodo</option>
 				<option value="PAG">Página Web</option>
 				<option value="CP">Centro Plaza</option>
 				<option value="CCCT">Centro Ciudad Comercial Tamanaco</option>

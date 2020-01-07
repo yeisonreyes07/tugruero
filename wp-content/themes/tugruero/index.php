@@ -86,14 +86,14 @@ if(!isset($_SESSION['currency'])){
 								<div class="desc">
 									<p><?php echo $product->get_short_description(); ?></p>
 								</div>
-								<div class="tachado">
+								<!--<div class="tachado">
 									<?php if(!empty(get_field("precio_anterior_dolar", $product->id))){ ?>
 									<span class="dolar">$ <?php echo get_field("precio_anterior_dolar", $product->id);?></span>
 									<?php } ?>
 									<?php if(!empty(get_field("precio_anterior_bs", $product->id))){ ?>
 									<span class="vef">Bs. S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
 									<?php } ?>
-								</div>
+								</div>-->
 								<div class="price">
 									<?php #print_r($product);?>
 									<?php echo get_woocommerce_currency_symbol()." ".number_format($product->get_price(), 2, ',', '.'); ?>
