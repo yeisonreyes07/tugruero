@@ -15,6 +15,7 @@ wp-content/plugins/woocommerce-checkout-manager
 wp-content/plugins/yith-woocommerce-uploads-premiun
 wp-content/plugins/yith-woocommerce-sequential-order-number-premiun
 !wp-content/themes/
+wp-content/themes/twentysixteen
 wp-config.php
 wp-content/uploads/elementor/css/
 # ignore these plugins
