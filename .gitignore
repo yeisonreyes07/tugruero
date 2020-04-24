@@ -9,6 +9,11 @@
 !wp-content/uploads/
 !wp-content/mu-plugins/
 !wp-content/plugins/
+wp-content/plugins/woocommerce
+wp-content/plugins/woocommerce-ajax-cart
+wp-content/plugins/woocommerce-checkout-manager
+wp-content/plugins/yith-woocommerce-uploads-premiun
+wp-content/plugins/yith-woocommerce-sequential-order-number-premiun
 !wp-content/themes/
 wp-config.php
 wp-content/uploads/elementor/css/
