@@ -30,15 +30,28 @@ if(!function_exists("lwc_get_editor")){
                 echo '<a href="?page=lwedit" class="button">Volver</a>';
             }else{
                 $data = get_post_meta($_GET['id']);
+				/*echo '<pre>';
+				print_r($data);
+				echo '</pre>';*/
+				echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> ';
+				echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
                 echo '<form action="?page=lwedit&data=true&id='.$_GET['id'].'" method="post">';
+				echo '<div class="col-lg-6">';
                 foreach($data as $i => $val){
                     if($i!='_order_key' && $i!='_customer_user' && $i!='_payment_method' && $i!='_payment_method_title' && $i!='_customer_ip_address' && $i!='_customer_user_agent' && $i!='_created_via' && $i!='_cart_hash' && $i!='_order_total' && $i!='_ywau_order_uploads' && $i!='wmc_order_info' && $i!='_edit_lock' && $i!='_order_stock_reduced'){
                         ?>
-                            <input type="text" value="<?php echo $val[0] ?>" name="<?php echo $i ?>">
+							<div class="form-group">
+								<label for="<?= $i ?>"><?= $i ?></label> 
+								<input id="<?= $i ?>" name="<?= $i ?>" type="text" value="<?php echo $val[0] ?>" class="form-control">
+							</div> 
+                            <!--<input type="text" value="<?php echo $val[0] ?>" name="<?php echo $i ?>">-->
                         <?php
                     }
                 }
-                    echo '<br><br><button class="button">Enviar</button>';
+                    echo '<div class="form-group">
+    <button name="submit" type="submit" class="btn btn-primary button">Submit</button>
+  </div>';
+					echo '</div>';
                 echo '</form>';
             }
         }else{
