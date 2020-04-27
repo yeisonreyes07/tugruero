@@ -241,7 +241,7 @@ if ( ! is_ajax() ) {
 		$(obj).addClass("select");
 	}
 
-	jQuery(document).ready(function(){
+	$(document).ready(function(){
 		var file2 = $("input[type=file]");
 		if(file2.length==0){
 			$('#wpmc-next').text("Realizar pedido");
@@ -260,8 +260,8 @@ if ( ! is_ajax() ) {
 				'Cuentas Bancarias: <br><br>'+
 				'BANESCO: 0134 0371 6837 1103 9012<br>'+
 				'MERCANTIL: 0105 0277 2012 7707 6227<br>'+
-				'PROVINCIAL: 0108 0001 3101 0055 0488</p></div>'+
-				
+				'PROVINCIAL: 0108 0001 3101 0055 0488<br>'+
+				'VENEZOLANO DE CREDITO: 0104 0043 1104 3006 6994</p></div>'+
 
 				'<div class="col l6"><p><b>Para transferencia en Dólares (USD):</b><br><br>'+
 				'Nombre: TAKO LLC<br>'+

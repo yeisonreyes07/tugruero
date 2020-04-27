@@ -126,21 +126,6 @@ function tugruero_widgets_init() {
 }
 add_action( 'widgets_init', 'tugruero_widgets_init' );
 
-//POpper JS 
-// Incluir Bootstrap JS y dependencia popper
-function bootstrap_js() {
-	wp_enqueue_script( 'popper_js', 
-  					'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', 
-  					array(), 
-  					'1.14.3', 
-  					false); 
-	wp_enqueue_script( 'bootstrap_js', 
-  					'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 
-  					array('jquery','popper_js'), 
-  					'4.1.3', 
-  					false); 
-}
-add_action( 'wp_enqueue_scripts', 'bootstrap_js');
 /**
  * Enqueue scripts and styles.
  */
@@ -156,13 +141,6 @@ function tugruero_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tugruero_scripts' );
-
-
-
-
-
-
-
 
 /**
  * Implement the Custom Header feature.

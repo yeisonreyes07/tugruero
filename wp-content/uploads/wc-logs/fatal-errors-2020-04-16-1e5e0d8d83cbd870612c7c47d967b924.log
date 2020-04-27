@@ -1,6 +1,0 @@
-2020-04-16T21:29:35+00:00 CRITICAL syntax error, unexpected '?>' en /opt/bitnami/apps/wordpress/htdocs/wp-content/themes/tugruero/index.php en la línea 93
-
-2020-04-16T21:30:18+00:00 CRITICAL syntax error, unexpected '?>' en /opt/bitnami/apps/wordpress/htdocs/wp-content/themes/tugruero/index.php en la línea 93
-
-2020-04-16T21:30:33+00:00 CRITICAL syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' en /opt/bitnami/apps/wordpress/htdocs/wp-content/themes/tugruero/index.php en la línea 94
-

@@ -25,7 +25,7 @@ if(!isset($_SESSION['currency'])){
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<div class="section-banner">
-				<?php $query= new WP_Query(array('post_type'=>'banner','orderby'=>array('menu_order'=>'ASC')));
+				<?php $query= new WP_Query('post_type=banner');
 				if ($query->have_posts()) {
 				# code...
 					while($query->have_posts()){
@@ -42,24 +42,21 @@ if(!isset($_SESSION['currency'])){
 			</div>
 			<div class="liston">
 				<div class="kpi">
-					<div class="izq"><span class="bold">+7.000</span></div>
+					<div class="izq"><span class="bold">+7000</span></div>
 					<div class="der"><p>Servicios</p><p>realizados</p></div>
 				</div>
 				
 				<div class="kpi">
-					<div class="izq"><span class="bold">+20.000</span></div>
-					<div class="der"><p>Afiliados</p><p></p></div>
+					<div class="izq"><span class="bold">+20</span></div>
+					<div class="der"><p>Mil</p><p>afiliados</p></div>
 				</div>
 				<div class="kpi">
-					<div class="izq"><span class="bold">+95%</span></div>
+					<div class="izq"><span class="bold">90%</span></div>
 					<div class="der"><p>Clientes nos</p><p>recomiendan</p></div>
 				</div>
 			</div>
-<!-- AQUI COMIENZA LA SECCION DE NUESTROS PLANES -->
-			
 			<div class="planes" id="planes">
 				<h1>Nuestros planes</h1>
-				<hr>
 				<!-- <p class="subt">Si compras en nuestra página web tienes un 15% de descuento en todos nuestros planes.</p> -->
 				<div class="elige-moneda">
 					<label>Ver precios en</label>
@@ -70,8 +67,8 @@ if(!isset($_SESSION['currency'])){
 					<?php #$query= new WP_Query('post_type=product&order=ASC');
 						$query = new WC_Product_Query( array(
 							'limit' => 10,
-							'orderby' => 'price',
-							'order' => 'DESC',
+							'orderby' => 'date',
+							'order' => 'ASC',
 						));
 						$products = $query->get_products();
 						#if ($products->have_posts()) {
@@ -89,16 +86,14 @@ if(!isset($_SESSION['currency'])){
 								<div class="desc">
 									<p><?php echo $product->get_short_description(); ?></p>
 								</div>
-							<div class="tachado">
-						 
-									<span class="dolar">$<?php echo $product->regular_price; ?>
-</span>
-									
-						 
-									<span class="vef">Bs. S <?php echo $product->regular_price; ?>
-								</span>
-									
-								</div>
+								<!--<div class="tachado">
+									<?php if(!empty(get_field("precio_anterior_dolar", $product->id))){ ?>
+									<span class="dolar">$ <?php echo get_field("precio_anterior_dolar", $product->id);?></span>
+									<?php } ?>
+									<?php if(!empty(get_field("precio_anterior_bs", $product->id))){ ?>
+									<span class="vef">Bs. S <?php echo get_field("precio_anterior_bs", $product->id);?></span>
+									<?php } ?>
+								</div>-->
 								<div class="price">
 									<?php #print_r($product);?>
 									<?php echo get_woocommerce_currency_symbol()." ".number_format($product->get_price(), 2, ',', '.'); ?>
@@ -117,56 +112,14 @@ if(!isset($_SESSION['currency'])){
 					</div>
 					<?php }#}?>
 				</div>
-<!-- AQUI COMIENZA EL ACORDEON DE PREGUNTAS BASICAS -->
-<div id="accordion">
-	<h1 class="title-home-faqs">Información Relevante</h1>
-<?php $query= new WP_Query('post_type=preguntas_basicas&order=ASC');
-        if ($query->have_posts()) {
-		# code...
-            $i=0;
-            while($query->have_posts()){
-				$query->the_post();
-				$query->the_content();
-        ?>
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-       <button class="btn btn-link" data-toggle="collapse" data-target="#<?php echo $i;?>" aria-expanded="true" aria-controls="<?php echo $i; ?>">
-			<i class="fa fa-chevron-down"></i><?php echo get_the_title();?>
-        </button>
-      </h5>
-    </div>
-
-    <div id="<?php echo $i;?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-		  <p><?php the_content();?></p>
-      </div>
-	
-    </div>
-	  
-  </div>
-  <?php $i++; } } wp_reset_query();?>
-<div class="boton">
-	<a href="#planes" id="viewPlan">Ver Planes</a>
-	<br>
-	<br>
-</div>
-</div>
-				
+				<br>
+				<br>
+				<br>
+				<p class="subt">Todos nuestros planes incluyen RCV cubierto por Universal de Seguros C.A.</p>
 			</div>
-<!-- AQUI COMIENZA EL CONTENEDOR DE PREGUNTAS BASICAS // GUARDADO PARA DESPUES 
-<div class="faqs">
-<h1 class="title-home-faqs">Preguntas Frecuentes</h1>
-	<hr>
-
-</div>					
-	-->
-<!-- AQUI COMIENZA CONTENEDOR DE SERVICIOS ANCLADO A CPT SERVICIOS -->	
-<div class="services">
-	<h1>Nuestros servicios</h1>
-	<hr>
-		<p class="subt-2">(Incluídos en <b>todos</b> nuestros planes)</p>
-			<div class="content-services">
+			<div class="services">
+				<h1>Nuestros servicios</h1>
+				<div class="content-services">
 					<?php $query= new WP_Query('post_type=servicios&order=ASC');
 					if ($query->have_posts()) {
 					# code...
@@ -174,37 +127,52 @@ if(!isset($_SESSION['currency'])){
 							$query->the_post();
 							$query->the_content();
 					?>
-			<div class="service">
+					<div class="service">
 						<img src="<?php the_post_thumbnail_url(); ?>" />
 						<?php the_content(); ?>
 					</div>
 				<?php }} wp_reset_query();?>
-				
 				</div>
-				
-<div class="boton">
-	<a href="#planes" id="viewPlan">Ver Planes</a>
-</div>
+				<div class="cards">
+					<?php $query= new WP_Query('post_type=informacion&order=ASC');
+					if ($query->have_posts()) {
+					# code...
+						while($query->have_posts()){
+							$query->the_post();
+							$query->the_content();
+					?>
+					<div class="card">
+						<div class="content-card">
+							<div class="icon">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/PLANES.png" />
+							</div>
+							<div class="text">
+								<h3>Planes TU/GRUERO</h3>
+								<p><?php the_field("planes_tu_gruero");?></p>
+							</div>
+							<div class="boton">
+								<a href="#planes" id="viewPlan">Ver Planes</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="card">
+						<div class="content-card">
+							<div class="icon">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/SERVICIOS.png" />
+							</div>
+							<div class="text">
+								<h3>Servicios particulares:</h3>
+								<p><?php the_field("servicios_particulares");?></p>
+							</div>
+							<div class="boton">
+								<a href="#">Llamar</a>
+							</div>
+						</div>
+					</div>
+					<?php }} wp_reset_query();?>
 				</div>
-<!-- Video -->
-			
-			
-<div class="container video">
-  <div id="como-canjear-tu-tarjeta" class="row">
-    <div class="col-md-6">
-     <h1 class="video-letra">¿Como Canjear tu tarjeta Tu Gruero?</h1>
-		<hr class="video-hr">
-<p><span style="color: #ffffff;">Canjear tu tarjeta Tu Gruero es muy sencillo! Sigue los pasos en este video para activar tu plan anual en minutos.</span></p>
-    </div>
-    <div class="col-md-6">
-      <iframe class="video-home" width="560" height="315" src="https://www.youtube.com/embed/EvS9QZn2Y7o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  </div>
-    </div>
-  </div>
-		
-			
-			
-<!-- AQUI COMIENZAN LOS TESTIMONIALES CTP TESTIMONIALES -->
+			</div>
 			<div class="testimonials">
 				<div class="content-testimonial">
 					<?php $query= new WP_Query('post_type=testimonios');
@@ -258,20 +226,17 @@ if(!isset($_SESSION['currency'])){
 							$query->the_post();
 							$query->the_content();
 					?>
-					<div class="galeria" >
+					<div class="galeria">
 						<div class="image">
-						<a href="<?php the_post_thumbnail_url();?>" target="_blank">
 							<img src="<?php the_post_thumbnail_url();?>" />
-							</a>
 						</div>
 					</div>
 					<?php }} wp_reset_query(); ?>
 				</div>
 			</div>
-		<!-- SECCION DE CONTACTO -->
 			<div class="contacto" id="contacto">
-				<h1>Tu Gruero Corporativo</h1>
-				<p class="subt">Ofrecemos excelentes descuentos y beneficios para planes corporativos (flotas) y así los colaboradores de tu empresa u organización pueden disfrutar de nuestros servicios. Déjanos tus datos y te contactaremos.</p>
+				<h1>TU/Gruero Corporativo</h1>
+				<p class="subt">Ofrecemos excelentes descuentos y beneficios para planes corporativos (flotas) y asi los colaboradores de tu empresa u organizacion pueden disfrutar de nuestros servicios. Déjanos tus datos y te contactaremos.</p>
 				<?php echo do_shortcode('[contact-form-7 id="5" title="Formulario de contacto 1"]'); ?>
 			</div>
 		</main><!-- #main -->
@@ -279,5 +244,3 @@ if(!isset($_SESSION['currency'])){
 
 <?php
 get_footer();
-
-

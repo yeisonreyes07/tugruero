@@ -113,49 +113,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</tfoot>
 </table>
 <script>
-if (typeof jQuery == 'undefined') {
-    var script = document.createElement('script');
-    script.type = "text/javascript";
-    script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-	jQuery.noConflict();
-}	
-jQuery(document).ready(function(){
+	$(document).ready(function(){
 		console.log("paso 3");
-		var i;
-		for (i = 1980; i <= 1999; i++) {
-			$("#billing_myfield19").find("option[value='" + i +"']").remove();
-		}
-		
-jQuery('#billing_serialcarroceria_field').hide();
-if($("#billing_myfield18_field").is(":visible")){
-				jQuery('#billing_serialcarroceria_field').show();
-			}else{
-				jQuery('#billing_serialcarroceria_field').hide();
-			}
-
-		jQuery('#wpmc-next').text("Siguiente");
-		//jQuery('#wpmc-next').show();
-		jQuery(".resumen-cart.2").each(function(i,v){
+		$('#wpmc-next').text("Siguiente");
+		$(".resumen-cart.2").each(function(i,v){
 			if(i>=1){
 				$(this).hide();
 			}
 		})
 		if(sessionStorage.getItem("cupon")=="true"){
-			jQuery(".amount").each(function(){
-				jQuery(this).html("Tarjeta TuGruero");
+			$(".amount").each(function(){
+				$(this).html("Tarjeta TuGruero");
 			})
 		}
-
-		$(".der").on("click", "a", function (event) {
-			console.log("click en el boton next");
-
-			if($("#billing_myfield18_field").is(":visible")){
-				jQuery('#billing_serialcarroceria_field').show();
-			}else{
-				jQuery('#billing_serialcarroceria_field').hide();
-			}
-		})
-
 	})
 </script>

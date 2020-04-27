@@ -297,10 +297,7 @@ function wooccm_order_received_checkout_details( $order ) {
 			$options = get_option( 'wccs_settings'.$inc );
 			if( !empty( $options[sprintf( '%s_buttons', $name )] ) ) {
 				foreach( $options[sprintf( '%s_buttons', $name )] as $btn ) {
-					
-					/*echo '<pre>';
-					print_r($btn);
-					echo '</pre>';*/
+
 					if( !in_array( $btn['cow'], $array ) ) {
 						if(
 							( get_post_meta( $order_id , sprintf( '_%s_%s', $name, $btn['cow'] ), true) !== '' ) && 

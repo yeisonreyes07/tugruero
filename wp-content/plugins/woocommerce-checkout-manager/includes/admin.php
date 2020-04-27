@@ -1278,42 +1278,10 @@ function wooccm_admin_edit_order_billing_details( $order ) {
 					$btn['type'] !== 'wooccmupload' && 
 					$btn['type'] !== 'multicheckbox'
 				) {
-					$valor = get_post_meta( $order_id , sprintf( '_billing_%s', $btn['cow'] ), true );
-					if($btn['cow'] == 'canal'){
-						$canales = array('FTD'=>'Farmatodo'
-,'PAG'=>'Página Web'
-,'CP'=>'Centro Plaza'
-,'CCCT'=>'Centro Ciudad Comercial Tamanaco'
-,'FM'=>'Francisco de Miranda'
-,'OFIC'=>'Oficina'
-,'CCLP'=>'Centro Comercial Los Proceres'
-,'Corp'=>'Corporativo'
-,'AV01'=>'Agente de venta 01'
-,'AV02'=>'Agente de venta 02'
-,'AV03'=>'Agente de venta 03'
-,'AV04'=>'Agente de venta 04'
-,'AV05'=>'Agente de venta 05'
-,'AV06'=>'Agente de venta 06'
-,'AV07'=>'Agente de venta 07'
-,'AV08'=>'Agente de venta 08'
-,'AV09'=>'Agente de venta 09'
-,'AV10'=>'Agente de venta 10'
-,'AV11'=>'Agente de venta 11'
-,'AV12'=>'Agente de venta 12'
-,'AV13'=>'Agente de venta 13'
-,'AV14'=>'Agente de venta 14'
-,'AV15'=>'Agente de venta 15'
-,'AV16'=>'Agente de venta 16'
-,'AV17'=>'Agente de venta 17'
-,'AV18'=>'Agente de venta 18'
-,'AV19'=>'Agente de venta 19'
-,'AV20'=>'Agente de venta 20');
-						$valor = $canales[$valor];
-					}
 					echo '
 <p id="billing_' . $btn['cow'] . '" class="form-field form-field-wide form-field-type-' . $btn['type'] . '">
 	<strong title="' . sprintf( __( 'ID: %s | Field Type: %s', 'woocommerce-checkout-manager' ), sprintf( '_billing_%s', $btn['cow'] ), __( 'Generic', 'woocommerce-checkout-manager' ) ) . '">
-	'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong><br />'.nl2br( $valor ).'
+	'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong><br />'.nl2br( get_post_meta( $order_id , sprintf( '_billing_%s', $btn['cow'] ), true ) ).'
 </p>
 <!-- .form-field-type-... -->';
 				} elseif( 
