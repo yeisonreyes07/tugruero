@@ -10,7 +10,7 @@
 get_header();
 ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>	
-    <h1 class="title"><?php echo get_the_content(); ?></h1>
+    <h1 class="title">Confirma tu Plan<?php //echo get_the_content(); ?></h1>
 
 	<div class="form-cart">
 		<div class="form-row">
@@ -29,7 +29,7 @@ get_header();
 		    <?php }#}?>
             </select>
 		</div>
-		<div class="form-row">
+		<div class="form-row ocultar-campo">
 			<label>Escoja la cantidad de carros que desea afiliar</label>
 			<input type="number" id="cantidad" value="1"/>					
         </div>
@@ -51,16 +51,16 @@ get_header();
 				<option value="Corp">Corporativo</option>
 				<option value="AV01">Agente de venta 01</option>
 				<option value="AV02">Agente de venta 02</option>
-				<option value="AV03">Agente de venta 03</option>
+				<!--<option value="AV03">Agente de venta 03</option>
 				<option value="AV04">Agente de venta 04</option>
 				<option value="AV05">Agente de venta 05</option>
 				<option value="AV06">Agente de venta 06</option>
 				<option value="AV07">Agente de venta 07</option>
 				<option value="AV08">Agente de venta 08</option>
 				<option value="AV09">Agente de venta 09</option>
-				<option value="AV10">Agente de venta 10</option>
-				<option value="AV11">Agente de venta 11</option>
-				<option value="AV12">Agente de venta 12</option>
+				<option value="AV10">Agente de venta 10</option>-->
+				<option value="TS">TuSeguro.com</option>
+				<!--<option value="AV12">Agente de venta 12</option>
 				<option value="AV13">Agente de venta 13</option>
 				<option value="AV14">Agente de venta 14</option>
 				<option value="AV15">Agente de venta 15</option>
@@ -68,7 +68,7 @@ get_header();
 				<option value="AV17">Agente de venta 17</option>
 				<option value="AV18">Agente de venta 18</option>
 				<option value="AV19">Agente de venta 19</option>
-				<option value="AV20">Agente de venta 20</option>
+				<option value="AV20">Agente de venta 20</option>-->
 			</select>
 		</div>
 		<div class="form-row">
@@ -114,12 +114,12 @@ get_header();
 				<img src="../wp-content/themes/tugruero/images/tarjetastugruero-01.png" alt="">
 				<ul>
 					<li>Si vas a usar una Tarjeta TuGruero, haz click en "TARJETA TUGRUERO".</li>
-					<li>Si vas a pagar por Transferencia Nacional o Zelle, haz click en "TRANSFERENCIA, ZELLE"</li>
+					<li>Si vas a pagar por Transferencia Nacional o Zelle, haz click en "TRANSFERENCIA O ZELLE"</li>
 				</ul>
 				<div class="footer-in-body center">
 					<center>
 						<a href="plan/?canjear=true" class="btn btn-default" style="margin-right: 20px;">TARJETA TUGRUERO</a>
-						<a href="#!" class="btn btn-default" data-dismiss="modal">TRANSFERENCIA, ZELLE</a>
+						<a href="#!" class="btn btn-default" data-dismiss="modal">TRANSFERENCIA O ZELLE</a>
 					</center>
 				</div>
 			</div>
@@ -133,15 +133,17 @@ get_header();
 <?php get_footer(); ?>
 
 <script>
-	sessionStorage.setItem("canal", "PAG");
+	sessionStorage.setItem("canal", "FTD");
 	sessionStorage.setItem("tipo", "Nuevo");
 	$(document).ready(function(){
 		var pathname = window.location.search;
+		//sessionStorage.setItem("canal", "FTD");
 		if(pathname=='?canjear=true'){
 			$('#ModalChange').modal('show');
 			$("#cantidad").prop("disabled",true);
 			$("#moneda-con input").val("Tarjeta TuGruero");
 			sessionStorage.setItem("cupon", "true");
+			//sessionStorage.setItem("canal", "PAG");
 		}else{
 			sessionStorage.setItem("cupon", "false");
 			$('#ModalCupon').modal({

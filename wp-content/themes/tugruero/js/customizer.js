@@ -5,6 +5,18 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
+// Modaal box 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+// Popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+//Tooltip
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 ( function( $ ) {
 
@@ -40,3 +52,4 @@
 		} );
 	} );
 } )( jQuery );
+

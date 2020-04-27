@@ -8,6 +8,8 @@
  * Author URI: https://osba.com.ve
  * Copyright 2019-2020. All rights reserved.
  */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 if(!function_exists("lwc_opciones_admin")){
     function lwc_opciones_admin(){
@@ -18,15 +20,26 @@ add_action("admin_menu","lwc_opciones_admin");
 
 if(!function_exists("lwc_get_opciones_de_admin")){
     function lwc_get_opciones_de_admin(){
-        $query = new WC_Order_Query(array(
-            'limit' => 1000,
+       $query = new WC_Order_Query(array(
+            'limit' => 300,
         ));
+		/*echo '<pre>';
+			print_r($query);
+			echo '</pre>';*/
         if(isset($_GET['id'])){
 	    $issues=0;
             foreach($query->get_orders() as $i => $val){
-                if($val->get_order_number()==$_GET['id']){
+				foreach($val->data['meta_data'] as $meta)
+							{
+								$meta_data[$meta->key] = $meta->value;
+							}
+							$__order_number = $meta_data['_ywson_custom_number_order_complete'];
+                //if($val->get_order_number()==$_GET['id']){
+					if($__order_number==$_GET['id']){
+					echo "por aqui<br>";
 		    $query2 = new WC_Order($val->id);
-                    $id_yi=$query2->get_order_number();
+			
+                    $id_yi=$__order_number;//$query2->get_order_number();
                     $_SESSION['data_wc_lwc']=json_decode($query2);
                     if($_SESSION['data_wc_lwc']->meta_data[16]->key!='_billing_tipovental'){
                         $_SESSION['data_wc_lwc']->tipoventa = ""; 
@@ -35,7 +48,8 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                         $_SESSION['data_wc_lwc']->tipoventa = $_SESSION['data_wc_lwc']->meta_data[16]->value; 
                         $_SESSION['data_wc_lwc']->canal = $_SESSION['data_wc_lwc']->meta_data[15]->value; 
                     }
-                    $_SESSION['data_wc_lwc']->id_yi=$id_yi;
+                    //$_SESSION['data_wc_lwc']->id_yi=$id_yi;
+					$_SESSION['data_wc_lwc']->id_yi=$__order_number;
                     $items = $query2->get_items();
                     foreach ( $items as $item ) {
                         $product_name = $item['name'];
@@ -44,6 +58,10 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                     echo '<br><a href="./../enviarpdf.php" class="button">Enviar Correo</a>';
                     echo '<a href="./../generarpdf.php" class="button">Generar PDF - Cuadro Producto</a>';
                     echo '<a href="./../generarpdfrcv.php" class="button">Generar PDF - RCV</a>';
+					include "./../reshtmldoc/template_vp.php";
+					/*echo'<pre>';
+					print_r($_SESSION['data_wc_lwc']);
+					echo'</pre>';*/
 		    $issues=0;
                     break;
                 }else{
@@ -51,8 +69,23 @@ if(!function_exists("lwc_get_opciones_de_admin")){
 		}
 	    }
 	    if($issues>0){
-	    	$query = new WC_Order($_GET['id']);
-                $id_yi=$query->get_order_number();
+		global $wpdb;
+			echo "por aqui errores $issues<br>";
+			$select_query = "SELECT *
+FROM `wp_postmeta`
+WHERE `meta_key` = '_ywson_custom_number_order_complete' AND `meta_value` = '".$_GET['id']."'";
+$result = $wpdb->get_results($select_query);
+//echo '<pre>';
+			$__post_id = $result[0]->post_id;
+			//print_r($result);
+			//die();
+			//echo '</pre>';
+	    	$query = new WC_Order($__post_id);
+			/*echo '<pre>';
+			print_r($query);
+			echo '</pre>';
+			die();*/
+                $id_yi=$_GET['id'];//$query->get_order_number();
                 $_SESSION['data_wc_lwc']=json_decode($query);
                if($_SESSION['data_wc_lwc']->meta_data[16]->key!='_billing_tipovental'){
                     $_SESSION['data_wc_lwc']->tipoventa = ""; 
@@ -70,6 +103,11 @@ if(!function_exists("lwc_get_opciones_de_admin")){
                echo '<br><a href="./../enviarpdf.php" class="button">Enviar Correo</a>';
                echo '<a href="./../generarpdf.php" class="button">Generar PDF - Cuadro Producto</a>';
                echo '<a href="./../generarpdfrcv.php" class="button">Generar PDF - RCV</a>';
+			   include "./../reshtmldoc/template_vp.php";
+			  /* echo'<pre>';
+			   echo "issues + ".$issues;
+					print_r($_SESSION['data_wc_lwc']);
+					echo'</pre>';*/
 	    }
         }else{
         ?>
@@ -81,19 +119,39 @@ if(!function_exists("lwc_get_opciones_de_admin")){
 		</form>
             <table width=100%>
                 <tr>
-                    <td><b>Pedido</b></td>
+                    <td><b>#</b></td>
+					<td><b>Pedido</b></td>
                     <td><b>Fecha</b></td>
+					<td><b>Cliente</b></td>
                     <td><b>Estado</b></td>
                     <td><b>Opciones</b></td>
                 </tr>
                 <?php
+				$cont=1;
                     foreach($query->get_orders() as $i => $val){
+						
+					foreach($val->data['meta_data'] as $meta)
+							{
+								$meta_data[$meta->key] = $meta->value;
+							}
+							/*echo'<pre>';
+					print_r($meta_data);
+					echo'</pre>';
+					die();*/
+					$__order_number = $meta_data['_ywson_custom_number_order_complete'];
+					//$val->get_order_number();
                         ?>
                         <tr>
-                            <td><?= $val->get_order_number(); ?></td>
+							<td><?=$cont++;?></td>
+                            <td><?= $__order_number ?></td>
                             <td><?= $val->data['date_created'] ?></td>
+							<td><?= $val->data['billing']['first_name'] ?> <?= $val->data['billing']['last_name'] ?></td>
                             <td><?= $val->data['status'] ?></td>
-                            <td><a href="?page=lwc&id=<?= $val->id ?>" class="button">Generar PDF</a></td>
+                            <td><a href="?page=lwc&id=<?= $__order_number ?>" class="button">Generar PDF</a>
+							<?php
+							
+							?>
+							</td>
                         </tr>
                         <?php
                     }
