@@ -28,9 +28,9 @@
 			<div class="line line1">
 				<p><?php echo get_the_content(); ?></p>
 				<div class="redes">
-					<a href="https://es-la.facebook.com/tugruero/" target="_blank" class="fb"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" /></a>
-					<a href="https://twitter.com/tugruero?lang=es" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png" /></a>
-					<a href="https://www.instagram.com/tugruero/?hl=es-la" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/instagram.png" /></a>
+					<a href="<?php the_field("facebook"); ?>" target="_blank" class="fb"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" /></a>
+					<a href="<?php the_field("twitter"); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png" /></a>
+					<a href="<?php the_field("instagram"); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/instagram.png" /></a>
 				</div>
 			</div>
 			<div class="line line2">
@@ -43,7 +43,7 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="/wp-content/uploads/2020/03/cuadro-condicionado-TUGRUERO-ACTUALIZADO-CON-DISEÑO.pdf" target="_blank">Términos y condiciones</a>
+							<a href="wp-content/uploads/2019/07/Terminos-y-Condiciones-Julio-2019.pdf" target="_blank">Términos y condiciones</a>
 						</li>
 						<!-- <li>
 							<a href="#">Políticas de privacidad</a>
@@ -74,8 +74,7 @@
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/slick/slick.min.js"></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/slick-lightbox.js"></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/back.js?ver=6.3"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/back.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
